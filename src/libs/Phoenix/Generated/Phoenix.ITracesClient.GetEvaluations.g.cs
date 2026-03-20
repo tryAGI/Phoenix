@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface ITracesClient
     {
-
         /// <summary>
         /// Get span, trace, or document evaluations from a project
         /// </summary>

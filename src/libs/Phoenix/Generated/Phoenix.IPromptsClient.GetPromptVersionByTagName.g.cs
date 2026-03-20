@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IPromptsClient
     {
-
         /// <summary>
         /// Get prompt version by tag<br/>
         /// Retrieve a specific prompt version using its tag name. Tags are used to identify specific versions of a prompt.

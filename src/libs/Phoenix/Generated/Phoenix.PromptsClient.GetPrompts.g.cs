@@ -23,7 +23,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List all prompts<br/>
         /// Retrieve a paginated list of all prompts in the system. A prompt can have multiple versions.

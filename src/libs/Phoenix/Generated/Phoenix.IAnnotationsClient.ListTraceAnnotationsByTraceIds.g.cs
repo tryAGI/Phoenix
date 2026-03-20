@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IAnnotationsClient
     {
-
         /// <summary>
         /// Get trace annotations for a list of trace_ids.
         /// </summary>

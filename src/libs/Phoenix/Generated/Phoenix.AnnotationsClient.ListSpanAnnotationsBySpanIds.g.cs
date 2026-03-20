@@ -31,7 +31,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get span annotations for a list of span_ids.
         /// </summary>

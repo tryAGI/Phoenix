@@ -21,7 +21,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Download experiment runs as a JSON file
         /// </summary>

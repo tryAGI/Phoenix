@@ -27,7 +27,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List all projects<br/>
         /// Retrieve a paginated list of all projects in the system.

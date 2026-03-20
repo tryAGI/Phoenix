@@ -4,12 +4,10 @@ namespace Phoenix
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Create a new user<br/>
         /// Create a new user with the specified configuration.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace Phoenix
 
             global::Phoenix.CreateUserRequestBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a new user<br/>
         /// Create a new user with the specified configuration.

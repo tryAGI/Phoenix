@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface ISessionsClient
     {
-
         /// <summary>
         /// List sessions for a project
         /// </summary>

@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Delete a user by ID<br/>
         /// Delete an existing user by their unique GlobalID.

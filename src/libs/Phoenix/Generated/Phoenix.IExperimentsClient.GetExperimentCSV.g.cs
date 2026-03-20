@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IExperimentsClient
     {
-
         /// <summary>
         /// Download experiment runs as a CSV file
         /// </summary>

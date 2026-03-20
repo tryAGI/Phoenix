@@ -23,7 +23,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List all users<br/>
         /// Retrieve a paginated list of all users in the system.

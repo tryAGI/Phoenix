@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IPromptsClient
     {
-
         /// <summary>
         /// List prompt versions<br/>
         /// Retrieve all versions of a specific prompt with pagination support. Each prompt can have multiple versions with different configurations.

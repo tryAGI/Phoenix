@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Delete a project by ID or name<br/>
         /// Delete an existing project and all its associated data. The project identifier is either project ID or project name. The default project cannot be deleted. Note: When using a project name as the identifier, it cannot contain slash (/), question mark (?), or pound sign (#) characters.

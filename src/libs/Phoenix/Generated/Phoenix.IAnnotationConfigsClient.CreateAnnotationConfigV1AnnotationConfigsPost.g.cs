@@ -4,11 +4,9 @@ namespace Phoenix
 {
     public partial interface IAnnotationConfigsClient
     {
-
         /// <summary>
         /// Create an annotation configuration
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -16,7 +14,6 @@ namespace Phoenix
 
             global::Phoenix.CreateAnnotationConfigData request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an annotation configuration
         /// </summary>

@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IExperimentsClient
     {
-
         /// <summary>
         /// List runs for an experiment<br/>
         /// Retrieve a paginated list of runs for an experiment

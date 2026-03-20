@@ -4,12 +4,10 @@ namespace Phoenix
 {
     public partial interface IExperimentsClient
     {
-
         /// <summary>
         /// Create experiment on a dataset
         /// </summary>
         /// <param name="datasetId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace Phoenix
 
             global::Phoenix.CreateExperimentRequestBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create experiment on a dataset
         /// </summary>

@@ -25,7 +25,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List prompt versions<br/>
         /// Retrieve all versions of a specific prompt with pagination support. Each prompt can have multiple versions with different configurations.

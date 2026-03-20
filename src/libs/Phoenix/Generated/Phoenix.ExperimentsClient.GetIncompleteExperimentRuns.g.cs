@@ -25,7 +25,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get incomplete runs for an experiment<br/>
         /// Get runs that need to be completed for this experiment.<br/>

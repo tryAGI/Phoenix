@@ -19,7 +19,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get the authenticated user<br/>
         /// Returns the profile of the currently authenticated user. When authentication is disabled, returns an anonymous user representation.

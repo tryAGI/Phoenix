@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IExperimentsClient
     {
-
         /// <summary>
         /// Get experiment by ID
         /// </summary>

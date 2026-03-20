@@ -21,7 +21,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get latest prompt version<br/>
         /// Retrieve the most recent version of a specific prompt.

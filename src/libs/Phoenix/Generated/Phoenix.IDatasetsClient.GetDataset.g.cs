@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Get dataset by ID
         /// </summary>

@@ -23,7 +23,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List annotation configurations<br/>
         /// Retrieve a paginated list of all annotation configurations in the system.

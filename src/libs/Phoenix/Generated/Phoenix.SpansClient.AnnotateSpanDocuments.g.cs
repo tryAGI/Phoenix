@@ -23,7 +23,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Annotate Span Documents
         /// </summary>
@@ -31,7 +30,6 @@ namespace Phoenix
         /// If set to true, the annotations are inserted synchronously.<br/>
         /// Default Value: false
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -307,7 +305,6 @@ namespace Phoenix
                 }
             }
         }
-
         /// <summary>
         /// Annotate Span Documents
         /// </summary>

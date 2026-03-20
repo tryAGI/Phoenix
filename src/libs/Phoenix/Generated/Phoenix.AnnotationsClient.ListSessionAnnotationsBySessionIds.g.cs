@@ -31,7 +31,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get session annotations for a list of session_ids.
         /// </summary>

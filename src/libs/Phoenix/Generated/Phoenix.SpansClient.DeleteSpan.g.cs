@@ -16,7 +16,6 @@ namespace Phoenix
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete a span by span_identifier<br/>
         /// Delete a single span by identifier.<br/>

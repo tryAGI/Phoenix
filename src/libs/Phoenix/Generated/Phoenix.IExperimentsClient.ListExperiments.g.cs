@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IExperimentsClient
     {
-
         /// <summary>
         /// List experiments by dataset<br/>
         /// Retrieve a paginated list of experiments for the specified dataset.

@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface ISessionsClient
     {
-
         /// <summary>
         /// Create session annotations
         /// </summary>
@@ -12,7 +11,6 @@ namespace Phoenix
         /// If true, fulfill request synchronously.<br/>
         /// Default Value: false
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace Phoenix
             global::Phoenix.AnnotateSessionsRequestBody request,
             bool? sync = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create session annotations
         /// </summary>

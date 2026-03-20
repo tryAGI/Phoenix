@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IAnnotationsClient
     {
-
         /// <summary>
         /// Get session annotations for a list of session_ids.
         /// </summary>

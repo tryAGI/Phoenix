@@ -23,7 +23,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Download dataset examples as OpenAI evals JSONL file
         /// </summary>

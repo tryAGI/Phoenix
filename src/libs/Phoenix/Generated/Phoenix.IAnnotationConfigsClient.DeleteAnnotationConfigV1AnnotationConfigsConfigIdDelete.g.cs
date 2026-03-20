@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IAnnotationConfigsClient
     {
-
         /// <summary>
         /// Delete an annotation configuration
         /// </summary>
