@@ -5,8 +5,9 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Nuget">
-    <Description>C# SDK based on Phoenix OpenAPI specification.</Description>
-    <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;generated;nswag</PackageTags>
+    <PackageId>tryAGI.Phoenix</PackageId>
+    <Description>Generated C# SDK based on Arize Phoenix OpenAPI specification.</Description>
+    <PackageTags>api;client;sdk;dotnet;openapi;specification;phoenix;observability;tracing;generated</PackageTags>
   </PropertyGroup>
 
 </Project>
