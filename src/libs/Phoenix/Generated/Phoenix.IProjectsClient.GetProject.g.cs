@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Get project by ID or name<br/>
         /// Retrieve a specific project using its unique identifier: either project ID or project name. Note: When using a project name as the identifier, it cannot contain slash (/), question mark (?), or pound sign (#) characters.

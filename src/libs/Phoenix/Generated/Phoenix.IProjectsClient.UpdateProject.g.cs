@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Update a project by ID or name<br/>
         /// Update an existing project with new configuration. Project names cannot be changed. The project identifier is either project ID or project name. Note: When using a project name as the identifier, it cannot contain slash (/), question mark (?), or pound sign (#) characters.
@@ -12,7 +11,6 @@ namespace Phoenix
         /// <param name="projectIdentifier">
         /// The project identifier: either project ID or project name. If using a project name, it cannot contain slash (/), question mark (?), or pound sign (#) characters.
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace Phoenix
 
             global::Phoenix.UpdateProjectRequestBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a project by ID or name<br/>
         /// Update an existing project with new configuration. Project names cannot be changed. The project identifier is either project ID or project name. Note: When using a project name as the identifier, it cannot contain slash (/), question mark (?), or pound sign (#) characters.

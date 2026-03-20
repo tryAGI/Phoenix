@@ -21,7 +21,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get prompt version by ID<br/>
         /// Retrieve a specific prompt version using its unique identifier. A prompt version contains the actual template and configuration.

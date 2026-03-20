@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Download dataset examples as CSV file
         /// </summary>

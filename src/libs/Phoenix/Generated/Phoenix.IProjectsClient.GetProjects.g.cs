@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// List all projects<br/>
         /// Retrieve a paginated list of all projects in the system.

@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// List dataset versions
         /// </summary>

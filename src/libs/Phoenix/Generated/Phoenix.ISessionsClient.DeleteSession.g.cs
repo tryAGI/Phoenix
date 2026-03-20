@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface ISessionsClient
     {
-
         /// <summary>
         /// Delete a session by identifier<br/>
         /// Delete a session by its identifier. The identifier can be either:<br/>

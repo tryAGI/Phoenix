@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface ISpansClient
     {
-
         /// <summary>
         /// Delete a span by span_identifier<br/>
         /// Delete a single span by identifier.<br/>

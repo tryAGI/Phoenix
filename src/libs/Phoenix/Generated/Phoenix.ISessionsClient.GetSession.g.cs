@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface ISessionsClient
     {
-
         /// <summary>
         /// Get session by ID or session_id
         /// </summary>

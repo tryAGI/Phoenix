@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IExperimentsClient
     {
-
         /// <summary>
         /// Get incomplete evaluations for an experiment<br/>
         /// Get experiment runs that have incomplete evaluations.<br/>

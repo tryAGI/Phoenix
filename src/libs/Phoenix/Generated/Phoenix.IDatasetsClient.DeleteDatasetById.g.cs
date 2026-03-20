@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Delete dataset by ID
         /// </summary>

@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// List all users<br/>
         /// Retrieve a paginated list of all users in the system.

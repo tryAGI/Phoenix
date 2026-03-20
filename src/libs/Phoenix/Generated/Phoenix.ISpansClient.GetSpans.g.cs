@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface ISpansClient
     {
-
         /// <summary>
         /// List spans with simple filters (no DSL)<br/>
         /// Return spans within a project filtered by time range. Supports cursor-based pagination.

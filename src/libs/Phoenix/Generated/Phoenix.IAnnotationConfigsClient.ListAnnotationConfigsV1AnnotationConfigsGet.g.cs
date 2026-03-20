@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IAnnotationConfigsClient
     {
-
         /// <summary>
         /// List annotation configurations<br/>
         /// Retrieve a paginated list of all annotation configurations in the system.

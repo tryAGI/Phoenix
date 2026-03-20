@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IAnnotationsClient
     {
-
         /// <summary>
         /// Get span annotations for a list of span_ids.
         /// </summary>

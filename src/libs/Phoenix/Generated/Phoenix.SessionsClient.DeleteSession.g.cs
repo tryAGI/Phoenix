@@ -16,7 +16,6 @@ namespace Phoenix
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete a session by identifier<br/>
         /// Delete a session by its identifier. The identifier can be either:<br/>

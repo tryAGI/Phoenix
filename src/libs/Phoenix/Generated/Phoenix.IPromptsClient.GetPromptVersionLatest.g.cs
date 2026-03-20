@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IPromptsClient
     {
-
         /// <summary>
         /// Get latest prompt version<br/>
         /// Retrieve the most recent version of a specific prompt.

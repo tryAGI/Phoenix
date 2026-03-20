@@ -16,7 +16,6 @@ namespace Phoenix
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete a user by ID<br/>
         /// Delete an existing user by their unique GlobalID.

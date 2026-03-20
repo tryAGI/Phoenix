@@ -18,7 +18,6 @@ namespace Phoenix
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete experiment by ID
         /// </summary>

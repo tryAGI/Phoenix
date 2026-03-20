@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Download dataset examples as OpenAI fine-tuning JSONL file
         /// </summary>

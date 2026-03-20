@@ -31,7 +31,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get trace annotations for a list of trace_ids.
         /// </summary>

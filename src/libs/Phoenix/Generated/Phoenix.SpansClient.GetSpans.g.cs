@@ -39,7 +39,6 @@ namespace Phoenix
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List spans with simple filters (no DSL)<br/>
         /// Return spans within a project filtered by time range. Supports cursor-based pagination.

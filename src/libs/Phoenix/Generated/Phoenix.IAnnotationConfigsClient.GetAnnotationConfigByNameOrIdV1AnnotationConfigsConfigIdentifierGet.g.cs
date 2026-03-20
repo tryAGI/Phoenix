@@ -4,7 +4,6 @@ namespace Phoenix
 {
     public partial interface IAnnotationConfigsClient
     {
-
         /// <summary>
         /// Get an annotation configuration by ID or name
         /// </summary>
