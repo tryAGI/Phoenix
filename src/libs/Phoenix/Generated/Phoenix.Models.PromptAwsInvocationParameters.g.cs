@@ -1,0 +1,54 @@
+
+#nullable enable
+
+namespace Phoenix
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class PromptAwsInvocationParameters
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <default>"aws"</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string Type { get; set; } = "aws";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("aws")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Phoenix.PromptAwsInvocationParametersContent Aws { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptAwsInvocationParameters" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="aws"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public PromptAwsInvocationParameters(
+            global::Phoenix.PromptAwsInvocationParametersContent aws,
+            string type = "aws")
+        {
+            this.Aws = aws ?? throw new global::System.ArgumentNullException(nameof(aws));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptAwsInvocationParameters" /> class.
+        /// </summary>
+        public PromptAwsInvocationParameters()
+        {
+        }
+    }
+}

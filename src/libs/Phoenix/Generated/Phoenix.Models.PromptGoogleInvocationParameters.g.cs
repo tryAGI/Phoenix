@@ -1,0 +1,54 @@
+
+#nullable enable
+
+namespace Phoenix
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class PromptGoogleInvocationParameters
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <default>"google"</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string Type { get; set; } = "google";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("google")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Phoenix.PromptGoogleInvocationParametersContent Google { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptGoogleInvocationParameters" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="google"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public PromptGoogleInvocationParameters(
+            global::Phoenix.PromptGoogleInvocationParametersContent google,
+            string type = "google")
+        {
+            this.Google = google ?? throw new global::System.ArgumentNullException(nameof(google));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptGoogleInvocationParameters" /> class.
+        /// </summary>
+        public PromptGoogleInvocationParameters()
+        {
+        }
+    }
+}
