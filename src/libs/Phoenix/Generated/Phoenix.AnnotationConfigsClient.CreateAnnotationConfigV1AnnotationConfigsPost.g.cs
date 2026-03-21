@@ -253,21 +253,5 @@ namespace Phoenix
                 }
             }
         }
-        /// <summary>
-        /// Create an annotation configuration
-        /// </summary>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.CreateAnnotationConfigResponseBody> CreateAnnotationConfigV1AnnotationConfigsPostAsync(
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::Phoenix.CreateAnnotationConfigData
-            {
-            };
-
-            return await CreateAnnotationConfigV1AnnotationConfigsPostAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
     }
 }
