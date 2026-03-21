@@ -63,12 +63,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public TracesClient Traces { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SpansClient Spans { get; }
+        public ProjectsClient Projects { get; }
 
         /// <summary>
         /// 
@@ -78,12 +73,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public ProjectsClient Projects { get; }
+        public SessionsClient Sessions { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SessionsClient Sessions { get; }
+        public SpansClient Spans { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TracesClient Traces { get; }
 
         /// <summary>
         /// 
