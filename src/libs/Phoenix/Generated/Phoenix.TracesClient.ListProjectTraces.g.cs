@@ -109,7 +109,7 @@ namespace Phoenix
                 .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("cursor", cursor)
-                .AddOptionalParameter("include_spans", includeSpans?.ToString())
+                .AddOptionalParameter("include_spans", includeSpans?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("session_identifier", sessionIdentifier?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
