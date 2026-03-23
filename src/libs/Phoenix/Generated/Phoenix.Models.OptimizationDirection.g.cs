@@ -11,11 +11,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        Minimize,
+        Maximize,
         /// <summary>
         /// 
         /// </summary>
-        Maximize,
+        Minimize,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +34,8 @@ namespace Phoenix
         {
             return value switch
             {
-                OptimizationDirection.Minimize => "MINIMIZE",
                 OptimizationDirection.Maximize => "MAXIMIZE",
+                OptimizationDirection.Minimize => "MINIMIZE",
                 OptimizationDirection.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -47,8 +47,8 @@ namespace Phoenix
         {
             return value switch
             {
-                "MINIMIZE" => OptimizationDirection.Minimize,
                 "MAXIMIZE" => OptimizationDirection.Maximize,
+                "MINIMIZE" => OptimizationDirection.Minimize,
                 "NONE" => OptimizationDirection.None,
                 _ => null,
             };

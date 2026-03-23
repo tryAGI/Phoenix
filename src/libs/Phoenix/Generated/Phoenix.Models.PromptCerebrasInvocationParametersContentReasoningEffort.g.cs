@@ -11,11 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -46,11 +46,11 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptCerebrasInvocationParametersContentReasoningEffort.None => "none",
-                PromptCerebrasInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptCerebrasInvocationParametersContentReasoningEffort.High => "high",
                 PromptCerebrasInvocationParametersContentReasoningEffort.Low => "low",
                 PromptCerebrasInvocationParametersContentReasoningEffort.Medium => "medium",
-                PromptCerebrasInvocationParametersContentReasoningEffort.High => "high",
+                PromptCerebrasInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptCerebrasInvocationParametersContentReasoningEffort.None => "none",
                 PromptCerebrasInvocationParametersContentReasoningEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,11 +62,11 @@ namespace Phoenix
         {
             return value switch
             {
-                "none" => PromptCerebrasInvocationParametersContentReasoningEffort.None,
-                "minimal" => PromptCerebrasInvocationParametersContentReasoningEffort.Minimal,
+                "high" => PromptCerebrasInvocationParametersContentReasoningEffort.High,
                 "low" => PromptCerebrasInvocationParametersContentReasoningEffort.Low,
                 "medium" => PromptCerebrasInvocationParametersContentReasoningEffort.Medium,
-                "high" => PromptCerebrasInvocationParametersContentReasoningEffort.High,
+                "minimal" => PromptCerebrasInvocationParametersContentReasoningEffort.Minimal,
+                "none" => PromptCerebrasInvocationParametersContentReasoningEffort.None,
                 "xhigh" => PromptCerebrasInvocationParametersContentReasoningEffort.Xhigh,
                 _ => null,
             };

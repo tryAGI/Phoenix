@@ -11,11 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -46,11 +46,11 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptGroqInvocationParametersContentReasoningEffort.None => "none",
-                PromptGroqInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptGroqInvocationParametersContentReasoningEffort.High => "high",
                 PromptGroqInvocationParametersContentReasoningEffort.Low => "low",
                 PromptGroqInvocationParametersContentReasoningEffort.Medium => "medium",
-                PromptGroqInvocationParametersContentReasoningEffort.High => "high",
+                PromptGroqInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptGroqInvocationParametersContentReasoningEffort.None => "none",
                 PromptGroqInvocationParametersContentReasoningEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,11 +62,11 @@ namespace Phoenix
         {
             return value switch
             {
-                "none" => PromptGroqInvocationParametersContentReasoningEffort.None,
-                "minimal" => PromptGroqInvocationParametersContentReasoningEffort.Minimal,
+                "high" => PromptGroqInvocationParametersContentReasoningEffort.High,
                 "low" => PromptGroqInvocationParametersContentReasoningEffort.Low,
                 "medium" => PromptGroqInvocationParametersContentReasoningEffort.Medium,
-                "high" => PromptGroqInvocationParametersContentReasoningEffort.High,
+                "minimal" => PromptGroqInvocationParametersContentReasoningEffort.Minimal,
+                "none" => PromptGroqInvocationParametersContentReasoningEffort.None,
                 "xhigh" => PromptGroqInvocationParametersContentReasoningEffort.Xhigh,
                 _ => null,
             };

@@ -12,11 +12,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        StartTime,
+        LatencyMs,
         /// <summary>
         /// 
         /// </summary>
-        LatencyMs,
+        StartTime,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace Phoenix
         {
             return value switch
             {
-                ListProjectTracesSort.StartTime => "start_time",
                 ListProjectTracesSort.LatencyMs => "latency_ms",
+                ListProjectTracesSort.StartTime => "start_time",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace Phoenix
         {
             return value switch
             {
-                "start_time" => ListProjectTracesSort.StartTime,
                 "latency_ms" => ListProjectTracesSort.LatencyMs,
+                "start_time" => ListProjectTracesSort.StartTime,
                 _ => null,
             };
         }

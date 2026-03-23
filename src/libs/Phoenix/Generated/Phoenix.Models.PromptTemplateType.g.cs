@@ -11,11 +11,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        Str,
+        Chat,
         /// <summary>
         /// 
         /// </summary>
-        Chat,
+        Str,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptTemplateType.Str => "STR",
                 PromptTemplateType.Chat => "CHAT",
+                PromptTemplateType.Str => "STR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Phoenix
         {
             return value switch
             {
-                "STR" => PromptTemplateType.Str,
                 "CHAT" => PromptTemplateType.Chat,
+                "STR" => PromptTemplateType.Str,
                 _ => null,
             };
         }

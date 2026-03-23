@@ -11,31 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        Openai,
-        /// <summary>
-        /// 
-        /// </summary>
-        AzureOpenai,
-        /// <summary>
-        /// 
-        /// </summary>
         Anthropic,
-        /// <summary>
-        /// 
-        /// </summary>
-        Google,
-        /// <summary>
-        /// 
-        /// </summary>
-        Deepseek,
-        /// <summary>
-        /// 
-        /// </summary>
-        Xai,
-        /// <summary>
-        /// 
-        /// </summary>
-        Ollama,
         /// <summary>
         /// 
         /// </summary>
@@ -43,11 +19,23 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        AzureOpenai,
+        /// <summary>
+        /// 
+        /// </summary>
         Cerebras,
         /// <summary>
         /// 
         /// </summary>
+        Deepseek,
+        /// <summary>
+        /// 
+        /// </summary>
         Fireworks,
+        /// <summary>
+        /// 
+        /// </summary>
+        Google,
         /// <summary>
         /// 
         /// </summary>
@@ -59,11 +47,23 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        Ollama,
+        /// <summary>
+        /// 
+        /// </summary>
+        Openai,
+        /// <summary>
+        /// 
+        /// </summary>
         Perplexity,
         /// <summary>
         /// 
         /// </summary>
         Together,
+        /// <summary>
+        /// 
+        /// </summary>
+        Xai,
     }
 
     /// <summary>
@@ -78,20 +78,20 @@ namespace Phoenix
         {
             return value switch
             {
-                ModelProvider.Openai => "OPENAI",
-                ModelProvider.AzureOpenai => "AZURE_OPENAI",
                 ModelProvider.Anthropic => "ANTHROPIC",
-                ModelProvider.Google => "GOOGLE",
-                ModelProvider.Deepseek => "DEEPSEEK",
-                ModelProvider.Xai => "XAI",
-                ModelProvider.Ollama => "OLLAMA",
                 ModelProvider.Aws => "AWS",
+                ModelProvider.AzureOpenai => "AZURE_OPENAI",
                 ModelProvider.Cerebras => "CEREBRAS",
+                ModelProvider.Deepseek => "DEEPSEEK",
                 ModelProvider.Fireworks => "FIREWORKS",
+                ModelProvider.Google => "GOOGLE",
                 ModelProvider.Groq => "GROQ",
                 ModelProvider.Moonshot => "MOONSHOT",
+                ModelProvider.Ollama => "OLLAMA",
+                ModelProvider.Openai => "OPENAI",
                 ModelProvider.Perplexity => "PERPLEXITY",
                 ModelProvider.Together => "TOGETHER",
+                ModelProvider.Xai => "XAI",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -102,20 +102,20 @@ namespace Phoenix
         {
             return value switch
             {
-                "OPENAI" => ModelProvider.Openai,
-                "AZURE_OPENAI" => ModelProvider.AzureOpenai,
                 "ANTHROPIC" => ModelProvider.Anthropic,
-                "GOOGLE" => ModelProvider.Google,
-                "DEEPSEEK" => ModelProvider.Deepseek,
-                "XAI" => ModelProvider.Xai,
-                "OLLAMA" => ModelProvider.Ollama,
                 "AWS" => ModelProvider.Aws,
+                "AZURE_OPENAI" => ModelProvider.AzureOpenai,
                 "CEREBRAS" => ModelProvider.Cerebras,
+                "DEEPSEEK" => ModelProvider.Deepseek,
                 "FIREWORKS" => ModelProvider.Fireworks,
+                "GOOGLE" => ModelProvider.Google,
                 "GROQ" => ModelProvider.Groq,
                 "MOONSHOT" => ModelProvider.Moonshot,
+                "OLLAMA" => ModelProvider.Ollama,
+                "OPENAI" => ModelProvider.Openai,
                 "PERPLEXITY" => ModelProvider.Perplexity,
                 "TOGETHER" => ModelProvider.Together,
+                "XAI" => ModelProvider.Xai,
                 _ => null,
             };
         }

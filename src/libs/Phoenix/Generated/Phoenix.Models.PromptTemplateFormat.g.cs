@@ -11,11 +11,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        Mustache,
+        FString,
         /// <summary>
         /// 
         /// </summary>
-        FString,
+        Mustache,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +34,8 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptTemplateFormat.Mustache => "MUSTACHE",
                 PromptTemplateFormat.FString => "F_STRING",
+                PromptTemplateFormat.Mustache => "MUSTACHE",
                 PromptTemplateFormat.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -47,8 +47,8 @@ namespace Phoenix
         {
             return value switch
             {
-                "MUSTACHE" => PromptTemplateFormat.Mustache,
                 "F_STRING" => PromptTemplateFormat.FString,
+                "MUSTACHE" => PromptTemplateFormat.Mustache,
                 "NONE" => PromptTemplateFormat.None,
                 _ => null,
             };

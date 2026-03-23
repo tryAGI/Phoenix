@@ -11,11 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -46,11 +46,11 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptPerplexityInvocationParametersContentReasoningEffort.None => "none",
-                PromptPerplexityInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptPerplexityInvocationParametersContentReasoningEffort.High => "high",
                 PromptPerplexityInvocationParametersContentReasoningEffort.Low => "low",
                 PromptPerplexityInvocationParametersContentReasoningEffort.Medium => "medium",
-                PromptPerplexityInvocationParametersContentReasoningEffort.High => "high",
+                PromptPerplexityInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptPerplexityInvocationParametersContentReasoningEffort.None => "none",
                 PromptPerplexityInvocationParametersContentReasoningEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,11 +62,11 @@ namespace Phoenix
         {
             return value switch
             {
-                "none" => PromptPerplexityInvocationParametersContentReasoningEffort.None,
-                "minimal" => PromptPerplexityInvocationParametersContentReasoningEffort.Minimal,
+                "high" => PromptPerplexityInvocationParametersContentReasoningEffort.High,
                 "low" => PromptPerplexityInvocationParametersContentReasoningEffort.Low,
                 "medium" => PromptPerplexityInvocationParametersContentReasoningEffort.Medium,
-                "high" => PromptPerplexityInvocationParametersContentReasoningEffort.High,
+                "minimal" => PromptPerplexityInvocationParametersContentReasoningEffort.Minimal,
+                "none" => PromptPerplexityInvocationParametersContentReasoningEffort.None,
                 "xhigh" => PromptPerplexityInvocationParametersContentReasoningEffort.Xhigh,
                 _ => null,
             };

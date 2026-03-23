@@ -11,11 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -46,11 +46,11 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptXAIInvocationParametersContentReasoningEffort.None => "none",
-                PromptXAIInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptXAIInvocationParametersContentReasoningEffort.High => "high",
                 PromptXAIInvocationParametersContentReasoningEffort.Low => "low",
                 PromptXAIInvocationParametersContentReasoningEffort.Medium => "medium",
-                PromptXAIInvocationParametersContentReasoningEffort.High => "high",
+                PromptXAIInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptXAIInvocationParametersContentReasoningEffort.None => "none",
                 PromptXAIInvocationParametersContentReasoningEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,11 +62,11 @@ namespace Phoenix
         {
             return value switch
             {
-                "none" => PromptXAIInvocationParametersContentReasoningEffort.None,
-                "minimal" => PromptXAIInvocationParametersContentReasoningEffort.Minimal,
+                "high" => PromptXAIInvocationParametersContentReasoningEffort.High,
                 "low" => PromptXAIInvocationParametersContentReasoningEffort.Low,
                 "medium" => PromptXAIInvocationParametersContentReasoningEffort.Medium,
-                "high" => PromptXAIInvocationParametersContentReasoningEffort.High,
+                "minimal" => PromptXAIInvocationParametersContentReasoningEffort.Minimal,
+                "none" => PromptXAIInvocationParametersContentReasoningEffort.None,
                 "xhigh" => PromptXAIInvocationParametersContentReasoningEffort.Xhigh,
                 _ => null,
             };

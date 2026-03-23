@@ -11,7 +11,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        SpanKindUnspecified,
+        SpanKindClient,
+        /// <summary>
+        /// 
+        /// </summary>
+        SpanKindConsumer,
         /// <summary>
         /// 
         /// </summary>
@@ -19,19 +23,15 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        SpanKindServer,
-        /// <summary>
-        /// 
-        /// </summary>
-        SpanKindClient,
-        /// <summary>
-        /// 
-        /// </summary>
         SpanKindProducer,
         /// <summary>
         /// 
         /// </summary>
-        SpanKindConsumer,
+        SpanKindServer,
+        /// <summary>
+        /// 
+        /// </summary>
+        SpanKindUnspecified,
     }
 
     /// <summary>
@@ -46,12 +46,12 @@ namespace Phoenix
         {
             return value switch
             {
-                OtlpKind.SpanKindUnspecified => "SPAN_KIND_UNSPECIFIED",
-                OtlpKind.SpanKindInternal => "SPAN_KIND_INTERNAL",
-                OtlpKind.SpanKindServer => "SPAN_KIND_SERVER",
                 OtlpKind.SpanKindClient => "SPAN_KIND_CLIENT",
-                OtlpKind.SpanKindProducer => "SPAN_KIND_PRODUCER",
                 OtlpKind.SpanKindConsumer => "SPAN_KIND_CONSUMER",
+                OtlpKind.SpanKindInternal => "SPAN_KIND_INTERNAL",
+                OtlpKind.SpanKindProducer => "SPAN_KIND_PRODUCER",
+                OtlpKind.SpanKindServer => "SPAN_KIND_SERVER",
+                OtlpKind.SpanKindUnspecified => "SPAN_KIND_UNSPECIFIED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,12 +62,12 @@ namespace Phoenix
         {
             return value switch
             {
-                "SPAN_KIND_UNSPECIFIED" => OtlpKind.SpanKindUnspecified,
-                "SPAN_KIND_INTERNAL" => OtlpKind.SpanKindInternal,
-                "SPAN_KIND_SERVER" => OtlpKind.SpanKindServer,
                 "SPAN_KIND_CLIENT" => OtlpKind.SpanKindClient,
-                "SPAN_KIND_PRODUCER" => OtlpKind.SpanKindProducer,
                 "SPAN_KIND_CONSUMER" => OtlpKind.SpanKindConsumer,
+                "SPAN_KIND_INTERNAL" => OtlpKind.SpanKindInternal,
+                "SPAN_KIND_PRODUCER" => OtlpKind.SpanKindProducer,
+                "SPAN_KIND_SERVER" => OtlpKind.SpanKindServer,
+                "SPAN_KIND_UNSPECIFIED" => OtlpKind.SpanKindUnspecified,
                 _ => null,
             };
         }

@@ -11,11 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -46,11 +46,11 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptOpenAIInvocationParametersContentReasoningEffort.None => "none",
-                PromptOpenAIInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptOpenAIInvocationParametersContentReasoningEffort.High => "high",
                 PromptOpenAIInvocationParametersContentReasoningEffort.Low => "low",
                 PromptOpenAIInvocationParametersContentReasoningEffort.Medium => "medium",
-                PromptOpenAIInvocationParametersContentReasoningEffort.High => "high",
+                PromptOpenAIInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptOpenAIInvocationParametersContentReasoningEffort.None => "none",
                 PromptOpenAIInvocationParametersContentReasoningEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,11 +62,11 @@ namespace Phoenix
         {
             return value switch
             {
-                "none" => PromptOpenAIInvocationParametersContentReasoningEffort.None,
-                "minimal" => PromptOpenAIInvocationParametersContentReasoningEffort.Minimal,
+                "high" => PromptOpenAIInvocationParametersContentReasoningEffort.High,
                 "low" => PromptOpenAIInvocationParametersContentReasoningEffort.Low,
                 "medium" => PromptOpenAIInvocationParametersContentReasoningEffort.Medium,
-                "high" => PromptOpenAIInvocationParametersContentReasoningEffort.High,
+                "minimal" => PromptOpenAIInvocationParametersContentReasoningEffort.Minimal,
+                "none" => PromptOpenAIInvocationParametersContentReasoningEffort.None,
                 "xhigh" => PromptOpenAIInvocationParametersContentReasoningEffort.Xhigh,
                 _ => null,
             };

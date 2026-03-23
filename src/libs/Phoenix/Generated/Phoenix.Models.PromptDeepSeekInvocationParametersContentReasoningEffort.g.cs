@@ -11,11 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -46,11 +46,11 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptDeepSeekInvocationParametersContentReasoningEffort.None => "none",
-                PromptDeepSeekInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptDeepSeekInvocationParametersContentReasoningEffort.High => "high",
                 PromptDeepSeekInvocationParametersContentReasoningEffort.Low => "low",
                 PromptDeepSeekInvocationParametersContentReasoningEffort.Medium => "medium",
-                PromptDeepSeekInvocationParametersContentReasoningEffort.High => "high",
+                PromptDeepSeekInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptDeepSeekInvocationParametersContentReasoningEffort.None => "none",
                 PromptDeepSeekInvocationParametersContentReasoningEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,11 +62,11 @@ namespace Phoenix
         {
             return value switch
             {
-                "none" => PromptDeepSeekInvocationParametersContentReasoningEffort.None,
-                "minimal" => PromptDeepSeekInvocationParametersContentReasoningEffort.Minimal,
+                "high" => PromptDeepSeekInvocationParametersContentReasoningEffort.High,
                 "low" => PromptDeepSeekInvocationParametersContentReasoningEffort.Low,
                 "medium" => PromptDeepSeekInvocationParametersContentReasoningEffort.Medium,
-                "high" => PromptDeepSeekInvocationParametersContentReasoningEffort.High,
+                "minimal" => PromptDeepSeekInvocationParametersContentReasoningEffort.Minimal,
+                "none" => PromptDeepSeekInvocationParametersContentReasoningEffort.None,
                 "xhigh" => PromptDeepSeekInvocationParametersContentReasoningEffort.Xhigh,
                 _ => null,
             };

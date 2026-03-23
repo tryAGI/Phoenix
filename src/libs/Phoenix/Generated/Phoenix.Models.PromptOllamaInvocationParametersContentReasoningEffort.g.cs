@@ -11,11 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -46,11 +46,11 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptOllamaInvocationParametersContentReasoningEffort.None => "none",
-                PromptOllamaInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptOllamaInvocationParametersContentReasoningEffort.High => "high",
                 PromptOllamaInvocationParametersContentReasoningEffort.Low => "low",
                 PromptOllamaInvocationParametersContentReasoningEffort.Medium => "medium",
-                PromptOllamaInvocationParametersContentReasoningEffort.High => "high",
+                PromptOllamaInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptOllamaInvocationParametersContentReasoningEffort.None => "none",
                 PromptOllamaInvocationParametersContentReasoningEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,11 +62,11 @@ namespace Phoenix
         {
             return value switch
             {
-                "none" => PromptOllamaInvocationParametersContentReasoningEffort.None,
-                "minimal" => PromptOllamaInvocationParametersContentReasoningEffort.Minimal,
+                "high" => PromptOllamaInvocationParametersContentReasoningEffort.High,
                 "low" => PromptOllamaInvocationParametersContentReasoningEffort.Low,
                 "medium" => PromptOllamaInvocationParametersContentReasoningEffort.Medium,
-                "high" => PromptOllamaInvocationParametersContentReasoningEffort.High,
+                "minimal" => PromptOllamaInvocationParametersContentReasoningEffort.Minimal,
+                "none" => PromptOllamaInvocationParametersContentReasoningEffort.None,
                 "xhigh" => PromptOllamaInvocationParametersContentReasoningEffort.Xhigh,
                 _ => null,
             };
