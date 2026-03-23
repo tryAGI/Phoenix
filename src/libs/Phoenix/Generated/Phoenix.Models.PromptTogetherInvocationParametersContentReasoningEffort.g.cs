@@ -11,11 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -46,11 +46,11 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptTogetherInvocationParametersContentReasoningEffort.None => "none",
-                PromptTogetherInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptTogetherInvocationParametersContentReasoningEffort.High => "high",
                 PromptTogetherInvocationParametersContentReasoningEffort.Low => "low",
                 PromptTogetherInvocationParametersContentReasoningEffort.Medium => "medium",
-                PromptTogetherInvocationParametersContentReasoningEffort.High => "high",
+                PromptTogetherInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptTogetherInvocationParametersContentReasoningEffort.None => "none",
                 PromptTogetherInvocationParametersContentReasoningEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,11 +62,11 @@ namespace Phoenix
         {
             return value switch
             {
-                "none" => PromptTogetherInvocationParametersContentReasoningEffort.None,
-                "minimal" => PromptTogetherInvocationParametersContentReasoningEffort.Minimal,
+                "high" => PromptTogetherInvocationParametersContentReasoningEffort.High,
                 "low" => PromptTogetherInvocationParametersContentReasoningEffort.Low,
                 "medium" => PromptTogetherInvocationParametersContentReasoningEffort.Medium,
-                "high" => PromptTogetherInvocationParametersContentReasoningEffort.High,
+                "minimal" => PromptTogetherInvocationParametersContentReasoningEffort.Minimal,
+                "none" => PromptTogetherInvocationParametersContentReasoningEffort.None,
                 "xhigh" => PromptTogetherInvocationParametersContentReasoningEffort.Xhigh,
                 _ => null,
             };

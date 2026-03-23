@@ -11,15 +11,15 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        System,
-        /// <summary>
-        /// 
-        /// </summary>
         Admin,
         /// <summary>
         /// 
         /// </summary>
         Member,
+        /// <summary>
+        /// 
+        /// </summary>
+        System,
         /// <summary>
         /// 
         /// </summary>
@@ -38,9 +38,9 @@ namespace Phoenix
         {
             return value switch
             {
-                LDAPUserRole.System => "SYSTEM",
                 LDAPUserRole.Admin => "ADMIN",
                 LDAPUserRole.Member => "MEMBER",
+                LDAPUserRole.System => "SYSTEM",
                 LDAPUserRole.Viewer => "VIEWER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,9 +52,9 @@ namespace Phoenix
         {
             return value switch
             {
-                "SYSTEM" => LDAPUserRole.System,
                 "ADMIN" => LDAPUserRole.Admin,
                 "MEMBER" => LDAPUserRole.Member,
+                "SYSTEM" => LDAPUserRole.System,
                 "VIEWER" => LDAPUserRole.Viewer,
                 _ => null,
             };

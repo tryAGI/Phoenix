@@ -11,7 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Ai,
         /// <summary>
         /// 
         /// </summary>
@@ -19,15 +19,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        Developer,
+        /// <summary>
+        /// 
+        /// </summary>
         Model,
-        /// <summary>
-        /// 
-        /// </summary>
-        Ai,
-        /// <summary>
-        /// 
-        /// </summary>
-        Tool,
         /// <summary>
         /// 
         /// </summary>
@@ -35,7 +31,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        Developer,
+        Tool,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -50,13 +50,13 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptMessageRole.User => "user",
-                PromptMessageRole.Assistant => "assistant",
-                PromptMessageRole.Model => "model",
                 PromptMessageRole.Ai => "ai",
-                PromptMessageRole.Tool => "tool",
-                PromptMessageRole.System => "system",
+                PromptMessageRole.Assistant => "assistant",
                 PromptMessageRole.Developer => "developer",
+                PromptMessageRole.Model => "model",
+                PromptMessageRole.System => "system",
+                PromptMessageRole.Tool => "tool",
+                PromptMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,13 +67,13 @@ namespace Phoenix
         {
             return value switch
             {
-                "user" => PromptMessageRole.User,
-                "assistant" => PromptMessageRole.Assistant,
-                "model" => PromptMessageRole.Model,
                 "ai" => PromptMessageRole.Ai,
-                "tool" => PromptMessageRole.Tool,
-                "system" => PromptMessageRole.System,
+                "assistant" => PromptMessageRole.Assistant,
                 "developer" => PromptMessageRole.Developer,
+                "model" => PromptMessageRole.Model,
+                "system" => PromptMessageRole.System,
+                "tool" => PromptMessageRole.Tool,
+                "user" => PromptMessageRole.User,
                 _ => null,
             };
         }

@@ -11,11 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -46,11 +46,11 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptFireworksInvocationParametersContentReasoningEffort.None => "none",
-                PromptFireworksInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptFireworksInvocationParametersContentReasoningEffort.High => "high",
                 PromptFireworksInvocationParametersContentReasoningEffort.Low => "low",
                 PromptFireworksInvocationParametersContentReasoningEffort.Medium => "medium",
-                PromptFireworksInvocationParametersContentReasoningEffort.High => "high",
+                PromptFireworksInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptFireworksInvocationParametersContentReasoningEffort.None => "none",
                 PromptFireworksInvocationParametersContentReasoningEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,11 +62,11 @@ namespace Phoenix
         {
             return value switch
             {
-                "none" => PromptFireworksInvocationParametersContentReasoningEffort.None,
-                "minimal" => PromptFireworksInvocationParametersContentReasoningEffort.Minimal,
+                "high" => PromptFireworksInvocationParametersContentReasoningEffort.High,
                 "low" => PromptFireworksInvocationParametersContentReasoningEffort.Low,
                 "medium" => PromptFireworksInvocationParametersContentReasoningEffort.Medium,
-                "high" => PromptFireworksInvocationParametersContentReasoningEffort.High,
+                "minimal" => PromptFireworksInvocationParametersContentReasoningEffort.Minimal,
+                "none" => PromptFireworksInvocationParametersContentReasoningEffort.None,
                 "xhigh" => PromptFireworksInvocationParametersContentReasoningEffort.Xhigh,
                 _ => null,
             };

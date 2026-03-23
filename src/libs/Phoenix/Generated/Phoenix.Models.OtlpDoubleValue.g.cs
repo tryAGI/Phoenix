@@ -11,11 +11,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        Infinity,
+        MinusInfinity,
         /// <summary>
         /// 
         /// </summary>
-        MinusInfinity,
+        Infinity,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +34,8 @@ namespace Phoenix
         {
             return value switch
             {
-                OtlpDoubleValue.Infinity => "Infinity",
                 OtlpDoubleValue.MinusInfinity => "-Infinity",
+                OtlpDoubleValue.Infinity => "Infinity",
                 OtlpDoubleValue.NaN => "NaN",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -47,8 +47,8 @@ namespace Phoenix
         {
             return value switch
             {
-                "Infinity" => OtlpDoubleValue.Infinity,
                 "-Infinity" => OtlpDoubleValue.MinusInfinity,
+                "Infinity" => OtlpDoubleValue.Infinity,
                 "NaN" => OtlpDoubleValue.NaN,
                 _ => null,
             };

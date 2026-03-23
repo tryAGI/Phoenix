@@ -11,15 +11,15 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        Llm,
-        /// <summary>
-        /// 
-        /// </summary>
         Code,
         /// <summary>
         /// 
         /// </summary>
         Human,
+        /// <summary>
+        /// 
+        /// </summary>
+        Llm,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Phoenix
         {
             return value switch
             {
-                UpsertExperimentEvaluationRequestBodyAnnotatorKind.Llm => "LLM",
                 UpsertExperimentEvaluationRequestBodyAnnotatorKind.Code => "CODE",
                 UpsertExperimentEvaluationRequestBodyAnnotatorKind.Human => "HUMAN",
+                UpsertExperimentEvaluationRequestBodyAnnotatorKind.Llm => "LLM",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Phoenix
         {
             return value switch
             {
-                "LLM" => UpsertExperimentEvaluationRequestBodyAnnotatorKind.Llm,
                 "CODE" => UpsertExperimentEvaluationRequestBodyAnnotatorKind.Code,
                 "HUMAN" => UpsertExperimentEvaluationRequestBodyAnnotatorKind.Human,
+                "LLM" => UpsertExperimentEvaluationRequestBodyAnnotatorKind.Llm,
                 _ => null,
             };
         }

@@ -11,11 +11,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        Create,
+        Append,
         /// <summary>
         /// 
         /// </summary>
-        Append,
+        Create,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Phoenix
         {
             return value switch
             {
-                UploadDatasetRequestAction2.Create => "create",
                 UploadDatasetRequestAction2.Append => "append",
+                UploadDatasetRequestAction2.Create => "create",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Phoenix
         {
             return value switch
             {
-                "create" => UploadDatasetRequestAction2.Create,
                 "append" => UploadDatasetRequestAction2.Append,
+                "create" => UploadDatasetRequestAction2.Create,
                 _ => null,
             };
         }

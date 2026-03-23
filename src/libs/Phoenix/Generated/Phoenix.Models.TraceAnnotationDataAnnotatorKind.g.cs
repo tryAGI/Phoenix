@@ -11,15 +11,15 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        Llm,
-        /// <summary>
-        /// 
-        /// </summary>
         Code,
         /// <summary>
         /// 
         /// </summary>
         Human,
+        /// <summary>
+        /// 
+        /// </summary>
+        Llm,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Phoenix
         {
             return value switch
             {
-                TraceAnnotationDataAnnotatorKind.Llm => "LLM",
                 TraceAnnotationDataAnnotatorKind.Code => "CODE",
                 TraceAnnotationDataAnnotatorKind.Human => "HUMAN",
+                TraceAnnotationDataAnnotatorKind.Llm => "LLM",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Phoenix
         {
             return value switch
             {
-                "LLM" => TraceAnnotationDataAnnotatorKind.Llm,
                 "CODE" => TraceAnnotationDataAnnotatorKind.Code,
                 "HUMAN" => TraceAnnotationDataAnnotatorKind.Human,
+                "LLM" => TraceAnnotationDataAnnotatorKind.Llm,
                 _ => null,
             };
         }

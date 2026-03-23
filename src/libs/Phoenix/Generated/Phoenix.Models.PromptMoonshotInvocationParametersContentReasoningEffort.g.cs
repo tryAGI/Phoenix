@@ -11,11 +11,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +23,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -46,11 +46,11 @@ namespace Phoenix
         {
             return value switch
             {
-                PromptMoonshotInvocationParametersContentReasoningEffort.None => "none",
-                PromptMoonshotInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptMoonshotInvocationParametersContentReasoningEffort.High => "high",
                 PromptMoonshotInvocationParametersContentReasoningEffort.Low => "low",
                 PromptMoonshotInvocationParametersContentReasoningEffort.Medium => "medium",
-                PromptMoonshotInvocationParametersContentReasoningEffort.High => "high",
+                PromptMoonshotInvocationParametersContentReasoningEffort.Minimal => "minimal",
+                PromptMoonshotInvocationParametersContentReasoningEffort.None => "none",
                 PromptMoonshotInvocationParametersContentReasoningEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,11 +62,11 @@ namespace Phoenix
         {
             return value switch
             {
-                "none" => PromptMoonshotInvocationParametersContentReasoningEffort.None,
-                "minimal" => PromptMoonshotInvocationParametersContentReasoningEffort.Minimal,
+                "high" => PromptMoonshotInvocationParametersContentReasoningEffort.High,
                 "low" => PromptMoonshotInvocationParametersContentReasoningEffort.Low,
                 "medium" => PromptMoonshotInvocationParametersContentReasoningEffort.Medium,
-                "high" => PromptMoonshotInvocationParametersContentReasoningEffort.High,
+                "minimal" => PromptMoonshotInvocationParametersContentReasoningEffort.Minimal,
+                "none" => PromptMoonshotInvocationParametersContentReasoningEffort.None,
                 "xhigh" => PromptMoonshotInvocationParametersContentReasoningEffort.Xhigh,
                 _ => null,
             };
