@@ -11295,23 +11295,12 @@
         ],
         "title": "ValidationError"
       }
-    },
-    "securitySchemes": {
-      "BearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
-      }
     }
   },
   "servers": [
     {
       "url": "http://localhost:6006",
       "description": "Local Phoenix instance"
-    }
-  ],
-  "security": [
-    {
-      "BearerAuth": []
     }
   ]
 }
