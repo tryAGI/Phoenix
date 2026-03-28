@@ -97,13 +97,13 @@ namespace Phoenix
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext) as string;
+                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext) as string;
+                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
