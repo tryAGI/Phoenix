@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-dotnet tool update --global autosdk.cli --prerelease || dotnet tool install --global autosdk.cli --prerelease
+dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-curl -sL "https://raw.githubusercontent.com/Arize-ai/phoenix/main/schemas/openapi.json" -o openapi.json
+curl --fail --silent --show-error -L "https://raw.githubusercontent.com/Arize-ai/phoenix/main/schemas/openapi.json" -o openapi.json
 
 # Fix 1: Add servers section (Phoenix is self-hosted, default localhost:6006)
 jq '. + {"servers": [{"url": "http://localhost:6006", "description": "Local Phoenix instance"}]}' openapi.json > tmp.json && mv tmp.json openapi.json
