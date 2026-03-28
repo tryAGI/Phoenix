@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# OpenAPI spec: https://raw.githubusercontent.com/Arize-ai/phoenix/main/schemas/openapi.json
+
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
 curl --fail --silent --show-error -L "https://raw.githubusercontent.com/Arize-ai/phoenix/main/schemas/openapi.json" -o openapi.json
