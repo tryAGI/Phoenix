@@ -67,11 +67,11 @@ namespace Phoenix
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="metadata"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="exampleCount"></param>
+        /// <param name="description"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,11 +86,11 @@ namespace Phoenix
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.ExampleCount = exampleCount;
-            this.Description = description;
         }
 
         /// <summary>

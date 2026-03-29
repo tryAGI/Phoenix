@@ -74,12 +74,12 @@ namespace Phoenix
         /// </summary>
         /// <param name="id"></param>
         /// <param name="spanId"></param>
-        /// <param name="parentId"></param>
         /// <param name="name"></param>
         /// <param name="spanKind"></param>
         /// <param name="statusCode"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="parentId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -95,12 +95,12 @@ namespace Phoenix
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.SpanId = spanId ?? throw new global::System.ArgumentNullException(nameof(spanId));
+            this.ParentId = parentId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.SpanKind = spanKind ?? throw new global::System.ArgumentNullException(nameof(spanKind));
             this.StatusCode = statusCode ?? throw new global::System.ArgumentNullException(nameof(statusCode));
             this.StartTime = startTime;
             this.EndTime = endTime;
-            this.ParentId = parentId;
         }
 
         /// <summary>

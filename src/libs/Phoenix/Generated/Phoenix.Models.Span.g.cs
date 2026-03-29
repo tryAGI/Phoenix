@@ -89,9 +89,6 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="Span" /> class.
         /// </summary>
-        /// <param name="id">
-        /// Span Global ID, distinct from the OpenTelemetry span ID
-        /// </param>
         /// <param name="name">
         /// Name of the span operation
         /// </param>
@@ -101,9 +98,6 @@ namespace Phoenix
         /// <param name="spanKind">
         /// Type of work that the span encapsulates
         /// </param>
-        /// <param name="parentId">
-        /// OpenTelemetry span ID of the parent span
-        /// </param>
         /// <param name="startTime">
         /// Start time of the span (must be timezone-aware)
         /// </param>
@@ -112,6 +106,12 @@ namespace Phoenix
         /// </param>
         /// <param name="statusCode">
         /// Status code of the span
+        /// </param>
+        /// <param name="id">
+        /// Span Global ID, distinct from the OpenTelemetry span ID
+        /// </param>
+        /// <param name="parentId">
+        /// OpenTelemetry span ID of the parent span
         /// </param>
         /// <param name="statusMessage">
         /// Status message
@@ -138,14 +138,14 @@ namespace Phoenix
             object? attributes,
             global::System.Collections.Generic.IList<global::Phoenix.SpanEvent>? events)
         {
+            this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
             this.SpanKind = spanKind ?? throw new global::System.ArgumentNullException(nameof(spanKind));
+            this.ParentId = parentId;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.StatusCode = statusCode ?? throw new global::System.ArgumentNullException(nameof(statusCode));
-            this.Id = id;
-            this.ParentId = parentId;
             this.StatusMessage = statusMessage;
             this.Attributes = attributes;
             this.Events = events;

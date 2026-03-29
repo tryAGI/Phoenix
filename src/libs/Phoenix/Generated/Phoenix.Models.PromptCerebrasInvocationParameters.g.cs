@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptCerebrasInvocationParameters" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="cerebras"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             global::Phoenix.PromptCerebrasInvocationParametersContent cerebras,
             string type = "cerebras")
         {
-            this.Cerebras = cerebras ?? throw new global::System.ArgumentNullException(nameof(cerebras));
             this.Type = type;
+            this.Cerebras = cerebras ?? throw new global::System.ArgumentNullException(nameof(cerebras));
         }
 
         /// <summary>

@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptToolChoiceSpecificFunctionTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="functionName"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             string functionName,
             string type = "specific_function")
         {
-            this.FunctionName = functionName ?? throw new global::System.ArgumentNullException(nameof(functionName));
             this.Type = type;
+            this.FunctionName = functionName ?? throw new global::System.ArgumentNullException(nameof(functionName));
         }
 
         /// <summary>

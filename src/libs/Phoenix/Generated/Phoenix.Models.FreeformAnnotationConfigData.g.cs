@@ -38,8 +38,8 @@ namespace Phoenix
         /// Initializes a new instance of the <see cref="FreeformAnnotationConfigData" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="type"></param>
         /// <param name="description"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

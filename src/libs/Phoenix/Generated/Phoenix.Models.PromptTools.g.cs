@@ -44,10 +44,10 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptTools" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="tools"></param>
         /// <param name="toolChoice"></param>
         /// <param name="disableParallelToolCalls"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -57,8 +57,8 @@ namespace Phoenix
             bool? disableParallelToolCalls,
             string type = "tools")
         {
-            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.Type = type;
+            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.ToolChoice = toolChoice;
             this.DisableParallelToolCalls = disableParallelToolCalls;
         }

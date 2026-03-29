@@ -89,11 +89,13 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadDatasetRequest2" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="inputKeys"></param>
         /// <param name="outputKeys"></param>
+        /// <param name="file"></param>
+        /// <param name="filename"></param>
+        /// <param name="action"></param>
+        /// <param name="description"></param>
         /// <param name="metadataKeys"></param>
         /// <param name="splitKeys">
         /// Column names for auto-assigning examples to splits
@@ -104,8 +106,6 @@ namespace Phoenix
         /// <param name="spanIdKey">
         /// Column name for span IDs to link examples back to spans
         /// </param>
-        /// <param name="file"></param>
-        /// <param name="filename"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -122,17 +122,17 @@ namespace Phoenix
             global::System.Collections.Generic.IList<string>? flattenKeys,
             string? spanIdKey)
         {
+            this.Action = action;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.InputKeys = inputKeys ?? throw new global::System.ArgumentNullException(nameof(inputKeys));
             this.OutputKeys = outputKeys ?? throw new global::System.ArgumentNullException(nameof(outputKeys));
-            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
-            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
-            this.Action = action;
-            this.Description = description;
             this.MetadataKeys = metadataKeys;
             this.SplitKeys = splitKeys;
             this.FlattenKeys = flattenKeys;
             this.SpanIdKey = spanIdKey;
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
         }
 
         /// <summary>

@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptAwsInvocationParameters" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="aws"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             global::Phoenix.PromptAwsInvocationParametersContent aws,
             string type = "aws")
         {
-            this.Aws = aws ?? throw new global::System.ArgumentNullException(nameof(aws));
             this.Type = type;
+            this.Aws = aws ?? throw new global::System.ArgumentNullException(nameof(aws));
         }
 
         /// <summary>

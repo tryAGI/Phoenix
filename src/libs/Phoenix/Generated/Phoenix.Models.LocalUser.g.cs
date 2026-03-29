@@ -86,9 +86,9 @@ namespace Phoenix
         /// <param name="email"></param>
         /// <param name="username"></param>
         /// <param name="role"></param>
-        /// <param name="authMethod"></param>
-        /// <param name="password"></param>
         /// <param name="passwordNeedsReset"></param>
+        /// <param name="password"></param>
+        /// <param name="authMethod"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -109,9 +109,9 @@ namespace Phoenix
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
             this.Role = role;
-            this.PasswordNeedsReset = passwordNeedsReset;
             this.AuthMethod = authMethod;
             this.Password = password;
+            this.PasswordNeedsReset = passwordNeedsReset;
         }
 
         /// <summary>

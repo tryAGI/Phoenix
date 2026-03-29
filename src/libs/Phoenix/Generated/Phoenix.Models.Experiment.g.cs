@@ -115,9 +115,6 @@ namespace Phoenix
         /// <param name="metadata">
         /// Metadata of the experiment
         /// </param>
-        /// <param name="projectName">
-        /// The name of the project associated with the experiment
-        /// </param>
         /// <param name="createdAt">
         /// The creation timestamp of the experiment
         /// </param>
@@ -135,6 +132,9 @@ namespace Phoenix
         /// </param>
         /// <param name="missingRunCount">
         /// Number of missing (not yet executed) runs in the experiment
+        /// </param>
+        /// <param name="projectName">
+        /// The name of the project associated with the experiment
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -158,13 +158,13 @@ namespace Phoenix
             this.DatasetVersionId = datasetVersionId ?? throw new global::System.ArgumentNullException(nameof(datasetVersionId));
             this.Repetitions = repetitions;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.ProjectName = projectName;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.ExampleCount = exampleCount;
             this.SuccessfulRunCount = successfulRunCount;
             this.FailedRunCount = failedRunCount;
             this.MissingRunCount = missingRunCount;
-            this.ProjectName = projectName;
         }
 
         /// <summary>

@@ -96,13 +96,16 @@ namespace Phoenix
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="source"></param>
-        /// <param name="userId"></param>
         /// <param name="name">
         /// The name of the annotation
         /// </param>
         /// <param name="annotatorKind">
         /// The kind of annotator used for the annotation
         /// </param>
+        /// <param name="sessionId">
+        /// Session ID
+        /// </param>
+        /// <param name="userId"></param>
         /// <param name="result">
         /// The result of the annotation
         /// </param>
@@ -111,9 +114,6 @@ namespace Phoenix
         /// </param>
         /// <param name="identifier">
         /// The identifier of the annotation. If provided, the annotation will be updated if it already exists.
-        /// </param>
-        /// <param name="sessionId">
-        /// Session ID
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -135,13 +135,13 @@ namespace Phoenix
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Source = source;
+            this.UserId = userId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.AnnotatorKind = annotatorKind;
-            this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
-            this.UserId = userId;
             this.Result = result;
             this.Metadata = metadata;
             this.Identifier = identifier;
+            this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
         }
 
         /// <summary>

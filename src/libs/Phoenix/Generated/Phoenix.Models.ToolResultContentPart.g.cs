@@ -39,9 +39,9 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolResultContentPart" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="toolCallId"></param>
         /// <param name="toolResult"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,9 +50,9 @@ namespace Phoenix
             global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object> toolResult,
             string type = "tool_result")
         {
+            this.Type = type;
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
             this.ToolResult = toolResult;
-            this.Type = type;
         }
 
         /// <summary>

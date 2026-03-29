@@ -38,9 +38,9 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolCallContentPart" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="toolCallId"></param>
         /// <param name="toolCall"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -49,9 +49,9 @@ namespace Phoenix
             global::Phoenix.ToolCallFunction toolCall,
             string type = "tool_call")
         {
+            this.Type = type;
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
             this.ToolCall = toolCall ?? throw new global::System.ArgumentNullException(nameof(toolCall));
-            this.Type = type;
         }
 
         /// <summary>

@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptMoonshotInvocationParameters" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="moonshot"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             global::Phoenix.PromptMoonshotInvocationParametersContent moonshot,
             string type = "moonshot")
         {
-            this.Moonshot = moonshot ?? throw new global::System.ArgumentNullException(nameof(moonshot));
             this.Type = type;
+            this.Moonshot = moonshot ?? throw new global::System.ArgumentNullException(nameof(moonshot));
         }
 
         /// <summary>
