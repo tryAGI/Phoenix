@@ -45,9 +45,9 @@ namespace Phoenix
         /// Initializes a new instance of the <see cref="FreeformAnnotationConfig" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="type"></param>
-        /// <param name="description"></param>
         /// <param name="id"></param>
+        /// <param name="description"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -58,9 +58,9 @@ namespace Phoenix
             string type = "FREEFORM")
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
             this.Description = description;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 
         /// <summary>

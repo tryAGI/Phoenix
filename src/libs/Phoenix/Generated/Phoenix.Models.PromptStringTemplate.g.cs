@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptStringTemplate" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="template"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             string template,
             string type = "string")
         {
-            this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
             this.Type = type;
+            this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
         }
 
         /// <summary>

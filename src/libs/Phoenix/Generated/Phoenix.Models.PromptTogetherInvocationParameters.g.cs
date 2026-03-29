@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptTogetherInvocationParameters" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="together"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             global::Phoenix.PromptTogetherInvocationParametersContent together,
             string type = "together")
         {
-            this.Together = together ?? throw new global::System.ArgumentNullException(nameof(together));
             this.Type = type;
+            this.Together = together ?? throw new global::System.ArgumentNullException(nameof(together));
         }
 
         /// <summary>

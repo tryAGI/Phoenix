@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptOllamaInvocationParameters" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="ollama"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             global::Phoenix.PromptOllamaInvocationParametersContent ollama,
             string type = "ollama")
         {
-            this.Ollama = ollama ?? throw new global::System.ArgumentNullException(nameof(ollama));
             this.Type = type;
+            this.Ollama = ollama ?? throw new global::System.ArgumentNullException(nameof(ollama));
         }
 
         /// <summary>

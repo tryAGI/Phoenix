@@ -58,11 +58,11 @@ namespace Phoenix
         /// Initializes a new instance of the <see cref="ContinuousAnnotationConfigData" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="type"></param>
-        /// <param name="description"></param>
         /// <param name="optimizationDirection"></param>
+        /// <param name="description"></param>
         /// <param name="lowerBound"></param>
         /// <param name="upperBound"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,9 +75,9 @@ namespace Phoenix
             string type = "CONTINUOUS")
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.OptimizationDirection = optimizationDirection;
             this.Type = type;
             this.Description = description;
+            this.OptimizationDirection = optimizationDirection;
             this.LowerBound = lowerBound;
             this.UpperBound = upperBound;
         }

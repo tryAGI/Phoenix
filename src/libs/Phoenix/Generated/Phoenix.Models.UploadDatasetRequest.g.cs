@@ -68,10 +68,10 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadDatasetRequest" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="inputs"></param>
+        /// <param name="action"></param>
+        /// <param name="description"></param>
         /// <param name="outputs"></param>
         /// <param name="metadata"></param>
         /// <param name="splits">
@@ -93,10 +93,10 @@ namespace Phoenix
             global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? splits,
             global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? spanIds)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.Action = action;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.Outputs = outputs;
             this.Metadata = metadata;
             this.Splits = splits;

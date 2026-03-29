@@ -63,6 +63,9 @@ namespace Phoenix
         /// <param name="annotatorKind">
         /// The kind of annotator used for the annotation
         /// </param>
+        /// <param name="spanId">
+        /// OpenTelemetry Span ID (hex format w/o 0x prefix)
+        /// </param>
         /// <param name="result">
         /// The result of the annotation
         /// </param>
@@ -71,9 +74,6 @@ namespace Phoenix
         /// </param>
         /// <param name="identifier">
         /// The identifier of the annotation. If provided, the annotation will be updated if it already exists.
-        /// </param>
-        /// <param name="spanId">
-        /// OpenTelemetry Span ID (hex format w/o 0x prefix)
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -88,10 +88,10 @@ namespace Phoenix
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.AnnotatorKind = annotatorKind;
-            this.SpanId = spanId ?? throw new global::System.ArgumentNullException(nameof(spanId));
             this.Result = result;
             this.Metadata = metadata;
             this.Identifier = identifier;
+            this.SpanId = spanId ?? throw new global::System.ArgumentNullException(nameof(spanId));
         }
 
         /// <summary>

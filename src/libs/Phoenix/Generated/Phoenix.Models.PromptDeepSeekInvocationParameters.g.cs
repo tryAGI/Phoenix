@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptDeepSeekInvocationParameters" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="deepseek"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             global::Phoenix.PromptDeepSeekInvocationParametersContent deepseek,
             string type = "deepseek")
         {
-            this.Deepseek = deepseek ?? throw new global::System.ArgumentNullException(nameof(deepseek));
             this.Type = type;
+            this.Deepseek = deepseek ?? throw new global::System.ArgumentNullException(nameof(deepseek));
         }
 
         /// <summary>

@@ -89,16 +89,16 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptVersion" /> class.
         /// </summary>
-        /// <param name="description"></param>
         /// <param name="modelProvider"></param>
         /// <param name="modelName"></param>
         /// <param name="template"></param>
         /// <param name="templateType"></param>
         /// <param name="templateFormat"></param>
         /// <param name="invocationParameters"></param>
+        /// <param name="id"></param>
+        /// <param name="description"></param>
         /// <param name="tools"></param>
         /// <param name="responseFormat"></param>
-        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -114,16 +114,16 @@ namespace Phoenix
             global::Phoenix.PromptTools? tools,
             global::Phoenix.ResponseFormatVariant1? responseFormat)
         {
+            this.Description = description;
             this.ModelProvider = modelProvider;
             this.ModelName = modelName ?? throw new global::System.ArgumentNullException(nameof(modelName));
             this.Template = template;
             this.TemplateType = templateType;
             this.TemplateFormat = templateFormat;
             this.InvocationParameters = invocationParameters;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Description = description;
             this.Tools = tools;
             this.ResponseFormat = responseFormat;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 
         /// <summary>

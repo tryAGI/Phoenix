@@ -45,9 +45,9 @@ namespace Phoenix
         /// Initializes a new instance of the <see cref="DatasetVersion" /> class.
         /// </summary>
         /// <param name="versionId"></param>
-        /// <param name="description"></param>
         /// <param name="metadata"></param>
         /// <param name="createdAt"></param>
+        /// <param name="description"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -58,9 +58,9 @@ namespace Phoenix
             string? description)
         {
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
+            this.Description = description;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.CreatedAt = createdAt;
-            this.Description = description;
         }
 
         /// <summary>

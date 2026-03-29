@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptXAIInvocationParameters" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="xai"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             global::Phoenix.PromptXAIInvocationParametersContent xai,
             string type = "xai")
         {
-            this.Xai = xai ?? throw new global::System.ArgumentNullException(nameof(xai));
             this.Type = type;
+            this.Xai = xai ?? throw new global::System.ArgumentNullException(nameof(xai));
         }
 
         /// <summary>

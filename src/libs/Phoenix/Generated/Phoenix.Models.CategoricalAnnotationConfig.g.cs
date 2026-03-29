@@ -60,11 +60,11 @@ namespace Phoenix
         /// Initializes a new instance of the <see cref="CategoricalAnnotationConfig" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="type"></param>
-        /// <param name="description"></param>
         /// <param name="optimizationDirection"></param>
         /// <param name="values"></param>
         /// <param name="id"></param>
+        /// <param name="description"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -77,11 +77,11 @@ namespace Phoenix
             string type = "CATEGORICAL")
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type;
+            this.Description = description;
             this.OptimizationDirection = optimizationDirection;
             this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Type = type;
-            this.Description = description;
         }
 
         /// <summary>

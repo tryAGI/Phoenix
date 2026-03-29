@@ -50,10 +50,10 @@ namespace Phoenix
         /// Initializes a new instance of the <see cref="Prompt" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="id"></param>
         /// <param name="description"></param>
         /// <param name="sourcePromptId"></param>
         /// <param name="metadata"></param>
-        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,10 +65,10 @@ namespace Phoenix
             object? metadata)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Description = description;
             this.SourcePromptId = sourcePromptId;
             this.Metadata = metadata;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 
         /// <summary>

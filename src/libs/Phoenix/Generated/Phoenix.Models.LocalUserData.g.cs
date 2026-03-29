@@ -55,8 +55,8 @@ namespace Phoenix
         /// <param name="email"></param>
         /// <param name="username"></param>
         /// <param name="role"></param>
-        /// <param name="authMethod"></param>
         /// <param name="password"></param>
+        /// <param name="authMethod"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

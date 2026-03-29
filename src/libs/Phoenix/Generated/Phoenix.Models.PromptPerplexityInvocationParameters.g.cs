@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptPerplexityInvocationParameters" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="perplexity"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             global::Phoenix.PromptPerplexityInvocationParametersContent perplexity,
             string type = "perplexity")
         {
-            this.Perplexity = perplexity ?? throw new global::System.ArgumentNullException(nameof(perplexity));
             this.Type = type;
+            this.Perplexity = perplexity ?? throw new global::System.ArgumentNullException(nameof(perplexity));
         }
 
         /// <summary>

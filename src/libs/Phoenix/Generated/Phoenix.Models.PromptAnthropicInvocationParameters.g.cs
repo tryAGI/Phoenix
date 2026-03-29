@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptAnthropicInvocationParameters" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="anthropic"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             global::Phoenix.PromptAnthropicInvocationParametersContent anthropic,
             string type = "anthropic")
         {
-            this.Anthropic = anthropic ?? throw new global::System.ArgumentNullException(nameof(anthropic));
             this.Type = type;
+            this.Anthropic = anthropic ?? throw new global::System.ArgumentNullException(nameof(anthropic));
         }
 
         /// <summary>

@@ -46,8 +46,8 @@ namespace Phoenix
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="versionId"></param>
-        /// <param name="filteredSplits"></param>
         /// <param name="examples"></param>
+        /// <param name="filteredSplits"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -59,8 +59,8 @@ namespace Phoenix
         {
             this.DatasetId = datasetId ?? throw new global::System.ArgumentNullException(nameof(datasetId));
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
-            this.Examples = examples ?? throw new global::System.ArgumentNullException(nameof(examples));
             this.FilteredSplits = filteredSplits;
+            this.Examples = examples ?? throw new global::System.ArgumentNullException(nameof(examples));
         }
 
         /// <summary>

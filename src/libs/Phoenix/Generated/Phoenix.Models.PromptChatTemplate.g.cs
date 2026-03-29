@@ -31,8 +31,8 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptChatTemplate" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="messages"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Phoenix
             global::System.Collections.Generic.IList<global::Phoenix.PromptMessage> messages,
             string type = "chat")
         {
-            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Type = type;
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
         }
 
         /// <summary>

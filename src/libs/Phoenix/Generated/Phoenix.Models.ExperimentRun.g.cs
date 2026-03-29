@@ -93,17 +93,17 @@ namespace Phoenix
         /// <param name="endTime">
         /// The end time of the experiment run
         /// </param>
-        /// <param name="traceId">
-        /// The ID of the corresponding trace (if one exists)
-        /// </param>
-        /// <param name="error">
-        /// Optional error message if the experiment run encountered an error
-        /// </param>
         /// <param name="id">
         /// The ID of the experiment run
         /// </param>
         /// <param name="experimentId">
         /// The ID of the experiment
+        /// </param>
+        /// <param name="traceId">
+        /// The ID of the corresponding trace (if one exists)
+        /// </param>
+        /// <param name="error">
+        /// Optional error message if the experiment run encountered an error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -124,10 +124,10 @@ namespace Phoenix
             this.RepetitionNumber = repetitionNumber;
             this.StartTime = startTime;
             this.EndTime = endTime;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.ExperimentId = experimentId ?? throw new global::System.ArgumentNullException(nameof(experimentId));
             this.TraceId = traceId;
             this.Error = error;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.ExperimentId = experimentId ?? throw new global::System.ArgumentNullException(nameof(experimentId));
         }
 
         /// <summary>
