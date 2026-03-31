@@ -94,6 +94,15 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public SecretsClient Secrets => new SecretsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SessionsClient Sessions => new SessionsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
