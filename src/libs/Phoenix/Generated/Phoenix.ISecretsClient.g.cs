@@ -4,11 +4,10 @@
 namespace Phoenix
 {
     /// <summary>
-    /// Schema for Arize-Phoenix REST API<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public partial interface IPhoenixClient : global::System.IDisposable
+    public partial interface ISecretsClient : global::System.IDisposable
     {
         /// <summary>
         /// The HttpClient instance.
@@ -39,61 +38,6 @@ namespace Phoenix
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AnnotationConfigsClient AnnotationConfigs { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AnnotationsClient Annotations { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DatasetsClient Datasets { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ExperimentsClient Experiments { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ProjectsClient Projects { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PromptsClient Prompts { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SecretsClient Secrets { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SessionsClient Sessions { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SpansClient Spans { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TracesClient Traces { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsersClient Users { get; }
 
     }
 }
