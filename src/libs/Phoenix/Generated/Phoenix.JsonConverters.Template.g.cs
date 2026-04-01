@@ -59,13 +59,13 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptChatTemplate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptChatTemplate?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptChatTemplate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat!, typeInfo);
             }
             else if (value.IsString)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptStringTemplate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptStringTemplate?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptStringTemplate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.String, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.String!, typeInfo);
             }
         }
     }

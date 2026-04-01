@@ -50,7 +50,7 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptResponseFormatJSONSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptResponseFormatJSONSchema?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptResponseFormatJSONSchema).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JsonSchema, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JsonSchema!, typeInfo);
             }
         }
     }

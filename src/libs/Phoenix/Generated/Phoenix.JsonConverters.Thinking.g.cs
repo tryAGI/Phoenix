@@ -59,13 +59,13 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAnthropicThinkingConfigDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAnthropicThinkingConfigDisabled?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptAnthropicThinkingConfigDisabled).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled!, typeInfo);
             }
             else if (value.IsEnabled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAnthropicThinkingConfigEnabled?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabled).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enabled, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enabled!, typeInfo);
             }
         }
     }
