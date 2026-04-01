@@ -68,19 +68,19 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LocalUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LocalUser?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.LocalUser).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local!, typeInfo);
             }
             else if (value.IsOauth2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.OAuth2User), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.OAuth2User?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.OAuth2User).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2!, typeInfo);
             }
             else if (value.IsLdap)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LDAPUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LDAPUser?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.LDAPUser).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ldap, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ldap!, typeInfo);
             }
         }
     }

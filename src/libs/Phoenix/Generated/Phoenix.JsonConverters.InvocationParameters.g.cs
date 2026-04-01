@@ -167,85 +167,85 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptOpenAIInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptOpenAIInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptOpenAIInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openai, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openai!, typeInfo);
             }
             else if (value.IsAzureOpenai)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAzureOpenAIInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAzureOpenAIInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptAzureOpenAIInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureOpenai, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureOpenai!, typeInfo);
             }
             else if (value.IsAnthropic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAnthropicInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAnthropicInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptAnthropicInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anthropic, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anthropic!, typeInfo);
             }
             else if (value.IsGoogle)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptGoogleInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptGoogleInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptGoogleInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Google, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Google!, typeInfo);
             }
             else if (value.IsDeepseek)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptDeepSeekInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptDeepSeekInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptDeepSeekInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Deepseek, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Deepseek!, typeInfo);
             }
             else if (value.IsXai)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptXAIInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptXAIInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptXAIInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Xai, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Xai!, typeInfo);
             }
             else if (value.IsOllama)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptOllamaInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptOllamaInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptOllamaInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ollama, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ollama!, typeInfo);
             }
             else if (value.IsAws)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAwsInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAwsInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptAwsInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Aws, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Aws!, typeInfo);
             }
             else if (value.IsCerebras)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptCerebrasInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptCerebrasInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptCerebrasInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cerebras, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cerebras!, typeInfo);
             }
             else if (value.IsFireworks)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptFireworksInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptFireworksInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptFireworksInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Fireworks, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Fireworks!, typeInfo);
             }
             else if (value.IsGroq)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptGroqInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptGroqInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptGroqInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Groq, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Groq!, typeInfo);
             }
             else if (value.IsMoonshot)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptMoonshotInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptMoonshotInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptMoonshotInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Moonshot, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Moonshot!, typeInfo);
             }
             else if (value.IsPerplexity)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptPerplexityInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptPerplexityInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptPerplexityInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Perplexity, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Perplexity!, typeInfo);
             }
             else if (value.IsTogether)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptTogetherInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptTogetherInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptTogetherInvocationParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Together, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Together!, typeInfo);
             }
         }
     }

@@ -77,25 +77,25 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptToolChoiceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptToolChoiceNone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptToolChoiceNone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.None, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.None!, typeInfo);
             }
             else if (value.IsZeroOrMore)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptToolChoiceZeroOrMore), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptToolChoiceZeroOrMore?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptToolChoiceZeroOrMore).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ZeroOrMore, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ZeroOrMore!, typeInfo);
             }
             else if (value.IsOneOrMore)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptToolChoiceOneOrMore), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptToolChoiceOneOrMore?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptToolChoiceOneOrMore).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OneOrMore, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OneOrMore!, typeInfo);
             }
             else if (value.IsSpecificFunction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptToolChoiceSpecificFunctionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptToolChoiceSpecificFunctionTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptToolChoiceSpecificFunctionTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpecificFunction, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpecificFunction!, typeInfo);
             }
         }
     }

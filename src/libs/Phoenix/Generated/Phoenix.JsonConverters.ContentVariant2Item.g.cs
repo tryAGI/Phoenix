@@ -68,19 +68,19 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.TextContentPart), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.TextContentPart?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.TextContentPart).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
             else if (value.IsToolCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.ToolCallContentPart), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.ToolCallContentPart?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.ToolCallContentPart).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCall!, typeInfo);
             }
             else if (value.IsToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.ToolResultContentPart), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.ToolResultContentPart?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.ToolResultContentPart).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult!, typeInfo);
             }
         }
     }
