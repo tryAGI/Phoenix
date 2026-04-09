@@ -5,6 +5,25 @@ namespace Phoenix
 {
     public partial class ProjectsClient
     {
+
+
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_GetProjectSecurityRequirement0 =
+            new global::Phoenix.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
+                {                    new global::Phoenix.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_GetProjectSecurityRequirements =
+            new global::Phoenix.EndPointSecurityRequirement[]
+            {                s_GetProjectSecurityRequirement0,
+            };
         partial void PrepareGetProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectIdentifier);
@@ -40,9 +59,15 @@ namespace Phoenix
                 httpClient: HttpClient,
                 projectIdentifier: ref projectIdentifier);
 
+
+            var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetProjectSecurityRequirements,
+                operationName: "GetProjectAsync");
+
             var __pathBuilder = new global::Phoenix.PathBuilder(
                 path: $"/v1/projects/{projectIdentifier}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -52,7 +77,7 @@ namespace Phoenix
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

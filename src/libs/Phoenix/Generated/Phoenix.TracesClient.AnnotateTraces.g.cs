@@ -5,6 +5,25 @@ namespace Phoenix
 {
     public partial class TracesClient
     {
+
+
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_AnnotateTracesSecurityRequirement0 =
+            new global::Phoenix.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
+                {                    new global::Phoenix.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_AnnotateTracesSecurityRequirements =
+            new global::Phoenix.EndPointSecurityRequirement[]
+            {                s_AnnotateTracesSecurityRequirement0,
+            };
         partial void PrepareAnnotateTracesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? sync,
@@ -48,12 +67,18 @@ namespace Phoenix
                 sync: ref sync,
                 request: request);
 
+
+            var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AnnotateTracesSecurityRequirements,
+                operationName: "AnnotateTracesAsync");
+
             var __pathBuilder = new global::Phoenix.PathBuilder(
                 path: "/v1/trace_annotations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("sync", sync?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -63,7 +88,7 @@ namespace Phoenix
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

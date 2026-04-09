@@ -5,6 +5,25 @@ namespace Phoenix
 {
     public partial class PromptsClient
     {
+
+
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_ListPromptVersionsSecurityRequirement0 =
+            new global::Phoenix.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
+                {                    new global::Phoenix.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_ListPromptVersionsSecurityRequirements =
+            new global::Phoenix.EndPointSecurityRequirement[]
+            {                s_ListPromptVersionsSecurityRequirement0,
+            };
         partial void PrepareListPromptVersionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string promptIdentifier,
@@ -55,13 +74,19 @@ namespace Phoenix
                 cursor: ref cursor,
                 limit: ref limit);
 
+
+            var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListPromptVersionsSecurityRequirements,
+                operationName: "ListPromptVersionsAsync");
+
             var __pathBuilder = new global::Phoenix.PathBuilder(
                 path: $"/v1/prompts/{promptIdentifier}/versions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("cursor", cursor)
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -71,7 +96,7 @@ namespace Phoenix
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

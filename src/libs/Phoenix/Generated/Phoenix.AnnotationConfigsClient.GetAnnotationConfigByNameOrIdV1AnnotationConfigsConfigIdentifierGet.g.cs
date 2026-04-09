@@ -5,6 +5,25 @@ namespace Phoenix
 {
     public partial class AnnotationConfigsClient
     {
+
+
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetSecurityRequirement0 =
+            new global::Phoenix.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
+                {                    new global::Phoenix.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetSecurityRequirements =
+            new global::Phoenix.EndPointSecurityRequirement[]
+            {                s_GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetSecurityRequirement0,
+            };
         partial void PrepareGetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string configIdentifier);
@@ -39,9 +58,15 @@ namespace Phoenix
                 httpClient: HttpClient,
                 configIdentifier: ref configIdentifier);
 
+
+            var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetSecurityRequirements,
+                operationName: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetAsync");
+
             var __pathBuilder = new global::Phoenix.PathBuilder(
                 path: $"/v1/annotation_configs/{configIdentifier}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -51,7 +76,7 @@ namespace Phoenix
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

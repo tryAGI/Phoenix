@@ -5,6 +5,25 @@ namespace Phoenix
 {
     public partial class PromptsClient
     {
+
+
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_DeletePromptVersionTagSecurityRequirement0 =
+            new global::Phoenix.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
+                {                    new global::Phoenix.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_DeletePromptVersionTagSecurityRequirements =
+            new global::Phoenix.EndPointSecurityRequirement[]
+            {                s_DeletePromptVersionTagSecurityRequirement0,
+            };
         partial void PrepareDeletePromptVersionTagArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string promptVersionId,
@@ -42,9 +61,15 @@ namespace Phoenix
                 promptVersionId: ref promptVersionId,
                 tagName: ref tagName);
 
+
+            var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeletePromptVersionTagSecurityRequirements,
+                operationName: "DeletePromptVersionTagAsync");
+
             var __pathBuilder = new global::Phoenix.PathBuilder(
                 path: $"/v1/prompt_versions/{promptVersionId}/tags/{tagName}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -54,7 +79,7 @@ namespace Phoenix
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
