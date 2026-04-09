@@ -5,6 +5,25 @@ namespace Phoenix
 {
     public partial class AnnotationConfigsClient
     {
+
+
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_UpdateAnnotationConfigV1AnnotationConfigsConfigIdPutSecurityRequirement0 =
+            new global::Phoenix.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
+                {                    new global::Phoenix.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_UpdateAnnotationConfigV1AnnotationConfigsConfigIdPutSecurityRequirements =
+            new global::Phoenix.EndPointSecurityRequirement[]
+            {                s_UpdateAnnotationConfigV1AnnotationConfigsConfigIdPutSecurityRequirement0,
+            };
         partial void PrepareUpdateAnnotationConfigV1AnnotationConfigsConfigIdPutArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string configId,
@@ -45,9 +64,15 @@ namespace Phoenix
                 configId: ref configId,
                 request: request);
 
+
+            var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpdateAnnotationConfigV1AnnotationConfigsConfigIdPutSecurityRequirements,
+                operationName: "UpdateAnnotationConfigV1AnnotationConfigsConfigIdPutAsync");
+
             var __pathBuilder = new global::Phoenix.PathBuilder(
                 path: $"/v1/annotation_configs/{configId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
@@ -57,7 +82,7 @@ namespace Phoenix
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
