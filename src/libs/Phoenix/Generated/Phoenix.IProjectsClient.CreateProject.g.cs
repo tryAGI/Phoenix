@@ -9,11 +9,13 @@ namespace Phoenix
         /// Create a new project with the specified configuration.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Phoenix.CreateProjectResponseBody> CreateProjectAsync(
 
             global::Phoenix.CreateProjectRequestBody request,
+            global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new project<br/>
@@ -21,11 +23,13 @@ namespace Phoenix
         /// </summary>
         /// <param name="name"></param>
         /// <param name="description"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Phoenix.CreateProjectResponseBody> CreateProjectAsync(
             string name,
             string? description = default,
+            global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

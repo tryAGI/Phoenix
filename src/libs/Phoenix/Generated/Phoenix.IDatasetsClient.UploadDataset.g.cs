@@ -12,12 +12,14 @@ namespace Phoenix
         /// Default Value: false
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Phoenix.UploadDatasetResponseBody> UploadDatasetAsync(
 
             global::Phoenix.UploadDatasetRequest request,
             bool? sync = default,
+            global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload dataset from JSON, JSONL, CSV, or PyArrow
@@ -38,6 +40,7 @@ namespace Phoenix
         /// <param name="spanIds">
         /// Span IDs to link examples back to spans
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Phoenix.UploadDatasetResponseBody> UploadDatasetAsync(
@@ -50,6 +53,7 @@ namespace Phoenix
             global::System.Collections.Generic.IList<object>? metadata = default,
             global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? splits = default,
             global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? spanIds = default,
+            global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

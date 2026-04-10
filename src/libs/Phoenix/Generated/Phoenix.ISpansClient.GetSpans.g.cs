@@ -39,6 +39,7 @@ namespace Phoenix
         /// <param name="statusCode">
         /// Filter by status code(s). Values: OK, ERROR, UNSET
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Phoenix.SpansResponseBody> GetSpansAsync(
@@ -52,6 +53,7 @@ namespace Phoenix
             global::System.Collections.Generic.IList<string>? name = default,
             global::System.Collections.Generic.IList<string>? spanKind = default,
             global::System.Collections.Generic.IList<string>? statusCode = default,
+            global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
