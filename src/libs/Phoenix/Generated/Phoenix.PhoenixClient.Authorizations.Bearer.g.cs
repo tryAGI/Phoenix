@@ -25,6 +25,7 @@ namespace Phoenix
             Authorizations.Add(new global::Phoenix.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

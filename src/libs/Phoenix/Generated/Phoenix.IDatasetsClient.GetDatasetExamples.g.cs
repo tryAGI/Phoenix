@@ -16,12 +16,14 @@ namespace Phoenix
         /// <param name="split">
         /// List of dataset split identifiers (GlobalIDs or names) to filter by
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Phoenix.ListDatasetExamplesResponseBody> GetDatasetExamplesAsync(
             string id,
             string? versionId = default,
             global::System.Collections.Generic.IList<string>? split = default,
+            global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
