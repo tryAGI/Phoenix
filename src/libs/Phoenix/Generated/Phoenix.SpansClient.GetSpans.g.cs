@@ -36,7 +36,8 @@ namespace Phoenix
             ref string? parentId,
             global::System.Collections.Generic.IList<string>? name,
             global::System.Collections.Generic.IList<string>? spanKind,
-            global::System.Collections.Generic.IList<string>? statusCode);
+            global::System.Collections.Generic.IList<string>? statusCode,
+            global::System.Collections.Generic.IList<string>? attribute);
         partial void PrepareGetSpansRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -49,7 +50,8 @@ namespace Phoenix
             string? parentId,
             global::System.Collections.Generic.IList<string>? name,
             global::System.Collections.Generic.IList<string>? spanKind,
-            global::System.Collections.Generic.IList<string>? statusCode);
+            global::System.Collections.Generic.IList<string>? statusCode,
+            global::System.Collections.Generic.IList<string>? attribute);
         partial void ProcessGetSpansResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -94,6 +96,9 @@ namespace Phoenix
         /// <param name="statusCode">
         /// Filter by status code(s). Values: OK, ERROR, UNSET
         /// </param>
+        /// <param name="attribute">
+        /// Filter spans by `key:value`. Key is a dot-path (e.g. `user.id`, `metadata.tier`). Value is JSON-parsed: `k:12345` is int, `k:true` is bool, otherwise string (`k:user-42`). To match a numeric- or boolean-looking STRING, JSON-quote it: `user.id:"12345"` (URL-encoded `%2212345%22`). Split is on the first `:` only, so values may contain colons (`session.id:sess:abc:123`, ISO timestamps). Repeat the param to AND filters. List-valued attributes (e.g. `tag.tags`) cannot be matched here. Returns 422 on malformed input (missing colon, empty key/value, or list/dict/null value).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -108,6 +113,7 @@ namespace Phoenix
             global::System.Collections.Generic.IList<string>? name = default,
             global::System.Collections.Generic.IList<string>? spanKind = default,
             global::System.Collections.Generic.IList<string>? statusCode = default,
+            global::System.Collections.Generic.IList<string>? attribute = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -124,7 +130,8 @@ namespace Phoenix
                 parentId: ref parentId,
                 name: name,
                 spanKind: spanKind,
-                statusCode: statusCode);
+                statusCode: statusCode,
+                attribute: attribute);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
@@ -160,7 +167,8 @@ namespace Phoenix
                                 .AddOptionalParameter("parent_id", parentId)
                                 .AddOptionalParameter("name", name?.ToString())
                                 .AddOptionalParameter("span_kind", spanKind?.ToString())
-                                .AddOptionalParameter("status_code", statusCode?.ToString()) 
+                                .AddOptionalParameter("status_code", statusCode?.ToString())
+                                .AddOptionalParameter("attribute", attribute?.ToString()) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -211,7 +219,8 @@ namespace Phoenix
                     parentId: parentId,
                     name: name,
                     spanKind: spanKind,
-                    statusCode: statusCode);
+                    statusCode: statusCode,
+                    attribute: attribute);
 
                 return __httpRequest;
             }
