@@ -3,11 +3,11 @@
 
 namespace Phoenix
 {
-    public partial class SpansClient
+    public partial class TracesClient
     {
 
 
-        private static readonly global::Phoenix.EndPointSecurityRequirement s_CreateSpanNoteSecurityRequirement0 =
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_CreateTraceNoteSecurityRequirement0 =
             new global::Phoenix.EndPointSecurityRequirement
             {
                 Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
@@ -21,37 +21,37 @@ namespace Phoenix
                     },
                 },
             };
-        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_CreateSpanNoteSecurityRequirements =
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_CreateTraceNoteSecurityRequirements =
             new global::Phoenix.EndPointSecurityRequirement[]
-            {                s_CreateSpanNoteSecurityRequirement0,
+            {                s_CreateTraceNoteSecurityRequirement0,
             };
-        partial void PrepareCreateSpanNoteArguments(
+        partial void PrepareCreateTraceNoteArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Phoenix.CreateSpanNoteRequestBody request);
-        partial void PrepareCreateSpanNoteRequest(
+            global::Phoenix.CreateTraceNoteRequestBody request);
+        partial void PrepareCreateTraceNoteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Phoenix.CreateSpanNoteRequestBody request);
-        partial void ProcessCreateSpanNoteResponse(
+            global::Phoenix.CreateTraceNoteRequestBody request);
+        partial void ProcessCreateTraceNoteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateSpanNoteResponseContent(
+        partial void ProcessCreateTraceNoteResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create a span note<br/>
-        /// Add a note annotation to a span. Notes are special annotations that allow multiple entries per span (unlike regular annotations which are unique by name and identifier). Each note gets a unique UUIDv4 identifier.
+        /// Create a trace note<br/>
+        /// Add a note annotation to a trace. Notes are special annotations that allow multiple entries per trace (unlike regular annotations which are unique by name and identifier). Each note gets a unique UUIDv4 identifier.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.CreateSpanNoteResponseBody> CreateSpanNoteAsync(
+        public async global::System.Threading.Tasks.Task<global::Phoenix.CreateTraceNoteResponseBody> CreateTraceNoteAsync(
 
-            global::Phoenix.CreateSpanNoteRequestBody request,
+            global::Phoenix.CreateTraceNoteRequestBody request,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -59,15 +59,15 @@ namespace Phoenix
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateSpanNoteArguments(
+            PrepareCreateTraceNoteArguments(
                 httpClient: HttpClient,
                 request: request);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateSpanNoteSecurityRequirements,
-                operationName: "CreateSpanNoteAsync");
+                securityRequirements: s_CreateTraceNoteSecurityRequirements,
+                operationName: "CreateTraceNoteAsync");
 
             using var __timeoutCancellationTokenSource = global::Phoenix.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -86,7 +86,7 @@ namespace Phoenix
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::Phoenix.PathBuilder(
-                                path: "/v1/span_notes",
+                                path: "/v1/trace_notes",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -131,7 +131,7 @@ namespace Phoenix
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateSpanNoteRequest(
+                PrepareCreateTraceNoteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
@@ -151,9 +151,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateSpanNote",
-                                methodName: "CreateSpanNoteAsync",
-                                pathTemplate: "\"/v1/span_notes\"",
+                                operationId: "CreateTraceNote",
+                                methodName: "CreateTraceNoteAsync",
+                                pathTemplate: "\"/v1/trace_notes\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -178,9 +178,9 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateSpanNote",
-                                methodName: "CreateSpanNoteAsync",
-                                pathTemplate: "\"/v1/span_notes\"",
+                                operationId: "CreateTraceNote",
+                                methodName: "CreateTraceNoteAsync",
+                                pathTemplate: "\"/v1/trace_notes\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -213,9 +213,9 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateSpanNote",
-                                methodName: "CreateSpanNoteAsync",
-                                pathTemplate: "\"/v1/span_notes\"",
+                                operationId: "CreateTraceNote",
+                                methodName: "CreateTraceNoteAsync",
+                                pathTemplate: "\"/v1/trace_notes\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -252,7 +252,7 @@ namespace Phoenix
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateSpanNoteResponse(
+                ProcessCreateTraceNoteResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -260,9 +260,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateSpanNote",
-                                methodName: "CreateSpanNoteAsync",
-                                pathTemplate: "\"/v1/span_notes\"",
+                                operationId: "CreateTraceNote",
+                                methodName: "CreateTraceNoteAsync",
+                                pathTemplate: "\"/v1/trace_notes\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -280,9 +280,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateSpanNote",
-                                methodName: "CreateSpanNoteAsync",
-                                pathTemplate: "\"/v1/span_notes\"",
+                                operationId: "CreateTraceNote",
+                                methodName: "CreateTraceNoteAsync",
+                                pathTemplate: "\"/v1/trace_notes\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -333,7 +333,7 @@ namespace Phoenix
                                         h => h.Value),
                                 };
                             }
-                            // Span not found
+                            // Trace not found
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -422,7 +422,7 @@ namespace Phoenix
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateSpanNoteResponseContent(
+                                ProcessCreateTraceNoteResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -432,7 +432,7 @@ namespace Phoenix
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::Phoenix.CreateSpanNoteResponseBody.FromJson(__content, JsonSerializerContext) ??
+                                        global::Phoenix.CreateTraceNoteResponseBody.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -462,7 +462,7 @@ namespace Phoenix
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::Phoenix.CreateSpanNoteResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::Phoenix.CreateTraceNoteResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
@@ -502,24 +502,24 @@ namespace Phoenix
             }
         }
         /// <summary>
-        /// Create a span note<br/>
-        /// Add a note annotation to a span. Notes are special annotations that allow multiple entries per span (unlike regular annotations which are unique by name and identifier). Each note gets a unique UUIDv4 identifier.
+        /// Create a trace note<br/>
+        /// Add a note annotation to a trace. Notes are special annotations that allow multiple entries per trace (unlike regular annotations which are unique by name and identifier). Each note gets a unique UUIDv4 identifier.
         /// </summary>
         /// <param name="data"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.CreateSpanNoteResponseBody> CreateSpanNoteAsync(
-            global::Phoenix.SpanNoteData data,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.CreateTraceNoteResponseBody> CreateTraceNoteAsync(
+            global::Phoenix.TraceNoteData data,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Phoenix.CreateSpanNoteRequestBody
+            var __request = new global::Phoenix.CreateTraceNoteRequestBody
             {
                 Data = data,
             };
 
-            return await CreateSpanNoteAsync(
+            return await CreateTraceNoteAsync(
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
