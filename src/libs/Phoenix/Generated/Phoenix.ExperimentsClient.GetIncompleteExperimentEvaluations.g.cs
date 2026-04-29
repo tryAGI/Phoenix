@@ -163,7 +163,7 @@ namespace Phoenix
                 PrepareGetIncompleteExperimentEvaluationsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    experimentId: experimentId,
+                    experimentId: experimentId!,
                     evaluationName: evaluationName,
                     cursor: cursor,
                     limit: limit);

@@ -125,7 +125,7 @@ namespace Phoenix
                 PrepareDeleteTraceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    traceIdentifier: traceIdentifier);
+                    traceIdentifier: traceIdentifier!);
 
                 return __httpRequest;
             }

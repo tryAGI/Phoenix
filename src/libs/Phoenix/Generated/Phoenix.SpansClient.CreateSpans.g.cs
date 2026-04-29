@@ -141,7 +141,7 @@ namespace Phoenix
                 PrepareCreateSpansRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier,
+                    projectIdentifier: projectIdentifier!,
                     request: request);
 
                 return __httpRequest;

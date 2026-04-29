@@ -131,7 +131,7 @@ namespace Phoenix
                 PrepareDeleteSpanRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    spanIdentifier: spanIdentifier);
+                    spanIdentifier: spanIdentifier!);
 
                 return __httpRequest;
             }

@@ -146,7 +146,7 @@ namespace Phoenix
                 PrepareGetPromptVersionTagsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptVersionId: promptVersionId,
+                    promptVersionId: promptVersionId!,
                     cursor: cursor,
                     limit: limit);
 

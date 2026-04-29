@@ -154,7 +154,7 @@ namespace Phoenix
                 PrepareListProjectSessionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier,
+                    projectIdentifier: projectIdentifier!,
                     cursor: cursor,
                     limit: limit,
                     order: order);

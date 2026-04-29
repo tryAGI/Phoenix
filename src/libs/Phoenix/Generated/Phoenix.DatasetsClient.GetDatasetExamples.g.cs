@@ -144,7 +144,7 @@ namespace Phoenix
                 PrepareGetDatasetExamplesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
+                    id: id!,
                     versionId: versionId,
                     split: split);
 

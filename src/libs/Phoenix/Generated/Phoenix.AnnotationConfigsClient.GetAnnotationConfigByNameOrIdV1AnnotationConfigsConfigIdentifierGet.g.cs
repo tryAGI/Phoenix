@@ -126,7 +126,7 @@ namespace Phoenix
                 PrepareGetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    configIdentifier: configIdentifier);
+                    configIdentifier: configIdentifier!);
 
                 return __httpRequest;
             }

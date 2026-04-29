@@ -122,7 +122,7 @@ namespace Phoenix
                 PrepareDeletePromptRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptIdentifier: promptIdentifier);
+                    promptIdentifier: promptIdentifier!);
 
                 return __httpRequest;
             }

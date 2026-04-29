@@ -129,8 +129,8 @@ namespace Phoenix
                 PrepareDeletePromptVersionTagRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptVersionId: promptVersionId,
-                    tagName: tagName);
+                    promptVersionId: promptVersionId!,
+                    tagName: tagName!);
 
                 return __httpRequest;
             }

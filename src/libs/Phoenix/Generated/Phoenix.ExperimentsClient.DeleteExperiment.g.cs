@@ -130,7 +130,7 @@ namespace Phoenix
                 PrepareDeleteExperimentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    experimentId: experimentId,
+                    experimentId: experimentId!,
                     deleteProject: deleteProject);
 
                 return __httpRequest;
