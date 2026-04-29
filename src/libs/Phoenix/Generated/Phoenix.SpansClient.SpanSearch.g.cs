@@ -202,7 +202,7 @@ namespace Phoenix
                 PrepareSpanSearchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier,
+                    projectIdentifier: projectIdentifier!,
                     cursor: cursor,
                     limit: limit,
                     startTime: startTime,

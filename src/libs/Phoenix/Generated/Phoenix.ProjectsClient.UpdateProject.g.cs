@@ -141,7 +141,7 @@ namespace Phoenix
                 PrepareUpdateProjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier,
+                    projectIdentifier: projectIdentifier!,
                     request: request);
 
                 return __httpRequest;

@@ -127,7 +127,7 @@ namespace Phoenix
                 PrepareGetProjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier);
+                    projectIdentifier: projectIdentifier!);
 
                 return __httpRequest;
             }

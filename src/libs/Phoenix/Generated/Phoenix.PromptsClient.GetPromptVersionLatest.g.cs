@@ -127,7 +127,7 @@ namespace Phoenix
                 PrepareGetPromptVersionLatestRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptIdentifier: promptIdentifier);
+                    promptIdentifier: promptIdentifier!);
 
                 return __httpRequest;
             }

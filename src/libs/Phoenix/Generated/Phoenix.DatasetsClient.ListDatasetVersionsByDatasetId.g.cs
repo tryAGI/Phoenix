@@ -145,7 +145,7 @@ namespace Phoenix
                 PrepareListDatasetVersionsByDatasetIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
+                    id: id!,
                     cursor: cursor,
                     limit: limit);
 

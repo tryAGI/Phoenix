@@ -125,7 +125,7 @@ namespace Phoenix
                 PrepareDeleteSessionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionIdentifier: sessionIdentifier);
+                    sessionIdentifier: sessionIdentifier!);
 
                 return __httpRequest;
             }

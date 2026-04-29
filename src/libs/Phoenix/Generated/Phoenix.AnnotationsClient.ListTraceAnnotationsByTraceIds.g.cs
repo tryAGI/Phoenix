@@ -169,8 +169,8 @@ namespace Phoenix
                 PrepareListTraceAnnotationsByTraceIdsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier,
-                    traceIds: traceIds,
+                    projectIdentifier: projectIdentifier!,
+                    traceIds: traceIds!,
                     includeAnnotationNames: includeAnnotationNames,
                     excludeAnnotationNames: excludeAnnotationNames,
                     cursor: cursor,

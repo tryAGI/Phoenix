@@ -196,7 +196,7 @@ namespace Phoenix
                 PrepareListProjectTracesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier,
+                    projectIdentifier: projectIdentifier!,
                     startTime: startTime,
                     endTime: endTime,
                     sort: sort,

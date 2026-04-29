@@ -126,7 +126,7 @@ namespace Phoenix
                 PrepareDeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    configId: configId);
+                    configId: configId!);
 
                 return __httpRequest;
             }

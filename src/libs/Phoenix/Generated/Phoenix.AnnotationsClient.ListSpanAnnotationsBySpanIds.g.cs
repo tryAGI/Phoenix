@@ -169,8 +169,8 @@ namespace Phoenix
                 PrepareListSpanAnnotationsBySpanIdsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier,
-                    spanIds: spanIds,
+                    projectIdentifier: projectIdentifier!,
+                    spanIds: spanIds!,
                     includeAnnotationNames: includeAnnotationNames,
                     excludeAnnotationNames: excludeAnnotationNames,
                     cursor: cursor,

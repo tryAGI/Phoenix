@@ -138,7 +138,7 @@ namespace Phoenix
                 PrepareUpdateAnnotationConfigV1AnnotationConfigsConfigIdPutRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    configId: configId,
+                    configId: configId!,
                     request: request);
 
                 return __httpRequest;

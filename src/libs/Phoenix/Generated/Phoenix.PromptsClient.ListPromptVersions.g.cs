@@ -146,7 +146,7 @@ namespace Phoenix
                 PrepareListPromptVersionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptIdentifier: promptIdentifier,
+                    promptIdentifier: promptIdentifier!,
                     cursor: cursor,
                     limit: limit);
 

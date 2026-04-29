@@ -134,8 +134,8 @@ namespace Phoenix
                 PrepareGetPromptVersionByTagNameRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptIdentifier: promptIdentifier,
-                    tagName: tagName);
+                    promptIdentifier: promptIdentifier!,
+                    tagName: tagName!);
 
                 return __httpRequest;
             }

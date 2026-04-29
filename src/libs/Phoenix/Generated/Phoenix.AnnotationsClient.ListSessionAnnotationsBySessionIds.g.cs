@@ -169,8 +169,8 @@ namespace Phoenix
                 PrepareListSessionAnnotationsBySessionIdsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier,
-                    sessionIds: sessionIds,
+                    projectIdentifier: projectIdentifier!,
+                    sessionIds: sessionIds!,
                     includeAnnotationNames: includeAnnotationNames,
                     excludeAnnotationNames: excludeAnnotationNames,
                     cursor: cursor,

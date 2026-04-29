@@ -122,7 +122,7 @@ namespace Phoenix
                 PrepareDeleteProjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier);
+                    projectIdentifier: projectIdentifier!);
 
                 return __httpRequest;
             }
