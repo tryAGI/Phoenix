@@ -344,7 +344,7 @@ namespace Phoenix
                                         h => h.Value),
                                 };
                             }
-                            // Dataset of the same name already exists
+                            // Dataset with the given name already exists (action=create).
                             if ((int)__response.StatusCode == 409)
                             {
                                 string? __content_409 = null;
@@ -531,6 +531,9 @@ namespace Phoenix
         /// <param name="spanIds">
         /// Span IDs to link examples back to spans
         /// </param>
+        /// <param name="exampleIds">
+        /// Optional example ID per example. If provided, it is used as the example's stable public ID.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -544,6 +547,7 @@ namespace Phoenix
             global::System.Collections.Generic.IList<object>? metadata = default,
             global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? splits = default,
             global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? spanIds = default,
+            global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? exampleIds = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -557,6 +561,7 @@ namespace Phoenix
                 Metadata = metadata,
                 Splits = splits,
                 SpanIds = spanIds,
+                ExampleIds = exampleIds,
             };
 
             return await UploadDatasetAsync(

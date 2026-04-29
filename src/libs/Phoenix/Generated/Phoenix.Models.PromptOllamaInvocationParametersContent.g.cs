@@ -53,9 +53,21 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
+        public global::System.Collections.Generic.IList<string>? Stop { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortJsonConverter))]
         public global::Phoenix.PromptOllamaInvocationParametersContentReasoningEffort? ReasoningEffort { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extra_body")]
+        public object? ExtraBody { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,7 +85,9 @@ namespace Phoenix
         /// <param name="presencePenalty"></param>
         /// <param name="topP"></param>
         /// <param name="seed"></param>
+        /// <param name="stop"></param>
         /// <param name="reasoningEffort"></param>
+        /// <param name="extraBody"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -85,7 +99,9 @@ namespace Phoenix
             double? presencePenalty,
             double? topP,
             int? seed,
-            global::Phoenix.PromptOllamaInvocationParametersContentReasoningEffort? reasoningEffort)
+            global::System.Collections.Generic.IList<string>? stop,
+            global::Phoenix.PromptOllamaInvocationParametersContentReasoningEffort? reasoningEffort,
+            object? extraBody)
         {
             this.Temperature = temperature;
             this.MaxTokens = maxTokens;
@@ -94,7 +110,9 @@ namespace Phoenix
             this.PresencePenalty = presencePenalty;
             this.TopP = topP;
             this.Seed = seed;
+            this.Stop = stop;
             this.ReasoningEffort = reasoningEffort;
+            this.ExtraBody = extraBody;
         }
 
         /// <summary>

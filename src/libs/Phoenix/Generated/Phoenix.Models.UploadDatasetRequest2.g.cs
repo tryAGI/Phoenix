@@ -49,10 +49,16 @@ namespace Phoenix
         public global::System.Collections.Generic.IList<string>? MetadataKeys { get; set; }
 
         /// <summary>
-        /// Column names for auto-assigning examples to splits
+        /// Deprecated: use split_key instead. Column names for auto-assigning examples to splits
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split_keys[]")]
         public global::System.Collections.Generic.IList<string>? SplitKeys { get; set; }
+
+        /// <summary>
+        /// Single column name containing split names (plain string or JSON list) per row
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("split_key")]
+        public string? SplitKey { get; set; }
 
         /// <summary>
         /// Column names whose object values should be flattened into their selected bucket
@@ -65,6 +71,12 @@ namespace Phoenix
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("span_id_key")]
         public string? SpanIdKey { get; set; }
+
+        /// <summary>
+        /// Column name containing stable IDs for examples. When provided, examples with matching IDs are updated in place when their content changes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("example_id_key")]
+        public string? ExampleIdKey { get; set; }
 
         /// <summary>
         /// 
@@ -98,13 +110,19 @@ namespace Phoenix
         /// <param name="description"></param>
         /// <param name="metadataKeys"></param>
         /// <param name="splitKeys">
-        /// Column names for auto-assigning examples to splits
+        /// Deprecated: use split_key instead. Column names for auto-assigning examples to splits
+        /// </param>
+        /// <param name="splitKey">
+        /// Single column name containing split names (plain string or JSON list) per row
         /// </param>
         /// <param name="flattenKeys">
         /// Column names whose object values should be flattened into their selected bucket
         /// </param>
         /// <param name="spanIdKey">
         /// Column name for span IDs to link examples back to spans
+        /// </param>
+        /// <param name="exampleIdKey">
+        /// Column name containing stable IDs for examples. When provided, examples with matching IDs are updated in place when their content changes.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -119,8 +137,10 @@ namespace Phoenix
             string? description,
             global::System.Collections.Generic.IList<string>? metadataKeys,
             global::System.Collections.Generic.IList<string>? splitKeys,
+            string? splitKey,
             global::System.Collections.Generic.IList<string>? flattenKeys,
-            string? spanIdKey)
+            string? spanIdKey,
+            string? exampleIdKey)
         {
             this.Action = action;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -129,8 +149,10 @@ namespace Phoenix
             this.OutputKeys = outputKeys ?? throw new global::System.ArgumentNullException(nameof(outputKeys));
             this.MetadataKeys = metadataKeys;
             this.SplitKeys = splitKeys;
+            this.SplitKey = splitKey;
             this.FlattenKeys = flattenKeys;
             this.SpanIdKey = spanIdKey;
+            this.ExampleIdKey = exampleIdKey;
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
         }

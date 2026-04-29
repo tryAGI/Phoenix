@@ -18,6 +18,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string NodeId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Input { get; set; }
@@ -53,6 +60,7 @@ namespace Phoenix
         /// Initializes a new instance of the <see cref="DatasetExample" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="nodeId"></param>
         /// <param name="input"></param>
         /// <param name="output"></param>
         /// <param name="metadata"></param>
@@ -62,12 +70,14 @@ namespace Phoenix
 #endif
         public DatasetExample(
             string id,
+            string nodeId,
             object input,
             object output,
             object metadata,
             global::System.DateTime updatedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));

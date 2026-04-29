@@ -27,6 +27,12 @@ namespace Phoenix
         public double? TopP { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_sequences")]
+        public global::System.Collections.Generic.IList<string>? StopSequences { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,17 +44,20 @@ namespace Phoenix
         /// <param name="maxTokens"></param>
         /// <param name="temperature"></param>
         /// <param name="topP"></param>
+        /// <param name="stopSequences"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PromptAwsInvocationParametersContent(
             int? maxTokens,
             double? temperature,
-            double? topP)
+            double? topP,
+            global::System.Collections.Generic.IList<string>? stopSequences)
         {
             this.MaxTokens = maxTokens;
             this.Temperature = temperature;
             this.TopP = topP;
+            this.StopSequences = stopSequences;
         }
 
         /// <summary>

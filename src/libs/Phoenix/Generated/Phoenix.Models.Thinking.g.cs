@@ -47,6 +47,23 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enabled))]
 #endif
         public bool IsEnabled => Enabled != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.PromptAnthropicThinkingConfigAdaptive? Adaptive { get; init; }
+#else
+        public global::Phoenix.PromptAnthropicThinkingConfigAdaptive? Adaptive { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Adaptive))]
+#endif
+        public bool IsAdaptive => Adaptive != null;
         /// <summary>
         /// 
         /// </summary>
@@ -86,22 +103,43 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator Thinking(global::Phoenix.PromptAnthropicThinkingConfigAdaptive value) => new Thinking((global::Phoenix.PromptAnthropicThinkingConfigAdaptive?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.PromptAnthropicThinkingConfigAdaptive?(Thinking @this) => @this.Adaptive;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Thinking(global::Phoenix.PromptAnthropicThinkingConfigAdaptive? value)
+        {
+            Adaptive = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Thinking(
             global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminatorType? type,
             global::Phoenix.PromptAnthropicThinkingConfigDisabled? disabled,
-            global::Phoenix.PromptAnthropicThinkingConfigEnabled? enabled
+            global::Phoenix.PromptAnthropicThinkingConfigEnabled? enabled,
+            global::Phoenix.PromptAnthropicThinkingConfigAdaptive? adaptive
             )
         {
             Type = type;
 
             Disabled = disabled;
             Enabled = enabled;
+            Adaptive = adaptive;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Adaptive as object ??
             Enabled as object ??
             Disabled as object 
             ;
@@ -111,7 +149,8 @@ namespace Phoenix
         /// </summary>
         public override string? ToString() =>
             Disabled?.ToString() ??
-            Enabled?.ToString() 
+            Enabled?.ToString() ??
+            Adaptive?.ToString() 
             ;
 
         /// <summary>
@@ -119,7 +158,7 @@ namespace Phoenix
         /// </summary>
         public bool Validate()
         {
-            return IsDisabled && !IsEnabled || !IsDisabled && IsEnabled;
+            return IsDisabled && !IsEnabled && !IsAdaptive || !IsDisabled && IsEnabled && !IsAdaptive || !IsDisabled && !IsEnabled && IsAdaptive;
         }
 
         /// <summary>
@@ -128,6 +167,7 @@ namespace Phoenix
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.PromptAnthropicThinkingConfigDisabled?, TResult>? disabled = null,
             global::System.Func<global::Phoenix.PromptAnthropicThinkingConfigEnabled?, TResult>? enabled = null,
+            global::System.Func<global::Phoenix.PromptAnthropicThinkingConfigAdaptive?, TResult>? adaptive = null,
             bool validate = true)
         {
             if (validate)
@@ -143,6 +183,10 @@ namespace Phoenix
             {
                 return enabled(Enabled!);
             }
+            else if (IsAdaptive && adaptive != null)
+            {
+                return adaptive(Adaptive!);
+            }
 
             return default(TResult);
         }
@@ -153,6 +197,7 @@ namespace Phoenix
         public void Match(
             global::System.Action<global::Phoenix.PromptAnthropicThinkingConfigDisabled?>? disabled = null,
             global::System.Action<global::Phoenix.PromptAnthropicThinkingConfigEnabled?>? enabled = null,
+            global::System.Action<global::Phoenix.PromptAnthropicThinkingConfigAdaptive?>? adaptive = null,
             bool validate = true)
         {
             if (validate)
@@ -168,6 +213,10 @@ namespace Phoenix
             {
                 enabled?.Invoke(Enabled!);
             }
+            else if (IsAdaptive)
+            {
+                adaptive?.Invoke(Adaptive!);
+            }
         }
 
         /// <summary>
@@ -181,6 +230,8 @@ namespace Phoenix
                 typeof(global::Phoenix.PromptAnthropicThinkingConfigDisabled),
                 Enabled,
                 typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabled),
+                Adaptive,
+                typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptive),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -198,7 +249,8 @@ namespace Phoenix
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptAnthropicThinkingConfigDisabled?>.Default.Equals(Disabled, other.Disabled) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptAnthropicThinkingConfigEnabled?>.Default.Equals(Enabled, other.Enabled) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptAnthropicThinkingConfigEnabled?>.Default.Equals(Enabled, other.Enabled) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptAnthropicThinkingConfigAdaptive?>.Default.Equals(Adaptive, other.Adaptive) 
                 ;
         }
 
