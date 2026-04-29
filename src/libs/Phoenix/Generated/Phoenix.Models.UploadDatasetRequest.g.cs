@@ -60,6 +60,12 @@ namespace Phoenix
         public global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? SpanIds { get; set; }
 
         /// <summary>
+        /// Optional example ID per example. If provided, it is used as the example's stable public ID.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("example_ids")]
+        public global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? ExampleIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -80,6 +86,9 @@ namespace Phoenix
         /// <param name="spanIds">
         /// Span IDs to link examples back to spans
         /// </param>
+        /// <param name="exampleIds">
+        /// Optional example ID per example. If provided, it is used as the example's stable public ID.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -91,7 +100,8 @@ namespace Phoenix
             global::System.Collections.Generic.IList<object>? outputs,
             global::System.Collections.Generic.IList<object>? metadata,
             global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? splits,
-            global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? spanIds)
+            global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? spanIds,
+            global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? exampleIds)
         {
             this.Action = action;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -101,6 +111,7 @@ namespace Phoenix
             this.Metadata = metadata;
             this.Splits = splits;
             this.SpanIds = spanIds;
+            this.ExampleIds = exampleIds;
         }
 
         /// <summary>

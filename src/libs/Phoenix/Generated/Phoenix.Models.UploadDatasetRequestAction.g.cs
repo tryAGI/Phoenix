@@ -16,6 +16,10 @@ namespace Phoenix
         /// 
         /// </summary>
         Create,
+        /// <summary>
+        /// 
+        /// </summary>
+        Update,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace Phoenix
             {
                 UploadDatasetRequestAction.Append => "append",
                 UploadDatasetRequestAction.Create => "create",
+                UploadDatasetRequestAction.Update => "update",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace Phoenix
             {
                 "append" => UploadDatasetRequestAction.Append,
                 "create" => UploadDatasetRequestAction.Create,
+                "update" => UploadDatasetRequestAction.Update,
                 _ => null,
             };
         }

@@ -11,6 +11,10 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        Adaptive,
+        /// <summary>
+        /// 
+        /// </summary>
         Disabled,
         /// <summary>
         /// 
@@ -30,6 +34,7 @@ namespace Phoenix
         {
             return value switch
             {
+                PromptAnthropicInvocationParametersContentThinkingDiscriminatorType.Adaptive => "adaptive",
                 PromptAnthropicInvocationParametersContentThinkingDiscriminatorType.Disabled => "disabled",
                 PromptAnthropicInvocationParametersContentThinkingDiscriminatorType.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace Phoenix
         {
             return value switch
             {
+                "adaptive" => PromptAnthropicInvocationParametersContentThinkingDiscriminatorType.Adaptive,
                 "disabled" => PromptAnthropicInvocationParametersContentThinkingDiscriminatorType.Disabled,
                 "enabled" => PromptAnthropicInvocationParametersContentThinkingDiscriminatorType.Enabled,
                 _ => null,

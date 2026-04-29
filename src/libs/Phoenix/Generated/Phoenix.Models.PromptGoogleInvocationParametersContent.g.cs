@@ -51,6 +51,12 @@ namespace Phoenix
         public int? TopK { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thinking_config")]
+        public global::Phoenix.PromptGoogleThinkingConfig? ThinkingConfig { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,6 +72,7 @@ namespace Phoenix
         /// <param name="frequencyPenalty"></param>
         /// <param name="topP"></param>
         /// <param name="topK"></param>
+        /// <param name="thinkingConfig"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,7 +83,8 @@ namespace Phoenix
             double? presencePenalty,
             double? frequencyPenalty,
             double? topP,
-            int? topK)
+            int? topK,
+            global::Phoenix.PromptGoogleThinkingConfig? thinkingConfig)
         {
             this.Temperature = temperature;
             this.MaxOutputTokens = maxOutputTokens;
@@ -85,6 +93,7 @@ namespace Phoenix
             this.FrequencyPenalty = frequencyPenalty;
             this.TopP = topP;
             this.TopK = topK;
+            this.ThinkingConfig = thinkingConfig;
         }
 
         /// <summary>

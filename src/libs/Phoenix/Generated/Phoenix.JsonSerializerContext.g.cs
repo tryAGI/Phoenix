@@ -93,6 +93,18 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeNullableJsonConverter),
 
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayNullableJsonConverter),
+
             typeof(global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter),
@@ -108,6 +120,10 @@ namespace Phoenix
             typeof(global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelNullableJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortJsonConverter),
 
@@ -319,6 +335,8 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>),
 
+            typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>),
+
             typeof(global::Phoenix.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.JsonSerializerContextTypes))]
@@ -510,11 +528,16 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OtlpSpan>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicInvocationParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicInvocationParametersContent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicOutputConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Thinking), TypeInfoPropertyName = "Thinking2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicThinkingConfigDisabled))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabled))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptive))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminatorType), TypeInfoPropertyName = "PromptAnthropicInvocationParametersContentThinkingDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicOutputConfigEffort), TypeInfoPropertyName = "PromptAnthropicOutputConfigEffort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptiveDisplay), TypeInfoPropertyName = "PromptAnthropicThinkingConfigAdaptiveDisplay2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabledDisplay), TypeInfoPropertyName = "PromptAnthropicThinkingConfigEnabledDisplay2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAwsInvocationParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAwsInvocationParametersContent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAzureOpenAIInvocationParameters))]
@@ -534,6 +557,8 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptFireworksInvocationParametersContentReasoningEffort), TypeInfoPropertyName = "PromptFireworksInvocationParametersContentReasoningEffort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptGoogleInvocationParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptGoogleInvocationParametersContent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptGoogleThinkingConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptGoogleThinkingConfigThinkingLevel), TypeInfoPropertyName = "PromptGoogleThinkingConfigThinkingLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptGroqInvocationParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptGroqInvocationParametersContent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptGroqInvocationParametersContentReasoningEffort), TypeInfoPropertyName = "PromptGroqInvocationParametersContentReasoningEffort2")]

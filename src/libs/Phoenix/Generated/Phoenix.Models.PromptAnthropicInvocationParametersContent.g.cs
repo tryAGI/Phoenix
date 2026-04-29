@@ -36,9 +36,21 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_config")]
+        public global::Phoenix.PromptAnthropicOutputConfig? OutputConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.ThinkingJsonConverter))]
         public global::Phoenix.Thinking? Thinking { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extra_body")]
+        public object? ExtraBody { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,7 +65,9 @@ namespace Phoenix
         /// <param name="temperature"></param>
         /// <param name="topP"></param>
         /// <param name="stopSequences"></param>
+        /// <param name="outputConfig"></param>
         /// <param name="thinking"></param>
+        /// <param name="extraBody"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,13 +76,17 @@ namespace Phoenix
             double? temperature,
             double? topP,
             global::System.Collections.Generic.IList<string>? stopSequences,
-            global::Phoenix.Thinking? thinking)
+            global::Phoenix.PromptAnthropicOutputConfig? outputConfig,
+            global::Phoenix.Thinking? thinking,
+            object? extraBody)
         {
             this.MaxTokens = maxTokens;
             this.Temperature = temperature;
             this.TopP = topP;
             this.StopSequences = stopSequences;
+            this.OutputConfig = outputConfig;
             this.Thinking = thinking;
+            this.ExtraBody = extraBody;
         }
 
         /// <summary>

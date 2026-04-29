@@ -35,12 +35,21 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PromptAnthropicThinkingConfigEnabled)}");
                 enabled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.PromptAnthropicThinkingConfigAdaptive? adaptive = default;
+            if (discriminator?.Type == global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminatorType.Adaptive)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptive), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAnthropicThinkingConfigAdaptive> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PromptAnthropicThinkingConfigAdaptive)}");
+                adaptive = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Phoenix.Thinking(
                 discriminator?.Type,
                 disabled,
 
-                enabled
+                enabled,
+
+                adaptive
                 );
 
             return __value;
@@ -66,6 +75,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAnthropicThinkingConfigEnabled?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabled).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enabled!, typeInfo);
+            }
+            else if (value.IsAdaptive)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptive), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAnthropicThinkingConfigAdaptive?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptive).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Adaptive!, typeInfo);
             }
         }
     }
