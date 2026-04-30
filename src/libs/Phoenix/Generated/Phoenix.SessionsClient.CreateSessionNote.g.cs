@@ -43,7 +43,7 @@ namespace Phoenix
 
         /// <summary>
         /// Create a session note<br/>
-        /// Add a note annotation to a session. Notes are special annotations that allow multiple entries per session (unlike regular annotations which are unique by name and identifier). Each note gets a unique UUIDv4 identifier.
+        /// Add a note annotation to a session. Each call appends a new note with an auto-generated UUIDv4 identifier, so multiple notes accumulate on the same session. Structured annotations, by contrast, are keyed by (name, session_id, identifier) — re-writing the same key overwrites the existing annotation, so to keep multiple structured annotations with the same name on a session you must supply distinct identifiers.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -503,7 +503,7 @@ namespace Phoenix
         }
         /// <summary>
         /// Create a session note<br/>
-        /// Add a note annotation to a session. Notes are special annotations that allow multiple entries per session (unlike regular annotations which are unique by name and identifier). Each note gets a unique UUIDv4 identifier.
+        /// Add a note annotation to a session. Each call appends a new note with an auto-generated UUIDv4 identifier, so multiple notes accumulate on the same session. Structured annotations, by contrast, are keyed by (name, session_id, identifier) — re-writing the same key overwrites the existing annotation, so to keep multiple structured annotations with the same name on a session you must supply distinct identifiers.
         /// </summary>
         /// <param name="data"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
