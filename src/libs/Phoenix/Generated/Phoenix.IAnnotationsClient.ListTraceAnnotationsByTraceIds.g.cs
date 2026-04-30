@@ -5,13 +5,17 @@ namespace Phoenix
     public partial interface IAnnotationsClient
     {
         /// <summary>
-        /// Get trace annotations for a list of trace_ids.
+        /// Get trace annotations filtered by trace_ids and/or identifier.<br/>
+        /// Return trace annotations for a project, filtered by `trace_ids`, `identifier`, or both. At least one of `trace_ids` or `identifier` must be supplied. When both are supplied, results are the AND-intersection of the two filters.
         /// </summary>
         /// <param name="projectIdentifier">
         /// The project identifier: either project ID or project name. If using a project name as the identifier, it cannot contain slash (/), question mark (?), or pound sign (#) characters.
         /// </param>
         /// <param name="traceIds">
-        /// One or more trace id to fetch annotations for
+        /// Optional list of trace ids to fetch annotations for. If omitted, `identifier` must be supplied.
+        /// </param>
+        /// <param name="identifier">
+        /// Optional list of annotation identifiers to filter by. Each value must be non-empty. If omitted, `trace_ids` must be supplied. When combined with `trace_ids`, results are the AND-intersection of both filters.
         /// </param>
         /// <param name="includeAnnotationNames">
         /// Optional list of annotation names to include. If provided, only annotations with these names will be returned. 'note' annotations are excluded by default unless explicitly included in this list.
@@ -31,7 +35,8 @@ namespace Phoenix
         /// <exception cref="global::Phoenix.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Phoenix.TraceAnnotationsResponseBody> ListTraceAnnotationsByTraceIdsAsync(
             string projectIdentifier,
-            global::System.Collections.Generic.IList<string> traceIds,
+            global::System.Collections.Generic.IList<string>? traceIds = default,
+            global::System.Collections.Generic.IList<string>? identifier = default,
             global::System.Collections.Generic.IList<string>? includeAnnotationNames = default,
             global::System.Collections.Generic.IList<string>? excludeAnnotationNames = default,
             string? cursor = default,

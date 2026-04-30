@@ -28,7 +28,8 @@ namespace Phoenix
         partial void PrepareListSpanAnnotationsBySpanIdsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectIdentifier,
-            global::System.Collections.Generic.IList<string> spanIds,
+            global::System.Collections.Generic.IList<string>? spanIds,
+            global::System.Collections.Generic.IList<string>? identifier,
             global::System.Collections.Generic.IList<string>? includeAnnotationNames,
             global::System.Collections.Generic.IList<string>? excludeAnnotationNames,
             ref string? cursor,
@@ -37,7 +38,8 @@ namespace Phoenix
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string projectIdentifier,
-            global::System.Collections.Generic.IList<string> spanIds,
+            global::System.Collections.Generic.IList<string>? spanIds,
+            global::System.Collections.Generic.IList<string>? identifier,
             global::System.Collections.Generic.IList<string>? includeAnnotationNames,
             global::System.Collections.Generic.IList<string>? excludeAnnotationNames,
             string? cursor,
@@ -52,13 +54,17 @@ namespace Phoenix
             ref string content);
 
         /// <summary>
-        /// Get span annotations for a list of span_ids.
+        /// Get span annotations filtered by span_ids and/or identifier.<br/>
+        /// Return span annotations for a project, filtered by `span_ids`, `identifier`, or both. At least one of `span_ids` or `identifier` must be supplied. When both are supplied, results are the AND-intersection of the two filters.
         /// </summary>
         /// <param name="projectIdentifier">
         /// The project identifier: either project ID or project name. If using a project name as the identifier, it cannot contain slash (/), question mark (?), or pound sign (#) characters.
         /// </param>
         /// <param name="spanIds">
-        /// One or more span id to fetch annotations for
+        /// Optional list of span ids to fetch annotations for. If omitted, `identifier` must be supplied.
+        /// </param>
+        /// <param name="identifier">
+        /// Optional list of annotation identifiers to filter by. Each value must be non-empty. If omitted, `span_ids` must be supplied. When combined with `span_ids`, results are the AND-intersection of both filters.
         /// </param>
         /// <param name="includeAnnotationNames">
         /// Optional list of annotation names to include. If provided, only annotations with these names will be returned. 'note' annotations are excluded by default unless explicitly included in this list.
@@ -78,7 +84,8 @@ namespace Phoenix
         /// <exception cref="global::Phoenix.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Phoenix.SpanAnnotationsResponseBody> ListSpanAnnotationsBySpanIdsAsync(
             string projectIdentifier,
-            global::System.Collections.Generic.IList<string> spanIds,
+            global::System.Collections.Generic.IList<string>? spanIds = default,
+            global::System.Collections.Generic.IList<string>? identifier = default,
             global::System.Collections.Generic.IList<string>? includeAnnotationNames = default,
             global::System.Collections.Generic.IList<string>? excludeAnnotationNames = default,
             string? cursor = default,
@@ -92,6 +99,7 @@ namespace Phoenix
                 httpClient: HttpClient,
                 projectIdentifier: ref projectIdentifier,
                 spanIds: spanIds,
+                identifier: identifier,
                 includeAnnotationNames: includeAnnotationNames,
                 excludeAnnotationNames: excludeAnnotationNames,
                 cursor: ref cursor,
@@ -123,7 +131,8 @@ namespace Phoenix
                                 path: $"/v1/projects/{projectIdentifier}/span_annotations",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
-                                .AddRequiredParameter("span_ids", spanIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("span_ids", spanIds?.ToString())
+                                .AddOptionalParameter("identifier", identifier?.ToString())
                                 .AddOptionalParameter("include_annotation_names", includeAnnotationNames?.ToString())
                                 .AddOptionalParameter("exclude_annotation_names", excludeAnnotationNames?.ToString())
                                 .AddOptionalParameter("cursor", cursor)
@@ -170,7 +179,8 @@ namespace Phoenix
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     projectIdentifier: projectIdentifier!,
-                    spanIds: spanIds!,
+                    spanIds: spanIds,
+                    identifier: identifier,
                     includeAnnotationNames: includeAnnotationNames,
                     excludeAnnotationNames: excludeAnnotationNames,
                     cursor: cursor,
