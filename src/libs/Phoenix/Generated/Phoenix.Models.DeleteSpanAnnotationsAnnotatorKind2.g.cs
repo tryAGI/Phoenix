@@ -6,44 +6,50 @@ namespace Phoenix
     /// <summary>
     /// 
     /// </summary>
-    public enum PromptToolsToolDiscriminatorType
+    public enum DeleteSpanAnnotationsAnnotatorKind2
     {
         /// <summary>
         /// 
         /// </summary>
-        Function,
+        Code,
         /// <summary>
         /// 
         /// </summary>
-        Raw,
+        Human,
+        /// <summary>
+        /// 
+        /// </summary>
+        Llm,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class PromptToolsToolDiscriminatorTypeExtensions
+    public static class DeleteSpanAnnotationsAnnotatorKind2Extensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this PromptToolsToolDiscriminatorType value)
+        public static string ToValueString(this DeleteSpanAnnotationsAnnotatorKind2 value)
         {
             return value switch
             {
-                PromptToolsToolDiscriminatorType.Function => "function",
-                PromptToolsToolDiscriminatorType.Raw => "raw",
+                DeleteSpanAnnotationsAnnotatorKind2.Code => "CODE",
+                DeleteSpanAnnotationsAnnotatorKind2.Human => "HUMAN",
+                DeleteSpanAnnotationsAnnotatorKind2.Llm => "LLM",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PromptToolsToolDiscriminatorType? ToEnum(string value)
+        public static DeleteSpanAnnotationsAnnotatorKind2? ToEnum(string value)
         {
             return value switch
             {
-                "function" => PromptToolsToolDiscriminatorType.Function,
-                "raw" => PromptToolsToolDiscriminatorType.Raw,
+                "CODE" => DeleteSpanAnnotationsAnnotatorKind2.Code,
+                "HUMAN" => DeleteSpanAnnotationsAnnotatorKind2.Human,
+                "LLM" => DeleteSpanAnnotationsAnnotatorKind2.Llm,
                 _ => null,
             };
         }

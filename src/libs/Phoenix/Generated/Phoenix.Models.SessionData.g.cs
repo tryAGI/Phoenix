@@ -51,6 +51,27 @@ namespace Phoenix
         public required global::System.Collections.Generic.IList<global::Phoenix.SessionTraceData> Traces { get; set; }
 
         /// <summary>
+        /// Cumulative prompt token count across all spans in the session.<br/>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("token_count_prompt")]
+        public int? TokenCountPrompt { get; set; }
+
+        /// <summary>
+        /// Cumulative completion token count across all spans in the session.<br/>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("token_count_completion")]
+        public int? TokenCountCompletion { get; set; }
+
+        /// <summary>
+        /// Cumulative total token count across all spans in the session (prompt + completion).<br/>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("token_count_total")]
+        public int? TokenCountTotal { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -65,6 +86,18 @@ namespace Phoenix
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="traces"></param>
+        /// <param name="tokenCountPrompt">
+        /// Cumulative prompt token count across all spans in the session.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="tokenCountCompletion">
+        /// Cumulative completion token count across all spans in the session.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="tokenCountTotal">
+        /// Cumulative total token count across all spans in the session (prompt + completion).<br/>
+        /// Default Value: 0
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,7 +107,10 @@ namespace Phoenix
             string projectId,
             global::System.DateTime startTime,
             global::System.DateTime endTime,
-            global::System.Collections.Generic.IList<global::Phoenix.SessionTraceData> traces)
+            global::System.Collections.Generic.IList<global::Phoenix.SessionTraceData> traces,
+            int? tokenCountPrompt,
+            int? tokenCountCompletion,
+            int? tokenCountTotal)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
@@ -82,6 +118,9 @@ namespace Phoenix
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Traces = traces ?? throw new global::System.ArgumentNullException(nameof(traces));
+            this.TokenCountPrompt = tokenCountPrompt;
+            this.TokenCountCompletion = tokenCountCompletion;
+            this.TokenCountTotal = tokenCountTotal;
         }
 
         /// <summary>

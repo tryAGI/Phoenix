@@ -261,6 +261,18 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.UploadDatasetRequestAction2NullableJsonConverter),
 
+            typeof(global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2NullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2NullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2NullableJsonConverter),
+
             typeof(global::Phoenix.JsonConverters.ListProjectTracesSortJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.ListProjectTracesSortNullableJsonConverter),
@@ -597,6 +609,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptToolChoiceZeroOrMore))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptToolFunction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptToolFunctionDefinition))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptToolRaw))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptTools))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.ToolsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolsItem), TypeInfoPropertyName = "ToolsItem2")]
@@ -687,6 +700,9 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequest2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction2), TypeInfoPropertyName = "UploadDatasetRequestAction22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesSort), TypeInfoPropertyName = "ListProjectTracesSort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesOrder), TypeInfoPropertyName = "ListProjectTracesOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectSessionsOrder), TypeInfoPropertyName = "ListProjectSessionsOrder2")]
