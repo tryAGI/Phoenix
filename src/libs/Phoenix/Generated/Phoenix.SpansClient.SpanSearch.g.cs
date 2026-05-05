@@ -111,6 +111,75 @@ namespace Phoenix
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SpanSearchAsResponseAsync(
+                projectIdentifier: projectIdentifier,
+                cursor: cursor,
+                limit: limit,
+                startTime: startTime,
+                endTime: endTime,
+                traceId: traceId,
+                parentId: parentId,
+                name: name,
+                statusCode: statusCode,
+                attribute: attribute,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Search spans with simple filters (no DSL)<br/>
+        /// Return spans within a project filtered by time range. Supports cursor-based pagination.
+        /// </summary>
+        /// <param name="projectIdentifier">
+        /// The project identifier: either project ID or project name. If using a project name, it cannot contain slash (/), question mark (?), or pound sign (#) characters.
+        /// </param>
+        /// <param name="cursor">
+        /// Pagination cursor (Span Global ID)
+        /// </param>
+        /// <param name="limit">
+        /// Maximum number of spans to return<br/>
+        /// Default Value: 100
+        /// </param>
+        /// <param name="startTime">
+        /// Inclusive lower bound time
+        /// </param>
+        /// <param name="endTime">
+        /// Exclusive upper bound time
+        /// </param>
+        /// <param name="traceId">
+        /// Filter by one or more trace IDs
+        /// </param>
+        /// <param name="parentId">
+        /// Filter by parent span ID. Use "null" to get root spans only.
+        /// </param>
+        /// <param name="name">
+        /// Filter by span name(s)
+        /// </param>
+        /// <param name="statusCode">
+        /// Filter by status code(s). Values: OK, ERROR, UNSET
+        /// </param>
+        /// <param name="attribute">
+        /// Filter spans by `key:value`. Key is a dot-path (e.g. `user.id`, `metadata.tier`). Value is JSON-parsed: `k:12345` is int, `k:true` is bool, otherwise string (`k:user-42`). To match a numeric- or boolean-looking STRING, JSON-quote it: `user.id:"12345"` (URL-encoded `%2212345%22`). Split is on the first `:` only, so values may contain colons (`session.id:sess:abc:123`, ISO timestamps). Repeat the param to AND filters. List-valued attributes (e.g. `tag.tags`) cannot be matched here. Returns 422 on malformed input (missing colon, empty key/value, or list/dict/null value).
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Phoenix.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.OtlpSpansResponseBody>> SpanSearchAsResponseAsync(
+            string projectIdentifier,
+            string? cursor = default,
+            int? limit = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
+            global::System.Collections.Generic.IList<string>? traceId = default,
+            string? parentId = default,
+            global::System.Collections.Generic.IList<string>? name = default,
+            global::System.Collections.Generic.IList<string>? statusCode = default,
+            global::System.Collections.Generic.IList<string>? attribute = default,
+            global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareSpanSearchArguments(
@@ -148,9 +217,10 @@ namespace Phoenix
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Phoenix.PathBuilder(
                                 path: $"/v1/projects/{projectIdentifier}/spans/otlpv1",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -160,7 +230,7 @@ namespace Phoenix
                                 .AddOptionalParameter("parent_id", parentId)
                                 .AddOptionalParameter("name", name?.ToString())
                                 .AddOptionalParameter("status_code", statusCode?.ToString())
-                                .AddOptionalParameter("attribute", attribute?.ToString()) 
+                                .AddOptionalParameter("attribute", attribute?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -241,6 +311,8 @@ namespace Phoenix
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -251,6 +323,11 @@ namespace Phoenix
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Phoenix.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -268,6 +345,8 @@ namespace Phoenix
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -277,8 +356,7 @@ namespace Phoenix
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Phoenix.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -287,6 +365,11 @@ namespace Phoenix
                         __attempt < __maxAttempts &&
                         global::Phoenix.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Phoenix.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -303,14 +386,15 @@ namespace Phoenix
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Phoenix.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -350,6 +434,8 @@ namespace Phoenix
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -370,6 +456,8 @@ namespace Phoenix
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Forbidden
@@ -508,9 +596,13 @@ namespace Phoenix
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Phoenix.OtlpSpansResponseBody.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Phoenix.OtlpSpansResponseBody.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.OtlpSpansResponseBody>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -538,9 +630,13 @@ namespace Phoenix
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Phoenix.OtlpSpansResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Phoenix.OtlpSpansResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.OtlpSpansResponseBody>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

@@ -21,6 +21,19 @@ namespace Phoenix
         /// Bulk delete sessions<br/>
         /// Delete multiple sessions by their identifiers (GlobalIDs or session_id strings). All identifiers in a single request must be the same type. Non-existent IDs are silently skipped. All associated traces, spans, and annotations are cascade deleted.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Phoenix.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse> DeleteSessionsAsResponseAsync(
+
+            global::Phoenix.DeleteSessionsRequestBody request,
+            global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Bulk delete sessions<br/>
+        /// Delete multiple sessions by their identifiers (GlobalIDs or session_id strings). All identifiers in a single request must be the same type. Non-existent IDs are silently skipped. All associated traces, spans, and annotations are cascade deleted.
+        /// </summary>
         /// <param name="sessionIdentifiers">
         /// List of session identifiers to delete. All identifiers must be the same type: either all GlobalIDs or all user-provided session_id strings.
         /// </param>
