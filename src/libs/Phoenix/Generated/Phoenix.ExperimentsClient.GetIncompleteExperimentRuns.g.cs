@@ -76,6 +76,47 @@ namespace Phoenix
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetIncompleteExperimentRunsAsResponseAsync(
+                experimentId: experimentId,
+                cursor: cursor,
+                limit: limit,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get incomplete runs for an experiment<br/>
+        /// Get runs that need to be completed for this experiment.<br/>
+        /// Returns all incomplete runs, including both missing runs (not yet attempted)<br/>
+        /// and failed runs (attempted but have errors).<br/>
+        /// Args:<br/>
+        ///     experiment_id: The ID of the experiment<br/>
+        ///     cursor: Cursor for pagination<br/>
+        ///     limit: Maximum number of results to return<br/>
+        /// Returns:<br/>
+        ///     Paginated list of incomplete runs grouped by dataset example,<br/>
+        ///     with repetition numbers that need to be run
+        /// </summary>
+        /// <param name="experimentId"></param>
+        /// <param name="cursor">
+        /// Cursor for pagination
+        /// </param>
+        /// <param name="limit">
+        /// Maximum number of examples with incomplete runs to return<br/>
+        /// Default Value: 50
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Phoenix.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetIncompleteExperimentRunsResponseBody>> GetIncompleteExperimentRunsAsResponseAsync(
+            string experimentId,
+            string? cursor = default,
+            int? limit = default,
+            global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetIncompleteExperimentRunsArguments(
@@ -106,12 +147,13 @@ namespace Phoenix
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Phoenix.PathBuilder(
                                 path: $"/v1/experiments/{experimentId}/incomplete-runs",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("cursor", cursor)
-                                .AddOptionalParameter("limit", limit?.ToString()) 
+                                .AddOptionalParameter("limit", limit?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -185,6 +227,8 @@ namespace Phoenix
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -195,6 +239,11 @@ namespace Phoenix
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Phoenix.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -212,6 +261,8 @@ namespace Phoenix
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -221,8 +272,7 @@ namespace Phoenix
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Phoenix.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -231,6 +281,11 @@ namespace Phoenix
                         __attempt < __maxAttempts &&
                         global::Phoenix.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Phoenix.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -247,14 +302,15 @@ namespace Phoenix
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Phoenix.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -294,6 +350,8 @@ namespace Phoenix
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -314,6 +372,8 @@ namespace Phoenix
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Forbidden
@@ -452,9 +512,13 @@ namespace Phoenix
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Phoenix.GetIncompleteExperimentRunsResponseBody.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Phoenix.GetIncompleteExperimentRunsResponseBody.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetIncompleteExperimentRunsResponseBody>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -482,9 +546,13 @@ namespace Phoenix
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Phoenix.GetIncompleteExperimentRunsResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Phoenix.GetIncompleteExperimentRunsResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetIncompleteExperimentRunsResponseBody>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
