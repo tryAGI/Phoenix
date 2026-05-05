@@ -30,6 +30,23 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
         public bool IsFunction => Function != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.PromptToolRaw? Raw { get; init; }
+#else
+        public global::Phoenix.PromptToolRaw? Raw { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Raw))]
+#endif
+        public bool IsRaw => Raw != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,20 +68,41 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ToolsItem(global::Phoenix.PromptToolRaw value) => new ToolsItem((global::Phoenix.PromptToolRaw?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.PromptToolRaw?(ToolsItem @this) => @this.Raw;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsItem(global::Phoenix.PromptToolRaw? value)
+        {
+            Raw = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ToolsItem(
             global::Phoenix.PromptToolsToolDiscriminatorType? type,
-            global::Phoenix.PromptToolFunction? function
+            global::Phoenix.PromptToolFunction? function,
+            global::Phoenix.PromptToolRaw? raw
             )
         {
             Type = type;
 
             Function = function;
+            Raw = raw;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Raw as object ??
             Function as object 
             ;
 
@@ -72,7 +110,8 @@ namespace Phoenix
         /// 
         /// </summary>
         public override string? ToString() =>
-            Function?.ToString() 
+            Function?.ToString() ??
+            Raw?.ToString() 
             ;
 
         /// <summary>
@@ -80,7 +119,7 @@ namespace Phoenix
         /// </summary>
         public bool Validate()
         {
-            return IsFunction;
+            return IsFunction && !IsRaw || !IsFunction && IsRaw;
         }
 
         /// <summary>
@@ -88,6 +127,7 @@ namespace Phoenix
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.PromptToolFunction?, TResult>? function = null,
+            global::System.Func<global::Phoenix.PromptToolRaw?, TResult>? raw = null,
             bool validate = true)
         {
             if (validate)
@@ -99,6 +139,10 @@ namespace Phoenix
             {
                 return function(Function!);
             }
+            else if (IsRaw && raw != null)
+            {
+                return raw(Raw!);
+            }
 
             return default(TResult);
         }
@@ -108,6 +152,7 @@ namespace Phoenix
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.PromptToolFunction?>? function = null,
+            global::System.Action<global::Phoenix.PromptToolRaw?>? raw = null,
             bool validate = true)
         {
             if (validate)
@@ -118,6 +163,10 @@ namespace Phoenix
             if (IsFunction)
             {
                 function?.Invoke(Function!);
+            }
+            else if (IsRaw)
+            {
+                raw?.Invoke(Raw!);
             }
         }
 
@@ -130,6 +179,8 @@ namespace Phoenix
             {
                 Function,
                 typeof(global::Phoenix.PromptToolFunction),
+                Raw,
+                typeof(global::Phoenix.PromptToolRaw),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -146,7 +197,8 @@ namespace Phoenix
         public bool Equals(ToolsItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolFunction?>.Default.Equals(Function, other.Function) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolFunction?>.Default.Equals(Function, other.Function) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolRaw?>.Default.Equals(Raw, other.Raw) 
                 ;
         }
 

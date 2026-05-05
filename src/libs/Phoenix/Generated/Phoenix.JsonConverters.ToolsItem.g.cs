@@ -28,10 +28,19 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PromptToolFunction)}");
                 function = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.PromptToolRaw? raw = default;
+            if (discriminator?.Type == global::Phoenix.PromptToolsToolDiscriminatorType.Raw)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptToolRaw), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptToolRaw> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PromptToolRaw)}");
+                raw = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Phoenix.ToolsItem(
                 discriminator?.Type,
-                function
+                function,
+
+                raw
                 );
 
             return __value;
@@ -51,6 +60,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptToolFunction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptToolFunction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptToolFunction).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function!, typeInfo);
+            }
+            else if (value.IsRaw)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptToolRaw), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptToolRaw?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptToolRaw).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Raw!, typeInfo);
             }
         }
     }
