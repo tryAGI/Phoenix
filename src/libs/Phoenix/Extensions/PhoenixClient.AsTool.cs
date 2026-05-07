@@ -1,5 +1,4 @@
 #pragma warning disable CS3002 // Return type is not CLS-compliant
-using System.Text.Json;
 using Microsoft.Extensions.AI;
 
 namespace Phoenix;
@@ -27,7 +26,7 @@ public static class PhoenixToolExtensions
                     promptIdentifier: promptName,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return JsonSerializer.Serialize(new
+                return new
                 {
                     id = response.Data.Id,
                     description = response.Data.Description,
@@ -35,7 +34,7 @@ public static class PhoenixToolExtensions
                     model_name = response.Data.ModelName,
                     template_type = response.Data.TemplateType.ToString(),
                     template_format = response.Data.TemplateFormat.ToString(),
-                });
+                };
             },
             name: "GetPrompt",
             description: "Retrieves the latest version of a prompt template from Phoenix by name. Returns the prompt's model configuration, template type, and format.");
@@ -61,11 +60,11 @@ public static class PhoenixToolExtensions
                     limit: limit,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return JsonSerializer.Serialize(response.Data.Select(p => new
+                return response.Data.Select(p => new
                 {
                     name = p.Name,
                     description = p.Description,
-                }));
+                });
             },
             name: "ListPrompts",
             description: "Lists all available prompt templates in Phoenix's prompt registry. Returns prompt names and descriptions.");
@@ -133,12 +132,12 @@ public static class PhoenixToolExtensions
                     limit: limit,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return JsonSerializer.Serialize(response.Data.Select(t => new
+                return response.Data.Select(t => new
                 {
                     trace_id = t.TraceId,
                     start_time = t.StartTime,
                     end_time = t.EndTime,
-                }));
+                });
             },
             name: "ListTraces",
             description: "Lists recent traces for a Phoenix project. Returns trace IDs, timestamps, status, latency, and token usage. Useful for inspecting AI operation history.");
