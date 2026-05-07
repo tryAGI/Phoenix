@@ -58,6 +58,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public ChatClient Chat { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DatasetsClient Datasets { get; }
 
         /// <summary>
