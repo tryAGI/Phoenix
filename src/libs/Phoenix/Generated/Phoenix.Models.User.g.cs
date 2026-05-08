@@ -34,6 +34,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLocal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.LocalUserData? value)
+        {
+            value = Local;
+            return IsLocal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.OAuth2UserData? Oauth2 { get; init; }
 #else
@@ -51,6 +64,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOauth2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.OAuth2UserData? value)
+        {
+            value = Oauth2;
+            return IsOauth2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.LDAPUserData? Ldap { get; init; }
 #else
@@ -64,6 +90,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ldap))]
 #endif
         public bool IsLdap => Ldap != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLdap(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.LDAPUserData? value)
+        {
+            value = Ldap;
+            return IsLdap;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -165,9 +204,9 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.LocalUserData?, TResult>? local = null,
-            global::System.Func<global::Phoenix.OAuth2UserData?, TResult>? oauth2 = null,
-            global::System.Func<global::Phoenix.LDAPUserData?, TResult>? ldap = null,
+            global::System.Func<global::Phoenix.LocalUserData, TResult>? local = null,
+            global::System.Func<global::Phoenix.OAuth2UserData, TResult>? oauth2 = null,
+            global::System.Func<global::Phoenix.LDAPUserData, TResult>? ldap = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +234,39 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.LocalUserData?>? local = null,
-            global::System.Action<global::Phoenix.OAuth2UserData?>? oauth2 = null,
-            global::System.Action<global::Phoenix.LDAPUserData?>? ldap = null,
+            global::System.Action<global::Phoenix.LocalUserData>? local = null,
+
+            global::System.Action<global::Phoenix.OAuth2UserData>? oauth2 = null,
+
+            global::System.Action<global::Phoenix.LDAPUserData>? ldap = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLocal)
+            {
+                local?.Invoke(Local!);
+            }
+            else if (IsOauth2)
+            {
+                oauth2?.Invoke(Oauth2!);
+            }
+            else if (IsLdap)
+            {
+                ldap?.Invoke(Ldap!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.LocalUserData>? local = null,
+            global::System.Action<global::Phoenix.OAuth2UserData>? oauth2 = null,
+            global::System.Action<global::Phoenix.LDAPUserData>? ldap = null,
             bool validate = true)
         {
             if (validate)

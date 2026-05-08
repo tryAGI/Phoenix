@@ -36,6 +36,19 @@ namespace Phoenix
         public bool IsCustom => Custom != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustom(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.CustomProviderChatSearchParams? value)
+        {
+            value = Custom;
+            return IsCustom;
+        }
+
+        /// <summary>
         /// Chat against a Phoenix built-in provider.<br/>
         /// Credentials and connection details (base URL, Azure endpoint, AWS<br/>
         /// region) are resolved from the secret store first and the process<br/>
@@ -55,6 +68,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Builtin))]
 #endif
         public bool IsBuiltin => Builtin != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBuiltin(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.BuiltInProviderChatSearchParams? value)
+        {
+            value = Builtin;
+            return IsBuiltin;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -134,8 +160,8 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.CustomProviderChatSearchParams?, TResult>? custom = null,
-            global::System.Func<global::Phoenix.BuiltInProviderChatSearchParams?, TResult>? builtin = null,
+            global::System.Func<global::Phoenix.CustomProviderChatSearchParams, TResult>? custom = null,
+            global::System.Func<global::Phoenix.BuiltInProviderChatSearchParams, TResult>? builtin = null,
             bool validate = true)
         {
             if (validate)
@@ -159,8 +185,32 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.CustomProviderChatSearchParams?>? custom = null,
-            global::System.Action<global::Phoenix.BuiltInProviderChatSearchParams?>? builtin = null,
+            global::System.Action<global::Phoenix.CustomProviderChatSearchParams>? custom = null,
+
+            global::System.Action<global::Phoenix.BuiltInProviderChatSearchParams>? builtin = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCustom)
+            {
+                custom?.Invoke(Custom!);
+            }
+            else if (IsBuiltin)
+            {
+                builtin?.Invoke(Builtin!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.CustomProviderChatSearchParams>? custom = null,
+            global::System.Action<global::Phoenix.BuiltInProviderChatSearchParams>? builtin = null,
             bool validate = true)
         {
             if (validate)

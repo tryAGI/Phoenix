@@ -34,6 +34,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptToolFunction? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptToolRaw? Raw { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Raw))]
 #endif
         public bool IsRaw => Raw != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRaw(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptToolRaw? value)
+        {
+            value = Raw;
+            return IsRaw;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.PromptToolFunction?, TResult>? function = null,
-            global::System.Func<global::Phoenix.PromptToolRaw?, TResult>? raw = null,
+            global::System.Func<global::Phoenix.PromptToolFunction, TResult>? function = null,
+            global::System.Func<global::Phoenix.PromptToolRaw, TResult>? raw = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.PromptToolFunction?>? function = null,
-            global::System.Action<global::Phoenix.PromptToolRaw?>? raw = null,
+            global::System.Action<global::Phoenix.PromptToolFunction>? function = null,
+
+            global::System.Action<global::Phoenix.PromptToolRaw>? raw = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsRaw)
+            {
+                raw?.Invoke(Raw!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.PromptToolFunction>? function = null,
+            global::System.Action<global::Phoenix.PromptToolRaw>? raw = null,
             bool validate = true)
         {
             if (validate)

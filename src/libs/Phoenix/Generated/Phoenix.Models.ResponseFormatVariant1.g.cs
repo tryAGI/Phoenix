@@ -30,6 +30,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
 #endif
         public bool IsJsonSchema => JsonSchema != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonSchema(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptResponseFormatJSONSchema? value)
+        {
+            value = JsonSchema;
+            return IsJsonSchema;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -87,7 +100,7 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.PromptResponseFormatJSONSchema?, TResult>? jsonSchema = null,
+            global::System.Func<global::Phoenix.PromptResponseFormatJSONSchema, TResult>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +120,25 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.PromptResponseFormatJSONSchema?>? jsonSchema = null,
+            global::System.Action<global::Phoenix.PromptResponseFormatJSONSchema>? jsonSchema = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsJsonSchema)
+            {
+                jsonSchema?.Invoke(JsonSchema!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.PromptResponseFormatJSONSchema>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)

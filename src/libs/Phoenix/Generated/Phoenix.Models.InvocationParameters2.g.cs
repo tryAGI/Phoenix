@@ -34,6 +34,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptOpenAIInvocationParameters? value)
+        {
+            value = Openai;
+            return IsOpenai;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptAzureOpenAIInvocationParameters? AzureOpenai { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureOpenai))]
 #endif
         public bool IsAzureOpenai => AzureOpenai != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAzureOpenai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptAzureOpenAIInvocationParameters? value)
+        {
+            value = AzureOpenai;
+            return IsAzureOpenai;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptAnthropicInvocationParameters? value)
+        {
+            value = Anthropic;
+            return IsAnthropic;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptGoogleInvocationParameters? Google { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Google))]
 #endif
         public bool IsGoogle => Google != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGoogle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptGoogleInvocationParameters? value)
+        {
+            value = Google;
+            return IsGoogle;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeepseek(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptDeepSeekInvocationParameters? value)
+        {
+            value = Deepseek;
+            return IsDeepseek;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptXAIInvocationParameters? Xai { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Xai))]
 #endif
         public bool IsXai => Xai != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickXai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptXAIInvocationParameters? value)
+        {
+            value = Xai;
+            return IsXai;
+        }
 
         /// <summary>
         /// 
@@ -136,6 +214,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOllama(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptOllamaInvocationParameters? value)
+        {
+            value = Ollama;
+            return IsOllama;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptAwsInvocationParameters? Aws { get; init; }
 #else
@@ -149,6 +240,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Aws))]
 #endif
         public bool IsAws => Aws != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAws(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptAwsInvocationParameters? value)
+        {
+            value = Aws;
+            return IsAws;
+        }
 
         /// <summary>
         /// 
@@ -170,6 +274,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCerebras(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptCerebrasInvocationParameters? value)
+        {
+            value = Cerebras;
+            return IsCerebras;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptFireworksInvocationParameters? Fireworks { get; init; }
 #else
@@ -183,6 +300,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fireworks))]
 #endif
         public bool IsFireworks => Fireworks != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFireworks(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptFireworksInvocationParameters? value)
+        {
+            value = Fireworks;
+            return IsFireworks;
+        }
 
         /// <summary>
         /// 
@@ -204,6 +334,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGroq(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptGroqInvocationParameters? value)
+        {
+            value = Groq;
+            return IsGroq;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptMoonshotInvocationParameters? Moonshot { get; init; }
 #else
@@ -217,6 +360,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Moonshot))]
 #endif
         public bool IsMoonshot => Moonshot != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMoonshot(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptMoonshotInvocationParameters? value)
+        {
+            value = Moonshot;
+            return IsMoonshot;
+        }
 
         /// <summary>
         /// 
@@ -238,6 +394,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPerplexity(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptPerplexityInvocationParameters? value)
+        {
+            value = Perplexity;
+            return IsPerplexity;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptTogetherInvocationParameters? Together { get; init; }
 #else
@@ -251,6 +420,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Together))]
 #endif
         public bool IsTogether => Together != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTogether(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptTogetherInvocationParameters? value)
+        {
+            value = Together;
+            return IsTogether;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -594,20 +776,20 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.PromptOpenAIInvocationParameters?, TResult>? openai = null,
-            global::System.Func<global::Phoenix.PromptAzureOpenAIInvocationParameters?, TResult>? azureOpenai = null,
-            global::System.Func<global::Phoenix.PromptAnthropicInvocationParameters?, TResult>? anthropic = null,
-            global::System.Func<global::Phoenix.PromptGoogleInvocationParameters?, TResult>? google = null,
-            global::System.Func<global::Phoenix.PromptDeepSeekInvocationParameters?, TResult>? deepseek = null,
-            global::System.Func<global::Phoenix.PromptXAIInvocationParameters?, TResult>? xai = null,
-            global::System.Func<global::Phoenix.PromptOllamaInvocationParameters?, TResult>? ollama = null,
-            global::System.Func<global::Phoenix.PromptAwsInvocationParameters?, TResult>? aws = null,
-            global::System.Func<global::Phoenix.PromptCerebrasInvocationParameters?, TResult>? cerebras = null,
-            global::System.Func<global::Phoenix.PromptFireworksInvocationParameters?, TResult>? fireworks = null,
-            global::System.Func<global::Phoenix.PromptGroqInvocationParameters?, TResult>? groq = null,
-            global::System.Func<global::Phoenix.PromptMoonshotInvocationParameters?, TResult>? moonshot = null,
-            global::System.Func<global::Phoenix.PromptPerplexityInvocationParameters?, TResult>? perplexity = null,
-            global::System.Func<global::Phoenix.PromptTogetherInvocationParameters?, TResult>? together = null,
+            global::System.Func<global::Phoenix.PromptOpenAIInvocationParameters, TResult>? openai = null,
+            global::System.Func<global::Phoenix.PromptAzureOpenAIInvocationParameters, TResult>? azureOpenai = null,
+            global::System.Func<global::Phoenix.PromptAnthropicInvocationParameters, TResult>? anthropic = null,
+            global::System.Func<global::Phoenix.PromptGoogleInvocationParameters, TResult>? google = null,
+            global::System.Func<global::Phoenix.PromptDeepSeekInvocationParameters, TResult>? deepseek = null,
+            global::System.Func<global::Phoenix.PromptXAIInvocationParameters, TResult>? xai = null,
+            global::System.Func<global::Phoenix.PromptOllamaInvocationParameters, TResult>? ollama = null,
+            global::System.Func<global::Phoenix.PromptAwsInvocationParameters, TResult>? aws = null,
+            global::System.Func<global::Phoenix.PromptCerebrasInvocationParameters, TResult>? cerebras = null,
+            global::System.Func<global::Phoenix.PromptFireworksInvocationParameters, TResult>? fireworks = null,
+            global::System.Func<global::Phoenix.PromptGroqInvocationParameters, TResult>? groq = null,
+            global::System.Func<global::Phoenix.PromptMoonshotInvocationParameters, TResult>? moonshot = null,
+            global::System.Func<global::Phoenix.PromptPerplexityInvocationParameters, TResult>? perplexity = null,
+            global::System.Func<global::Phoenix.PromptTogetherInvocationParameters, TResult>? together = null,
             bool validate = true)
         {
             if (validate)
@@ -679,20 +861,116 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.PromptOpenAIInvocationParameters?>? openai = null,
-            global::System.Action<global::Phoenix.PromptAzureOpenAIInvocationParameters?>? azureOpenai = null,
-            global::System.Action<global::Phoenix.PromptAnthropicInvocationParameters?>? anthropic = null,
-            global::System.Action<global::Phoenix.PromptGoogleInvocationParameters?>? google = null,
-            global::System.Action<global::Phoenix.PromptDeepSeekInvocationParameters?>? deepseek = null,
-            global::System.Action<global::Phoenix.PromptXAIInvocationParameters?>? xai = null,
-            global::System.Action<global::Phoenix.PromptOllamaInvocationParameters?>? ollama = null,
-            global::System.Action<global::Phoenix.PromptAwsInvocationParameters?>? aws = null,
-            global::System.Action<global::Phoenix.PromptCerebrasInvocationParameters?>? cerebras = null,
-            global::System.Action<global::Phoenix.PromptFireworksInvocationParameters?>? fireworks = null,
-            global::System.Action<global::Phoenix.PromptGroqInvocationParameters?>? groq = null,
-            global::System.Action<global::Phoenix.PromptMoonshotInvocationParameters?>? moonshot = null,
-            global::System.Action<global::Phoenix.PromptPerplexityInvocationParameters?>? perplexity = null,
-            global::System.Action<global::Phoenix.PromptTogetherInvocationParameters?>? together = null,
+            global::System.Action<global::Phoenix.PromptOpenAIInvocationParameters>? openai = null,
+
+            global::System.Action<global::Phoenix.PromptAzureOpenAIInvocationParameters>? azureOpenai = null,
+
+            global::System.Action<global::Phoenix.PromptAnthropicInvocationParameters>? anthropic = null,
+
+            global::System.Action<global::Phoenix.PromptGoogleInvocationParameters>? google = null,
+
+            global::System.Action<global::Phoenix.PromptDeepSeekInvocationParameters>? deepseek = null,
+
+            global::System.Action<global::Phoenix.PromptXAIInvocationParameters>? xai = null,
+
+            global::System.Action<global::Phoenix.PromptOllamaInvocationParameters>? ollama = null,
+
+            global::System.Action<global::Phoenix.PromptAwsInvocationParameters>? aws = null,
+
+            global::System.Action<global::Phoenix.PromptCerebrasInvocationParameters>? cerebras = null,
+
+            global::System.Action<global::Phoenix.PromptFireworksInvocationParameters>? fireworks = null,
+
+            global::System.Action<global::Phoenix.PromptGroqInvocationParameters>? groq = null,
+
+            global::System.Action<global::Phoenix.PromptMoonshotInvocationParameters>? moonshot = null,
+
+            global::System.Action<global::Phoenix.PromptPerplexityInvocationParameters>? perplexity = null,
+
+            global::System.Action<global::Phoenix.PromptTogetherInvocationParameters>? together = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenai)
+            {
+                openai?.Invoke(Openai!);
+            }
+            else if (IsAzureOpenai)
+            {
+                azureOpenai?.Invoke(AzureOpenai!);
+            }
+            else if (IsAnthropic)
+            {
+                anthropic?.Invoke(Anthropic!);
+            }
+            else if (IsGoogle)
+            {
+                google?.Invoke(Google!);
+            }
+            else if (IsDeepseek)
+            {
+                deepseek?.Invoke(Deepseek!);
+            }
+            else if (IsXai)
+            {
+                xai?.Invoke(Xai!);
+            }
+            else if (IsOllama)
+            {
+                ollama?.Invoke(Ollama!);
+            }
+            else if (IsAws)
+            {
+                aws?.Invoke(Aws!);
+            }
+            else if (IsCerebras)
+            {
+                cerebras?.Invoke(Cerebras!);
+            }
+            else if (IsFireworks)
+            {
+                fireworks?.Invoke(Fireworks!);
+            }
+            else if (IsGroq)
+            {
+                groq?.Invoke(Groq!);
+            }
+            else if (IsMoonshot)
+            {
+                moonshot?.Invoke(Moonshot!);
+            }
+            else if (IsPerplexity)
+            {
+                perplexity?.Invoke(Perplexity!);
+            }
+            else if (IsTogether)
+            {
+                together?.Invoke(Together!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.PromptOpenAIInvocationParameters>? openai = null,
+            global::System.Action<global::Phoenix.PromptAzureOpenAIInvocationParameters>? azureOpenai = null,
+            global::System.Action<global::Phoenix.PromptAnthropicInvocationParameters>? anthropic = null,
+            global::System.Action<global::Phoenix.PromptGoogleInvocationParameters>? google = null,
+            global::System.Action<global::Phoenix.PromptDeepSeekInvocationParameters>? deepseek = null,
+            global::System.Action<global::Phoenix.PromptXAIInvocationParameters>? xai = null,
+            global::System.Action<global::Phoenix.PromptOllamaInvocationParameters>? ollama = null,
+            global::System.Action<global::Phoenix.PromptAwsInvocationParameters>? aws = null,
+            global::System.Action<global::Phoenix.PromptCerebrasInvocationParameters>? cerebras = null,
+            global::System.Action<global::Phoenix.PromptFireworksInvocationParameters>? fireworks = null,
+            global::System.Action<global::Phoenix.PromptGroqInvocationParameters>? groq = null,
+            global::System.Action<global::Phoenix.PromptMoonshotInvocationParameters>? moonshot = null,
+            global::System.Action<global::Phoenix.PromptPerplexityInvocationParameters>? perplexity = null,
+            global::System.Action<global::Phoenix.PromptTogetherInvocationParameters>? together = null,
             bool validate = true)
         {
             if (validate)

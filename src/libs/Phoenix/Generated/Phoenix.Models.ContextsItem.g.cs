@@ -32,6 +32,19 @@ namespace Phoenix
         public bool IsApp => App != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.AppContext? value)
+        {
+            value = App;
+            return IsApp;
+        }
+
+        /// <summary>
         /// Project the user is currently viewing.<br/>
         /// ``span_filter`` carries the project-scoped span filter expression when the<br/>
         /// span filter field is mounted — empty string when the field is mounted with<br/>
@@ -58,6 +71,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.ProjectContext? value)
+        {
+            value = Project;
+            return IsProject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.TraceContext? Trace { get; init; }
 #else
@@ -71,6 +97,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Trace))]
 #endif
         public bool IsTrace => Trace != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTrace(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.TraceContext? value)
+        {
+            value = Trace;
+            return IsTrace;
+        }
 
         /// <summary>
         /// Span the user has selected.<br/>
@@ -91,6 +130,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Span))]
 #endif
         public bool IsSpan => Span != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpan(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.AgentSpanContext? value)
+        {
+            value = Span;
+            return IsSpan;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -214,10 +266,10 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.AppContext?, TResult>? app = null,
-            global::System.Func<global::Phoenix.ProjectContext?, TResult>? project = null,
-            global::System.Func<global::Phoenix.TraceContext?, TResult>? trace = null,
-            global::System.Func<global::Phoenix.AgentSpanContext?, TResult>? span = null,
+            global::System.Func<global::Phoenix.AppContext, TResult>? app = null,
+            global::System.Func<global::Phoenix.ProjectContext, TResult>? project = null,
+            global::System.Func<global::Phoenix.TraceContext, TResult>? trace = null,
+            global::System.Func<global::Phoenix.AgentSpanContext, TResult>? span = null,
             bool validate = true)
         {
             if (validate)
@@ -249,10 +301,46 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.AppContext?>? app = null,
-            global::System.Action<global::Phoenix.ProjectContext?>? project = null,
-            global::System.Action<global::Phoenix.TraceContext?>? trace = null,
-            global::System.Action<global::Phoenix.AgentSpanContext?>? span = null,
+            global::System.Action<global::Phoenix.AppContext>? app = null,
+
+            global::System.Action<global::Phoenix.ProjectContext>? project = null,
+
+            global::System.Action<global::Phoenix.TraceContext>? trace = null,
+
+            global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsApp)
+            {
+                app?.Invoke(App!);
+            }
+            else if (IsProject)
+            {
+                project?.Invoke(Project!);
+            }
+            else if (IsTrace)
+            {
+                trace?.Invoke(Trace!);
+            }
+            else if (IsSpan)
+            {
+                span?.Invoke(Span!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.AppContext>? app = null,
+            global::System.Action<global::Phoenix.ProjectContext>? project = null,
+            global::System.Action<global::Phoenix.TraceContext>? trace = null,
+            global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
             bool validate = true)
         {
             if (validate)
