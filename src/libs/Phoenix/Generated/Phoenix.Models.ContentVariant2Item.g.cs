@@ -34,6 +34,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.TextContentPart? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ToolCallContentPart? ToolCall { get; init; }
 #else
@@ -51,6 +64,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.ToolCallContentPart? value)
+        {
+            value = ToolCall;
+            return IsToolCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ToolResultContentPart? ToolResult { get; init; }
 #else
@@ -64,6 +90,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
 #endif
         public bool IsToolResult => ToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.ToolResultContentPart? value)
+        {
+            value = ToolResult;
+            return IsToolResult;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -165,9 +204,9 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.TextContentPart?, TResult>? text = null,
-            global::System.Func<global::Phoenix.ToolCallContentPart?, TResult>? toolCall = null,
-            global::System.Func<global::Phoenix.ToolResultContentPart?, TResult>? toolResult = null,
+            global::System.Func<global::Phoenix.TextContentPart, TResult>? text = null,
+            global::System.Func<global::Phoenix.ToolCallContentPart, TResult>? toolCall = null,
+            global::System.Func<global::Phoenix.ToolResultContentPart, TResult>? toolResult = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +234,39 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.TextContentPart?>? text = null,
-            global::System.Action<global::Phoenix.ToolCallContentPart?>? toolCall = null,
-            global::System.Action<global::Phoenix.ToolResultContentPart?>? toolResult = null,
+            global::System.Action<global::Phoenix.TextContentPart>? text = null,
+
+            global::System.Action<global::Phoenix.ToolCallContentPart>? toolCall = null,
+
+            global::System.Action<global::Phoenix.ToolResultContentPart>? toolResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsToolCall)
+            {
+                toolCall?.Invoke(ToolCall!);
+            }
+            else if (IsToolResult)
+            {
+                toolResult?.Invoke(ToolResult!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.TextContentPart>? text = null,
+            global::System.Action<global::Phoenix.ToolCallContentPart>? toolCall = null,
+            global::System.Action<global::Phoenix.ToolResultContentPart>? toolResult = null,
             bool validate = true)
         {
             if (validate)

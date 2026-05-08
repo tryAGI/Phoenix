@@ -32,6 +32,19 @@ namespace Phoenix
         public bool IsSubmitMessage => SubmitMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSubmitMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.SubmitMessage? value)
+        {
+            value = SubmitMessage;
+            return IsSubmitMessage;
+        }
+
+        /// <summary>
         /// Regenerate message extended with Phoenix-specific fields.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RegenerateMessage))]
 #endif
         public bool IsRegenerateMessage => RegenerateMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRegenerateMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.RegenerateMessage? value)
+        {
+            value = RegenerateMessage;
+            return IsRegenerateMessage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.SubmitMessage?, TResult>? submitMessage = null,
-            global::System.Func<global::Phoenix.RegenerateMessage?, TResult>? regenerateMessage = null,
+            global::System.Func<global::Phoenix.SubmitMessage, TResult>? submitMessage = null,
+            global::System.Func<global::Phoenix.RegenerateMessage, TResult>? regenerateMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.SubmitMessage?>? submitMessage = null,
-            global::System.Action<global::Phoenix.RegenerateMessage?>? regenerateMessage = null,
+            global::System.Action<global::Phoenix.SubmitMessage>? submitMessage = null,
+
+            global::System.Action<global::Phoenix.RegenerateMessage>? regenerateMessage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSubmitMessage)
+            {
+                submitMessage?.Invoke(SubmitMessage!);
+            }
+            else if (IsRegenerateMessage)
+            {
+                regenerateMessage?.Invoke(RegenerateMessage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.SubmitMessage>? submitMessage = null,
+            global::System.Action<global::Phoenix.RegenerateMessage>? regenerateMessage = null,
             bool validate = true)
         {
             if (validate)
