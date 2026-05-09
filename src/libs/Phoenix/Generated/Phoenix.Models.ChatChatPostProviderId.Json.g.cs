@@ -2,7 +2,7 @@
 
 namespace Phoenix
 {
-    public sealed partial class ChatV2ChatV2PostRootDiscriminator
+    public sealed partial class ChatChatPostProviderId
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Phoenix
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Phoenix.ChatV2ChatV2PostRootDiscriminator? FromJson(
+        public static global::Phoenix.ChatChatPostProviderId? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Phoenix.ChatV2ChatV2PostRootDiscriminator),
-                jsonSerializerContext) as global::Phoenix.ChatV2ChatV2PostRootDiscriminator;
+                typeof(global::Phoenix.ChatChatPostProviderId),
+                jsonSerializerContext) as global::Phoenix.ChatChatPostProviderId;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Phoenix.ChatV2ChatV2PostRootDiscriminator? FromJson(
+        public static global::Phoenix.ChatChatPostProviderId? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Phoenix.ChatV2ChatV2PostRootDiscriminator>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Phoenix.ChatChatPostProviderId>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Phoenix
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Phoenix.ChatV2ChatV2PostRootDiscriminator?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Phoenix.ChatChatPostProviderId?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Phoenix.ChatV2ChatV2PostRootDiscriminator),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Phoenix.ChatV2ChatV2PostRootDiscriminator;
+                typeof(global::Phoenix.ChatChatPostProviderId),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Phoenix.ChatChatPostProviderId;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Phoenix.ChatV2ChatV2PostRootDiscriminator?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Phoenix.ChatChatPostProviderId?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Phoenix.ChatV2ChatV2PostRootDiscriminator?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Phoenix.ChatChatPostProviderId?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

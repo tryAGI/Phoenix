@@ -27,11 +27,19 @@ namespace Phoenix
             };
         partial void PrepareChatChatPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Phoenix.ChatChatPostRoot root);
+            ref global::Phoenix.ChatChatPostProviderType providerType,
+            ref string modelName,
+            ref string? providerId,
+            global::Phoenix.ModelProvider? provider,
+            ref global::Phoenix.ChatChatPostOpenaiApiType? openaiApiType);
         partial void PrepareChatChatPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Phoenix.ChatChatPostRoot root);
+            global::Phoenix.ChatChatPostProviderType providerType,
+            string modelName,
+            string? providerId,
+            global::Phoenix.ModelProvider? provider,
+            global::Phoenix.ChatChatPostOpenaiApiType? openaiApiType);
         partial void ProcessChatChatPostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,17 +52,31 @@ namespace Phoenix
         /// <summary>
         /// Chat
         /// </summary>
-        /// <param name="root"></param>
+        /// <param name="providerType"></param>
+        /// <param name="modelName"></param>
+        /// <param name="providerId"></param>
+        /// <param name="provider"></param>
+        /// <param name="openaiApiType">
+        /// Default Value: responses
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> ChatChatPostAsync(
-            global::Phoenix.ChatChatPostRoot root,
+            global::Phoenix.ChatChatPostProviderType providerType,
+            string modelName,
+            string? providerId = default,
+            global::Phoenix.ModelProvider? provider = default,
+            global::Phoenix.ChatChatPostOpenaiApiType? openaiApiType = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ChatChatPostAsResponseAsync(
-                root: root,
+                providerType: providerType,
+                modelName: modelName,
+                providerId: providerId,
+                provider: provider,
+                openaiApiType: openaiApiType,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -64,12 +86,22 @@ namespace Phoenix
         /// <summary>
         /// Chat
         /// </summary>
-        /// <param name="root"></param>
+        /// <param name="providerType"></param>
+        /// <param name="modelName"></param>
+        /// <param name="providerId"></param>
+        /// <param name="provider"></param>
+        /// <param name="openaiApiType">
+        /// Default Value: responses
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<string>> ChatChatPostAsResponseAsync(
-            global::Phoenix.ChatChatPostRoot root,
+            global::Phoenix.ChatChatPostProviderType providerType,
+            string modelName,
+            string? providerId = default,
+            global::Phoenix.ModelProvider? provider = default,
+            global::Phoenix.ChatChatPostOpenaiApiType? openaiApiType = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -77,7 +109,11 @@ namespace Phoenix
                 client: HttpClient);
             PrepareChatChatPostArguments(
                 httpClient: HttpClient,
-                root: ref root);
+                providerType: ref providerType,
+                modelName: ref modelName,
+                providerId: ref providerId,
+                provider: provider,
+                openaiApiType: ref openaiApiType);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
@@ -106,7 +142,11 @@ namespace Phoenix
                                 path: "/chat",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("root", root.ToString() ?? string.Empty)
+                                .AddRequiredParameter("provider_type", providerType.ToValueString())
+                                .AddRequiredParameter("model_name", modelName)
+                                .AddOptionalParameter("provider_id", providerId)
+                                .AddOptionalParameter("provider", provider?.ToString())
+                                .AddOptionalParameter("openai_api_type", openaiApiType?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -148,7 +188,11 @@ namespace Phoenix
                 PrepareChatChatPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    root: root!);
+                    providerType: providerType!,
+                    modelName: modelName!,
+                    providerId: providerId,
+                    provider: provider,
+                    openaiApiType: openaiApiType);
 
                 return __httpRequest;
             }

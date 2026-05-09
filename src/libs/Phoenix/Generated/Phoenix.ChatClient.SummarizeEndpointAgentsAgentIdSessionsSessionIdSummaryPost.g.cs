@@ -7,7 +7,7 @@ namespace Phoenix
     {
 
 
-        private static readonly global::Phoenix.EndPointSecurityRequirement s_ChatV2ChatV2PostSecurityRequirement0 =
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostSecurityRequirement0 =
             new global::Phoenix.EndPointSecurityRequirement
             {
                 Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
@@ -21,39 +21,45 @@ namespace Phoenix
                     },
                 },
             };
-        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_ChatV2ChatV2PostSecurityRequirements =
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostSecurityRequirements =
             new global::Phoenix.EndPointSecurityRequirement[]
-            {                s_ChatV2ChatV2PostSecurityRequirement0,
+            {                s_SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostSecurityRequirement0,
             };
-        partial void PrepareChatV2ChatV2PostArguments(
+        partial void PrepareSummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Phoenix.ChatV2ChatV2PostProviderType providerType,
+            ref string agentId,
+            ref string sessionId,
+            ref global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostProviderType providerType,
             ref string modelName,
             ref string? providerId,
             global::Phoenix.ModelProvider? provider,
-            ref global::Phoenix.ChatV2ChatV2PostOpenaiApiType? openaiApiType,
-            global::Phoenix.ChatV2ChatV2PostRequest request);
-        partial void PrepareChatV2ChatV2PostRequest(
+            ref global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostOpenaiApiType? openaiApiType,
+            global::Phoenix.SummarizeRequest request);
+        partial void PrepareSummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Phoenix.ChatV2ChatV2PostProviderType providerType,
+            string agentId,
+            string sessionId,
+            global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostProviderType providerType,
             string modelName,
             string? providerId,
             global::Phoenix.ModelProvider? provider,
-            global::Phoenix.ChatV2ChatV2PostOpenaiApiType? openaiApiType,
-            global::Phoenix.ChatV2ChatV2PostRequest request);
-        partial void ProcessChatV2ChatV2PostResponse(
+            global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostOpenaiApiType? openaiApiType,
+            global::Phoenix.SummarizeRequest request);
+        partial void ProcessSummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessChatV2ChatV2PostResponseContent(
+        partial void ProcessSummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Chat V2
+        /// Summarize Endpoint
         /// </summary>
+        /// <param name="agentId"></param>
+        /// <param name="sessionId"></param>
         /// <param name="providerType"></param>
         /// <param name="modelName"></param>
         /// <param name="providerId"></param>
@@ -65,18 +71,22 @@ namespace Phoenix
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> ChatV2ChatV2PostAsync(
-            global::Phoenix.ChatV2ChatV2PostProviderType providerType,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.SummarizeResponse> SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsync(
+            string agentId,
+            string sessionId,
+            global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostProviderType providerType,
             string modelName,
 
-            global::Phoenix.ChatV2ChatV2PostRequest request,
+            global::Phoenix.SummarizeRequest request,
             string? providerId = default,
             global::Phoenix.ModelProvider? provider = default,
-            global::Phoenix.ChatV2ChatV2PostOpenaiApiType? openaiApiType = default,
+            global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostOpenaiApiType? openaiApiType = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ChatV2ChatV2PostAsResponseAsync(
+            var __response = await SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsResponseAsync(
+                agentId: agentId,
+                sessionId: sessionId,
                 providerType: providerType,
                 modelName: modelName,
 
@@ -91,8 +101,10 @@ namespace Phoenix
             return __response.Body;
         }
         /// <summary>
-        /// Chat V2
+        /// Summarize Endpoint
         /// </summary>
+        /// <param name="agentId"></param>
+        /// <param name="sessionId"></param>
         /// <param name="providerType"></param>
         /// <param name="modelName"></param>
         /// <param name="providerId"></param>
@@ -104,21 +116,27 @@ namespace Phoenix
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<string>> ChatV2ChatV2PostAsResponseAsync(
-            global::Phoenix.ChatV2ChatV2PostProviderType providerType,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.SummarizeResponse>> SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsResponseAsync(
+            string agentId,
+            string sessionId,
+            global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostProviderType providerType,
             string modelName,
 
-            global::Phoenix.ChatV2ChatV2PostRequest request,
+            global::Phoenix.SummarizeRequest request,
             string? providerId = default,
             global::Phoenix.ModelProvider? provider = default,
-            global::Phoenix.ChatV2ChatV2PostOpenaiApiType? openaiApiType = default,
+            global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostOpenaiApiType? openaiApiType = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
-            PrepareChatV2ChatV2PostArguments(
+            PrepareSummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostArguments(
                 httpClient: HttpClient,
+                agentId: ref agentId,
+                sessionId: ref sessionId,
                 providerType: ref providerType,
                 modelName: ref modelName,
                 providerId: ref providerId,
@@ -129,8 +147,8 @@ namespace Phoenix
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ChatV2ChatV2PostSecurityRequirements,
-                operationName: "ChatV2ChatV2PostAsync");
+                securityRequirements: s_SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostSecurityRequirements,
+                operationName: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsync");
 
             using var __timeoutCancellationTokenSource = global::Phoenix.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -150,7 +168,7 @@ namespace Phoenix
             {
 
                             var __pathBuilder = new global::Phoenix.PathBuilder(
-                                path: "/chat-v2",
+                                path: $"/agents/{agentId}/sessions/{sessionId}/summary",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("provider_type", providerType.ToValueString())
@@ -202,9 +220,11 @@ namespace Phoenix
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareChatV2ChatV2PostRequest(
+                PrepareSummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    agentId: agentId!,
+                    sessionId: sessionId!,
                     providerType: providerType!,
                     modelName: modelName!,
                     providerId: providerId,
@@ -227,9 +247,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ChatV2ChatV2Post",
-                                methodName: "ChatV2ChatV2PostAsync",
-                                pathTemplate: "\"/chat-v2\"",
+                                operationId: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPost",
+                                methodName: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsync",
+                                pathTemplate: "$\"/agents/{agentId}/sessions/{sessionId}/summary\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -261,9 +281,9 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ChatV2ChatV2Post",
-                                methodName: "ChatV2ChatV2PostAsync",
-                                pathTemplate: "\"/chat-v2\"",
+                                operationId: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPost",
+                                methodName: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsync",
+                                pathTemplate: "$\"/agents/{agentId}/sessions/{sessionId}/summary\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -302,9 +322,9 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ChatV2ChatV2Post",
-                                methodName: "ChatV2ChatV2PostAsync",
-                                pathTemplate: "\"/chat-v2\"",
+                                operationId: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPost",
+                                methodName: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsync",
+                                pathTemplate: "$\"/agents/{agentId}/sessions/{sessionId}/summary\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -342,7 +362,7 @@ namespace Phoenix
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessChatV2ChatV2PostResponse(
+                ProcessSummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -350,9 +370,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ChatV2ChatV2Post",
-                                methodName: "ChatV2ChatV2PostAsync",
-                                pathTemplate: "\"/chat-v2\"",
+                                operationId: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPost",
+                                methodName: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsync",
+                                pathTemplate: "$\"/agents/{agentId}/sessions/{sessionId}/summary\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -372,9 +392,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ChatV2ChatV2Post",
-                                methodName: "ChatV2ChatV2PostAsync",
-                                pathTemplate: "\"/chat-v2\"",
+                                operationId: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPost",
+                                methodName: "SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsync",
+                                pathTemplate: "$\"/agents/{agentId}/sessions/{sessionId}/summary\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -440,7 +460,7 @@ namespace Phoenix
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessChatV2ChatV2PostResponseContent(
+                                ProcessSummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -449,11 +469,13 @@ namespace Phoenix
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return new global::Phoenix.AutoSDKHttpResponse<string>(
+                                    var __value = global::Phoenix.SummarizeResponse.FromJson(__content, JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.SummarizeResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -475,17 +497,19 @@ namespace Phoenix
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    var __content = await __response.Content.ReadAsStringAsync(
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return new global::Phoenix.AutoSDKHttpResponse<string>(
+                                    var __value = await global::Phoenix.SummarizeResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.SummarizeResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -524,8 +548,10 @@ namespace Phoenix
             }
         }
         /// <summary>
-        /// Chat V2
+        /// Summarize Endpoint
         /// </summary>
+        /// <param name="agentId"></param>
+        /// <param name="sessionId"></param>
         /// <param name="providerType"></param>
         /// <param name="modelName"></param>
         /// <param name="providerId"></param>
@@ -533,23 +559,30 @@ namespace Phoenix
         /// <param name="openaiApiType">
         /// Default Value: responses
         /// </param>
+        /// <param name="messages"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> ChatV2ChatV2PostAsync(
-            global::Phoenix.ChatV2ChatV2PostProviderType providerType,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.SummarizeResponse> SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsync(
+            string agentId,
+            string sessionId,
+            global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostProviderType providerType,
             string modelName,
+            global::System.Collections.Generic.IList<global::Phoenix.UIMessage> messages,
             string? providerId = default,
             global::Phoenix.ModelProvider? provider = default,
-            global::Phoenix.ChatV2ChatV2PostOpenaiApiType? openaiApiType = default,
+            global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostOpenaiApiType? openaiApiType = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Phoenix.ChatV2ChatV2PostRequest
+            var __request = new global::Phoenix.SummarizeRequest
             {
+                Messages = messages,
             };
 
-            return await ChatV2ChatV2PostAsync(
+            return await SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostAsync(
+                agentId: agentId,
+                sessionId: sessionId,
                 providerType: providerType,
                 modelName: modelName,
                 providerId: providerId,

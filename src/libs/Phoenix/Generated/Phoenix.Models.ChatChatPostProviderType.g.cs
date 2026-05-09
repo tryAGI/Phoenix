@@ -6,7 +6,7 @@ namespace Phoenix
     /// <summary>
     /// 
     /// </summary>
-    public enum ChatChatPostRootDiscriminatorProviderType
+    public enum ChatChatPostProviderType
     {
         /// <summary>
         /// 
@@ -21,29 +21,29 @@ namespace Phoenix
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ChatChatPostRootDiscriminatorProviderTypeExtensions
+    public static class ChatChatPostProviderTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ChatChatPostRootDiscriminatorProviderType value)
+        public static string ToValueString(this ChatChatPostProviderType value)
         {
             return value switch
             {
-                ChatChatPostRootDiscriminatorProviderType.Builtin => "builtin",
-                ChatChatPostRootDiscriminatorProviderType.Custom => "custom",
+                ChatChatPostProviderType.Builtin => "builtin",
+                ChatChatPostProviderType.Custom => "custom",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ChatChatPostRootDiscriminatorProviderType? ToEnum(string value)
+        public static ChatChatPostProviderType? ToEnum(string value)
         {
             return value switch
             {
-                "builtin" => ChatChatPostRootDiscriminatorProviderType.Builtin,
-                "custom" => ChatChatPostRootDiscriminatorProviderType.Custom,
+                "builtin" => ChatChatPostProviderType.Builtin,
+                "custom" => ChatChatPostProviderType.Custom,
                 _ => null,
             };
         }
