@@ -3,10 +3,10 @@
 namespace Phoenix.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class BuiltInProviderChatSearchParamsOpenaiApiTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Phoenix.BuiltInProviderChatSearchParamsOpenaiApiType>
+    public sealed class ChatChatPostOpenaiApiTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Phoenix.ChatChatPostOpenaiApiType>
     {
         /// <inheritdoc />
-        public override global::Phoenix.BuiltInProviderChatSearchParamsOpenaiApiType Read(
+        public override global::Phoenix.ChatChatPostOpenaiApiType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Phoenix.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Phoenix.BuiltInProviderChatSearchParamsOpenaiApiTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::Phoenix.ChatChatPostOpenaiApiTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Phoenix.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Phoenix.BuiltInProviderChatSearchParamsOpenaiApiType)numValue;
+                    return (global::Phoenix.ChatChatPostOpenaiApiType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Phoenix.BuiltInProviderChatSearchParamsOpenaiApiType);
+                    return default(global::Phoenix.ChatChatPostOpenaiApiType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace Phoenix.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Phoenix.BuiltInProviderChatSearchParamsOpenaiApiType value,
+            global::Phoenix.ChatChatPostOpenaiApiType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Phoenix.BuiltInProviderChatSearchParamsOpenaiApiTypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::Phoenix.ChatChatPostOpenaiApiTypeExtensions.ToValueString(value));
         }
     }
 }
