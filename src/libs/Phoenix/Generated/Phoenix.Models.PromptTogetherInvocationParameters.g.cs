@@ -50,5 +50,18 @@ namespace Phoenix
         public PromptTogetherInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptTogetherInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptTogetherInvocationParameters FromTogether(global::Phoenix.PromptTogetherInvocationParametersContent together)
+        {
+            return new PromptTogetherInvocationParameters
+            {
+                Together = together,
+            };
+        }
+
     }
 }

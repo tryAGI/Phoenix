@@ -59,5 +59,6 @@ namespace Phoenix
         public DataUIPart()
         {
         }
+
     }
 }

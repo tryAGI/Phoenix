@@ -52,5 +52,6 @@ namespace Phoenix
         public AgentCapabilities()
         {
         }
+
     }
 }

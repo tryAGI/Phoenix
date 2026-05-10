@@ -50,5 +50,18 @@ namespace Phoenix
         public PromptGoogleInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptGoogleInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptGoogleInvocationParameters FromGoogle(global::Phoenix.PromptGoogleInvocationParametersContent google)
+        {
+            return new PromptGoogleInvocationParameters
+            {
+                Google = google,
+            };
+        }
+
     }
 }

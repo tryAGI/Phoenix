@@ -58,5 +58,6 @@ namespace Phoenix
         public PromptGoogleThinkingConfig()
         {
         }
+
     }
 }

@@ -75,5 +75,18 @@ namespace Phoenix
         public ProjectContext()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ProjectContext"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ProjectContext FromProjectNodeId(string projectNodeId)
+        {
+            return new ProjectContext
+            {
+                ProjectNodeId = projectNodeId,
+            };
+        }
+
     }
 }

@@ -40,5 +40,6 @@ namespace Phoenix
         public ChatV2ChatV2PostRequestDiscriminator()
         {
         }
+
     }
 }

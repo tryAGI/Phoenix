@@ -65,5 +65,6 @@ namespace Phoenix
         public SpanEvent()
         {
         }
+
     }
 }

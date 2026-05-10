@@ -50,5 +50,18 @@ namespace Phoenix
         public PromptCerebrasInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptCerebrasInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptCerebrasInvocationParameters FromCerebras(global::Phoenix.PromptCerebrasInvocationParametersContent cerebras)
+        {
+            return new PromptCerebrasInvocationParameters
+            {
+                Cerebras = cerebras,
+            };
+        }
+
     }
 }
