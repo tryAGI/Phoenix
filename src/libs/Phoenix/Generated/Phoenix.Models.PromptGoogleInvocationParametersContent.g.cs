@@ -102,5 +102,6 @@ namespace Phoenix
         public PromptGoogleInvocationParametersContent()
         {
         }
+
     }
 }

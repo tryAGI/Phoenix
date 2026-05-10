@@ -89,5 +89,6 @@ namespace Phoenix
         public OAuth2UserData()
         {
         }
+
     }
 }

@@ -42,5 +42,6 @@ namespace Phoenix
         public DeleteSessionsRequestBody()
         {
         }
+
     }
 }

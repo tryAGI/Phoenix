@@ -129,5 +129,6 @@ namespace Phoenix
         public SessionData()
         {
         }
+
     }
 }

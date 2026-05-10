@@ -50,5 +50,18 @@ namespace Phoenix
         public PromptXAIInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptXAIInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptXAIInvocationParameters FromXai(global::Phoenix.PromptXAIInvocationParametersContent xai)
+        {
+            return new PromptXAIInvocationParameters
+            {
+                Xai = xai,
+            };
+        }
+
     }
 }

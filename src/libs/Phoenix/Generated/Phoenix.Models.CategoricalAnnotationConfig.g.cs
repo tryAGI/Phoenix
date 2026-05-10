@@ -90,5 +90,6 @@ namespace Phoenix
         public CategoricalAnnotationConfig()
         {
         }
+
     }
 }

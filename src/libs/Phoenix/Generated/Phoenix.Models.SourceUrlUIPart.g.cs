@@ -79,5 +79,6 @@ namespace Phoenix
         public SourceUrlUIPart()
         {
         }
+
     }
 }

@@ -54,5 +54,6 @@ namespace Phoenix
         public SpanNoteData()
         {
         }
+
     }
 }

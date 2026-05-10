@@ -71,5 +71,6 @@ namespace Phoenix
         public LDAPUserData()
         {
         }
+
     }
 }

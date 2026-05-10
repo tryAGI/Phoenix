@@ -70,5 +70,6 @@ namespace Phoenix
         public AgentSpanContext()
         {
         }
+
     }
 }

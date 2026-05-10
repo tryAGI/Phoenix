@@ -50,5 +50,18 @@ namespace Phoenix
         public PromptPerplexityInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptPerplexityInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptPerplexityInvocationParameters FromPerplexity(global::Phoenix.PromptPerplexityInvocationParametersContent perplexity)
+        {
+            return new PromptPerplexityInvocationParameters
+            {
+                Perplexity = perplexity,
+            };
+        }
+
     }
 }

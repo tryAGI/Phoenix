@@ -50,5 +50,18 @@ namespace Phoenix
         public PromptToolRaw()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptToolRaw"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptToolRaw FromRaw(object raw)
+        {
+            return new PromptToolRaw
+            {
+                Raw = raw,
+            };
+        }
+
     }
 }

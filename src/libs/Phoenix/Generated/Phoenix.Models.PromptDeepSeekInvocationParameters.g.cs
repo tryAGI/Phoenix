@@ -50,5 +50,18 @@ namespace Phoenix
         public PromptDeepSeekInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptDeepSeekInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptDeepSeekInvocationParameters FromDeepseek(global::Phoenix.PromptDeepSeekInvocationParametersContent deepseek)
+        {
+            return new PromptDeepSeekInvocationParameters
+            {
+                Deepseek = deepseek,
+            };
+        }
+
     }
 }

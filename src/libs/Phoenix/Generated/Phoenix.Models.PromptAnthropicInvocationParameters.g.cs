@@ -50,5 +50,18 @@ namespace Phoenix
         public PromptAnthropicInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptAnthropicInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptAnthropicInvocationParameters FromAnthropic(global::Phoenix.PromptAnthropicInvocationParametersContent anthropic)
+        {
+            return new PromptAnthropicInvocationParameters
+            {
+                Anthropic = anthropic,
+            };
+        }
+
     }
 }

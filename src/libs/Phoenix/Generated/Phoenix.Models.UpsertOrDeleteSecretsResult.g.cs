@@ -50,5 +50,6 @@ namespace Phoenix
         public UpsertOrDeleteSecretsResult()
         {
         }
+
     }
 }
