@@ -15,6 +15,10 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        Playground,
+        /// <summary>
+        /// 
+        /// </summary>
         Project,
         /// <summary>
         /// 
@@ -39,6 +43,7 @@ namespace Phoenix
             return value switch
             {
                 SubmitMessageContextDiscriminatorType.App => "app",
+                SubmitMessageContextDiscriminatorType.Playground => "playground",
                 SubmitMessageContextDiscriminatorType.Project => "project",
                 SubmitMessageContextDiscriminatorType.Span => "span",
                 SubmitMessageContextDiscriminatorType.Trace => "trace",
@@ -53,6 +58,7 @@ namespace Phoenix
             return value switch
             {
                 "app" => SubmitMessageContextDiscriminatorType.App,
+                "playground" => SubmitMessageContextDiscriminatorType.Playground,
                 "project" => SubmitMessageContextDiscriminatorType.Project,
                 "span" => SubmitMessageContextDiscriminatorType.Span,
                 "trace" => SubmitMessageContextDiscriminatorType.Trace,

@@ -143,6 +143,36 @@ namespace Phoenix
             value = Span;
             return IsSpan;
         }
+
+        /// <summary>
+        /// Playground prompt editor state mounted in the current browser route.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.PlaygroundContext? Playground { get; init; }
+#else
+        public global::Phoenix.PlaygroundContext? Playground { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Playground))]
+#endif
+        public bool IsPlayground => Playground != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPlayground(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PlaygroundContext? value)
+        {
+            value = Playground;
+            return IsPlayground;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -218,12 +248,31 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ContextsItem(global::Phoenix.PlaygroundContext value) => new ContextsItem((global::Phoenix.PlaygroundContext?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.PlaygroundContext?(ContextsItem @this) => @this.Playground;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContextsItem(global::Phoenix.PlaygroundContext? value)
+        {
+            Playground = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContextsItem(
             global::Phoenix.RegenerateMessageContextDiscriminatorType? type,
             global::Phoenix.AppContext? app,
             global::Phoenix.ProjectContext? project,
             global::Phoenix.TraceContext? trace,
-            global::Phoenix.AgentSpanContext? span
+            global::Phoenix.AgentSpanContext? span,
+            global::Phoenix.PlaygroundContext? playground
             )
         {
             Type = type;
@@ -232,12 +281,14 @@ namespace Phoenix
             Project = project;
             Trace = trace;
             Span = span;
+            Playground = playground;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Playground as object ??
             Span as object ??
             Trace as object ??
             Project as object ??
@@ -251,7 +302,8 @@ namespace Phoenix
             App?.ToString() ??
             Project?.ToString() ??
             Trace?.ToString() ??
-            Span?.ToString() 
+            Span?.ToString() ??
+            Playground?.ToString() 
             ;
 
         /// <summary>
@@ -259,7 +311,7 @@ namespace Phoenix
         /// </summary>
         public bool Validate()
         {
-            return IsApp && !IsProject && !IsTrace && !IsSpan || !IsApp && IsProject && !IsTrace && !IsSpan || !IsApp && !IsProject && IsTrace && !IsSpan || !IsApp && !IsProject && !IsTrace && IsSpan;
+            return IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground || !IsApp && IsProject && !IsTrace && !IsSpan && !IsPlayground || !IsApp && !IsProject && IsTrace && !IsSpan && !IsPlayground || !IsApp && !IsProject && !IsTrace && IsSpan && !IsPlayground || !IsApp && !IsProject && !IsTrace && !IsSpan && IsPlayground;
         }
 
         /// <summary>
@@ -270,6 +322,7 @@ namespace Phoenix
             global::System.Func<global::Phoenix.ProjectContext, TResult>? project = null,
             global::System.Func<global::Phoenix.TraceContext, TResult>? trace = null,
             global::System.Func<global::Phoenix.AgentSpanContext, TResult>? span = null,
+            global::System.Func<global::Phoenix.PlaygroundContext, TResult>? playground = null,
             bool validate = true)
         {
             if (validate)
@@ -293,6 +346,10 @@ namespace Phoenix
             {
                 return span(Span!);
             }
+            else if (IsPlayground && playground != null)
+            {
+                return playground(Playground!);
+            }
 
             return default(TResult);
         }
@@ -308,6 +365,8 @@ namespace Phoenix
             global::System.Action<global::Phoenix.TraceContext>? trace = null,
 
             global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
+
+            global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
             bool validate = true)
         {
             if (validate)
@@ -330,6 +389,10 @@ namespace Phoenix
             else if (IsSpan)
             {
                 span?.Invoke(Span!);
+            }
+            else if (IsPlayground)
+            {
+                playground?.Invoke(Playground!);
             }
         }
 
@@ -341,6 +404,7 @@ namespace Phoenix
             global::System.Action<global::Phoenix.ProjectContext>? project = null,
             global::System.Action<global::Phoenix.TraceContext>? trace = null,
             global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
+            global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
             bool validate = true)
         {
             if (validate)
@@ -363,6 +427,10 @@ namespace Phoenix
             else if (IsSpan)
             {
                 span?.Invoke(Span!);
+            }
+            else if (IsPlayground)
+            {
+                playground?.Invoke(Playground!);
             }
         }
 
@@ -381,6 +449,8 @@ namespace Phoenix
                 typeof(global::Phoenix.TraceContext),
                 Span,
                 typeof(global::Phoenix.AgentSpanContext),
+                Playground,
+                typeof(global::Phoenix.PlaygroundContext),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -400,7 +470,8 @@ namespace Phoenix
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.AppContext?>.Default.Equals(App, other.App) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.ProjectContext?>.Default.Equals(Project, other.Project) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.TraceContext?>.Default.Equals(Trace, other.Trace) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.AgentSpanContext?>.Default.Equals(Span, other.Span) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.AgentSpanContext?>.Default.Equals(Span, other.Span) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundContext?>.Default.Equals(Playground, other.Playground) 
                 ;
         }
 
