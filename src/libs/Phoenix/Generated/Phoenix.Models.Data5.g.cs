@@ -47,6 +47,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.LocalUser PickLocal() => IsLocal
+            ? Local!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.OAuth2User? Oauth2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Phoenix
             value = Oauth2;
             return IsOauth2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.OAuth2User PickOauth2() => IsOauth2
+            ? Oauth2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.LDAPUser PickLdap() => IsLdap
+            ? Ldap!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ldap' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.AnonymousUser? Anonymous { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Phoenix
             value = Anonymous;
             return IsAnonymous;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.AnonymousUser PickAnonymous() => IsAnonymous
+            ? Anonymous!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Anonymous' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -150,6 +178,11 @@ namespace Phoenix
         {
             Local = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data5 FromLocal(global::Phoenix.LocalUser? value) => new Data5(value);
 
         /// <summary>
         /// 
@@ -172,6 +205,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static Data5 FromOauth2(global::Phoenix.OAuth2User? value) => new Data5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data5(global::Phoenix.LDAPUser value) => new Data5((global::Phoenix.LDAPUser?)value);
 
         /// <summary>
@@ -190,6 +228,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static Data5 FromLdap(global::Phoenix.LDAPUser? value) => new Data5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data5(global::Phoenix.AnonymousUser value) => new Data5((global::Phoenix.AnonymousUser?)value);
 
         /// <summary>
@@ -204,6 +247,11 @@ namespace Phoenix
         {
             Anonymous = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data5 FromAnonymous(global::Phoenix.AnonymousUser? value) => new Data5(value);
 
         /// <summary>
         /// 

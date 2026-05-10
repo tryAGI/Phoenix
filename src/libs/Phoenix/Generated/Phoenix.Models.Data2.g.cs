@@ -47,6 +47,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.LocalUser PickLocal() => IsLocal
+            ? Local!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.OAuth2User? Oauth2 { get; init; }
 #else
@@ -77,6 +84,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.OAuth2User PickOauth2() => IsOauth2
+            ? Oauth2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.LDAPUser? Ldap { get; init; }
 #else
@@ -103,6 +117,13 @@ namespace Phoenix
             value = Ldap;
             return IsLdap;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.LDAPUser PickLdap() => IsLdap
+            ? Ldap!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ldap' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -120,6 +141,11 @@ namespace Phoenix
         {
             Local = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data2 FromLocal(global::Phoenix.LocalUser? value) => new Data2(value);
 
         /// <summary>
         /// 
@@ -142,6 +168,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static Data2 FromOauth2(global::Phoenix.OAuth2User? value) => new Data2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data2(global::Phoenix.LDAPUser value) => new Data2((global::Phoenix.LDAPUser?)value);
 
         /// <summary>
@@ -156,6 +187,11 @@ namespace Phoenix
         {
             Ldap = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data2 FromLdap(global::Phoenix.LDAPUser? value) => new Data2(value);
 
         /// <summary>
         /// 

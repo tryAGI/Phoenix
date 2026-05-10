@@ -47,6 +47,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.PromptAnthropicThinkingConfigDisabled PickDisabled() => IsDisabled
+            ? Disabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptAnthropicThinkingConfigEnabled? Enabled { get; init; }
 #else
@@ -77,6 +84,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.PromptAnthropicThinkingConfigEnabled PickEnabled() => IsEnabled
+            ? Enabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptAnthropicThinkingConfigAdaptive? Adaptive { get; init; }
 #else
@@ -103,6 +117,13 @@ namespace Phoenix
             value = Adaptive;
             return IsAdaptive;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.PromptAnthropicThinkingConfigAdaptive PickAdaptive() => IsAdaptive
+            ? Adaptive!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Adaptive' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -120,6 +141,11 @@ namespace Phoenix
         {
             Disabled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Thinking FromDisabled(global::Phoenix.PromptAnthropicThinkingConfigDisabled? value) => new Thinking(value);
 
         /// <summary>
         /// 
@@ -142,6 +168,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static Thinking FromEnabled(global::Phoenix.PromptAnthropicThinkingConfigEnabled? value) => new Thinking(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Thinking(global::Phoenix.PromptAnthropicThinkingConfigAdaptive value) => new Thinking((global::Phoenix.PromptAnthropicThinkingConfigAdaptive?)value);
 
         /// <summary>
@@ -156,6 +187,11 @@ namespace Phoenix
         {
             Adaptive = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Thinking FromAdaptive(global::Phoenix.PromptAnthropicThinkingConfigAdaptive? value) => new Thinking(value);
 
         /// <summary>
         /// 

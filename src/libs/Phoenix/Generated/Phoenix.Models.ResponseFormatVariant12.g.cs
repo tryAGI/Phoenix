@@ -43,6 +43,13 @@ namespace Phoenix
             value = JsonSchema;
             return IsJsonSchema;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.PromptResponseFormatJSONSchema PickJsonSchema() => IsJsonSchema
+            ? JsonSchema!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -60,6 +67,11 @@ namespace Phoenix
         {
             JsonSchema = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseFormatVariant12 FromJsonSchema(global::Phoenix.PromptResponseFormatJSONSchema? value) => new ResponseFormatVariant12(value);
 
         /// <summary>
         /// 
