@@ -45,6 +45,13 @@ namespace Phoenix
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.SubmitMessage PickSubmitMessage() => IsSubmitMessage
+            ? SubmitMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SubmitMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Regenerate message extended with Phoenix-specific fields.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Phoenix
             value = RegenerateMessage;
             return IsRegenerateMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.RegenerateMessage PickRegenerateMessage() => IsRegenerateMessage
+            ? RegenerateMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RegenerateMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static ChatV2ChatV2PostRequest FromSubmitMessage(global::Phoenix.SubmitMessage? value) => new ChatV2ChatV2PostRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatV2ChatV2PostRequest(global::Phoenix.RegenerateMessage value) => new ChatV2ChatV2PostRequest((global::Phoenix.RegenerateMessage?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Phoenix
         {
             RegenerateMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatV2ChatV2PostRequest FromRegenerateMessage(global::Phoenix.RegenerateMessage? value) => new ChatV2ChatV2PostRequest(value);
 
         /// <summary>
         /// 

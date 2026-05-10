@@ -45,6 +45,13 @@ namespace Phoenix
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.AppContext PickApp() => IsApp
+            ? App!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'App' but the value was {ToString()}.");
+
+        /// <summary>
         /// Project the user is currently viewing.<br/>
         /// ``span_filter`` carries the project-scoped span filter expression when the<br/>
         /// span filter field is mounted — empty string when the field is mounted with<br/>
@@ -84,6 +91,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.ProjectContext PickProject() => IsProject
+            ? Project!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Project' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.TraceContext? Trace { get; init; }
 #else
@@ -110,6 +124,13 @@ namespace Phoenix
             value = Trace;
             return IsTrace;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.TraceContext PickTrace() => IsTrace
+            ? Trace!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Trace' but the value was {ToString()}.");
 
         /// <summary>
         /// Span the user has selected.<br/>
@@ -145,6 +166,13 @@ namespace Phoenix
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.AgentSpanContext PickSpan() => IsSpan
+            ? Span!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Span' but the value was {ToString()}.");
+
+        /// <summary>
         /// Playground prompt editor state mounted in the current browser route.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -173,6 +201,13 @@ namespace Phoenix
             value = Playground;
             return IsPlayground;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.PlaygroundContext PickPlayground() => IsPlayground
+            ? Playground!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Playground' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -190,6 +225,11 @@ namespace Phoenix
         {
             App = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContextsItem2 FromApp(global::Phoenix.AppContext? value) => new ContextsItem2(value);
 
         /// <summary>
         /// 
@@ -212,6 +252,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static ContextsItem2 FromProject(global::Phoenix.ProjectContext? value) => new ContextsItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContextsItem2(global::Phoenix.TraceContext value) => new ContextsItem2((global::Phoenix.TraceContext?)value);
 
         /// <summary>
@@ -226,6 +271,11 @@ namespace Phoenix
         {
             Trace = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContextsItem2 FromTrace(global::Phoenix.TraceContext? value) => new ContextsItem2(value);
 
         /// <summary>
         /// 
@@ -248,6 +298,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static ContextsItem2 FromSpan(global::Phoenix.AgentSpanContext? value) => new ContextsItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContextsItem2(global::Phoenix.PlaygroundContext value) => new ContextsItem2((global::Phoenix.PlaygroundContext?)value);
 
         /// <summary>
@@ -262,6 +317,11 @@ namespace Phoenix
         {
             Playground = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContextsItem2 FromPlayground(global::Phoenix.PlaygroundContext? value) => new ContextsItem2(value);
 
         /// <summary>
         /// 

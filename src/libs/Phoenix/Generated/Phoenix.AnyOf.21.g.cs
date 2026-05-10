@@ -41,6 +41,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T1 PickValue1() => IsValue1
+            ? Value1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T2? Value2 { get; init; }
 #else
@@ -67,6 +74,13 @@ namespace Phoenix
             value = Value2;
             return IsValue2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T2 PickValue2() => IsValue2
+            ? Value2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -101,6 +115,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T3 PickValue3() => IsValue3
+            ? Value3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T4? Value4 { get; init; }
 #else
@@ -127,6 +148,13 @@ namespace Phoenix
             value = Value4;
             return IsValue4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T4 PickValue4() => IsValue4
+            ? Value4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value4' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -161,6 +189,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T5 PickValue5() => IsValue5
+            ? Value5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value5' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T6? Value6 { get; init; }
 #else
@@ -187,6 +222,13 @@ namespace Phoenix
             value = Value6;
             return IsValue6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T6 PickValue6() => IsValue6
+            ? Value6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value6' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -221,6 +263,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T7 PickValue7() => IsValue7
+            ? Value7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value7' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T8? Value8 { get; init; }
 #else
@@ -247,6 +296,13 @@ namespace Phoenix
             value = Value8;
             return IsValue8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T8 PickValue8() => IsValue8
+            ? Value8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value8' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -281,6 +337,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T9 PickValue9() => IsValue9
+            ? Value9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value9' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T10? Value10 { get; init; }
 #else
@@ -307,6 +370,13 @@ namespace Phoenix
             value = Value10;
             return IsValue10;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T10 PickValue10() => IsValue10
+            ? Value10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value10' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -341,6 +411,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T11 PickValue11() => IsValue11
+            ? Value11!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value11' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T12? Value12 { get; init; }
 #else
@@ -367,6 +444,13 @@ namespace Phoenix
             value = Value12;
             return IsValue12;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T12 PickValue12() => IsValue12
+            ? Value12!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value12' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -401,6 +485,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T13 PickValue13() => IsValue13
+            ? Value13!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value13' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T14? Value14 { get; init; }
 #else
@@ -427,6 +518,13 @@ namespace Phoenix
             value = Value14;
             return IsValue14;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T14 PickValue14() => IsValue14
+            ? Value14!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value14' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -461,6 +559,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T15 PickValue15() => IsValue15
+            ? Value15!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value15' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T16? Value16 { get; init; }
 #else
@@ -487,6 +592,13 @@ namespace Phoenix
             value = Value16;
             return IsValue16;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T16 PickValue16() => IsValue16
+            ? Value16!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value16' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -521,6 +633,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T17 PickValue17() => IsValue17
+            ? Value17!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value17' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T18? Value18 { get; init; }
 #else
@@ -547,6 +666,13 @@ namespace Phoenix
             value = Value18;
             return IsValue18;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T18 PickValue18() => IsValue18
+            ? Value18!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value18' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -581,6 +707,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T19 PickValue19() => IsValue19
+            ? Value19!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value19' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T20? Value20 { get; init; }
 #else
@@ -611,6 +744,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public T20 PickValue20() => IsValue20
+            ? Value20!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value20' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T21? Value21 { get; init; }
 #else
@@ -637,6 +777,13 @@ namespace Phoenix
             value = Value21;
             return IsValue21;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T21 PickValue21() => IsValue21
+            ? Value21!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value21' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -654,6 +801,11 @@ namespace Phoenix
         {
             Value1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue1(T1? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 
@@ -676,6 +828,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue2(T2? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T3 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>((T3?)value);
 
         /// <summary>
@@ -690,6 +847,11 @@ namespace Phoenix
         {
             Value3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue3(T3? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 
@@ -712,6 +874,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue4(T4? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T5 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>((T5?)value);
 
         /// <summary>
@@ -726,6 +893,11 @@ namespace Phoenix
         {
             Value5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue5(T5? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 
@@ -748,6 +920,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue6(T6? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T7 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>((T7?)value);
 
         /// <summary>
@@ -762,6 +939,11 @@ namespace Phoenix
         {
             Value7 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue7(T7? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 
@@ -784,6 +966,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue8(T8? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T9 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>((T9?)value);
 
         /// <summary>
@@ -798,6 +985,11 @@ namespace Phoenix
         {
             Value9 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue9(T9? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 
@@ -820,6 +1012,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue10(T10? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T11 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>((T11?)value);
 
         /// <summary>
@@ -834,6 +1031,11 @@ namespace Phoenix
         {
             Value11 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue11(T11? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 
@@ -856,6 +1058,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue12(T12? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T13 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>((T13?)value);
 
         /// <summary>
@@ -870,6 +1077,11 @@ namespace Phoenix
         {
             Value13 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue13(T13? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 
@@ -892,6 +1104,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue14(T14? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T15 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>((T15?)value);
 
         /// <summary>
@@ -906,6 +1123,11 @@ namespace Phoenix
         {
             Value15 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue15(T15? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 
@@ -928,6 +1150,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue16(T16? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T17 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>((T17?)value);
 
         /// <summary>
@@ -942,6 +1169,11 @@ namespace Phoenix
         {
             Value17 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue17(T17? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 
@@ -964,6 +1196,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue18(T18? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T19 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>((T19?)value);
 
         /// <summary>
@@ -978,6 +1215,11 @@ namespace Phoenix
         {
             Value19 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue19(T19? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 
@@ -1000,6 +1242,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue20(T20? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T21 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>((T21?)value);
 
         /// <summary>
@@ -1014,6 +1261,11 @@ namespace Phoenix
         {
             Value21 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromValue21(T21? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(value);
 
         /// <summary>
         /// 

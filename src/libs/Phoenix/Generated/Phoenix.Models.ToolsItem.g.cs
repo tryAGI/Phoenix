@@ -47,6 +47,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.PromptToolFunction PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptToolRaw? Raw { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Phoenix
             value = Raw;
             return IsRaw;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.PromptToolRaw PickRaw() => IsRaw
+            ? Raw!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Raw' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsItem FromFunction(global::Phoenix.PromptToolFunction? value) => new ToolsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsItem(global::Phoenix.PromptToolRaw value) => new ToolsItem((global::Phoenix.PromptToolRaw?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Phoenix
         {
             Raw = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsItem FromRaw(global::Phoenix.PromptToolRaw? value) => new ToolsItem(value);
 
         /// <summary>
         /// 
