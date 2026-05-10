@@ -49,6 +49,13 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.AgentSpanContext)}");
                 span = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.PlaygroundContext? playground = default;
+            if (discriminator?.Type == global::Phoenix.RegenerateMessageContextDiscriminatorType.Playground)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PlaygroundContext)}");
+                playground = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Phoenix.ContextsItem(
                 discriminator?.Type,
@@ -58,7 +65,9 @@ namespace Phoenix.JsonConverters
 
                 trace,
 
-                span
+                span,
+
+                playground
                 );
 
             return __value;
@@ -96,6 +105,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.AgentSpanContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.AgentSpanContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.AgentSpanContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Span!, typeInfo);
+            }
+            else if (value.IsPlayground)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PlaygroundContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Playground!, typeInfo);
             }
         }
     }
