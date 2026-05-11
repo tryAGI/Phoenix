@@ -72,6 +72,12 @@ namespace Phoenix
         /// <param name="openaiApiType">
         /// Default Value: responses
         /// </param>
+        /// <param name="ingestTraces">
+        /// Default Value: false
+        /// </param>
+        /// <param name="exportRemoteTraces">
+        /// Default Value: false
+        /// </param>
         /// <param name="messages"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -85,6 +91,8 @@ namespace Phoenix
             string? providerId = default,
             global::Phoenix.ModelProvider? provider = default,
             global::Phoenix.SummarizeEndpointAgentsAgentIdSessionsSessionIdSummaryPostOpenaiApiType? openaiApiType = default,
+            bool? ingestTraces = default,
+            bool? exportRemoteTraces = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
