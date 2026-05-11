@@ -11,6 +11,18 @@ namespace Phoenix
     public sealed partial class SummarizeRequest
     {
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ingestTraces")]
+        public bool? IngestTraces { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("exportRemoteTraces")]
+        public bool? ExportRemoteTraces { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
@@ -27,12 +39,22 @@ namespace Phoenix
         /// Initializes a new instance of the <see cref="SummarizeRequest" /> class.
         /// </summary>
         /// <param name="messages"></param>
+        /// <param name="ingestTraces">
+        /// Default Value: false
+        /// </param>
+        /// <param name="exportRemoteTraces">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SummarizeRequest(
-            global::System.Collections.Generic.IList<global::Phoenix.UIMessage> messages)
+            global::System.Collections.Generic.IList<global::Phoenix.UIMessage> messages,
+            bool? ingestTraces,
+            bool? exportRemoteTraces)
         {
+            this.IngestTraces = ingestTraces;
+            this.ExportRemoteTraces = exportRemoteTraces;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
         }
 
