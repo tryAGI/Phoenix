@@ -53,6 +53,14 @@ namespace Phoenix
         public global::Phoenix.AgentCapabilities? Capabilities { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.Model2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Phoenix.Model2 Model { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -63,6 +71,7 @@ namespace Phoenix
         /// </summary>
         /// <param name="id"></param>
         /// <param name="messages"></param>
+        /// <param name="model"></param>
         /// <param name="trigger">
         /// Default Value: submit-message
         /// </param>
@@ -82,6 +91,7 @@ namespace Phoenix
         public ChatSubmitMessage(
             string id,
             global::System.Collections.Generic.IList<global::Phoenix.AssistantMetadataUIMessage> messages,
+            global::Phoenix.Model2 model,
             string? trigger,
             bool? ingestTraces,
             bool? exportRemoteTraces,
@@ -95,6 +105,7 @@ namespace Phoenix
             this.ExportRemoteTraces = exportRemoteTraces;
             this.Contexts = contexts;
             this.Capabilities = capabilities;
+            this.Model = model;
         }
 
         /// <summary>

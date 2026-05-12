@@ -3,10 +3,10 @@
 namespace Phoenix.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiType?>
+    public sealed class SummarizeRequestModelDiscriminatorProviderTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Phoenix.SummarizeRequestModelDiscriminatorProviderType?>
     {
         /// <inheritdoc />
-        public override global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiType? Read(
+        public override global::Phoenix.SummarizeRequestModelDiscriminatorProviderType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Phoenix.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiTypeExtensions.ToEnum(stringValue);
+                        return global::Phoenix.SummarizeRequestModelDiscriminatorProviderTypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Phoenix.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiType)numValue;
+                    return (global::Phoenix.SummarizeRequestModelDiscriminatorProviderType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiType?);
+                    return default(global::Phoenix.SummarizeRequestModelDiscriminatorProviderType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace Phoenix.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiType? value,
+            global::Phoenix.SummarizeRequestModelDiscriminatorProviderType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace Phoenix.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiTypeExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::Phoenix.SummarizeRequestModelDiscriminatorProviderTypeExtensions.ToValueString(value.Value));
             }
         }
     }

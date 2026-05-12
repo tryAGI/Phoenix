@@ -60,6 +60,14 @@ namespace Phoenix
         public global::Phoenix.AgentCapabilities? Capabilities { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.ModelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Phoenix.Model Model { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -70,6 +78,7 @@ namespace Phoenix
         /// </summary>
         /// <param name="id"></param>
         /// <param name="messages"></param>
+        /// <param name="model"></param>
         /// <param name="messageId"></param>
         /// <param name="ingestTraces">
         /// Default Value: false
@@ -88,6 +97,7 @@ namespace Phoenix
         public ChatRegenerateMessage(
             string id,
             global::System.Collections.Generic.IList<global::Phoenix.AssistantMetadataUIMessage> messages,
+            global::Phoenix.Model model,
             string? messageId,
             bool? ingestTraces,
             bool? exportRemoteTraces,
@@ -103,6 +113,7 @@ namespace Phoenix
             this.ExportRemoteTraces = exportRemoteTraces;
             this.Contexts = contexts;
             this.Capabilities = capabilities;
+            this.Model = model;
         }
 
         /// <summary>
