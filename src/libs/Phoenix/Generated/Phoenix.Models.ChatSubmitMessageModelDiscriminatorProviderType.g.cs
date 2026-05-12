@@ -6,7 +6,7 @@ namespace Phoenix
     /// <summary>
     /// 
     /// </summary>
-    public enum ChatAgentsAgentIdSessionsSessionIdChatPostProviderType
+    public enum ChatSubmitMessageModelDiscriminatorProviderType
     {
         /// <summary>
         /// 
@@ -21,29 +21,29 @@ namespace Phoenix
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ChatAgentsAgentIdSessionsSessionIdChatPostProviderTypeExtensions
+    public static class ChatSubmitMessageModelDiscriminatorProviderTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ChatAgentsAgentIdSessionsSessionIdChatPostProviderType value)
+        public static string ToValueString(this ChatSubmitMessageModelDiscriminatorProviderType value)
         {
             return value switch
             {
-                ChatAgentsAgentIdSessionsSessionIdChatPostProviderType.Builtin => "builtin",
-                ChatAgentsAgentIdSessionsSessionIdChatPostProviderType.Custom => "custom",
+                ChatSubmitMessageModelDiscriminatorProviderType.Builtin => "builtin",
+                ChatSubmitMessageModelDiscriminatorProviderType.Custom => "custom",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ChatAgentsAgentIdSessionsSessionIdChatPostProviderType? ToEnum(string value)
+        public static ChatSubmitMessageModelDiscriminatorProviderType? ToEnum(string value)
         {
             return value switch
             {
-                "builtin" => ChatAgentsAgentIdSessionsSessionIdChatPostProviderType.Builtin,
-                "custom" => ChatAgentsAgentIdSessionsSessionIdChatPostProviderType.Custom,
+                "builtin" => ChatSubmitMessageModelDiscriminatorProviderType.Builtin,
+                "custom" => ChatSubmitMessageModelDiscriminatorProviderType.Custom,
                 _ => null,
             };
         }

@@ -29,22 +29,12 @@ namespace Phoenix
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
             ref string sessionId,
-            ref global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostProviderType providerType,
-            ref string modelName,
-            ref string? providerId,
-            global::Phoenix.ModelProvider? provider,
-            ref global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiType? openaiApiType,
             global::Phoenix.ChatRequest request);
         partial void PrepareChatAgentsAgentIdSessionsSessionIdChatPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string agentId,
             string sessionId,
-            global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostProviderType providerType,
-            string modelName,
-            string? providerId,
-            global::Phoenix.ModelProvider? provider,
-            global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiType? openaiApiType,
             global::Phoenix.ChatRequest request);
         partial void ProcessChatAgentsAgentIdSessionsSessionIdChatPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -60,13 +50,6 @@ namespace Phoenix
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="sessionId"></param>
-        /// <param name="providerType"></param>
-        /// <param name="modelName"></param>
-        /// <param name="providerId"></param>
-        /// <param name="provider"></param>
-        /// <param name="openaiApiType">
-        /// Default Value: responses
-        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -74,26 +57,16 @@ namespace Phoenix
         public async global::System.Threading.Tasks.Task<global::Phoenix.AssistantMessageMetadata> ChatAgentsAgentIdSessionsSessionIdChatPostAsync(
             string agentId,
             string sessionId,
-            global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostProviderType providerType,
-            string modelName,
 
             global::Phoenix.ChatRequest request,
-            string? providerId = default,
-            global::Phoenix.ModelProvider? provider = default,
-            global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiType? openaiApiType = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ChatAgentsAgentIdSessionsSessionIdChatPostAsResponseAsync(
                 agentId: agentId,
                 sessionId: sessionId,
-                providerType: providerType,
-                modelName: modelName,
 
                 request: request,
-                providerId: providerId,
-                provider: provider,
-                openaiApiType: openaiApiType,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -105,13 +78,6 @@ namespace Phoenix
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="sessionId"></param>
-        /// <param name="providerType"></param>
-        /// <param name="modelName"></param>
-        /// <param name="providerId"></param>
-        /// <param name="provider"></param>
-        /// <param name="openaiApiType">
-        /// Default Value: responses
-        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -119,13 +85,8 @@ namespace Phoenix
         public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.AssistantMessageMetadata>> ChatAgentsAgentIdSessionsSessionIdChatPostAsResponseAsync(
             string agentId,
             string sessionId,
-            global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostProviderType providerType,
-            string modelName,
 
             global::Phoenix.ChatRequest request,
-            string? providerId = default,
-            global::Phoenix.ModelProvider? provider = default,
-            global::Phoenix.ChatAgentsAgentIdSessionsSessionIdChatPostOpenaiApiType? openaiApiType = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -135,11 +96,6 @@ namespace Phoenix
                 httpClient: HttpClient,
                 agentId: ref agentId,
                 sessionId: ref sessionId,
-                providerType: ref providerType,
-                modelName: ref modelName,
-                providerId: ref providerId,
-                provider: provider,
-                openaiApiType: ref openaiApiType,
                 request: request);
 
 
@@ -168,13 +124,6 @@ namespace Phoenix
                             var __pathBuilder = new global::Phoenix.PathBuilder(
                                 path: $"/agents/{agentId}/sessions/{sessionId}/chat",
                                 baseUri: HttpClient.BaseAddress);
-                            __pathBuilder
-                                .AddRequiredParameter("provider_type", providerType.ToValueString())
-                                .AddRequiredParameter("model_name", modelName)
-                                .AddOptionalParameter("provider_id", providerId)
-                                .AddOptionalParameter("provider", provider?.ToString())
-                                .AddOptionalParameter("openai_api_type", openaiApiType?.ToValueString())
-                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -223,11 +172,6 @@ namespace Phoenix
                     httpRequestMessage: __httpRequest,
                     agentId: agentId!,
                     sessionId: sessionId!,
-                    providerType: providerType!,
-                    modelName: modelName!,
-                    providerId: providerId,
-                    provider: provider,
-                    openaiApiType: openaiApiType,
                     request: request);
 
                 return __httpRequest;
