@@ -4,7 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// Optional list of annotation names to include. If provided, only annotations with these names will be returned. 'note' annotations are excluded by default unless explicitly included in this list.
+    /// Optional list of annotation names to include. If provided, only annotations with these names will be returned (allowlist). When omitted, the response includes every matching row regardless of name (no annotation names are excluded by default).
     /// </summary>
     public sealed partial class ListTraceAnnotationsByTraceIdsIncludeAnnotationNames
     {

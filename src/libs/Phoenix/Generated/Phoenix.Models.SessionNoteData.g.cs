@@ -23,6 +23,12 @@ namespace Phoenix
         public required string Note { get; set; }
 
         /// <summary>
+        /// Optional caller-supplied identifier. When non-empty, the note is upserted on (session_id, name='note', identifier) — repeated calls with the same identifier overwrite the existing note. When omitted or empty, the server stamps a unique 'px-session-note:&lt;uuid&gt;' identifier so each call appends a new note.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("identifier")]
+        public string? Identifier { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +43,20 @@ namespace Phoenix
         /// <param name="note">
         /// The note text to add to the session
         /// </param>
+        /// <param name="identifier">
+        /// Optional caller-supplied identifier. When non-empty, the note is upserted on (session_id, name='note', identifier) — repeated calls with the same identifier overwrite the existing note. When omitted or empty, the server stamps a unique 'px-session-note:&lt;uuid&gt;' identifier so each call appends a new note.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SessionNoteData(
             string sessionId,
-            string note)
+            string note,
+            string? identifier)
         {
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.Note = note ?? throw new global::System.ArgumentNullException(nameof(note));
+            this.Identifier = identifier;
         }
 
         /// <summary>
