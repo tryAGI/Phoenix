@@ -21,6 +21,12 @@ namespace Phoenix
         public bool? GraphqlMutations { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session.storeSessions")]
+        public bool? SessionStoreSessions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,15 +41,20 @@ namespace Phoenix
         /// <param name="graphqlMutations">
         /// Default Value: false
         /// </param>
+        /// <param name="sessionStoreSessions">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentCapabilities(
             bool? bashRetainInactiveSessions,
-            bool? graphqlMutations)
+            bool? graphqlMutations,
+            bool? sessionStoreSessions)
         {
             this.BashRetainInactiveSessions = bashRetainInactiveSessions;
             this.GraphqlMutations = graphqlMutations;
+            this.SessionStoreSessions = sessionStoreSessions;
         }
 
         /// <summary>
