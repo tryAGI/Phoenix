@@ -47,12 +47,6 @@ namespace Phoenix
         public global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? Contexts { get; set; }
 
         /// <summary>
-        /// Runtime capability state sent by the browser for a chat turn.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("capabilities")]
-        public global::Phoenix.AgentCapabilities? Capabilities { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -82,9 +76,6 @@ namespace Phoenix
         /// Default Value: false
         /// </param>
         /// <param name="contexts"></param>
-        /// <param name="capabilities">
-        /// Runtime capability state sent by the browser for a chat turn.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -95,8 +86,7 @@ namespace Phoenix
             string? trigger,
             bool? ingestTraces,
             bool? exportRemoteTraces,
-            global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? contexts,
-            global::Phoenix.AgentCapabilities? capabilities)
+            global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? contexts)
         {
             this.Trigger = trigger;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -104,7 +94,6 @@ namespace Phoenix
             this.IngestTraces = ingestTraces;
             this.ExportRemoteTraces = exportRemoteTraces;
             this.Contexts = contexts;
-            this.Capabilities = capabilities;
             this.Model = model;
         }
 

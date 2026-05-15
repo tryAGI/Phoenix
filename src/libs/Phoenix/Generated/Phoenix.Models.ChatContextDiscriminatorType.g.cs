@@ -15,6 +15,10 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        Graphql,
+        /// <summary>
+        /// 
+        /// </summary>
         Playground,
         /// <summary>
         /// 
@@ -43,6 +47,7 @@ namespace Phoenix
             return value switch
             {
                 ChatContextDiscriminatorType.App => "app",
+                ChatContextDiscriminatorType.Graphql => "graphql",
                 ChatContextDiscriminatorType.Playground => "playground",
                 ChatContextDiscriminatorType.Project => "project",
                 ChatContextDiscriminatorType.Span => "span",
@@ -58,6 +63,7 @@ namespace Phoenix
             return value switch
             {
                 "app" => ChatContextDiscriminatorType.App,
+                "graphql" => ChatContextDiscriminatorType.Graphql,
                 "playground" => ChatContextDiscriminatorType.Playground,
                 "project" => ChatContextDiscriminatorType.Project,
                 "span" => ChatContextDiscriminatorType.Span,
