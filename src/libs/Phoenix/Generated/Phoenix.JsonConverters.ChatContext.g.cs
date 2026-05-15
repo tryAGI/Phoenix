@@ -56,6 +56,13 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PlaygroundContext)}");
                 playground = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.GraphQLContext? graphql = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Graphql)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.GraphQLContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.GraphQLContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.GraphQLContext)}");
+                graphql = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Phoenix.ChatContext(
                 discriminator?.Type,
@@ -67,7 +74,9 @@ namespace Phoenix.JsonConverters
 
                 span,
 
-                playground
+                playground,
+
+                graphql
                 );
 
             return __value;
@@ -111,6 +120,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PlaygroundContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Playground!, typeInfo);
+            }
+            else if (value.IsGraphql)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.GraphQLContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.GraphQLContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.GraphQLContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Graphql!, typeInfo);
             }
         }
     }

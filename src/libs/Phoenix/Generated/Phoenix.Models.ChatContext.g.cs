@@ -5,10 +5,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// Discriminated union of every UI-state context the agent understands.<br/>
-    /// Wrapped in ``RootModel`` so the generated OpenAPI schema exposes a single<br/>
-    /// named ``ChatContext`` component instead of inlining the ``oneOf`` at every<br/>
-    /// reference site. The actual member is accessible via ``.root``.
+    /// Discriminated union of every UI-state context the agent understands.
     /// </summary>
     public readonly partial struct ChatContext : global::System.IEquatable<ChatContext>
     {
@@ -211,6 +208,46 @@ namespace Phoenix
         public global::Phoenix.PlaygroundContext PickPlayground() => IsPlayground
             ? Playground!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Playground' but the value was {ToString()}.");
+
+        /// <summary>
+        /// GraphQL runtime state.<br/>
+        /// Unlike the other contexts this one always emits a block — when no instance<br/>
+        /// is present the policy defaults to ``disabled`` (the safe default). Callers<br/>
+        /// in the absent case should use :meth:`render_disabled_default`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.GraphQLContext? Graphql { get; init; }
+#else
+        public global::Phoenix.GraphQLContext? Graphql { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Graphql))]
+#endif
+        public bool IsGraphql => Graphql != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGraphql(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.GraphQLContext? value)
+        {
+            value = Graphql;
+            return IsGraphql;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.GraphQLContext PickGraphql() => IsGraphql
+            ? Graphql!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Graphql' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -329,13 +366,37 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChatContext(global::Phoenix.GraphQLContext value) => new ChatContext((global::Phoenix.GraphQLContext?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.GraphQLContext?(ChatContext @this) => @this.Graphql;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatContext(global::Phoenix.GraphQLContext? value)
+        {
+            Graphql = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContext FromGraphql(global::Phoenix.GraphQLContext? value) => new ChatContext(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatContext(
             global::Phoenix.ChatContextDiscriminatorType? type,
             global::Phoenix.AppContext? app,
             global::Phoenix.ProjectContext? project,
             global::Phoenix.TraceContext? trace,
             global::Phoenix.AgentSpanContext? span,
-            global::Phoenix.PlaygroundContext? playground
+            global::Phoenix.PlaygroundContext? playground,
+            global::Phoenix.GraphQLContext? graphql
             )
         {
             Type = type;
@@ -345,12 +406,14 @@ namespace Phoenix
             Trace = trace;
             Span = span;
             Playground = playground;
+            Graphql = graphql;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Graphql as object ??
             Playground as object ??
             Span as object ??
             Trace as object ??
@@ -366,7 +429,8 @@ namespace Phoenix
             Project?.ToString() ??
             Trace?.ToString() ??
             Span?.ToString() ??
-            Playground?.ToString() 
+            Playground?.ToString() ??
+            Graphql?.ToString() 
             ;
 
         /// <summary>
@@ -374,7 +438,7 @@ namespace Phoenix
         /// </summary>
         public bool Validate()
         {
-            return IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground || !IsApp && IsProject && !IsTrace && !IsSpan && !IsPlayground || !IsApp && !IsProject && IsTrace && !IsSpan && !IsPlayground || !IsApp && !IsProject && !IsTrace && IsSpan && !IsPlayground || !IsApp && !IsProject && !IsTrace && !IsSpan && IsPlayground;
+            return IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsGraphql || !IsApp && IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsGraphql || !IsApp && !IsProject && IsTrace && !IsSpan && !IsPlayground && !IsGraphql || !IsApp && !IsProject && !IsTrace && IsSpan && !IsPlayground && !IsGraphql || !IsApp && !IsProject && !IsTrace && !IsSpan && IsPlayground && !IsGraphql || !IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && IsGraphql;
         }
 
         /// <summary>
@@ -386,6 +450,7 @@ namespace Phoenix
             global::System.Func<global::Phoenix.TraceContext, TResult>? trace = null,
             global::System.Func<global::Phoenix.AgentSpanContext, TResult>? span = null,
             global::System.Func<global::Phoenix.PlaygroundContext, TResult>? playground = null,
+            global::System.Func<global::Phoenix.GraphQLContext, TResult>? graphql = null,
             bool validate = true)
         {
             if (validate)
@@ -413,6 +478,10 @@ namespace Phoenix
             {
                 return playground(Playground!);
             }
+            else if (IsGraphql && graphql != null)
+            {
+                return graphql(Graphql!);
+            }
 
             return default(TResult);
         }
@@ -430,6 +499,8 @@ namespace Phoenix
             global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
 
             global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
+
+            global::System.Action<global::Phoenix.GraphQLContext>? graphql = null,
             bool validate = true)
         {
             if (validate)
@@ -456,6 +527,10 @@ namespace Phoenix
             else if (IsPlayground)
             {
                 playground?.Invoke(Playground!);
+            }
+            else if (IsGraphql)
+            {
+                graphql?.Invoke(Graphql!);
             }
         }
 
@@ -468,6 +543,7 @@ namespace Phoenix
             global::System.Action<global::Phoenix.TraceContext>? trace = null,
             global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
             global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
+            global::System.Action<global::Phoenix.GraphQLContext>? graphql = null,
             bool validate = true)
         {
             if (validate)
@@ -494,6 +570,10 @@ namespace Phoenix
             else if (IsPlayground)
             {
                 playground?.Invoke(Playground!);
+            }
+            else if (IsGraphql)
+            {
+                graphql?.Invoke(Graphql!);
             }
         }
 
@@ -514,6 +594,8 @@ namespace Phoenix
                 typeof(global::Phoenix.AgentSpanContext),
                 Playground,
                 typeof(global::Phoenix.PlaygroundContext),
+                Graphql,
+                typeof(global::Phoenix.GraphQLContext),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -534,7 +616,8 @@ namespace Phoenix
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.ProjectContext?>.Default.Equals(Project, other.Project) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.TraceContext?>.Default.Equals(Trace, other.Trace) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.AgentSpanContext?>.Default.Equals(Span, other.Span) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundContext?>.Default.Equals(Playground, other.Playground) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundContext?>.Default.Equals(Playground, other.Playground) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.GraphQLContext?>.Default.Equals(Graphql, other.Graphql) 
                 ;
         }
 
