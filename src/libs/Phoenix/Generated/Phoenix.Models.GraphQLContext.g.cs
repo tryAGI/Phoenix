@@ -4,10 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// GraphQL runtime state.<br/>
-    /// Unlike the other contexts this one always emits a block — when no instance<br/>
-    /// is present the policy defaults to ``disabled`` (the safe default). Callers<br/>
-    /// in the absent case should use :meth:`render_disabled_default`.
+    /// GraphQL runtime state.
     /// </summary>
     public sealed partial class GraphQLContext
     {

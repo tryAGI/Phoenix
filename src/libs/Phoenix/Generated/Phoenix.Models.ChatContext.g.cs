@@ -210,10 +210,7 @@ namespace Phoenix
             : throw new global::System.InvalidOperationException($"Expected union variant 'Playground' but the value was {ToString()}.");
 
         /// <summary>
-        /// GraphQL runtime state.<br/>
-        /// Unlike the other contexts this one always emits a block — when no instance<br/>
-        /// is present the policy defaults to ``disabled`` (the safe default). Callers<br/>
-        /// in the absent case should use :meth:`render_disabled_default`.
+        /// GraphQL runtime state.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.GraphQLContext? Graphql { get; init; }
