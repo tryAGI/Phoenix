@@ -293,6 +293,10 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.SummarizeRequestModelDiscriminatorProviderTypeNullableJsonConverter),
 
+            typeof(global::Phoenix.JsonConverters.ToolCallProviderMetadataToolExecutionEnvironmentJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ToolCallProviderMetadataToolExecutionEnvironmentNullableJsonConverter),
+
             typeof(global::Phoenix.JsonConverters.UploadDatasetRequestActionJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.UploadDatasetRequestActionNullableJsonConverter),
@@ -842,6 +846,8 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SummarizeRequestModelDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SummarizeRequestModelDiscriminatorProviderType), TypeInfoPropertyName = "SummarizeRequestModelDiscriminatorProviderType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SummarizeResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolCallProviderMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolCallProviderMetadataToolExecutionEnvironment), TypeInfoPropertyName = "ToolCallProviderMetadataToolExecutionEnvironment2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction), TypeInfoPropertyName = "UploadDatasetRequestAction2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>))]
