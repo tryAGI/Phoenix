@@ -513,6 +513,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TraceContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GraphQLContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.WebAccessContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContextDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContextDiscriminatorType), TypeInfoPropertyName = "ChatContextDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRegenerateMessage))]

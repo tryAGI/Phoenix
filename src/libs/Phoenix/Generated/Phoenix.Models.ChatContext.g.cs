@@ -245,6 +245,43 @@ namespace Phoenix
         public global::Phoenix.GraphQLContext PickGraphql() => IsGraphql
             ? Graphql!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Graphql' but the value was {ToString()}.");
+
+        /// <summary>
+        /// User's per-turn request to expose web search / fetch tools.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.WebAccessContext? WebAccess { get; init; }
+#else
+        public global::Phoenix.WebAccessContext? WebAccess { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebAccess))]
+#endif
+        public bool IsWebAccess => WebAccess != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebAccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.WebAccessContext? value)
+        {
+            value = WebAccess;
+            return IsWebAccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.WebAccessContext PickWebAccess() => IsWebAccess
+            ? WebAccess!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebAccess' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -386,6 +423,29 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChatContext(global::Phoenix.WebAccessContext value) => new ChatContext((global::Phoenix.WebAccessContext?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.WebAccessContext?(ChatContext @this) => @this.WebAccess;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatContext(global::Phoenix.WebAccessContext? value)
+        {
+            WebAccess = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContext FromWebAccess(global::Phoenix.WebAccessContext? value) => new ChatContext(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatContext(
             global::Phoenix.ChatContextDiscriminatorType? type,
             global::Phoenix.AppContext? app,
@@ -393,7 +453,8 @@ namespace Phoenix
             global::Phoenix.TraceContext? trace,
             global::Phoenix.AgentSpanContext? span,
             global::Phoenix.PlaygroundContext? playground,
-            global::Phoenix.GraphQLContext? graphql
+            global::Phoenix.GraphQLContext? graphql,
+            global::Phoenix.WebAccessContext? webAccess
             )
         {
             Type = type;
@@ -404,12 +465,14 @@ namespace Phoenix
             Span = span;
             Playground = playground;
             Graphql = graphql;
+            WebAccess = webAccess;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            WebAccess as object ??
             Graphql as object ??
             Playground as object ??
             Span as object ??
@@ -427,7 +490,8 @@ namespace Phoenix
             Trace?.ToString() ??
             Span?.ToString() ??
             Playground?.ToString() ??
-            Graphql?.ToString() 
+            Graphql?.ToString() ??
+            WebAccess?.ToString() 
             ;
 
         /// <summary>
@@ -435,7 +499,7 @@ namespace Phoenix
         /// </summary>
         public bool Validate()
         {
-            return IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsGraphql || !IsApp && IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsGraphql || !IsApp && !IsProject && IsTrace && !IsSpan && !IsPlayground && !IsGraphql || !IsApp && !IsProject && !IsTrace && IsSpan && !IsPlayground && !IsGraphql || !IsApp && !IsProject && !IsTrace && !IsSpan && IsPlayground && !IsGraphql || !IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && IsGraphql;
+            return IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsGraphql && !IsWebAccess || !IsApp && IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsGraphql && !IsWebAccess || !IsApp && !IsProject && IsTrace && !IsSpan && !IsPlayground && !IsGraphql && !IsWebAccess || !IsApp && !IsProject && !IsTrace && IsSpan && !IsPlayground && !IsGraphql && !IsWebAccess || !IsApp && !IsProject && !IsTrace && !IsSpan && IsPlayground && !IsGraphql && !IsWebAccess || !IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && IsGraphql && !IsWebAccess || !IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsGraphql && IsWebAccess;
         }
 
         /// <summary>
@@ -448,6 +512,7 @@ namespace Phoenix
             global::System.Func<global::Phoenix.AgentSpanContext, TResult>? span = null,
             global::System.Func<global::Phoenix.PlaygroundContext, TResult>? playground = null,
             global::System.Func<global::Phoenix.GraphQLContext, TResult>? graphql = null,
+            global::System.Func<global::Phoenix.WebAccessContext, TResult>? webAccess = null,
             bool validate = true)
         {
             if (validate)
@@ -479,6 +544,10 @@ namespace Phoenix
             {
                 return graphql(Graphql!);
             }
+            else if (IsWebAccess && webAccess != null)
+            {
+                return webAccess(WebAccess!);
+            }
 
             return default(TResult);
         }
@@ -498,6 +567,8 @@ namespace Phoenix
             global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
 
             global::System.Action<global::Phoenix.GraphQLContext>? graphql = null,
+
+            global::System.Action<global::Phoenix.WebAccessContext>? webAccess = null,
             bool validate = true)
         {
             if (validate)
@@ -528,6 +599,10 @@ namespace Phoenix
             else if (IsGraphql)
             {
                 graphql?.Invoke(Graphql!);
+            }
+            else if (IsWebAccess)
+            {
+                webAccess?.Invoke(WebAccess!);
             }
         }
 
@@ -541,6 +616,7 @@ namespace Phoenix
             global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
             global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
             global::System.Action<global::Phoenix.GraphQLContext>? graphql = null,
+            global::System.Action<global::Phoenix.WebAccessContext>? webAccess = null,
             bool validate = true)
         {
             if (validate)
@@ -571,6 +647,10 @@ namespace Phoenix
             else if (IsGraphql)
             {
                 graphql?.Invoke(Graphql!);
+            }
+            else if (IsWebAccess)
+            {
+                webAccess?.Invoke(WebAccess!);
             }
         }
 
@@ -593,6 +673,8 @@ namespace Phoenix
                 typeof(global::Phoenix.PlaygroundContext),
                 Graphql,
                 typeof(global::Phoenix.GraphQLContext),
+                WebAccess,
+                typeof(global::Phoenix.WebAccessContext),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -614,7 +696,8 @@ namespace Phoenix
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.TraceContext?>.Default.Equals(Trace, other.Trace) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.AgentSpanContext?>.Default.Equals(Span, other.Span) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundContext?>.Default.Equals(Playground, other.Playground) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.GraphQLContext?>.Default.Equals(Graphql, other.Graphql) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.GraphQLContext?>.Default.Equals(Graphql, other.Graphql) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.WebAccessContext?>.Default.Equals(WebAccess, other.WebAccess) 
                 ;
         }
 

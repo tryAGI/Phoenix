@@ -32,6 +32,10 @@ namespace Phoenix
         /// 
         /// </summary>
         Trace,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebAccess,
     }
 
     /// <summary>
@@ -52,6 +56,7 @@ namespace Phoenix
                 ChatContextDiscriminatorType.Project => "project",
                 ChatContextDiscriminatorType.Span => "span",
                 ChatContextDiscriminatorType.Trace => "trace",
+                ChatContextDiscriminatorType.WebAccess => "web_access",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,6 +73,7 @@ namespace Phoenix
                 "project" => ChatContextDiscriminatorType.Project,
                 "span" => ChatContextDiscriminatorType.Span,
                 "trace" => ChatContextDiscriminatorType.Trace,
+                "web_access" => ChatContextDiscriminatorType.WebAccess,
                 _ => null,
             };
         }
