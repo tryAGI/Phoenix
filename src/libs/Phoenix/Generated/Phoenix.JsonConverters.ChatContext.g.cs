@@ -63,6 +63,13 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.GraphQLContext)}");
                 graphql = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.WebAccessContext? webAccess = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.WebAccess)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.WebAccessContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.WebAccessContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.WebAccessContext)}");
+                webAccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Phoenix.ChatContext(
                 discriminator?.Type,
@@ -76,7 +83,9 @@ namespace Phoenix.JsonConverters
 
                 playground,
 
-                graphql
+                graphql,
+
+                webAccess
                 );
 
             return __value;
@@ -126,6 +135,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.GraphQLContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.GraphQLContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.GraphQLContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Graphql!, typeInfo);
+            }
+            else if (value.IsWebAccess)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.WebAccessContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.WebAccessContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.WebAccessContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebAccess!, typeInfo);
             }
         }
     }
