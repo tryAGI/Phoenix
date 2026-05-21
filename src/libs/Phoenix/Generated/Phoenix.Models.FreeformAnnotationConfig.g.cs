@@ -31,6 +31,30 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("optimization_direction")]
+        public global::Phoenix.OptimizationDirection? OptimizationDirection { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
+        public double? Threshold { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lower_bound")]
+        public double? LowerBound { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("upper_bound")]
+        public double? UpperBound { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -47,6 +71,10 @@ namespace Phoenix
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <param name="description"></param>
+        /// <param name="optimizationDirection"></param>
+        /// <param name="threshold"></param>
+        /// <param name="lowerBound"></param>
+        /// <param name="upperBound"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,11 +83,19 @@ namespace Phoenix
             string name,
             string id,
             string? description,
+            global::Phoenix.OptimizationDirection? optimizationDirection,
+            double? threshold,
+            double? lowerBound,
+            double? upperBound,
             string type = "FREEFORM")
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
             this.Description = description;
+            this.OptimizationDirection = optimizationDirection;
+            this.Threshold = threshold;
+            this.LowerBound = lowerBound;
+            this.UpperBound = upperBound;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 
