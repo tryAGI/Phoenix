@@ -29,6 +29,12 @@ namespace Phoenix
         public required string ToolCallId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
         /// Default Value: input-streaming
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
@@ -39,6 +45,12 @@ namespace Phoenix
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         public object? Input { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("providerExecuted")]
+        public bool? ProviderExecuted { get; set; }
 
         /// <summary>
         /// 
@@ -67,10 +79,12 @@ namespace Phoenix
         /// <param name="type">
         /// Default Value: dynamic-tool
         /// </param>
+        /// <param name="title"></param>
         /// <param name="state">
         /// Default Value: input-streaming
         /// </param>
         /// <param name="input"></param>
+        /// <param name="providerExecuted"></param>
         /// <param name="callProviderMetadata"></param>
         /// <param name="approval"></param>
 #if NET7_0_OR_GREATER
@@ -80,16 +94,20 @@ namespace Phoenix
             string toolName,
             string toolCallId,
             string? type,
+            string? title,
             string? state,
             object? input,
+            bool? providerExecuted,
             global::System.Collections.Generic.Dictionary<string, object>? callProviderMetadata,
             global::Phoenix.AnyOf<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>? approval)
         {
             this.Type = type;
             this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
+            this.Title = title;
             this.State = state;
             this.Input = input;
+            this.ProviderExecuted = providerExecuted;
             this.CallProviderMetadata = callProviderMetadata;
             this.Approval = approval;
         }
