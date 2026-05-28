@@ -23,6 +23,12 @@ namespace Phoenix
         public required string ToolCallId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
         /// Default Value: output-available
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
@@ -76,6 +82,7 @@ namespace Phoenix
         /// </summary>
         /// <param name="type"></param>
         /// <param name="toolCallId"></param>
+        /// <param name="title"></param>
         /// <param name="state">
         /// Default Value: output-available
         /// </param>
@@ -91,6 +98,7 @@ namespace Phoenix
         public ToolOutputAvailablePart(
             string type,
             string toolCallId,
+            string? title,
             string? state,
             object? input,
             object? output,
@@ -101,6 +109,7 @@ namespace Phoenix
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
+            this.Title = title;
             this.State = state;
             this.Input = input;
             this.Output = output;

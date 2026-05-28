@@ -29,6 +29,12 @@ namespace Phoenix
         public required string ToolCallId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
         /// Default Value: output-available
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
@@ -47,6 +53,12 @@ namespace Phoenix
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Output { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("providerExecuted")]
+        public bool? ProviderExecuted { get; set; }
 
         /// <summary>
         /// 
@@ -83,9 +95,11 @@ namespace Phoenix
         /// <param name="type">
         /// Default Value: dynamic-tool
         /// </param>
+        /// <param name="title"></param>
         /// <param name="state">
         /// Default Value: output-available
         /// </param>
+        /// <param name="providerExecuted"></param>
         /// <param name="callProviderMetadata"></param>
         /// <param name="preliminary"></param>
         /// <param name="approval"></param>
@@ -98,7 +112,9 @@ namespace Phoenix
             object input,
             object output,
             string? type,
+            string? title,
             string? state,
+            bool? providerExecuted,
             global::System.Collections.Generic.Dictionary<string, object>? callProviderMetadata,
             bool? preliminary,
             global::Phoenix.AnyOf<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>? approval)
@@ -106,9 +122,11 @@ namespace Phoenix
             this.Type = type;
             this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
+            this.Title = title;
             this.State = state;
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
+            this.ProviderExecuted = providerExecuted;
             this.CallProviderMetadata = callProviderMetadata;
             this.Preliminary = preliminary;
             this.Approval = approval;
