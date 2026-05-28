@@ -47,6 +47,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.PromptChatTemplate PickChat() => IsChat
+            ? Chat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptStringTemplate? String { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Phoenix
             value = String;
             return IsString;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.PromptStringTemplate PickString() => IsString
+            ? String!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static Template2 FromChat(global::Phoenix.PromptChatTemplate? value) => new Template2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Template2(global::Phoenix.PromptStringTemplate value) => new Template2((global::Phoenix.PromptStringTemplate?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace Phoenix
         {
             String = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Template2 FromString(global::Phoenix.PromptStringTemplate? value) => new Template2(value);
 
         /// <summary>
         /// 

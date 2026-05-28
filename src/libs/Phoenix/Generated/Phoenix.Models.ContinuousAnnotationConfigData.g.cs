@@ -88,5 +88,6 @@ namespace Phoenix
         public ContinuousAnnotationConfigData()
         {
         }
+
     }
 }

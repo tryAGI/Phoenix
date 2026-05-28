@@ -50,5 +50,18 @@ namespace Phoenix
         public PromptMoonshotInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptMoonshotInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptMoonshotInvocationParameters FromMoonshot(global::Phoenix.PromptMoonshotInvocationParametersContent moonshot)
+        {
+            return new PromptMoonshotInvocationParameters
+            {
+                Moonshot = moonshot,
+            };
+        }
+
     }
 }

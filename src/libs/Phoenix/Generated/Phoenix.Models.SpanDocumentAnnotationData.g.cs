@@ -112,5 +112,6 @@ namespace Phoenix
         public SpanDocumentAnnotationData()
         {
         }
+
     }
 }

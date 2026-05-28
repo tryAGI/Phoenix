@@ -50,5 +50,18 @@ namespace Phoenix
         public PromptOllamaInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptOllamaInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptOllamaInvocationParameters FromOllama(global::Phoenix.PromptOllamaInvocationParametersContent ollama)
+        {
+            return new PromptOllamaInvocationParameters
+            {
+                Ollama = ollama,
+            };
+        }
+
     }
 }

@@ -29,6 +29,12 @@ namespace Phoenix
         public required string ToolCallId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
         /// Default Value: input-available
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
@@ -40,6 +46,12 @@ namespace Phoenix
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Input { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("providerExecuted")]
+        public bool? ProviderExecuted { get; set; }
 
         /// <summary>
         /// 
@@ -69,9 +81,11 @@ namespace Phoenix
         /// <param name="type">
         /// Default Value: dynamic-tool
         /// </param>
+        /// <param name="title"></param>
         /// <param name="state">
         /// Default Value: input-available
         /// </param>
+        /// <param name="providerExecuted"></param>
         /// <param name="callProviderMetadata"></param>
         /// <param name="approval"></param>
 #if NET7_0_OR_GREATER
@@ -82,15 +96,19 @@ namespace Phoenix
             string toolCallId,
             object input,
             string? type,
+            string? title,
             string? state,
+            bool? providerExecuted,
             global::System.Collections.Generic.Dictionary<string, object>? callProviderMetadata,
             global::Phoenix.AnyOf<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>? approval)
         {
             this.Type = type;
             this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
+            this.Title = title;
             this.State = state;
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.ProviderExecuted = providerExecuted;
             this.CallProviderMetadata = callProviderMetadata;
             this.Approval = approval;
         }
@@ -101,5 +119,6 @@ namespace Phoenix
         public DynamicToolInputAvailablePart()
         {
         }
+
     }
 }

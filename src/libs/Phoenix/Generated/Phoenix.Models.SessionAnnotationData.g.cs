@@ -100,5 +100,6 @@ namespace Phoenix
         public SessionAnnotationData()
         {
         }
+
     }
 }

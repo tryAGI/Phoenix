@@ -77,5 +77,6 @@ namespace Phoenix
         public Prompt()
         {
         }
+
     }
 }

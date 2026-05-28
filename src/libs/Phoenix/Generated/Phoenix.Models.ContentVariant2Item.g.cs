@@ -47,6 +47,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.TextContentPart PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ToolCallContentPart? ToolCall { get; init; }
 #else
@@ -77,6 +84,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.ToolCallContentPart PickToolCall() => IsToolCall
+            ? ToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ToolResultContentPart? ToolResult { get; init; }
 #else
@@ -103,6 +117,13 @@ namespace Phoenix
             value = ToolResult;
             return IsToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.ToolResultContentPart PickToolResult() => IsToolResult
+            ? ToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -120,6 +141,11 @@ namespace Phoenix
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant2Item FromText(global::Phoenix.TextContentPart? value) => new ContentVariant2Item(value);
 
         /// <summary>
         /// 
@@ -142,6 +168,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item FromToolCall(global::Phoenix.ToolCallContentPart? value) => new ContentVariant2Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item(global::Phoenix.ToolResultContentPart value) => new ContentVariant2Item((global::Phoenix.ToolResultContentPart?)value);
 
         /// <summary>
@@ -156,6 +187,11 @@ namespace Phoenix
         {
             ToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant2Item FromToolResult(global::Phoenix.ToolResultContentPart? value) => new ContentVariant2Item(value);
 
         /// <summary>
         /// 

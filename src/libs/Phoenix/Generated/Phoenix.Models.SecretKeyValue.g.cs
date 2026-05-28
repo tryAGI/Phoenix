@@ -51,5 +51,6 @@ namespace Phoenix
         public SecretKeyValue()
         {
         }
+
     }
 }

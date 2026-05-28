@@ -80,5 +80,6 @@ namespace Phoenix
         public LocalUserData()
         {
         }
+
     }
 }

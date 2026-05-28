@@ -47,6 +47,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.CategoricalAnnotationConfigData PickCategorical() => IsCategorical
+            ? Categorical!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Categorical' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ContinuousAnnotationConfigData? Continuous { get; init; }
 #else
@@ -77,6 +84,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.ContinuousAnnotationConfigData PickContinuous() => IsContinuous
+            ? Continuous!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Continuous' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.FreeformAnnotationConfigData? Freeform { get; init; }
 #else
@@ -103,6 +117,13 @@ namespace Phoenix
             value = Freeform;
             return IsFreeform;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.FreeformAnnotationConfigData PickFreeform() => IsFreeform
+            ? Freeform!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Freeform' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -120,6 +141,11 @@ namespace Phoenix
         {
             Categorical = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateAnnotationConfigData FromCategorical(global::Phoenix.CategoricalAnnotationConfigData? value) => new CreateAnnotationConfigData(value);
 
         /// <summary>
         /// 
@@ -142,6 +168,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static CreateAnnotationConfigData FromContinuous(global::Phoenix.ContinuousAnnotationConfigData? value) => new CreateAnnotationConfigData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateAnnotationConfigData(global::Phoenix.FreeformAnnotationConfigData value) => new CreateAnnotationConfigData((global::Phoenix.FreeformAnnotationConfigData?)value);
 
         /// <summary>
@@ -156,6 +187,11 @@ namespace Phoenix
         {
             Freeform = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateAnnotationConfigData FromFreeform(global::Phoenix.FreeformAnnotationConfigData? value) => new CreateAnnotationConfigData(value);
 
         /// <summary>
         /// 

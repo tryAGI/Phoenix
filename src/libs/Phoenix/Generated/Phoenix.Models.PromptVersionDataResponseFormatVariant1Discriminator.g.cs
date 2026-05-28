@@ -40,5 +40,6 @@ namespace Phoenix
         public PromptVersionDataResponseFormatVariant1Discriminator()
         {
         }
+
     }
 }

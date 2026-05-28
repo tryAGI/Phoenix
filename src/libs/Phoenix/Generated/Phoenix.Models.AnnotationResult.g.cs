@@ -63,5 +63,6 @@ namespace Phoenix
         public AnnotationResult()
         {
         }
+
     }
 }

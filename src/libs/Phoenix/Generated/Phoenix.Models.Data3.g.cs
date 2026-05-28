@@ -47,6 +47,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.CategoricalAnnotationConfig PickCategorical() => IsCategorical
+            ? Categorical!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Categorical' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ContinuousAnnotationConfig? Continuous { get; init; }
 #else
@@ -77,6 +84,13 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public global::Phoenix.ContinuousAnnotationConfig PickContinuous() => IsContinuous
+            ? Continuous!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Continuous' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.FreeformAnnotationConfig? Freeform { get; init; }
 #else
@@ -103,6 +117,13 @@ namespace Phoenix
             value = Freeform;
             return IsFreeform;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.FreeformAnnotationConfig PickFreeform() => IsFreeform
+            ? Freeform!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Freeform' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -120,6 +141,11 @@ namespace Phoenix
         {
             Categorical = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data3 FromCategorical(global::Phoenix.CategoricalAnnotationConfig? value) => new Data3(value);
 
         /// <summary>
         /// 
@@ -142,6 +168,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static Data3 FromContinuous(global::Phoenix.ContinuousAnnotationConfig? value) => new Data3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data3(global::Phoenix.FreeformAnnotationConfig value) => new Data3((global::Phoenix.FreeformAnnotationConfig?)value);
 
         /// <summary>
@@ -156,6 +187,11 @@ namespace Phoenix
         {
             Freeform = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data3 FromFreeform(global::Phoenix.FreeformAnnotationConfig? value) => new Data3(value);
 
         /// <summary>
         /// 

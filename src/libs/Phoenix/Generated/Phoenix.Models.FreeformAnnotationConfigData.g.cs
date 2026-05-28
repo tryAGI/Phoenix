@@ -29,6 +29,30 @@ namespace Phoenix
         public string? Description { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("optimization_direction")]
+        public global::Phoenix.OptimizationDirection? OptimizationDirection { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
+        public double? Threshold { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lower_bound")]
+        public double? LowerBound { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("upper_bound")]
+        public double? UpperBound { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,6 +63,10 @@ namespace Phoenix
         /// </summary>
         /// <param name="name"></param>
         /// <param name="description"></param>
+        /// <param name="optimizationDirection"></param>
+        /// <param name="threshold"></param>
+        /// <param name="lowerBound"></param>
+        /// <param name="upperBound"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -46,11 +74,19 @@ namespace Phoenix
         public FreeformAnnotationConfigData(
             string name,
             string? description,
+            global::Phoenix.OptimizationDirection? optimizationDirection,
+            double? threshold,
+            double? lowerBound,
+            double? upperBound,
             string type = "FREEFORM")
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
             this.Description = description;
+            this.OptimizationDirection = optimizationDirection;
+            this.Threshold = threshold;
+            this.LowerBound = lowerBound;
+            this.UpperBound = upperBound;
         }
 
         /// <summary>
@@ -59,5 +95,18 @@ namespace Phoenix
         public FreeformAnnotationConfigData()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="FreeformAnnotationConfigData"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static FreeformAnnotationConfigData FromName(string name)
+        {
+            return new FreeformAnnotationConfigData
+            {
+                Name = name,
+            };
+        }
+
     }
 }

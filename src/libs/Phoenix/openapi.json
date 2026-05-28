@@ -379,10 +379,10 @@
                   "type": "null"
                 }
               ],
-              "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned. 'note' annotations are excluded by default unless explicitly included in this list.",
+              "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned (allowlist). When omitted, the response includes every matching row regardless of name (no annotation names are excluded by default).",
               "title": "Include Annotation Names"
             },
-            "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned. 'note' annotations are excluded by default unless explicitly included in this list."
+            "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned (allowlist). When omitted, the response includes every matching row regardless of name (no annotation names are excluded by default)."
           },
           {
             "name": "exclude_annotation_names",
@@ -728,10 +728,10 @@
                   "type": "null"
                 }
               ],
-              "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned. 'note' annotations are excluded by default unless explicitly included in this list.",
+              "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned (allowlist). When omitted, the response includes every matching row regardless of name (no annotation names are excluded by default).",
               "title": "Include Annotation Names"
             },
-            "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned. 'note' annotations are excluded by default unless explicitly included in this list."
+            "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned (allowlist). When omitted, the response includes every matching row regardless of name (no annotation names are excluded by default)."
           },
           {
             "name": "exclude_annotation_names",
@@ -1077,10 +1077,10 @@
                   "type": "null"
                 }
               ],
-              "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned. 'note' annotations are excluded by default unless explicitly included in this list.",
+              "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned (allowlist). When omitted, the response includes every matching row regardless of name (no annotation names are excluded by default).",
               "title": "Include Annotation Names"
             },
-            "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned. 'note' annotations are excluded by default unless explicitly included in this list."
+            "description": "Optional list of annotation names to include. If provided, only annotations with these names will be returned (allowlist). When omitted, the response includes every matching row regardless of name (no annotation names are excluded by default)."
           },
           {
             "name": "exclude_annotation_names",
@@ -3416,7 +3416,7 @@
           "traces"
         ],
         "summary": "Create a trace note",
-        "description": "Add a note annotation to a trace. Each call appends a new note with an auto-generated UUIDv4 identifier, so multiple notes accumulate on the same trace. Structured annotations, by contrast, are keyed by (name, trace_id, identifier) — re-writing the same key overwrites the existing annotation, so to keep multiple structured annotations with the same name on a trace you must supply distinct identifiers.",
+        "description": "Add a note annotation to a trace. By default each call appends a new note with an auto-generated UUIDv4 identifier, so multiple notes accumulate on the same trace. Callers may supply a non-empty `identifier` to upsert on (trace_id, name='note', identifier) — repeated calls with the same identifier overwrite the existing note, matching the semantics of structured annotations.",
         "operationId": "createTraceNote",
         "requestBody": {
           "content": {
@@ -4189,7 +4189,7 @@
           "spans"
         ],
         "summary": "Create a span note",
-        "description": "Add a note annotation to a span. Each call appends a new note with an auto-generated UUIDv4 identifier, so multiple notes accumulate on the same span. Structured annotations, by contrast, are keyed by (name, span_id, identifier) — re-writing the same key overwrites the existing annotation, so to keep multiple structured annotations with the same name on a span you must supply distinct identifiers.",
+        "description": "Add a note annotation to a span. By default each call appends a new note with an auto-generated UUIDv4 identifier, so multiple notes accumulate on the same span. Callers may supply a non-empty `identifier` to upsert on (span_id, name='note', identifier) — repeated calls with the same identifier overwrite the existing note, matching the semantics of structured annotations.",
         "operationId": "createSpanNote",
         "requestBody": {
           "content": {
@@ -5719,7 +5719,7 @@
           "sessions"
         ],
         "summary": "Create a session note",
-        "description": "Add a note annotation to a session. Each call appends a new note with an auto-generated UUIDv4 identifier, so multiple notes accumulate on the same session. Structured annotations, by contrast, are keyed by (name, session_id, identifier) — re-writing the same key overwrites the existing annotation, so to keep multiple structured annotations with the same name on a session you must supply distinct identifiers.",
+        "description": "Add a note annotation to a session. By default each call appends a new note with an auto-generated UUIDv4 identifier, so multiple notes accumulate on the same session. Callers may supply a non-empty `identifier` to upsert on (session_id, name='note', identifier) — repeated calls with the same identifier overwrite the existing note, matching the semantics of structured annotations.",
         "operationId": "createSessionNote",
         "requestBody": {
           "content": {
@@ -6490,38 +6490,43 @@
         }
       }
     },
-    "/chat": {
+    "/agents/{agent_id}/sessions/{session_id}/chat": {
       "post": {
         "tags": [
           "chat"
         ],
         "summary": "Chat",
-        "operationId": "chat_chat_post",
+        "operationId": "chat_agents__agent_id__sessions__session_id__chat_post",
         "parameters": [
           {
-            "name": "root",
-            "in": "query",
+            "name": "agent_id",
+            "in": "path",
             "required": true,
             "schema": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/CustomProviderChatSearchParams"
-                },
-                {
-                  "$ref": "#/components/schemas/BuiltInProviderChatSearchParams"
-                }
-              ],
-              "discriminator": {
-                "propertyName": "provider_type",
-                "mapping": {
-                  "custom": "#/components/schemas/CustomProviderChatSearchParams",
-                  "builtin": "#/components/schemas/BuiltInProviderChatSearchParams"
-                }
-              },
-              "title": "Root"
+              "type": "string",
+              "title": "Agent Id"
+            }
+          },
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -6544,35 +6549,30 @@
         }
       }
     },
-    "/chat-v2": {
+    "/agents/{agent_id}/sessions/{session_id}/summary": {
       "post": {
         "tags": [
           "chat"
         ],
-        "summary": "Chat V2",
-        "operationId": "chat_v2_chat_v2_post",
+        "summary": "Summarize Endpoint",
+        "operationId": "summarize_endpoint_agents__agent_id__sessions__session_id__summary_post",
         "parameters": [
           {
-            "name": "root",
-            "in": "query",
+            "name": "agent_id",
+            "in": "path",
             "required": true,
             "schema": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/CustomProviderChatSearchParams"
-                },
-                {
-                  "$ref": "#/components/schemas/BuiltInProviderChatSearchParams"
-                }
-              ],
-              "discriminator": {
-                "propertyName": "provider_type",
-                "mapping": {
-                  "custom": "#/components/schemas/CustomProviderChatSearchParams",
-                  "builtin": "#/components/schemas/BuiltInProviderChatSearchParams"
-                }
-              },
-              "title": "Root"
+              "type": "string",
+              "title": "Agent Id"
+            }
+          },
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
             }
           }
         ],
@@ -6581,22 +6581,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/_SubmitMessage"
-                  },
-                  {
-                    "$ref": "#/components/schemas/_RegenerateMessage"
-                  }
-                ],
-                "discriminator": {
-                  "propertyName": "trigger",
-                  "mapping": {
-                    "submit-message": "#/components/schemas/_SubmitMessage",
-                    "regenerate-message": "#/components/schemas/_RegenerateMessage"
-                  }
-                },
-                "title": "Body"
+                "$ref": "#/components/schemas/_SummarizeRequest"
               }
             }
           }
@@ -6606,7 +6591,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/_SummarizeResponse"
+                }
               }
             }
           },
@@ -6674,23 +6661,6 @@
   },
   "components": {
     "schemas": {
-      "AgentCapabilities": {
-        "properties": {
-          "bash.retainInactiveSessions": {
-            "type": "boolean",
-            "title": "Bash.Retaininactivesessions",
-            "default": false
-          },
-          "graphql.mutations": {
-            "type": "boolean",
-            "title": "Graphql.Mutations",
-            "default": false
-          }
-        },
-        "type": "object",
-        "title": "AgentCapabilities",
-        "description": "Runtime capability state sent by the browser for a chat turn."
-      },
       "AgentSpanContext": {
         "properties": {
           "type": {
@@ -6949,37 +6919,259 @@
         "title": "AppContext",
         "description": "Per-turn browser clock context for resolving relative time requests."
       },
-      "BuiltInProviderChatSearchParams": {
+      "AssistantMessageMetadata": {
         "properties": {
-          "provider_type": {
+          "sessionId": {
+            "type": "string",
+            "title": "Sessionid"
+          },
+          "trace": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssistantMessageMetadataTraceIds"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "usage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssistantMessageMetadataUsage"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "sessionId"
+        ],
+        "title": "AssistantMessageMetadata",
+        "description": "Wire schema for the chat stream's `message_metadata` payload."
+      },
+      "AssistantMessageMetadataTraceIds": {
+        "properties": {
+          "traceId": {
+            "type": "string",
+            "title": "Traceid"
+          },
+          "rootSpanId": {
+            "type": "string",
+            "title": "Rootspanid"
+          }
+        },
+        "type": "object",
+        "required": [
+          "traceId",
+          "rootSpanId"
+        ],
+        "title": "AssistantMessageMetadataTraceIds"
+      },
+      "AssistantMessageMetadataUsage": {
+        "properties": {
+          "tokens": {
+            "$ref": "#/components/schemas/AssistantMessageMetadataUsageTokens"
+          },
+          "promptDetails": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssistantMessageMetadataUsageTokenDetails"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "tokens"
+        ],
+        "title": "AssistantMessageMetadataUsage"
+      },
+      "AssistantMessageMetadataUsageTokenDetails": {
+        "properties": {
+          "cacheRead": {
+            "type": "integer",
+            "title": "Cacheread"
+          },
+          "cacheWrite": {
+            "type": "integer",
+            "title": "Cachewrite"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cacheRead",
+          "cacheWrite"
+        ],
+        "title": "AssistantMessageMetadataUsageTokenDetails"
+      },
+      "AssistantMessageMetadataUsageTokens": {
+        "properties": {
+          "prompt": {
+            "type": "integer",
+            "title": "Prompt"
+          },
+          "completion": {
+            "type": "integer",
+            "title": "Completion"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          }
+        },
+        "type": "object",
+        "required": [
+          "prompt",
+          "completion",
+          "total"
+        ],
+        "title": "AssistantMessageMetadataUsageTokens"
+      },
+      "AssistantMetadataUIMessage": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "system",
+              "user",
+              "assistant"
+            ],
+            "title": "Role"
+          },
+          "metadata": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssistantMessageMetadata"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "parts": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/TextUIPart"
+                },
+                {
+                  "$ref": "#/components/schemas/ReasoningUIPart"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolInputStreamingPart"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolInputAvailablePart"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolOutputAvailablePart"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolOutputErrorPart"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolApprovalRequestedPart"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolApprovalRespondedPart"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolOutputDeniedPart"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicToolInputStreamingPart"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicToolInputAvailablePart"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicToolOutputAvailablePart"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicToolOutputErrorPart"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicToolApprovalRequestedPart"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicToolApprovalRespondedPart"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicToolOutputDeniedPart"
+                },
+                {
+                  "$ref": "#/components/schemas/SourceUrlUIPart"
+                },
+                {
+                  "$ref": "#/components/schemas/SourceDocumentUIPart"
+                },
+                {
+                  "$ref": "#/components/schemas/FileUIPart"
+                },
+                {
+                  "$ref": "#/components/schemas/DataUIPart"
+                },
+                {
+                  "$ref": "#/components/schemas/StepStartUIPart"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Parts"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "role",
+          "parts"
+        ],
+        "title": "AssistantMetadataUIMessage",
+        "description": "`UIMessage` with `metadata` narrowed to `AssistantMessageMetadata`."
+      },
+      "BuiltInProviderModelSelection": {
+        "properties": {
+          "providerType": {
             "type": "string",
             "const": "builtin",
-            "title": "Provider Type"
+            "title": "Providertype"
           },
           "provider": {
             "$ref": "#/components/schemas/ModelProvider"
           },
-          "model_name": {
+          "modelName": {
             "type": "string",
-            "title": "Model Name"
+            "title": "Modelname"
           },
-          "openai_api_type": {
+          "openaiApiType": {
             "type": "string",
             "enum": [
               "chat_completions",
               "responses"
             ],
-            "title": "Openai Api Type",
+            "title": "Openaiapitype",
             "default": "responses"
           }
         },
         "type": "object",
         "required": [
-          "provider_type",
+          "providerType",
           "provider",
-          "model_name"
+          "modelName"
         ],
-        "title": "BuiltInProviderChatSearchParams",
+        "title": "BuiltInProviderModelSelection",
         "description": "Chat against a Phoenix built-in provider.\n\nCredentials and connection details (base URL, Azure endpoint, AWS\nregion) are resolved from the secret store first and the process\nenvironment second. ``openai_api_type`` is honoured by the OpenAI and\nAzure OpenAI branches; other providers ignore it."
       },
       "CategoricalAnnotationConfig": {
@@ -7094,6 +7286,205 @@
           "label"
         ],
         "title": "CategoricalAnnotationValue"
+      },
+      "ChatContext": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AppContext"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectContext"
+          },
+          {
+            "$ref": "#/components/schemas/TraceContext"
+          },
+          {
+            "$ref": "#/components/schemas/AgentSpanContext"
+          },
+          {
+            "$ref": "#/components/schemas/PlaygroundContext"
+          },
+          {
+            "$ref": "#/components/schemas/GraphQLContext"
+          },
+          {
+            "$ref": "#/components/schemas/WebAccessContext"
+          }
+        ],
+        "title": "ChatContext",
+        "description": "Discriminated union of every UI-state context the agent understands.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "app": "#/components/schemas/AppContext",
+            "graphql": "#/components/schemas/GraphQLContext",
+            "playground": "#/components/schemas/PlaygroundContext",
+            "project": "#/components/schemas/ProjectContext",
+            "span": "#/components/schemas/AgentSpanContext",
+            "trace": "#/components/schemas/TraceContext",
+            "web_access": "#/components/schemas/WebAccessContext"
+          }
+        }
+      },
+      "ChatRegenerateMessage": {
+        "properties": {
+          "trigger": {
+            "type": "string",
+            "const": "regenerate-message",
+            "title": "Trigger"
+          },
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "messages": {
+            "items": {
+              "$ref": "#/components/schemas/AssistantMetadataUIMessage"
+            },
+            "type": "array",
+            "title": "Messages"
+          },
+          "messageId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Messageid"
+          },
+          "ingestTraces": {
+            "type": "boolean",
+            "title": "Ingesttraces",
+            "default": false
+          },
+          "exportRemoteTraces": {
+            "type": "boolean",
+            "title": "Exportremotetraces",
+            "default": false
+          },
+          "contexts": {
+            "items": {
+              "$ref": "#/components/schemas/ChatContext"
+            },
+            "type": "array",
+            "title": "Contexts"
+          },
+          "model": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CustomProviderModelSelection"
+              },
+              {
+                "$ref": "#/components/schemas/BuiltInProviderModelSelection"
+              }
+            ],
+            "title": "Model",
+            "discriminator": {
+              "propertyName": "providerType",
+              "mapping": {
+                "builtin": "#/components/schemas/BuiltInProviderModelSelection",
+                "custom": "#/components/schemas/CustomProviderModelSelection"
+              }
+            }
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "trigger",
+          "id",
+          "messages",
+          "model"
+        ],
+        "title": "ChatRegenerateMessage",
+        "description": "Regenerate message extended with Phoenix-specific fields."
+      },
+      "ChatRequest": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ChatSubmitMessage"
+          },
+          {
+            "$ref": "#/components/schemas/ChatRegenerateMessage"
+          }
+        ],
+        "title": "ChatRequest",
+        "description": "Discriminated union of chat request payloads.",
+        "discriminator": {
+          "propertyName": "trigger",
+          "mapping": {
+            "regenerate-message": "#/components/schemas/ChatRegenerateMessage",
+            "submit-message": "#/components/schemas/ChatSubmitMessage"
+          }
+        }
+      },
+      "ChatSubmitMessage": {
+        "properties": {
+          "trigger": {
+            "type": "string",
+            "const": "submit-message",
+            "title": "Trigger",
+            "default": "submit-message"
+          },
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "messages": {
+            "items": {
+              "$ref": "#/components/schemas/AssistantMetadataUIMessage"
+            },
+            "type": "array",
+            "title": "Messages"
+          },
+          "ingestTraces": {
+            "type": "boolean",
+            "title": "Ingesttraces",
+            "default": false
+          },
+          "exportRemoteTraces": {
+            "type": "boolean",
+            "title": "Exportremotetraces",
+            "default": false
+          },
+          "contexts": {
+            "items": {
+              "$ref": "#/components/schemas/ChatContext"
+            },
+            "type": "array",
+            "title": "Contexts"
+          },
+          "model": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CustomProviderModelSelection"
+              },
+              {
+                "$ref": "#/components/schemas/BuiltInProviderModelSelection"
+              }
+            ],
+            "title": "Model",
+            "discriminator": {
+              "propertyName": "providerType",
+              "mapping": {
+                "builtin": "#/components/schemas/BuiltInProviderModelSelection",
+                "custom": "#/components/schemas/CustomProviderModelSelection"
+              }
+            }
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "id",
+          "messages",
+          "model"
+        ],
+        "title": "ChatSubmitMessage",
+        "description": "Submit message extended with Phoenix-specific fields."
       },
       "ContinuousAnnotationConfig": {
         "properties": {
@@ -7684,30 +8075,30 @@
         ],
         "title": "CreateUserResponseBody"
       },
-      "CustomProviderChatSearchParams": {
+      "CustomProviderModelSelection": {
         "properties": {
-          "provider_type": {
+          "providerType": {
             "type": "string",
             "const": "custom",
-            "title": "Provider Type"
+            "title": "Providertype"
           },
-          "provider_id": {
-            "type": "integer",
-            "title": "Provider Id"
-          },
-          "model_name": {
+          "providerId": {
             "type": "string",
-            "title": "Model Name"
+            "title": "Providerid"
+          },
+          "modelName": {
+            "type": "string",
+            "title": "Modelname"
           }
         },
         "type": "object",
         "required": [
-          "provider_type",
-          "provider_id",
-          "model_name"
+          "providerType",
+          "providerId",
+          "modelName"
         ],
-        "title": "CustomProviderChatSearchParams",
-        "description": "Chat against a stored custom provider record.\n\nThe wire format of ``provider_id`` is a relay GlobalID (e.g.\n``UHJvdmlkZXI6MTM=``). It is decoded to its integer node ID at\nparse time so downstream consumers don't need to know the GlobalID\nencoding."
+        "title": "CustomProviderModelSelection",
+        "description": "Chat against a stored custom provider record."
       },
       "DataUIPart": {
         "properties": {
@@ -7989,6 +8380,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "approval-requested",
@@ -7997,6 +8399,17 @@
           },
           "input": {
             "title": "Input"
+          },
+          "providerExecuted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Providerexecuted"
           },
           "callProviderMetadata": {
             "anyOf": [
@@ -8054,6 +8467,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "approval-responded",
@@ -8062,6 +8486,17 @@
           },
           "input": {
             "title": "Input"
+          },
+          "providerExecuted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Providerexecuted"
           },
           "callProviderMetadata": {
             "anyOf": [
@@ -8119,6 +8554,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "input-available",
@@ -8127,6 +8573,17 @@
           },
           "input": {
             "title": "Input"
+          },
+          "providerExecuted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Providerexecuted"
           },
           "callProviderMetadata": {
             "anyOf": [
@@ -8184,6 +8641,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "input-streaming",
@@ -8198,6 +8666,17 @@
               }
             ],
             "title": "Input"
+          },
+          "providerExecuted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Providerexecuted"
           },
           "callProviderMetadata": {
             "anyOf": [
@@ -8254,6 +8733,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "output-available",
@@ -8265,6 +8755,17 @@
           },
           "output": {
             "title": "Output"
+          },
+          "providerExecuted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Providerexecuted"
           },
           "callProviderMetadata": {
             "anyOf": [
@@ -8334,6 +8835,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "output-denied",
@@ -8342,6 +8854,17 @@
           },
           "input": {
             "title": "Input"
+          },
+          "providerExecuted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Providerexecuted"
           },
           "callProviderMetadata": {
             "anyOf": [
@@ -8399,6 +8922,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "output-error",
@@ -8411,6 +8945,17 @@
           "errorText": {
             "type": "string",
             "title": "Errortext"
+          },
+          "providerExecuted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Providerexecuted"
           },
           "callProviderMetadata": {
             "anyOf": [
@@ -8736,6 +9281,49 @@
             ],
             "title": "Description"
           },
+          "optimization_direction": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/OptimizationDirection"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "threshold": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Threshold"
+          },
+          "lower_bound": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lower Bound"
+          },
+          "upper_bound": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper Bound"
+          },
           "id": {
             "type": "string",
             "title": "Id"
@@ -8770,6 +9358,49 @@
               }
             ],
             "title": "Description"
+          },
+          "optimization_direction": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/OptimizationDirection"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "threshold": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Threshold"
+          },
+          "lower_bound": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lower Bound"
+          },
+          "upper_bound": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper Bound"
           }
         },
         "type": "object",
@@ -9220,6 +9851,26 @@
           "data"
         ],
         "title": "GetViewerResponseBody"
+      },
+      "GraphQLContext": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "graphql",
+            "title": "Type"
+          },
+          "mutationsEnabled": {
+            "type": "boolean",
+            "title": "Mutationsenabled"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "mutationsEnabled"
+        ],
+        "title": "GraphQLContext",
+        "description": "GraphQL runtime state."
       },
       "HTTPValidationError": {
         "properties": {
@@ -10338,6 +10989,29 @@
         "additionalProperties": false,
         "type": "object",
         "title": "OtlpStatus"
+      },
+      "PlaygroundContext": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "playground",
+            "title": "Type"
+          },
+          "instanceIds": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Instanceids"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "instanceIds"
+        ],
+        "title": "PlaygroundContext",
+        "description": "Playground prompt editor state mounted in the current browser route."
       },
       "Project": {
         "properties": {
@@ -12736,6 +13410,12 @@
             "minLength": 1,
             "title": "Note",
             "description": "The note text to add to the session"
+          },
+          "identifier": {
+            "type": "string",
+            "title": "Identifier",
+            "description": "Optional caller-supplied identifier. When non-empty, the note is upserted on (session_id, name='note', identifier) — repeated calls with the same identifier overwrite the existing note. When omitted or empty, the server stamps a unique 'px-session-note:<uuid>' identifier so each call appends a new note.",
+            "default": ""
           }
         },
         "type": "object",
@@ -13317,6 +13997,12 @@
             "minLength": 1,
             "title": "Note",
             "description": "The note text to add to the span"
+          },
+          "identifier": {
+            "type": "string",
+            "title": "Identifier",
+            "description": "Optional caller-supplied identifier. When non-empty, the note is upserted on (span_id, name='note', identifier) — repeated calls with the same identifier overwrite the existing note. When omitted or empty, the server stamps a unique 'px-span-note:<uuid>' identifier so each call appends a new note.",
+            "default": ""
           }
         },
         "type": "object",
@@ -13465,6 +14151,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "approval-requested",
@@ -13571,6 +14268,17 @@
           "toolCallId": {
             "type": "string",
             "title": "Toolcallid"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
           },
           "state": {
             "type": "string",
@@ -13708,6 +14416,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "input-available",
@@ -13784,6 +14503,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "input-streaming",
@@ -13859,6 +14589,17 @@
           "toolCallId": {
             "type": "string",
             "title": "Toolcallid"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
           },
           "state": {
             "type": "string",
@@ -13956,6 +14697,17 @@
             "type": "string",
             "title": "Toolcallid"
           },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
           "state": {
             "type": "string",
             "const": "output-denied",
@@ -14031,6 +14783,17 @@
           "toolCallId": {
             "type": "string",
             "title": "Toolcallid"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
           },
           "state": {
             "type": "string",
@@ -14452,6 +15215,12 @@
             "minLength": 1,
             "title": "Note",
             "description": "The note text to add to the trace"
+          },
+          "identifier": {
+            "type": "string",
+            "title": "Identifier",
+            "description": "Optional caller-supplied identifier. When non-empty, the note is upserted on (trace_id, name='note', identifier) — repeated calls with the same identifier overwrite the existing note. When omitted or empty, the server stamps a unique 'px-trace-note:<uuid>' identifier so each call appends a new note.",
+            "default": ""
           }
         },
         "type": "object",
@@ -14930,16 +15699,37 @@
         ],
         "title": "ValidationError"
       },
-      "_RegenerateMessage": {
+      "WebAccessContext": {
         "properties": {
-          "trigger": {
+          "type": {
             "type": "string",
-            "const": "regenerate-message",
-            "title": "Trigger"
+            "const": "web_access",
+            "title": "Type"
           },
-          "id": {
-            "type": "string",
-            "title": "Id"
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "enabled"
+        ],
+        "title": "WebAccessContext",
+        "description": "User's per-turn request to expose web search / fetch tools."
+      },
+      "_SummarizeRequest": {
+        "properties": {
+          "ingestTraces": {
+            "type": "boolean",
+            "title": "Ingesttraces",
+            "default": false
+          },
+          "exportRemoteTraces": {
+            "type": "boolean",
+            "title": "Exportremotetraces",
+            "default": false
           },
           "messages": {
             "items": {
@@ -14948,130 +15738,64 @@
             "type": "array",
             "title": "Messages"
           },
-          "messageId": {
-            "anyOf": [
+          "model": {
+            "oneOf": [
               {
-                "type": "string"
+                "$ref": "#/components/schemas/CustomProviderModelSelection"
               },
               {
-                "type": "null"
+                "$ref": "#/components/schemas/BuiltInProviderModelSelection"
               }
             ],
-            "title": "Messageid"
-          },
-          "contexts": {
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/AppContext"
-                },
-                {
-                  "$ref": "#/components/schemas/ProjectContext"
-                },
-                {
-                  "$ref": "#/components/schemas/TraceContext"
-                },
-                {
-                  "$ref": "#/components/schemas/AgentSpanContext"
-                }
-              ],
-              "discriminator": {
-                "propertyName": "type",
-                "mapping": {
-                  "app": "#/components/schemas/AppContext",
-                  "project": "#/components/schemas/ProjectContext",
-                  "span": "#/components/schemas/AgentSpanContext",
-                  "trace": "#/components/schemas/TraceContext"
-                }
+            "title": "Model",
+            "discriminator": {
+              "propertyName": "providerType",
+              "mapping": {
+                "builtin": "#/components/schemas/BuiltInProviderModelSelection",
+                "custom": "#/components/schemas/CustomProviderModelSelection"
               }
-            },
-            "type": "array",
-            "title": "Contexts"
-          },
-          "capabilities": {
-            "$ref": "#/components/schemas/AgentCapabilities"
-          },
-          "sessionId": {
-            "type": "string",
-            "title": "Sessionid"
+            }
           }
         },
-        "additionalProperties": true,
         "type": "object",
         "required": [
-          "trigger",
-          "id",
           "messages",
-          "sessionId"
+          "model"
         ],
-        "title": "_RegenerateMessage",
-        "description": "Regenerate message extended with Phoenix-specific fields."
+        "title": "_SummarizeRequest",
+        "description": "Body for POST /agents/{agent_id}/sessions/{session_id}/summary.\n\nCarries the Vercel-style messages array; the backend owns the prompt and\nthe structured-output tool schema."
       },
-      "_SubmitMessage": {
+      "_SummarizeResponse": {
         "properties": {
-          "trigger": {
+          "summary": {
             "type": "string",
-            "const": "submit-message",
-            "title": "Trigger",
-            "default": "submit-message"
-          },
-          "id": {
-            "type": "string",
-            "title": "Id"
-          },
-          "messages": {
-            "items": {
-              "$ref": "#/components/schemas/UIMessage"
-            },
-            "type": "array",
-            "title": "Messages"
-          },
-          "contexts": {
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/AppContext"
-                },
-                {
-                  "$ref": "#/components/schemas/ProjectContext"
-                },
-                {
-                  "$ref": "#/components/schemas/TraceContext"
-                },
-                {
-                  "$ref": "#/components/schemas/AgentSpanContext"
-                }
-              ],
-              "discriminator": {
-                "propertyName": "type",
-                "mapping": {
-                  "app": "#/components/schemas/AppContext",
-                  "project": "#/components/schemas/ProjectContext",
-                  "span": "#/components/schemas/AgentSpanContext",
-                  "trace": "#/components/schemas/TraceContext"
-                }
-              }
-            },
-            "type": "array",
-            "title": "Contexts"
-          },
-          "capabilities": {
-            "$ref": "#/components/schemas/AgentCapabilities"
-          },
-          "sessionId": {
-            "type": "string",
-            "title": "Sessionid"
+            "title": "Summary"
           }
         },
-        "additionalProperties": true,
         "type": "object",
         "required": [
-          "id",
-          "messages",
-          "sessionId"
+          "summary"
         ],
-        "title": "_SubmitMessage",
-        "description": "Submit message extended with Phoenix-specific fields."
+        "title": "_SummarizeResponse"
+      },
+      "ToolCallProviderMetadata": {
+        "additionalProperties": false,
+        "description": "Payload Phoenix stamps under the ``phoenix`` namespace of Vercel AI\n``providerMetadata`` on tool-call chunks (``tool-input-start`` and\n``tool-input-available``).",
+        "properties": {
+          "tool_execution_environment": {
+            "enum": [
+              "client",
+              "server"
+            ],
+            "title": "Tool Execution Environment",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tool_execution_environment"
+        ],
+        "title": "ToolCallProviderMetadata",
+        "type": "object"
       }
     }
   },
