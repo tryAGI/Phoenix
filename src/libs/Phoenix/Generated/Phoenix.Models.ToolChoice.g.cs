@@ -34,6 +34,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptToolChoiceNone? value)
+        {
+            value = None;
+            return IsNone;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptToolChoiceZeroOrMore? ZeroOrMore { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ZeroOrMore))]
 #endif
         public bool IsZeroOrMore => ZeroOrMore != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickZeroOrMore(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptToolChoiceZeroOrMore? value)
+        {
+            value = ZeroOrMore;
+            return IsZeroOrMore;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOneOrMore(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptToolChoiceOneOrMore? value)
+        {
+            value = OneOrMore;
+            return IsOneOrMore;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptToolChoiceSpecificFunctionTool? SpecificFunction { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpecificFunction))]
 #endif
         public bool IsSpecificFunction => SpecificFunction != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpecificFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptToolChoiceSpecificFunctionTool? value)
+        {
+            value = SpecificFunction;
+            return IsSpecificFunction;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -204,10 +256,10 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.PromptToolChoiceNone?, TResult>? none = null,
-            global::System.Func<global::Phoenix.PromptToolChoiceZeroOrMore?, TResult>? zeroOrMore = null,
-            global::System.Func<global::Phoenix.PromptToolChoiceOneOrMore?, TResult>? oneOrMore = null,
-            global::System.Func<global::Phoenix.PromptToolChoiceSpecificFunctionTool?, TResult>? specificFunction = null,
+            global::System.Func<global::Phoenix.PromptToolChoiceNone, TResult>? none = null,
+            global::System.Func<global::Phoenix.PromptToolChoiceZeroOrMore, TResult>? zeroOrMore = null,
+            global::System.Func<global::Phoenix.PromptToolChoiceOneOrMore, TResult>? oneOrMore = null,
+            global::System.Func<global::Phoenix.PromptToolChoiceSpecificFunctionTool, TResult>? specificFunction = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +291,46 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.PromptToolChoiceNone?>? none = null,
-            global::System.Action<global::Phoenix.PromptToolChoiceZeroOrMore?>? zeroOrMore = null,
-            global::System.Action<global::Phoenix.PromptToolChoiceOneOrMore?>? oneOrMore = null,
-            global::System.Action<global::Phoenix.PromptToolChoiceSpecificFunctionTool?>? specificFunction = null,
+            global::System.Action<global::Phoenix.PromptToolChoiceNone>? none = null,
+
+            global::System.Action<global::Phoenix.PromptToolChoiceZeroOrMore>? zeroOrMore = null,
+
+            global::System.Action<global::Phoenix.PromptToolChoiceOneOrMore>? oneOrMore = null,
+
+            global::System.Action<global::Phoenix.PromptToolChoiceSpecificFunctionTool>? specificFunction = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNone)
+            {
+                none?.Invoke(None!);
+            }
+            else if (IsZeroOrMore)
+            {
+                zeroOrMore?.Invoke(ZeroOrMore!);
+            }
+            else if (IsOneOrMore)
+            {
+                oneOrMore?.Invoke(OneOrMore!);
+            }
+            else if (IsSpecificFunction)
+            {
+                specificFunction?.Invoke(SpecificFunction!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.PromptToolChoiceNone>? none = null,
+            global::System.Action<global::Phoenix.PromptToolChoiceZeroOrMore>? zeroOrMore = null,
+            global::System.Action<global::Phoenix.PromptToolChoiceOneOrMore>? oneOrMore = null,
+            global::System.Action<global::Phoenix.PromptToolChoiceSpecificFunctionTool>? specificFunction = null,
             bool validate = true)
         {
             if (validate)

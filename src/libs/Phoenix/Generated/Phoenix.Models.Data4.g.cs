@@ -34,6 +34,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCategorical(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.CategoricalAnnotationConfig? value)
+        {
+            value = Categorical;
+            return IsCategorical;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ContinuousAnnotationConfig? Continuous { get; init; }
 #else
@@ -51,6 +64,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContinuous(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.ContinuousAnnotationConfig? value)
+        {
+            value = Continuous;
+            return IsContinuous;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.FreeformAnnotationConfig? Freeform { get; init; }
 #else
@@ -64,6 +90,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Freeform))]
 #endif
         public bool IsFreeform => Freeform != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFreeform(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.FreeformAnnotationConfig? value)
+        {
+            value = Freeform;
+            return IsFreeform;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -165,9 +204,9 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.CategoricalAnnotationConfig?, TResult>? categorical = null,
-            global::System.Func<global::Phoenix.ContinuousAnnotationConfig?, TResult>? continuous = null,
-            global::System.Func<global::Phoenix.FreeformAnnotationConfig?, TResult>? freeform = null,
+            global::System.Func<global::Phoenix.CategoricalAnnotationConfig, TResult>? categorical = null,
+            global::System.Func<global::Phoenix.ContinuousAnnotationConfig, TResult>? continuous = null,
+            global::System.Func<global::Phoenix.FreeformAnnotationConfig, TResult>? freeform = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +234,39 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.CategoricalAnnotationConfig?>? categorical = null,
-            global::System.Action<global::Phoenix.ContinuousAnnotationConfig?>? continuous = null,
-            global::System.Action<global::Phoenix.FreeformAnnotationConfig?>? freeform = null,
+            global::System.Action<global::Phoenix.CategoricalAnnotationConfig>? categorical = null,
+
+            global::System.Action<global::Phoenix.ContinuousAnnotationConfig>? continuous = null,
+
+            global::System.Action<global::Phoenix.FreeformAnnotationConfig>? freeform = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCategorical)
+            {
+                categorical?.Invoke(Categorical!);
+            }
+            else if (IsContinuous)
+            {
+                continuous?.Invoke(Continuous!);
+            }
+            else if (IsFreeform)
+            {
+                freeform?.Invoke(Freeform!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.CategoricalAnnotationConfig>? categorical = null,
+            global::System.Action<global::Phoenix.ContinuousAnnotationConfig>? continuous = null,
+            global::System.Action<global::Phoenix.FreeformAnnotationConfig>? freeform = null,
             bool validate = true)
         {
             if (validate)

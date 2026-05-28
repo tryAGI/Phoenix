@@ -17,4 +17,5 @@ autosdk generate openapi.json \
   --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations \
-  --security-scheme Http:Header:Bearer
+  --security-scheme Http:Header:Bearer \
+  --auth-env-var PHOENIX_API_KEY

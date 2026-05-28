@@ -34,6 +34,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptChatTemplate? value)
+        {
+            value = Chat;
+            return IsChat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptStringTemplate? String { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(String))]
 #endif
         public bool IsString => String != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptStringTemplate? value)
+        {
+            value = String;
+            return IsString;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.PromptChatTemplate?, TResult>? chat = null,
-            global::System.Func<global::Phoenix.PromptStringTemplate?, TResult>? @string = null,
+            global::System.Func<global::Phoenix.PromptChatTemplate, TResult>? chat = null,
+            global::System.Func<global::Phoenix.PromptStringTemplate, TResult>? @string = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.PromptChatTemplate?>? chat = null,
-            global::System.Action<global::Phoenix.PromptStringTemplate?>? @string = null,
+            global::System.Action<global::Phoenix.PromptChatTemplate>? chat = null,
+
+            global::System.Action<global::Phoenix.PromptStringTemplate>? @string = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChat)
+            {
+                chat?.Invoke(Chat!);
+            }
+            else if (IsString)
+            {
+                @string?.Invoke(String!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.PromptChatTemplate>? chat = null,
+            global::System.Action<global::Phoenix.PromptStringTemplate>? @string = null,
             bool validate = true)
         {
             if (validate)
