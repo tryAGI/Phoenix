@@ -25,6 +25,10 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeNullableJsonConverter),
 
+            typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageEditPermissionJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageEditPermissionNullableJsonConverter),
+
             typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageModelDiscriminatorProviderTypeJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageModelDiscriminatorProviderTypeNullableJsonConverter),
@@ -32,6 +36,10 @@ namespace Phoenix
             typeof(global::Phoenix.JsonConverters.ChatRequestDiscriminatorTriggerJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.ChatRequestDiscriminatorTriggerNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatSubmitMessageEditPermissionJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatSubmitMessageEditPermissionNullableJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.ChatSubmitMessageModelDiscriminatorProviderTypeJsonConverter),
 
@@ -520,6 +528,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AssistantMetadataUIMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.ChatContext>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRegenerateMessageEditPermission), TypeInfoPropertyName = "ChatRegenerateMessageEditPermission2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Model), TypeInfoPropertyName = "Model2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CustomProviderModelSelection))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRegenerateMessageModelDiscriminator))]
@@ -528,6 +537,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatSubmitMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRequestDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRequestDiscriminatorTrigger), TypeInfoPropertyName = "ChatRequestDiscriminatorTrigger2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatSubmitMessageEditPermission), TypeInfoPropertyName = "ChatSubmitMessageEditPermission2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Model2), TypeInfoPropertyName = "Model22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatSubmitMessageModelDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatSubmitMessageModelDiscriminatorProviderType), TypeInfoPropertyName = "ChatSubmitMessageModelDiscriminatorProviderType2")]

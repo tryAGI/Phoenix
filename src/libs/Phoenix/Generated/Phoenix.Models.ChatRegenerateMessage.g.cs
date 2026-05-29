@@ -54,6 +54,13 @@ namespace Phoenix
         public global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? Contexts { get; set; }
 
         /// <summary>
+        /// Default Value: manual
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("editPermission")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageEditPermissionJsonConverter))]
+        public global::Phoenix.ChatRegenerateMessageEditPermission? EditPermission { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -81,6 +88,9 @@ namespace Phoenix
         /// Default Value: false
         /// </param>
         /// <param name="contexts"></param>
+        /// <param name="editPermission">
+        /// Default Value: manual
+        /// </param>
         /// <param name="trigger"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -93,6 +103,7 @@ namespace Phoenix
             bool? ingestTraces,
             bool? exportRemoteTraces,
             global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? contexts,
+            global::Phoenix.ChatRegenerateMessageEditPermission? editPermission,
             string trigger = "regenerate-message")
         {
             this.Trigger = trigger;
@@ -102,6 +113,7 @@ namespace Phoenix
             this.IngestTraces = ingestTraces;
             this.ExportRemoteTraces = exportRemoteTraces;
             this.Contexts = contexts;
+            this.EditPermission = editPermission;
             this.Model = model;
         }
 
