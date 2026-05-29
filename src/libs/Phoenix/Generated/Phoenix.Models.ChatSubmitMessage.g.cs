@@ -47,6 +47,13 @@ namespace Phoenix
         public global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? Contexts { get; set; }
 
         /// <summary>
+        /// Default Value: manual
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("editPermission")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.ChatSubmitMessageEditPermissionJsonConverter))]
+        public global::Phoenix.ChatSubmitMessageEditPermission? EditPermission { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -76,6 +83,9 @@ namespace Phoenix
         /// Default Value: false
         /// </param>
         /// <param name="contexts"></param>
+        /// <param name="editPermission">
+        /// Default Value: manual
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,7 +96,8 @@ namespace Phoenix
             string? trigger,
             bool? ingestTraces,
             bool? exportRemoteTraces,
-            global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? contexts)
+            global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? contexts,
+            global::Phoenix.ChatSubmitMessageEditPermission? editPermission)
         {
             this.Trigger = trigger;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -94,6 +105,7 @@ namespace Phoenix
             this.IngestTraces = ingestTraces;
             this.ExportRemoteTraces = exportRemoteTraces;
             this.Contexts = contexts;
+            this.EditPermission = editPermission;
             this.Model = model;
         }
 
