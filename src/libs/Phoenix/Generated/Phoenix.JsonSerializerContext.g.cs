@@ -527,6 +527,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TraceContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CodeEvaluatorContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.LlmEvaluatorContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DatasetContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GraphQLContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.WebAccessContext))]
