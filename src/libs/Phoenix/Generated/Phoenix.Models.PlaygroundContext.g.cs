@@ -18,9 +18,8 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("instanceIds")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int> InstanceIds { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("instances")]
+        public global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceContext>? Instances { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,17 +30,17 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PlaygroundContext" /> class.
         /// </summary>
-        /// <param name="instanceIds"></param>
+        /// <param name="instances"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PlaygroundContext(
-            global::System.Collections.Generic.IList<int> instanceIds,
+            global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceContext>? instances,
             string type = "playground")
         {
             this.Type = type;
-            this.InstanceIds = instanceIds ?? throw new global::System.ArgumentNullException(nameof(instanceIds));
+            this.Instances = instances;
         }
 
         /// <summary>
