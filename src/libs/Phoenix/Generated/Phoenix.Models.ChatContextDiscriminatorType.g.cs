@@ -15,6 +15,14 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        CodeEvaluator,
+        /// <summary>
+        /// 
+        /// </summary>
+        Dataset,
+        /// <summary>
+        /// 
+        /// </summary>
         Graphql,
         /// <summary>
         /// 
@@ -51,6 +59,8 @@ namespace Phoenix
             return value switch
             {
                 ChatContextDiscriminatorType.App => "app",
+                ChatContextDiscriminatorType.CodeEvaluator => "code_evaluator",
+                ChatContextDiscriminatorType.Dataset => "dataset",
                 ChatContextDiscriminatorType.Graphql => "graphql",
                 ChatContextDiscriminatorType.Playground => "playground",
                 ChatContextDiscriminatorType.Project => "project",
@@ -68,6 +78,8 @@ namespace Phoenix
             return value switch
             {
                 "app" => ChatContextDiscriminatorType.App,
+                "code_evaluator" => ChatContextDiscriminatorType.CodeEvaluator,
+                "dataset" => ChatContextDiscriminatorType.Dataset,
                 "graphql" => ChatContextDiscriminatorType.Graphql,
                 "playground" => ChatContextDiscriminatorType.Playground,
                 "project" => ChatContextDiscriminatorType.Project,
