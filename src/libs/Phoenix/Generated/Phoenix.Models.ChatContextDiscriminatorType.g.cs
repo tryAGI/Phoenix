@@ -27,6 +27,10 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        LlmEvaluator,
+        /// <summary>
+        /// 
+        /// </summary>
         Playground,
         /// <summary>
         /// 
@@ -62,6 +66,7 @@ namespace Phoenix
                 ChatContextDiscriminatorType.CodeEvaluator => "code_evaluator",
                 ChatContextDiscriminatorType.Dataset => "dataset",
                 ChatContextDiscriminatorType.Graphql => "graphql",
+                ChatContextDiscriminatorType.LlmEvaluator => "llm_evaluator",
                 ChatContextDiscriminatorType.Playground => "playground",
                 ChatContextDiscriminatorType.Project => "project",
                 ChatContextDiscriminatorType.Span => "span",
@@ -81,6 +86,7 @@ namespace Phoenix
                 "code_evaluator" => ChatContextDiscriminatorType.CodeEvaluator,
                 "dataset" => ChatContextDiscriminatorType.Dataset,
                 "graphql" => ChatContextDiscriminatorType.Graphql,
+                "llm_evaluator" => ChatContextDiscriminatorType.LlmEvaluator,
                 "playground" => ChatContextDiscriminatorType.Playground,
                 "project" => ChatContextDiscriminatorType.Project,
                 "span" => ChatContextDiscriminatorType.Span,

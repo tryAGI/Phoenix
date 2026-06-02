@@ -63,6 +63,13 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.CodeEvaluatorContext)}");
                 codeEvaluator = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.LlmEvaluatorContext? llmEvaluator = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.LlmEvaluator)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LlmEvaluatorContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LlmEvaluatorContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.LlmEvaluatorContext)}");
+                llmEvaluator = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Phoenix.DatasetContext? dataset = default;
             if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Dataset)
             {
@@ -98,6 +105,8 @@ namespace Phoenix.JsonConverters
                 playground,
 
                 codeEvaluator,
+
+                llmEvaluator,
 
                 dataset,
 
@@ -153,6 +162,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.CodeEvaluatorContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.CodeEvaluatorContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.CodeEvaluatorContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeEvaluator!, typeInfo);
+            }
+            else if (value.IsLlmEvaluator)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LlmEvaluatorContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LlmEvaluatorContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.LlmEvaluatorContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LlmEvaluator!, typeInfo);
             }
             else if (value.IsDataset)
             {
