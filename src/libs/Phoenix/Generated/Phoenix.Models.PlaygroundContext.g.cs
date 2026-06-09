@@ -16,6 +16,12 @@ namespace Phoenix
         public string Type { get; set; } = "playground";
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("recordExperiments")]
+        public bool? RecordExperiments { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instances")]
@@ -30,16 +36,21 @@ namespace Phoenix
         /// <summary>
         /// Initializes a new instance of the <see cref="PlaygroundContext" /> class.
         /// </summary>
+        /// <param name="recordExperiments">
+        /// Default Value: true
+        /// </param>
         /// <param name="instances"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PlaygroundContext(
+            bool? recordExperiments,
             global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceContext>? instances,
             string type = "playground")
         {
             this.Type = type;
+            this.RecordExperiments = recordExperiments;
             this.Instances = instances;
         }
 
