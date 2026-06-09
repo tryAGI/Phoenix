@@ -54,6 +54,12 @@ namespace Phoenix
         public global::Phoenix.ChatSubmitMessageEditPermission? EditPermission { get; set; }
 
         /// <summary>
+        /// Skills the user explicitly requested via the prompt's slash-command affordance. The server force-loads each available skill by injecting a synthetic load_skill tool call/result at the tail of the message history. Unknown or context-unavailable names are ignored.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("requestedSkills")]
+        public global::System.Collections.Generic.IList<string>? RequestedSkills { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -86,6 +92,9 @@ namespace Phoenix
         /// <param name="editPermission">
         /// Default Value: manual
         /// </param>
+        /// <param name="requestedSkills">
+        /// Skills the user explicitly requested via the prompt's slash-command affordance. The server force-loads each available skill by injecting a synthetic load_skill tool call/result at the tail of the message history. Unknown or context-unavailable names are ignored.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -97,7 +106,8 @@ namespace Phoenix
             bool? ingestTraces,
             bool? exportRemoteTraces,
             global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? contexts,
-            global::Phoenix.ChatSubmitMessageEditPermission? editPermission)
+            global::Phoenix.ChatSubmitMessageEditPermission? editPermission,
+            global::System.Collections.Generic.IList<string>? requestedSkills)
         {
             this.Trigger = trigger;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -106,6 +116,7 @@ namespace Phoenix
             this.ExportRemoteTraces = exportRemoteTraces;
             this.Contexts = contexts;
             this.EditPermission = editPermission;
+            this.RequestedSkills = requestedSkills;
             this.Model = model;
         }
 
