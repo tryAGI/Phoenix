@@ -364,103 +364,103 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.Model? Type84 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.CustomProviderModelSelection? Type85 { get; set; }
+        public global::Phoenix.Model? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ChatRegenerateMessageModelDiscriminator? Type86 { get; set; }
+        public global::Phoenix.CustomProviderModelSelection? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ChatRegenerateMessageModelDiscriminatorProviderType? Type87 { get; set; }
+        public global::Phoenix.ChatRegenerateMessageModelDiscriminator? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ChatRequest? Type88 { get; set; }
+        public global::Phoenix.ChatRegenerateMessageModelDiscriminatorProviderType? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ChatSubmitMessage? Type89 { get; set; }
+        public global::Phoenix.ChatRequest? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ChatRequestDiscriminator? Type90 { get; set; }
+        public global::Phoenix.ChatSubmitMessage? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ChatRequestDiscriminatorTrigger? Type91 { get; set; }
+        public global::Phoenix.ChatRequestDiscriminator? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ChatSubmitMessageEditPermission? Type92 { get; set; }
+        public global::Phoenix.ChatRequestDiscriminatorTrigger? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.Model2? Type93 { get; set; }
+        public global::Phoenix.ChatSubmitMessageEditPermission? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ChatSubmitMessageModelDiscriminator? Type94 { get; set; }
+        public global::Phoenix.Model2? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ChatSubmitMessageModelDiscriminatorProviderType? Type95 { get; set; }
+        public global::Phoenix.ChatSubmitMessageModelDiscriminator? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ContinuousAnnotationConfig? Type96 { get; set; }
+        public global::Phoenix.ChatSubmitMessageModelDiscriminatorProviderType? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ContinuousAnnotationConfigData? Type97 { get; set; }
+        public global::Phoenix.ContinuousAnnotationConfig? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.CreateAnnotationConfigData? Type98 { get; set; }
+        public global::Phoenix.ContinuousAnnotationConfigData? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.FreeformAnnotationConfigData? Type99 { get; set; }
+        public global::Phoenix.CreateAnnotationConfigData? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.CreateAnnotationConfigDataDiscriminator? Type100 { get; set; }
+        public global::Phoenix.FreeformAnnotationConfigData? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.CreateAnnotationConfigDataDiscriminatorType? Type101 { get; set; }
+        public global::Phoenix.CreateAnnotationConfigDataDiscriminator? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.CreateAnnotationConfigResponseBody? Type102 { get; set; }
+        public global::Phoenix.CreateAnnotationConfigDataDiscriminatorType? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.Data? Type103 { get; set; }
+        public global::Phoenix.CreateAnnotationConfigResponseBody? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.FreeformAnnotationConfig? Type104 { get; set; }
+        public global::Phoenix.Data? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminator? Type105 { get; set; }
+        public global::Phoenix.FreeformAnnotationConfig? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType? Type106 { get; set; }
+        public global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminator? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.CreateExperimentRequestBody? Type107 { get; set; }
+        public global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type108 { get; set; }
+        public global::Phoenix.CreateExperimentRequestBody? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
