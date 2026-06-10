@@ -22,6 +22,12 @@ namespace Phoenix
         public bool? RecordExperiments { get; set; }
 
         /// <summary>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repetitions")]
+        public int? Repetitions { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instances")]
@@ -39,6 +45,9 @@ namespace Phoenix
         /// <param name="recordExperiments">
         /// Default Value: true
         /// </param>
+        /// <param name="repetitions">
+        /// Default Value: 1
+        /// </param>
         /// <param name="instances"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -46,11 +55,13 @@ namespace Phoenix
 #endif
         public PlaygroundContext(
             bool? recordExperiments,
+            int? repetitions,
             global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceContext>? instances,
             string type = "playground")
         {
             this.Type = type;
             this.RecordExperiments = recordExperiments;
+            this.Repetitions = repetitions;
             this.Instances = instances;
         }
 
