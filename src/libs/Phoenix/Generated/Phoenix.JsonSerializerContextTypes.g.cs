@@ -1036,739 +1036,751 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PlaygroundCustomProviderModelContext? Type252 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.PlaygroundEvaluatorContext>? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ModelVariant1? Type253 { get; set; }
+        public global::Phoenix.PlaygroundEvaluatorContext? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PlaygroundInstanceContextModelVariant1Discriminator? Type254 { get; set; }
+        public global::Phoenix.PlaygroundCustomProviderModelContext? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType? Type255 { get; set; }
+        public global::Phoenix.PlaygroundEvaluatorContextKind? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicInvocationParameters? Type256 { get; set; }
+        public global::Phoenix.ModelVariant1? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicInvocationParametersContent? Type257 { get; set; }
+        public global::Phoenix.PlaygroundInstanceContextModelVariant1Discriminator? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicOutputConfig? Type258 { get; set; }
+        public global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.Thinking? Type259 { get; set; }
+        public global::Phoenix.PromptAnthropicInvocationParameters? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicThinkingConfigDisabled? Type260 { get; set; }
+        public global::Phoenix.PromptAnthropicInvocationParametersContent? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicThinkingConfigEnabled? Type261 { get; set; }
+        public global::Phoenix.PromptAnthropicOutputConfig? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicThinkingConfigAdaptive? Type262 { get; set; }
+        public global::Phoenix.Thinking? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminator? Type263 { get; set; }
+        public global::Phoenix.PromptAnthropicThinkingConfigDisabled? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminatorType? Type264 { get; set; }
+        public global::Phoenix.PromptAnthropicThinkingConfigEnabled? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicOutputConfigEffort? Type265 { get; set; }
+        public global::Phoenix.PromptAnthropicThinkingConfigAdaptive? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicThinkingConfigAdaptiveDisplay? Type266 { get; set; }
+        public global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminator? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAnthropicThinkingConfigEnabledDisplay? Type267 { get; set; }
+        public global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminatorType? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAwsInvocationParameters? Type268 { get; set; }
+        public global::Phoenix.PromptAnthropicOutputConfigEffort? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAwsInvocationParametersContent? Type269 { get; set; }
+        public global::Phoenix.PromptAnthropicThinkingConfigAdaptiveDisplay? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAzureOpenAIInvocationParameters? Type270 { get; set; }
+        public global::Phoenix.PromptAnthropicThinkingConfigEnabledDisplay? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAzureOpenAIInvocationParametersContent? Type271 { get; set; }
+        public global::Phoenix.PromptAwsInvocationParameters? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptAzureOpenAIInvocationParametersContentReasoningEffort? Type272 { get; set; }
+        public global::Phoenix.PromptAwsInvocationParametersContent? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptCerebrasInvocationParameters? Type273 { get; set; }
+        public global::Phoenix.PromptAzureOpenAIInvocationParameters? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptCerebrasInvocationParametersContent? Type274 { get; set; }
+        public global::Phoenix.PromptAzureOpenAIInvocationParametersContent? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptCerebrasInvocationParametersContentReasoningEffort? Type275 { get; set; }
+        public global::Phoenix.PromptAzureOpenAIInvocationParametersContentReasoningEffort? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptChatTemplate? Type276 { get; set; }
+        public global::Phoenix.PromptCerebrasInvocationParameters? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.PromptMessage>? Type277 { get; set; }
+        public global::Phoenix.PromptCerebrasInvocationParametersContent? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptMessage? Type278 { get; set; }
+        public global::Phoenix.PromptCerebrasInvocationParametersContentReasoningEffort? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptDeepSeekInvocationParameters? Type279 { get; set; }
+        public global::Phoenix.PromptChatTemplate? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptDeepSeekInvocationParametersContent? Type280 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.PromptMessage>? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptDeepSeekInvocationParametersContentReasoningEffort? Type281 { get; set; }
+        public global::Phoenix.PromptMessage? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptFireworksInvocationParameters? Type282 { get; set; }
+        public global::Phoenix.PromptDeepSeekInvocationParameters? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptFireworksInvocationParametersContent? Type283 { get; set; }
+        public global::Phoenix.PromptDeepSeekInvocationParametersContent? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptFireworksInvocationParametersContentReasoningEffort? Type284 { get; set; }
+        public global::Phoenix.PromptDeepSeekInvocationParametersContentReasoningEffort? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptGoogleInvocationParameters? Type285 { get; set; }
+        public global::Phoenix.PromptFireworksInvocationParameters? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptGoogleInvocationParametersContent? Type286 { get; set; }
+        public global::Phoenix.PromptFireworksInvocationParametersContent? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptGoogleThinkingConfig? Type287 { get; set; }
+        public global::Phoenix.PromptFireworksInvocationParametersContentReasoningEffort? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptGoogleThinkingConfigThinkingLevel? Type288 { get; set; }
+        public global::Phoenix.PromptGoogleInvocationParameters? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptGroqInvocationParameters? Type289 { get; set; }
+        public global::Phoenix.PromptGoogleInvocationParametersContent? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptGroqInvocationParametersContent? Type290 { get; set; }
+        public global::Phoenix.PromptGoogleThinkingConfig? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptGroqInvocationParametersContentReasoningEffort? Type291 { get; set; }
+        public global::Phoenix.PromptGoogleThinkingConfigThinkingLevel? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptMessageRole? Type292 { get; set; }
+        public global::Phoenix.PromptGroqInvocationParameters? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<global::Phoenix.ContentVariant2Item>>? Type293 { get; set; }
+        public global::Phoenix.PromptGroqInvocationParametersContent? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.ContentVariant2Item>? Type294 { get; set; }
+        public global::Phoenix.PromptGroqInvocationParametersContentReasoningEffort? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ContentVariant2Item? Type295 { get; set; }
+        public global::Phoenix.PromptMessageRole? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.TextContentPart? Type296 { get; set; }
+        public global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<global::Phoenix.ContentVariant2Item>>? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ToolCallContentPart? Type297 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.ContentVariant2Item>? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ToolResultContentPart? Type298 { get; set; }
+        public global::Phoenix.ContentVariant2Item? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptMessageContentVariant2ItemDiscriminator? Type299 { get; set; }
+        public global::Phoenix.TextContentPart? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptMessageContentVariant2ItemDiscriminatorType? Type300 { get; set; }
+        public global::Phoenix.ToolCallContentPart? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptMoonshotInvocationParameters? Type301 { get; set; }
+        public global::Phoenix.ToolResultContentPart? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptMoonshotInvocationParametersContent? Type302 { get; set; }
+        public global::Phoenix.PromptMessageContentVariant2ItemDiscriminator? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptMoonshotInvocationParametersContentReasoningEffort? Type303 { get; set; }
+        public global::Phoenix.PromptMessageContentVariant2ItemDiscriminatorType? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptOllamaInvocationParameters? Type304 { get; set; }
+        public global::Phoenix.PromptMoonshotInvocationParameters? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptOllamaInvocationParametersContent? Type305 { get; set; }
+        public global::Phoenix.PromptMoonshotInvocationParametersContent? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptOllamaInvocationParametersContentReasoningEffort? Type306 { get; set; }
+        public global::Phoenix.PromptMoonshotInvocationParametersContentReasoningEffort? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptOpenAIInvocationParameters? Type307 { get; set; }
+        public global::Phoenix.PromptOllamaInvocationParameters? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptOpenAIInvocationParametersContent? Type308 { get; set; }
+        public global::Phoenix.PromptOllamaInvocationParametersContent? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptOpenAIInvocationParametersContentReasoningEffort? Type309 { get; set; }
+        public global::Phoenix.PromptOllamaInvocationParametersContentReasoningEffort? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptPerplexityInvocationParameters? Type310 { get; set; }
+        public global::Phoenix.PromptOpenAIInvocationParameters? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptPerplexityInvocationParametersContent? Type311 { get; set; }
+        public global::Phoenix.PromptOpenAIInvocationParametersContent? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptPerplexityInvocationParametersContentReasoningEffort? Type312 { get; set; }
+        public global::Phoenix.PromptOpenAIInvocationParametersContentReasoningEffort? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptResponseFormatJSONSchema? Type313 { get; set; }
+        public global::Phoenix.PromptPerplexityInvocationParameters? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptResponseFormatJSONSchemaDefinition? Type314 { get; set; }
+        public global::Phoenix.PromptPerplexityInvocationParametersContent? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptStringTemplate? Type315 { get; set; }
+        public global::Phoenix.PromptPerplexityInvocationParametersContentReasoningEffort? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptTemplateFormat? Type316 { get; set; }
+        public global::Phoenix.PromptResponseFormatJSONSchema? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptTemplateType? Type317 { get; set; }
+        public global::Phoenix.PromptResponseFormatJSONSchemaDefinition? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptTogetherInvocationParameters? Type318 { get; set; }
+        public global::Phoenix.PromptStringTemplate? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptTogetherInvocationParametersContent? Type319 { get; set; }
+        public global::Phoenix.PromptTemplateFormat? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptTogetherInvocationParametersContentReasoningEffort? Type320 { get; set; }
+        public global::Phoenix.PromptTemplateType? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolChoiceNone? Type321 { get; set; }
+        public global::Phoenix.PromptTogetherInvocationParameters? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolChoiceOneOrMore? Type322 { get; set; }
+        public global::Phoenix.PromptTogetherInvocationParametersContent? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolChoiceSpecificFunctionTool? Type323 { get; set; }
+        public global::Phoenix.PromptTogetherInvocationParametersContentReasoningEffort? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolChoiceZeroOrMore? Type324 { get; set; }
+        public global::Phoenix.PromptToolChoiceNone? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolFunction? Type325 { get; set; }
+        public global::Phoenix.PromptToolChoiceOneOrMore? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolFunctionDefinition? Type326 { get; set; }
+        public global::Phoenix.PromptToolChoiceSpecificFunctionTool? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolRaw? Type327 { get; set; }
+        public global::Phoenix.PromptToolChoiceZeroOrMore? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptTools? Type328 { get; set; }
+        public global::Phoenix.PromptToolFunction? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.ToolsItem>? Type329 { get; set; }
+        public global::Phoenix.PromptToolFunctionDefinition? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ToolsItem? Type330 { get; set; }
+        public global::Phoenix.PromptToolRaw? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolsToolDiscriminator? Type331 { get; set; }
+        public global::Phoenix.PromptTools? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolsToolDiscriminatorType? Type332 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.ToolsItem>? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ToolChoice? Type333 { get; set; }
+        public global::Phoenix.ToolsItem? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolsToolChoiceDiscriminator? Type334 { get; set; }
+        public global::Phoenix.PromptToolsToolDiscriminator? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptToolsToolChoiceDiscriminatorType? Type335 { get; set; }
+        public global::Phoenix.PromptToolsToolDiscriminatorType? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.Template? Type336 { get; set; }
+        public global::Phoenix.ToolChoice? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionTemplateDiscriminator? Type337 { get; set; }
+        public global::Phoenix.PromptToolsToolChoiceDiscriminator? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionTemplateDiscriminatorType? Type338 { get; set; }
+        public global::Phoenix.PromptToolsToolChoiceDiscriminatorType? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.InvocationParameters? Type339 { get; set; }
+        public global::Phoenix.Template? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptXAIInvocationParameters? Type340 { get; set; }
+        public global::Phoenix.PromptVersionTemplateDiscriminator? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionInvocationParametersDiscriminator? Type341 { get; set; }
+        public global::Phoenix.PromptVersionTemplateDiscriminatorType? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionInvocationParametersDiscriminatorType? Type342 { get; set; }
+        public global::Phoenix.InvocationParameters? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ResponseFormatVariant1? Type343 { get; set; }
+        public global::Phoenix.PromptXAIInvocationParameters? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionResponseFormatVariant1Discriminator? Type344 { get; set; }
+        public global::Phoenix.PromptVersionInvocationParametersDiscriminator? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionResponseFormatVariant1DiscriminatorType? Type345 { get; set; }
+        public global::Phoenix.PromptVersionInvocationParametersDiscriminatorType? Type345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.Template2? Type346 { get; set; }
+        public global::Phoenix.ResponseFormatVariant1? Type346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionDataTemplateDiscriminator? Type347 { get; set; }
+        public global::Phoenix.PromptVersionResponseFormatVariant1Discriminator? Type347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionDataTemplateDiscriminatorType? Type348 { get; set; }
+        public global::Phoenix.PromptVersionResponseFormatVariant1DiscriminatorType? Type348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.InvocationParameters2? Type349 { get; set; }
+        public global::Phoenix.Template2? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionDataInvocationParametersDiscriminator? Type350 { get; set; }
+        public global::Phoenix.PromptVersionDataTemplateDiscriminator? Type350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionDataInvocationParametersDiscriminatorType? Type351 { get; set; }
+        public global::Phoenix.PromptVersionDataTemplateDiscriminatorType? Type351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ResponseFormatVariant12? Type352 { get; set; }
+        public global::Phoenix.InvocationParameters2? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionDataResponseFormatVariant1Discriminator? Type353 { get; set; }
+        public global::Phoenix.PromptVersionDataInvocationParametersDiscriminator? Type353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionDataResponseFormatVariant1DiscriminatorType? Type354 { get; set; }
+        public global::Phoenix.PromptVersionDataInvocationParametersDiscriminatorType? Type354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionTagData? Type355 { get; set; }
+        public global::Phoenix.ResponseFormatVariant12? Type355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptXAIInvocationParametersContent? Type356 { get; set; }
+        public global::Phoenix.PromptVersionDataResponseFormatVariant1Discriminator? Type356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptXAIInvocationParametersContentReasoningEffort? Type357 { get; set; }
+        public global::Phoenix.PromptVersionDataResponseFormatVariant1DiscriminatorType? Type357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ReasoningUIPartState2? Type358 { get; set; }
+        public global::Phoenix.PromptVersionTagData? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ResponseBodyUpsertOrDeleteSecretsResult? Type359 { get; set; }
+        public global::Phoenix.PromptXAIInvocationParametersContent? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpsertOrDeleteSecretsResult? Type360 { get; set; }
+        public global::Phoenix.PromptXAIInvocationParametersContentReasoningEffort? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SecretKeyValue? Type361 { get; set; }
+        public global::Phoenix.ReasoningUIPartState2? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SessionAnnotation? Type362 { get; set; }
+        public global::Phoenix.ResponseBodyUpsertOrDeleteSecretsResult? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SessionAnnotationSource? Type363 { get; set; }
+        public global::Phoenix.UpsertOrDeleteSecretsResult? Type363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SessionAnnotationAnnotatorKind? Type364 { get; set; }
+        public global::Phoenix.SecretKeyValue? Type364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SessionAnnotationDataAnnotatorKind? Type365 { get; set; }
+        public global::Phoenix.SessionAnnotation? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SessionAnnotationsResponseBody? Type366 { get; set; }
+        public global::Phoenix.SessionAnnotationSource? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.SessionAnnotation>? Type367 { get; set; }
+        public global::Phoenix.SessionAnnotationAnnotatorKind? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.SessionTraceData>? Type368 { get; set; }
+        public global::Phoenix.SessionAnnotationDataAnnotatorKind? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SessionTraceData? Type369 { get; set; }
+        public global::Phoenix.SessionAnnotationsResponseBody? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SpanContext? Type370 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.SessionAnnotation>? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.SpanEvent>? Type371 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.SessionTraceData>? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SpanEvent? Type372 { get; set; }
+        public global::Phoenix.SessionTraceData? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SpanAnnotation? Type373 { get; set; }
+        public global::Phoenix.SpanContext? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SpanAnnotationSource? Type374 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.SpanEvent>? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SpanAnnotationAnnotatorKind? Type375 { get; set; }
+        public global::Phoenix.SpanEvent? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SpanAnnotationDataAnnotatorKind? Type376 { get; set; }
+        public global::Phoenix.SpanAnnotation? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SpanAnnotationsResponseBody? Type377 { get; set; }
+        public global::Phoenix.SpanAnnotationSource? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.SpanAnnotation>? Type378 { get; set; }
+        public global::Phoenix.SpanAnnotationAnnotatorKind? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind? Type379 { get; set; }
+        public global::Phoenix.SpanAnnotationDataAnnotatorKind? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SpansResponseBody? Type380 { get; set; }
+        public global::Phoenix.SpanAnnotationsResponseBody? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.TextUIPartState2? Type381 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.SpanAnnotation>? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ToolCallFunction? Type382 { get; set; }
+        public global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ToolCallContentPartToolCallDiscriminator? Type383 { get; set; }
+        public global::Phoenix.SpansResponseBody? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ToolCallContentPartToolCallDiscriminatorType? Type384 { get; set; }
+        public global::Phoenix.TextUIPartState2? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>? Type385 { get; set; }
+        public global::Phoenix.ToolCallFunction? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type386 { get; set; }
+        public global::Phoenix.ToolCallContentPartToolCallDiscriminator? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.TraceAnnotation? Type387 { get; set; }
+        public global::Phoenix.ToolCallContentPartToolCallDiscriminatorType? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.TraceAnnotationSource? Type388 { get; set; }
+        public global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.TraceAnnotationAnnotatorKind? Type389 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.TraceAnnotationDataAnnotatorKind? Type390 { get; set; }
+        public global::Phoenix.TraceAnnotation? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.TraceAnnotationsResponseBody? Type391 { get; set; }
+        public global::Phoenix.TraceAnnotationSource? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.TraceAnnotation>? Type392 { get; set; }
+        public global::Phoenix.TraceAnnotationAnnotatorKind? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.TraceSpanData>? Type393 { get; set; }
+        public global::Phoenix.TraceAnnotationDataAnnotatorKind? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.TraceSpanData? Type394 { get; set; }
+        public global::Phoenix.TraceAnnotationsResponseBody? Type394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UIMessage? Type395 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.TraceAnnotation>? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UIMessageRole? Type396 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.TraceSpanData>? Type396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpdateAnnotationConfigResponseBody? Type397 { get; set; }
+        public global::Phoenix.TraceSpanData? Type397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.Data6? Type398 { get; set; }
+        public global::Phoenix.UIMessage? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminator? Type399 { get; set; }
+        public global::Phoenix.UIMessageRole? Type399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminatorType? Type400 { get; set; }
+        public global::Phoenix.UpdateAnnotationConfigResponseBody? Type400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpdateProjectRequestBody? Type401 { get; set; }
+        public global::Phoenix.Data6? Type401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpdateProjectResponseBody? Type402 { get; set; }
+        public global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminator? Type402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UploadDatasetData? Type403 { get; set; }
+        public global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminatorType? Type403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UploadDatasetResponseBody? Type404 { get; set; }
+        public global::Phoenix.UpdateProjectRequestBody? Type404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpsertExperimentEvaluationRequestBody? Type405 { get; set; }
+        public global::Phoenix.UpdateProjectResponseBody? Type405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind? Type406 { get; set; }
+        public global::Phoenix.UploadDatasetData? Type406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpsertExperimentEvaluationResponseBody? Type407 { get; set; }
+        public global::Phoenix.UploadDatasetResponseBody? Type407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpsertExperimentEvaluationResponseBodyData? Type408 { get; set; }
+        public global::Phoenix.UpsertExperimentEvaluationRequestBody? Type408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UpsertOrDeleteSecretsRequest? Type409 { get; set; }
+        public global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind? Type409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.SecretKeyValue>? Type410 { get; set; }
+        public global::Phoenix.UpsertExperimentEvaluationResponseBody? Type410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.AnyOf<string, int?>>? Type411 { get; set; }
+        public global::Phoenix.UpsertExperimentEvaluationResponseBodyData? Type411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.AnyOf<string, int?>? Type412 { get; set; }
+        public global::Phoenix.UpsertOrDeleteSecretsRequest? Type412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SummarizeRequest? Type413 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.SecretKeyValue>? Type413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.UIMessage>? Type414 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.AnyOf<string, int?>>? Type414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.Model3? Type415 { get; set; }
+        public global::Phoenix.AnyOf<string, int?>? Type415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SummarizeRequestModelDiscriminator? Type416 { get; set; }
+        public global::Phoenix.SummarizeRequest? Type416 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SummarizeRequestModelDiscriminatorProviderType? Type417 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.UIMessage>? Type417 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SummarizeResponse? Type418 { get; set; }
+        public global::Phoenix.Model3? Type418 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ToolCallProviderMetadata? Type419 { get; set; }
+        public global::Phoenix.SummarizeRequestModelDiscriminator? Type419 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ToolCallProviderMetadataToolExecutionEnvironment? Type420 { get; set; }
+        public global::Phoenix.SummarizeRequestModelDiscriminatorProviderType? Type420 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UploadDatasetRequest? Type421 { get; set; }
+        public global::Phoenix.SummarizeResponse? Type421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UploadDatasetRequestAction? Type422 { get; set; }
+        public global::Phoenix.ToolCallProviderMetadata? Type422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? Type423 { get; set; }
+        public global::Phoenix.ToolCallProviderMetadataToolExecutionEnvironment? Type423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>? Type424 { get; set; }
+        public global::Phoenix.UploadDatasetRequest? Type424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? Type425 { get; set; }
+        public global::Phoenix.UploadDatasetRequestAction? Type425 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.OneOf<string, object>? Type426 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? Type426 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UploadDatasetRequest2? Type427 { get; set; }
+        public global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>? Type427 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.UploadDatasetRequestAction2? Type428 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? Type428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type429 { get; set; }
+        public global::Phoenix.OneOf<string, object>? Type429 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2? Type430 { get; set; }
+        public global::Phoenix.UploadDatasetRequest2? Type430 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2? Type431 { get; set; }
+        public global::Phoenix.UploadDatasetRequestAction2? Type431 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2? Type432 { get; set; }
+        public byte[]? Type432 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ListProjectTracesSort? Type433 { get; set; }
+        public global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2? Type433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ListProjectTracesOrder? Type434 { get; set; }
+        public global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2? Type434 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ListProjectSessionsOrder? Type435 { get; set; }
+        public global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2? Type435 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.ListProjectTracesSort? Type436 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.ListProjectTracesOrder? Type437 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.ListProjectSessionsOrder? Type438 { get; set; }
 
         /// <summary>
         /// 
@@ -1913,74 +1925,78 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.PromptMessage>? ListType35 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.PlaygroundEvaluatorContext>? ListType35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.AnyOf<string, global::System.Collections.Generic.List<global::Phoenix.ContentVariant2Item>>? ListType36 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.PromptMessage>? ListType36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.ContentVariant2Item>? ListType37 { get; set; }
+        public global::Phoenix.AnyOf<string, global::System.Collections.Generic.List<global::Phoenix.ContentVariant2Item>>? ListType37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.ToolsItem>? ListType38 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.ContentVariant2Item>? ListType38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.SessionAnnotation>? ListType39 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.ToolsItem>? ListType39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.SessionTraceData>? ListType40 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.SessionAnnotation>? ListType40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.SpanEvent>? ListType41 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.SessionTraceData>? ListType41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.SpanAnnotation>? ListType42 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.SpanEvent>? ListType42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.List<object>, object>? ListType43 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.SpanAnnotation>? ListType43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<object>? ListType44 { get; set; }
+        public global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.List<object>, object>? ListType44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.TraceAnnotation>? ListType45 { get; set; }
+        public global::System.Collections.Generic.List<object>? ListType45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.TraceSpanData>? ListType46 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.TraceAnnotation>? ListType46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.SecretKeyValue>? ListType47 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.TraceSpanData>? ListType47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.AnyOf<string, int?>>? ListType48 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.SecretKeyValue>? ListType48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.UIMessage>? ListType49 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.AnyOf<string, int?>>? ListType49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.OneOf<string, global::System.Collections.Generic.List<string>, object>>? ListType50 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.UIMessage>? ListType50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.OneOf<string, global::System.Collections.Generic.List<string>, object>? ListType51 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.OneOf<string, global::System.Collections.Generic.List<string>, object>>? ListType51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.OneOf<string, object>>? ListType52 { get; set; }
+        public global::Phoenix.OneOf<string, global::System.Collections.Generic.List<string>, object>? ListType52 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Phoenix.OneOf<string, object>>? ListType53 { get; set; }
     }
 }

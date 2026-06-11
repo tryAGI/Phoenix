@@ -121,6 +121,10 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.OtlpKindNullableJsonConverter),
 
+            typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindNullableJsonConverter),
+
             typeof(global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeNullableJsonConverter),
@@ -706,7 +710,10 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundBuiltinModelContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceContext>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundInstanceContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.PlaygroundEvaluatorContext>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundEvaluatorContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundCustomProviderModelContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundEvaluatorContextKind), TypeInfoPropertyName = "PlaygroundEvaluatorContextKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ModelVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundInstanceContextModelVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType), TypeInfoPropertyName = "PlaygroundInstanceContextModelVariant1DiscriminatorType2")]
@@ -927,6 +934,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.OtlpEvent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.OtlpSpan>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.PlaygroundInstanceContext>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.PlaygroundEvaluatorContext>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.PromptMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, global::System.Collections.Generic.List<global::Phoenix.ContentVariant2Item>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.ContentVariant2Item>))]

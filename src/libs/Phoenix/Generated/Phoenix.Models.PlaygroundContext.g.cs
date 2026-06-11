@@ -34,6 +34,12 @@ namespace Phoenix
         public global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceContext>? Instances { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evaluators")]
+        public global::System.Collections.Generic.IList<global::Phoenix.PlaygroundEvaluatorContext>? Evaluators { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,6 +55,7 @@ namespace Phoenix
         /// Default Value: 1
         /// </param>
         /// <param name="instances"></param>
+        /// <param name="evaluators"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,12 +64,14 @@ namespace Phoenix
             bool? recordExperiments,
             int? repetitions,
             global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceContext>? instances,
+            global::System.Collections.Generic.IList<global::Phoenix.PlaygroundEvaluatorContext>? evaluators,
             string type = "playground")
         {
             this.Type = type;
             this.RecordExperiments = recordExperiments;
             this.Repetitions = repetitions;
             this.Instances = instances;
+            this.Evaluators = evaluators;
         }
 
         /// <summary>
