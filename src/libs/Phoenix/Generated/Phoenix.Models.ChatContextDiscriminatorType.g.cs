@@ -43,6 +43,10 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        Subagents,
+        /// <summary>
+        /// 
+        /// </summary>
         Trace,
         /// <summary>
         /// 
@@ -70,6 +74,7 @@ namespace Phoenix
                 ChatContextDiscriminatorType.Playground => "playground",
                 ChatContextDiscriminatorType.Project => "project",
                 ChatContextDiscriminatorType.Span => "span",
+                ChatContextDiscriminatorType.Subagents => "subagents",
                 ChatContextDiscriminatorType.Trace => "trace",
                 ChatContextDiscriminatorType.WebAccess => "web_access",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -90,6 +95,7 @@ namespace Phoenix
                 "playground" => ChatContextDiscriminatorType.Playground,
                 "project" => ChatContextDiscriminatorType.Project,
                 "span" => ChatContextDiscriminatorType.Span,
+                "subagents" => ChatContextDiscriminatorType.Subagents,
                 "trace" => ChatContextDiscriminatorType.Trace,
                 "web_access" => ChatContextDiscriminatorType.WebAccess,
                 _ => null,
