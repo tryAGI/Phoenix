@@ -91,6 +91,13 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.WebAccessContext)}");
                 webAccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.SubagentsContext? subagents = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Subagents)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SubagentsContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SubagentsContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.SubagentsContext)}");
+                subagents = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Phoenix.ChatContext(
                 discriminator?.Type,
@@ -112,7 +119,9 @@ namespace Phoenix.JsonConverters
 
                 graphql,
 
-                webAccess
+                webAccess,
+
+                subagents
                 );
 
             return __value;
@@ -186,6 +195,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.WebAccessContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.WebAccessContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.WebAccessContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebAccess!, typeInfo);
+            }
+            else if (value.IsSubagents)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SubagentsContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SubagentsContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.SubagentsContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Subagents!, typeInfo);
             }
         }
     }
