@@ -30,6 +30,12 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("nextExperimentScaffold")]
+        public global::Phoenix.PlaygroundExperimentScaffoldContext? NextExperimentScaffold { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instances")]
         public global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceContext>? Instances { get; set; }
 
@@ -54,6 +60,7 @@ namespace Phoenix
         /// <param name="repetitions">
         /// Default Value: 1
         /// </param>
+        /// <param name="nextExperimentScaffold"></param>
         /// <param name="instances"></param>
         /// <param name="evaluators"></param>
         /// <param name="type"></param>
@@ -63,6 +70,7 @@ namespace Phoenix
         public PlaygroundContext(
             bool? recordExperiments,
             int? repetitions,
+            global::Phoenix.PlaygroundExperimentScaffoldContext? nextExperimentScaffold,
             global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceContext>? instances,
             global::System.Collections.Generic.IList<global::Phoenix.PlaygroundEvaluatorContext>? evaluators,
             string type = "playground")
@@ -70,6 +78,7 @@ namespace Phoenix
             this.Type = type;
             this.RecordExperiments = recordExperiments;
             this.Repetitions = repetitions;
+            this.NextExperimentScaffold = nextExperimentScaffold;
             this.Instances = instances;
             this.Evaluators = evaluators;
         }

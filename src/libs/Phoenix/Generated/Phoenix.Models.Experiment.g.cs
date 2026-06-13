@@ -30,6 +30,19 @@ namespace Phoenix
         public required string DatasetVersionId { get; set; }
 
         /// <summary>
+        /// The name of the experiment
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// The description of the experiment
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
         /// Number of times the experiment is repeated
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repetitions")]
@@ -109,6 +122,9 @@ namespace Phoenix
         /// <param name="datasetVersionId">
         /// The ID of the dataset version associated with the experiment
         /// </param>
+        /// <param name="name">
+        /// The name of the experiment
+        /// </param>
         /// <param name="repetitions">
         /// Number of times the experiment is repeated
         /// </param>
@@ -133,6 +149,9 @@ namespace Phoenix
         /// <param name="missingRunCount">
         /// Number of missing (not yet executed) runs in the experiment
         /// </param>
+        /// <param name="description">
+        /// The description of the experiment
+        /// </param>
         /// <param name="projectName">
         /// The name of the project associated with the experiment
         /// </param>
@@ -143,6 +162,7 @@ namespace Phoenix
             string id,
             string datasetId,
             string datasetVersionId,
+            string name,
             int repetitions,
             object metadata,
             global::System.DateTime createdAt,
@@ -151,11 +171,14 @@ namespace Phoenix
             int successfulRunCount,
             int failedRunCount,
             int missingRunCount,
+            string? description,
             string? projectName)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.DatasetId = datasetId ?? throw new global::System.ArgumentNullException(nameof(datasetId));
             this.DatasetVersionId = datasetVersionId ?? throw new global::System.ArgumentNullException(nameof(datasetVersionId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.Repetitions = repetitions;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.ProjectName = projectName;
