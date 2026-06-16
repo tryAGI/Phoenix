@@ -133,6 +133,43 @@ namespace Phoenix
             : throw new global::System.InvalidOperationException($"Expected union variant 'Trace' but the value was {ToString()}.");
 
         /// <summary>
+        /// Session the user is currently viewing.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.SessionContext? Session { get; init; }
+#else
+        public global::Phoenix.SessionContext? Session { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Session))]
+#endif
+        public bool IsSession => Session != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSession(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.SessionContext? value)
+        {
+            value = Session;
+            return IsSession;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.SessionContext PickSession() => IsSession
+            ? Session!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Session' but the value was {ToString()}.");
+
+        /// <summary>
         /// Span the user has selected.<br/>
         /// Exactly one of ``span_node_id`` (relay) or ``otel_span_id`` (OpenTelemetry<br/>
         /// hex) must be set. ``project_node_id`` is optional because a span can be<br/>
@@ -506,6 +543,29 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChatContext(global::Phoenix.SessionContext value) => new ChatContext((global::Phoenix.SessionContext?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.SessionContext?(ChatContext @this) => @this.Session;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatContext(global::Phoenix.SessionContext? value)
+        {
+            Session = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContext FromSession(global::Phoenix.SessionContext? value) => new ChatContext(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContext(global::Phoenix.AgentSpanContext value) => new ChatContext((global::Phoenix.AgentSpanContext?)value);
 
         /// <summary>
@@ -695,6 +755,7 @@ namespace Phoenix
             global::Phoenix.AppContext? app,
             global::Phoenix.ProjectContext? project,
             global::Phoenix.TraceContext? trace,
+            global::Phoenix.SessionContext? session,
             global::Phoenix.AgentSpanContext? span,
             global::Phoenix.PlaygroundContext? playground,
             global::Phoenix.CodeEvaluatorContext? codeEvaluator,
@@ -710,6 +771,7 @@ namespace Phoenix
             App = app;
             Project = project;
             Trace = trace;
+            Session = session;
             Span = span;
             Playground = playground;
             CodeEvaluator = codeEvaluator;
@@ -732,6 +794,7 @@ namespace Phoenix
             CodeEvaluator as object ??
             Playground as object ??
             Span as object ??
+            Session as object ??
             Trace as object ??
             Project as object ??
             App as object 
@@ -744,6 +807,7 @@ namespace Phoenix
             App?.ToString() ??
             Project?.ToString() ??
             Trace?.ToString() ??
+            Session?.ToString() ??
             Span?.ToString() ??
             Playground?.ToString() ??
             CodeEvaluator?.ToString() ??
@@ -759,7 +823,7 @@ namespace Phoenix
         /// </summary>
         public bool Validate()
         {
-            return IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && IsTrace && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSpan && IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsCodeEvaluator && IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && IsSubagents;
+            return IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && IsSubagents;
         }
 
         /// <summary>
@@ -769,6 +833,7 @@ namespace Phoenix
             global::System.Func<global::Phoenix.AppContext, TResult>? app = null,
             global::System.Func<global::Phoenix.ProjectContext, TResult>? project = null,
             global::System.Func<global::Phoenix.TraceContext, TResult>? trace = null,
+            global::System.Func<global::Phoenix.SessionContext, TResult>? session = null,
             global::System.Func<global::Phoenix.AgentSpanContext, TResult>? span = null,
             global::System.Func<global::Phoenix.PlaygroundContext, TResult>? playground = null,
             global::System.Func<global::Phoenix.CodeEvaluatorContext, TResult>? codeEvaluator = null,
@@ -795,6 +860,10 @@ namespace Phoenix
             else if (IsTrace && trace != null)
             {
                 return trace(Trace!);
+            }
+            else if (IsSession && session != null)
+            {
+                return session(Session!);
             }
             else if (IsSpan && span != null)
             {
@@ -842,6 +911,8 @@ namespace Phoenix
 
             global::System.Action<global::Phoenix.TraceContext>? trace = null,
 
+            global::System.Action<global::Phoenix.SessionContext>? session = null,
+
             global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
 
             global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
@@ -875,6 +946,10 @@ namespace Phoenix
             else if (IsTrace)
             {
                 trace?.Invoke(Trace!);
+            }
+            else if (IsSession)
+            {
+                session?.Invoke(Session!);
             }
             else if (IsSpan)
             {
@@ -917,6 +992,7 @@ namespace Phoenix
             global::System.Action<global::Phoenix.AppContext>? app = null,
             global::System.Action<global::Phoenix.ProjectContext>? project = null,
             global::System.Action<global::Phoenix.TraceContext>? trace = null,
+            global::System.Action<global::Phoenix.SessionContext>? session = null,
             global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
             global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
             global::System.Action<global::Phoenix.CodeEvaluatorContext>? codeEvaluator = null,
@@ -943,6 +1019,10 @@ namespace Phoenix
             else if (IsTrace)
             {
                 trace?.Invoke(Trace!);
+            }
+            else if (IsSession)
+            {
+                session?.Invoke(Session!);
             }
             else if (IsSpan)
             {
@@ -991,6 +1071,8 @@ namespace Phoenix
                 typeof(global::Phoenix.ProjectContext),
                 Trace,
                 typeof(global::Phoenix.TraceContext),
+                Session,
+                typeof(global::Phoenix.SessionContext),
                 Span,
                 typeof(global::Phoenix.AgentSpanContext),
                 Playground,
@@ -1026,6 +1108,7 @@ namespace Phoenix
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.AppContext?>.Default.Equals(App, other.App) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.ProjectContext?>.Default.Equals(Project, other.Project) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.TraceContext?>.Default.Equals(Trace, other.Trace) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.SessionContext?>.Default.Equals(Session, other.Session) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.AgentSpanContext?>.Default.Equals(Span, other.Span) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundContext?>.Default.Equals(Playground, other.Playground) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.CodeEvaluatorContext?>.Default.Equals(CodeEvaluator, other.CodeEvaluator) &&

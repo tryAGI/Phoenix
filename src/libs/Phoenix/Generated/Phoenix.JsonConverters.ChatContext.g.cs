@@ -42,6 +42,13 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.TraceContext)}");
                 trace = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.SessionContext? session = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Session)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SessionContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SessionContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.SessionContext)}");
+                session = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Phoenix.AgentSpanContext? span = default;
             if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Span)
             {
@@ -107,6 +114,8 @@ namespace Phoenix.JsonConverters
 
                 trace,
 
+                session,
+
                 span,
 
                 playground,
@@ -153,6 +162,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.TraceContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.TraceContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.TraceContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Trace!, typeInfo);
+            }
+            else if (value.IsSession)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SessionContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SessionContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.SessionContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Session!, typeInfo);
             }
             else if (value.IsSpan)
             {
