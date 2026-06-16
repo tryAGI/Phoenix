@@ -15,7 +15,19 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        CodeEvaluator,
+        /// <summary>
+        /// 
+        /// </summary>
+        Dataset,
+        /// <summary>
+        /// 
+        /// </summary>
         Graphql,
+        /// <summary>
+        /// 
+        /// </summary>
+        LlmEvaluator,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +39,15 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        Session,
+        /// <summary>
+        /// 
+        /// </summary>
         Span,
+        /// <summary>
+        /// 
+        /// </summary>
+        Subagents,
         /// <summary>
         /// 
         /// </summary>
@@ -51,10 +71,15 @@ namespace Phoenix
             return value switch
             {
                 ChatContextDiscriminatorType.App => "app",
+                ChatContextDiscriminatorType.CodeEvaluator => "code_evaluator",
+                ChatContextDiscriminatorType.Dataset => "dataset",
                 ChatContextDiscriminatorType.Graphql => "graphql",
+                ChatContextDiscriminatorType.LlmEvaluator => "llm_evaluator",
                 ChatContextDiscriminatorType.Playground => "playground",
                 ChatContextDiscriminatorType.Project => "project",
+                ChatContextDiscriminatorType.Session => "session",
                 ChatContextDiscriminatorType.Span => "span",
+                ChatContextDiscriminatorType.Subagents => "subagents",
                 ChatContextDiscriminatorType.Trace => "trace",
                 ChatContextDiscriminatorType.WebAccess => "web_access",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -68,10 +93,15 @@ namespace Phoenix
             return value switch
             {
                 "app" => ChatContextDiscriminatorType.App,
+                "code_evaluator" => ChatContextDiscriminatorType.CodeEvaluator,
+                "dataset" => ChatContextDiscriminatorType.Dataset,
                 "graphql" => ChatContextDiscriminatorType.Graphql,
+                "llm_evaluator" => ChatContextDiscriminatorType.LlmEvaluator,
                 "playground" => ChatContextDiscriminatorType.Playground,
                 "project" => ChatContextDiscriminatorType.Project,
+                "session" => ChatContextDiscriminatorType.Session,
                 "span" => ChatContextDiscriminatorType.Span,
+                "subagents" => ChatContextDiscriminatorType.Subagents,
                 "trace" => ChatContextDiscriminatorType.Trace,
                 "web_access" => ChatContextDiscriminatorType.WebAccess,
                 _ => null,

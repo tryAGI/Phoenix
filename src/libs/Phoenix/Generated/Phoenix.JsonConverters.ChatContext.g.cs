@@ -42,6 +42,13 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.TraceContext)}");
                 trace = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.SessionContext? session = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Session)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SessionContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SessionContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.SessionContext)}");
+                session = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Phoenix.AgentSpanContext? span = default;
             if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Span)
             {
@@ -55,6 +62,27 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundContext> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PlaygroundContext)}");
                 playground = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Phoenix.CodeEvaluatorContext? codeEvaluator = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.CodeEvaluator)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.CodeEvaluatorContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.CodeEvaluatorContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.CodeEvaluatorContext)}");
+                codeEvaluator = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Phoenix.LlmEvaluatorContext? llmEvaluator = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.LlmEvaluator)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LlmEvaluatorContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LlmEvaluatorContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.LlmEvaluatorContext)}");
+                llmEvaluator = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Phoenix.DatasetContext? dataset = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Dataset)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.DatasetContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.DatasetContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.DatasetContext)}");
+                dataset = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Phoenix.GraphQLContext? graphql = default;
             if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Graphql)
@@ -70,6 +98,13 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.WebAccessContext)}");
                 webAccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.SubagentsContext? subagents = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Subagents)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SubagentsContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SubagentsContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.SubagentsContext)}");
+                subagents = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Phoenix.ChatContext(
                 discriminator?.Type,
@@ -79,13 +114,23 @@ namespace Phoenix.JsonConverters
 
                 trace,
 
+                session,
+
                 span,
 
                 playground,
 
+                codeEvaluator,
+
+                llmEvaluator,
+
+                dataset,
+
                 graphql,
 
-                webAccess
+                webAccess,
+
+                subagents
                 );
 
             return __value;
@@ -118,6 +163,12 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.TraceContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Trace!, typeInfo);
             }
+            else if (value.IsSession)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SessionContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SessionContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.SessionContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Session!, typeInfo);
+            }
             else if (value.IsSpan)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.AgentSpanContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.AgentSpanContext?> ??
@@ -130,6 +181,24 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PlaygroundContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Playground!, typeInfo);
             }
+            else if (value.IsCodeEvaluator)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.CodeEvaluatorContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.CodeEvaluatorContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.CodeEvaluatorContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeEvaluator!, typeInfo);
+            }
+            else if (value.IsLlmEvaluator)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LlmEvaluatorContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LlmEvaluatorContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.LlmEvaluatorContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LlmEvaluator!, typeInfo);
+            }
+            else if (value.IsDataset)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.DatasetContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.DatasetContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.DatasetContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dataset!, typeInfo);
+            }
             else if (value.IsGraphql)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.GraphQLContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.GraphQLContext?> ??
@@ -141,6 +210,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.WebAccessContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.WebAccessContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.WebAccessContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebAccess!, typeInfo);
+            }
+            else if (value.IsSubagents)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SubagentsContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SubagentsContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.SubagentsContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Subagents!, typeInfo);
             }
         }
     }

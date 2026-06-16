@@ -25,6 +25,10 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeNullableJsonConverter),
 
+            typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageEditPermissionJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageEditPermissionNullableJsonConverter),
+
             typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageModelDiscriminatorProviderTypeJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageModelDiscriminatorProviderTypeNullableJsonConverter),
@@ -32,6 +36,10 @@ namespace Phoenix
             typeof(global::Phoenix.JsonConverters.ChatRequestDiscriminatorTriggerJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.ChatRequestDiscriminatorTriggerNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatSubmitMessageEditPermissionJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatSubmitMessageEditPermissionNullableJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.ChatSubmitMessageModelDiscriminatorProviderTypeJsonConverter),
 
@@ -112,6 +120,14 @@ namespace Phoenix
             typeof(global::Phoenix.JsonConverters.OtlpKindJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.OtlpKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeNullableJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeJsonConverter),
 
@@ -355,6 +371,8 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.Data5JsonConverter),
 
+            typeof(global::Phoenix.JsonConverters.ModelVariant1JsonConverter),
+
             typeof(global::Phoenix.JsonConverters.ThinkingJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.ContentVariant2ItemJsonConverter),
@@ -437,6 +455,10 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>>), TypeInfoPropertyName = "StepStartUIPart_ed9b3d00af27a569")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>), TypeInfoPropertyName = "StepStartUIPart_ee2f9588200af449")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>?), TypeInfoPropertyName = "StepStartUIPart_4f65f1009b57fac6")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>>), TypeInfoPropertyName = "StepStartUIPart_6eee758df17ea469")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AgentSpanContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
@@ -477,8 +499,6 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AssistantMetadataUIMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AssistantMetadataUIMessageRole), TypeInfoPropertyName = "AssistantMetadataUIMessageRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>>), TypeInfoPropertyName = "StepStartUIPart_ed9b3d00af27a569")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>), TypeInfoPropertyName = "StepStartUIPart_ee2f9588200af449")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TextUIPart))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ReasoningUIPart))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolInputStreamingPart))]
@@ -511,15 +531,22 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContext), TypeInfoPropertyName = "ChatContext2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ProjectContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TraceContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SessionContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CodeEvaluatorContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.LlmEvaluatorContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DatasetContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GraphQLContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.WebAccessContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SubagentsContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContextDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContextDiscriminatorType), TypeInfoPropertyName = "ChatContextDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRegenerateMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AssistantMetadataUIMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.ChatContext>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRegenerateMessageEditPermission), TypeInfoPropertyName = "ChatRegenerateMessageEditPermission2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Model), TypeInfoPropertyName = "Model2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CustomProviderModelSelection))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRegenerateMessageModelDiscriminator))]
@@ -528,6 +555,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatSubmitMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRequestDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRequestDiscriminatorTrigger), TypeInfoPropertyName = "ChatRequestDiscriminatorTrigger2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatSubmitMessageEditPermission), TypeInfoPropertyName = "ChatSubmitMessageEditPermission2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Model2), TypeInfoPropertyName = "Model22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatSubmitMessageModelDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatSubmitMessageModelDiscriminatorProviderType), TypeInfoPropertyName = "ChatSubmitMessageModelDiscriminatorProviderType2")]
@@ -543,7 +571,6 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType), TypeInfoPropertyName = "CreateAnnotationConfigResponseBodyDataDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateExperimentRequestBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateExperimentResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Experiment))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateExperimentRunRequestBody))]
@@ -684,6 +711,17 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpSpansResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OtlpSpan>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundBuiltinModelContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundExperimentScaffoldContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceContext>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundInstanceContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.PlaygroundEvaluatorContext>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundEvaluatorContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundCustomProviderModelContext))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundEvaluatorContextKind), TypeInfoPropertyName = "PlaygroundEvaluatorContextKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ModelVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundInstanceContextModelVariant1Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType), TypeInfoPropertyName = "PlaygroundInstanceContextModelVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicInvocationParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicInvocationParametersContent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptAnthropicOutputConfig))]
@@ -829,6 +867,8 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data6), TypeInfoPropertyName = "Data62")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminatorType), TypeInfoPropertyName = "UpdateAnnotationConfigResponseBodyDataDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UpdateExperimentRequestBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UpdateExperimentResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UpdateProjectRequestBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UpdateProjectResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetData))]
@@ -864,7 +904,6 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesSort), TypeInfoPropertyName = "ListProjectTracesSort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesOrder), TypeInfoPropertyName = "ListProjectTracesOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectSessionsOrder), TypeInfoPropertyName = "ListProjectSessionsOrder2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>?), TypeInfoPropertyName = "StepStartUIPart_4f65f1009b57fac6")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.SessionAnnotationData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.InsertedSessionAnnotation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.SpanDocumentAnnotationData>))]
@@ -873,7 +912,6 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.InsertedSpanAnnotation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.TraceAnnotationData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.InsertedTraceAnnotation>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>>), TypeInfoPropertyName = "StepStartUIPart_6eee758df17ea469")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.CategoricalAnnotationValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.AssistantMetadataUIMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.ChatContext>))]
@@ -900,6 +938,8 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.OtlpKeyValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.OtlpEvent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.OtlpSpan>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.PlaygroundInstanceContext>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.PlaygroundEvaluatorContext>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.PromptMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, global::System.Collections.Generic.List<global::Phoenix.ContentVariant2Item>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.ContentVariant2Item>))]
@@ -915,10 +955,731 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.SecretKeyValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.UIMessage>))]
+    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::Phoenix.JsonConverters.AssistantMetadataUIMessageRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.AssistantMetadataUIMessageRoleNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.BuiltInProviderModelSelectionOpenaiApiTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.BuiltInProviderModelSelectionOpenaiApiTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageEditPermissionJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageEditPermissionNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageModelDiscriminatorProviderTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatRegenerateMessageModelDiscriminatorProviderTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatRequestDiscriminatorTriggerJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatRequestDiscriminatorTriggerNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatSubmitMessageEditPermissionJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatSubmitMessageEditPermissionNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatSubmitMessageModelDiscriminatorProviderTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatSubmitMessageModelDiscriminatorProviderTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.LDAPUserRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.LDAPUserRoleNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.LDAPUserDataRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.LDAPUserDataRoleNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.LocalUserRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.LocalUserRoleNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.LocalUserDataRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.LocalUserDataRoleNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ModelProviderJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ModelProviderNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.OAuth2UserRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.OAuth2UserRoleNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.OAuth2UserDataRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.OAuth2UserDataRoleNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.OptimizationDirectionJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.OptimizationDirectionNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.OtlpDoubleValueJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.OtlpDoubleValueNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.OtlpKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.OtlpKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptMessageRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptMessageRoleNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptTemplateFormatJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptTemplateFormatNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptTemplateTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptTemplateTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ReasoningUIPartState2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ReasoningUIPartState2NullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SessionAnnotationSourceJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SessionAnnotationSourceNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SpanAnnotationSourceJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SpanAnnotationSourceNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.TextUIPartState2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.TextUIPartState2NullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.TraceAnnotationSourceJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.TraceAnnotationSourceNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UIMessageRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UIMessageRoleNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SummarizeRequestModelDiscriminatorProviderTypeJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.SummarizeRequestModelDiscriminatorProviderTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ToolCallProviderMetadataToolExecutionEnvironmentJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ToolCallProviderMetadataToolExecutionEnvironmentNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestActionJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestActionNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestAction2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestAction2NullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2NullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2NullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2NullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ListProjectTracesSortJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ListProjectTracesSortNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ListProjectTracesOrderJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ListProjectTracesOrderNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ListProjectSessionsOrderJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ListProjectSessionsOrderNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatContextJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ModelJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatRequestJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.Model2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigDataJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DataJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.UserJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.Data2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.Data3JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.Data4JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DataItemJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.DataItem2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.Data5JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ModelVariant1JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ThinkingJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ContentVariant2ItemJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ToolsItemJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ToolChoiceJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.TemplateJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.InvocationParametersJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ResponseFormatVariant1JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.Template2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.InvocationParameters2JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ResponseFormatVariant12JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.Data6JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.Model3JsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<double?, global::Phoenix.OtlpDoubleValue?, string, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.OtlpKind?, int?, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Phoenix.ContentVariant2Item>>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, int?>),
+
+            typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
+
+            typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>),
+
+            typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>),
+
+            typeof(global::Phoenix.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>>), TypeInfoPropertyName = "StepStartUIPart_ed9b3d00af27a569")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>), TypeInfoPropertyName = "StepStartUIPart_ee2f9588200af449")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>?), TypeInfoPropertyName = "StepStartUIPart_4f65f1009b57fac6")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>>), TypeInfoPropertyName = "StepStartUIPart_6eee758df17ea469")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.OneOf<string, global::System.Collections.Generic.List<string>, object>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OneOf<string, global::System.Collections.Generic.List<string>, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.OneOf<string, object>>))]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
+            SourceGenerationContextChunk0.Default,
+
+            SourceGenerationContextChunk1.Default
+            );
+
+        private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SourceGenerationContext Default { get; } = new(DefaultOptions);
+
+        private SourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options)
+            : base(options)
+        {
+        }
+
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultOptions;
+
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {
+            return Resolver.GetTypeInfo(type, Options);
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            options.Converters.Add(new global::Phoenix.JsonConverters.AssistantMetadataUIMessageRoleJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AssistantMetadataUIMessageRoleNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.BuiltInProviderModelSelectionOpenaiApiTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.BuiltInProviderModelSelectionOpenaiApiTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatRegenerateMessageEditPermissionJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatRegenerateMessageEditPermissionNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatRegenerateMessageModelDiscriminatorProviderTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatRegenerateMessageModelDiscriminatorProviderTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatRequestDiscriminatorTriggerJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatRequestDiscriminatorTriggerNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatSubmitMessageEditPermissionJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatSubmitMessageEditPermissionNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatSubmitMessageModelDiscriminatorProviderTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatSubmitMessageModelDiscriminatorProviderTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.LDAPUserRoleJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.LDAPUserRoleNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.LDAPUserDataRoleJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.LDAPUserDataRoleNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.LocalUserRoleJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.LocalUserRoleNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.LocalUserDataRoleJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.LocalUserDataRoleNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ModelProviderJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ModelProviderNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OAuth2UserRoleJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OAuth2UserRoleNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OAuth2UserDataRoleJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OAuth2UserDataRoleNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OptimizationDirectionJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OptimizationDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OtlpDoubleValueJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OtlpDoubleValueNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OtlpKindJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OtlpKindNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMessageRoleJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMessageRoleNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTemplateFormatJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTemplateFormatNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTemplateTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTemplateTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ReasoningUIPartState2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ReasoningUIPartState2NullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationSourceJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationSourceNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationSourceJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationSourceNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.TextUIPartState2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.TextUIPartState2NullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationSourceJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationSourceNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UIMessageRoleJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UIMessageRoleNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SummarizeRequestModelDiscriminatorProviderTypeJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.SummarizeRequestModelDiscriminatorProviderTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ToolCallProviderMetadataToolExecutionEnvironmentJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ToolCallProviderMetadataToolExecutionEnvironmentNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UploadDatasetRequestActionJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UploadDatasetRequestActionNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UploadDatasetRequestAction2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UploadDatasetRequestAction2NullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2NullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2NullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2NullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectTracesSortJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectTracesSortNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectTracesOrderJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectTracesOrderNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectSessionsOrderJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectSessionsOrderNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatContextJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ModelJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatRequestJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.Model2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.CreateAnnotationConfigDataJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DataJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UserJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.Data2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.Data3JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.Data4JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DataItemJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DataItem2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.Data5JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ModelVariant1JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ThinkingJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ContentVariant2ItemJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ToolsItemJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ToolChoiceJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.TemplateJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.InvocationParametersJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ResponseFormatVariant1JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.Template2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.InvocationParameters2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ResponseFormatVariant12JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.Data6JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.Model3JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<double?, global::Phoenix.OtlpDoubleValue?, string, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.OtlpKind?, int?, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Phoenix.ContentVariant2Item>>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, int?>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.UnixTimestampJsonConverter());
+
+            return options;
+        }
     }
 }
