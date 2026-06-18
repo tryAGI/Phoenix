@@ -49,6 +49,20 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.SessionContext)}");
                 session = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.PromptContext? prompt = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Prompt)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PromptContext)}");
+                prompt = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Phoenix.PromptVersionContext? promptVersion = default;
+            if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.PromptVersion)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptVersionContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptVersionContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PromptVersionContext)}");
+                promptVersion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Phoenix.AgentSpanContext? span = default;
             if (discriminator?.Type == global::Phoenix.ChatContextDiscriminatorType.Span)
             {
@@ -116,6 +130,10 @@ namespace Phoenix.JsonConverters
 
                 session,
 
+                prompt,
+
+                promptVersion,
+
                 span,
 
                 playground,
@@ -168,6 +186,18 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SessionContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SessionContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.SessionContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Session!, typeInfo);
+            }
+            else if (value.IsPrompt)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Prompt!, typeInfo);
+            }
+            else if (value.IsPromptVersion)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptVersionContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptVersionContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptVersionContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PromptVersion!, typeInfo);
             }
             else if (value.IsSpan)
             {
