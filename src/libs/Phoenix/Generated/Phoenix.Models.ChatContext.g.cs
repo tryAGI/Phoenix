@@ -170,6 +170,80 @@ namespace Phoenix
             : throw new global::System.InvalidOperationException($"Expected union variant 'Session' but the value was {ToString()}.");
 
         /// <summary>
+        /// Prompt the user is currently viewing.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.PromptContext? Prompt { get; init; }
+#else
+        public global::Phoenix.PromptContext? Prompt { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Prompt))]
+#endif
+        public bool IsPrompt => Prompt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPrompt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptContext? value)
+        {
+            value = Prompt;
+            return IsPrompt;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.PromptContext PickPrompt() => IsPrompt
+            ? Prompt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Prompt' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Prompt version the user is currently viewing.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.PromptVersionContext? PromptVersion { get; init; }
+#else
+        public global::Phoenix.PromptVersionContext? PromptVersion { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PromptVersion))]
+#endif
+        public bool IsPromptVersion => PromptVersion != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPromptVersion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptVersionContext? value)
+        {
+            value = PromptVersion;
+            return IsPromptVersion;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.PromptVersionContext PickPromptVersion() => IsPromptVersion
+            ? PromptVersion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PromptVersion' but the value was {ToString()}.");
+
+        /// <summary>
         /// Span the user has selected.<br/>
         /// Exactly one of ``span_node_id`` (relay) or ``otel_span_id`` (OpenTelemetry<br/>
         /// hex) must be set. ``project_node_id`` is optional because a span can be<br/>
@@ -566,6 +640,52 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChatContext(global::Phoenix.PromptContext value) => new ChatContext((global::Phoenix.PromptContext?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.PromptContext?(ChatContext @this) => @this.Prompt;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatContext(global::Phoenix.PromptContext? value)
+        {
+            Prompt = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContext FromPrompt(global::Phoenix.PromptContext? value) => new ChatContext(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatContext(global::Phoenix.PromptVersionContext value) => new ChatContext((global::Phoenix.PromptVersionContext?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.PromptVersionContext?(ChatContext @this) => @this.PromptVersion;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatContext(global::Phoenix.PromptVersionContext? value)
+        {
+            PromptVersion = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContext FromPromptVersion(global::Phoenix.PromptVersionContext? value) => new ChatContext(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContext(global::Phoenix.AgentSpanContext value) => new ChatContext((global::Phoenix.AgentSpanContext?)value);
 
         /// <summary>
@@ -756,6 +876,8 @@ namespace Phoenix
             global::Phoenix.ProjectContext? project,
             global::Phoenix.TraceContext? trace,
             global::Phoenix.SessionContext? session,
+            global::Phoenix.PromptContext? prompt,
+            global::Phoenix.PromptVersionContext? promptVersion,
             global::Phoenix.AgentSpanContext? span,
             global::Phoenix.PlaygroundContext? playground,
             global::Phoenix.CodeEvaluatorContext? codeEvaluator,
@@ -772,6 +894,8 @@ namespace Phoenix
             Project = project;
             Trace = trace;
             Session = session;
+            Prompt = prompt;
+            PromptVersion = promptVersion;
             Span = span;
             Playground = playground;
             CodeEvaluator = codeEvaluator;
@@ -794,6 +918,8 @@ namespace Phoenix
             CodeEvaluator as object ??
             Playground as object ??
             Span as object ??
+            PromptVersion as object ??
+            Prompt as object ??
             Session as object ??
             Trace as object ??
             Project as object ??
@@ -808,6 +934,8 @@ namespace Phoenix
             Project?.ToString() ??
             Trace?.ToString() ??
             Session?.ToString() ??
+            Prompt?.ToString() ??
+            PromptVersion?.ToString() ??
             Span?.ToString() ??
             Playground?.ToString() ??
             CodeEvaluator?.ToString() ??
@@ -823,7 +951,7 @@ namespace Phoenix
         /// </summary>
         public bool Validate()
         {
-            return IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && IsSubagents;
+            return IsApp && !IsProject && !IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && IsProject && !IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsPrompt && IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && IsDataset && !IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && IsGraphql && !IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && IsWebAccess && !IsSubagents || !IsApp && !IsProject && !IsTrace && !IsSession && !IsPrompt && !IsPromptVersion && !IsSpan && !IsPlayground && !IsCodeEvaluator && !IsLlmEvaluator && !IsDataset && !IsGraphql && !IsWebAccess && IsSubagents;
         }
 
         /// <summary>
@@ -834,6 +962,8 @@ namespace Phoenix
             global::System.Func<global::Phoenix.ProjectContext, TResult>? project = null,
             global::System.Func<global::Phoenix.TraceContext, TResult>? trace = null,
             global::System.Func<global::Phoenix.SessionContext, TResult>? session = null,
+            global::System.Func<global::Phoenix.PromptContext, TResult>? prompt = null,
+            global::System.Func<global::Phoenix.PromptVersionContext, TResult>? promptVersion = null,
             global::System.Func<global::Phoenix.AgentSpanContext, TResult>? span = null,
             global::System.Func<global::Phoenix.PlaygroundContext, TResult>? playground = null,
             global::System.Func<global::Phoenix.CodeEvaluatorContext, TResult>? codeEvaluator = null,
@@ -864,6 +994,14 @@ namespace Phoenix
             else if (IsSession && session != null)
             {
                 return session(Session!);
+            }
+            else if (IsPrompt && prompt != null)
+            {
+                return prompt(Prompt!);
+            }
+            else if (IsPromptVersion && promptVersion != null)
+            {
+                return promptVersion(PromptVersion!);
             }
             else if (IsSpan && span != null)
             {
@@ -913,6 +1051,10 @@ namespace Phoenix
 
             global::System.Action<global::Phoenix.SessionContext>? session = null,
 
+            global::System.Action<global::Phoenix.PromptContext>? prompt = null,
+
+            global::System.Action<global::Phoenix.PromptVersionContext>? promptVersion = null,
+
             global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
 
             global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
@@ -950,6 +1092,14 @@ namespace Phoenix
             else if (IsSession)
             {
                 session?.Invoke(Session!);
+            }
+            else if (IsPrompt)
+            {
+                prompt?.Invoke(Prompt!);
+            }
+            else if (IsPromptVersion)
+            {
+                promptVersion?.Invoke(PromptVersion!);
             }
             else if (IsSpan)
             {
@@ -993,6 +1143,8 @@ namespace Phoenix
             global::System.Action<global::Phoenix.ProjectContext>? project = null,
             global::System.Action<global::Phoenix.TraceContext>? trace = null,
             global::System.Action<global::Phoenix.SessionContext>? session = null,
+            global::System.Action<global::Phoenix.PromptContext>? prompt = null,
+            global::System.Action<global::Phoenix.PromptVersionContext>? promptVersion = null,
             global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
             global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
             global::System.Action<global::Phoenix.CodeEvaluatorContext>? codeEvaluator = null,
@@ -1023,6 +1175,14 @@ namespace Phoenix
             else if (IsSession)
             {
                 session?.Invoke(Session!);
+            }
+            else if (IsPrompt)
+            {
+                prompt?.Invoke(Prompt!);
+            }
+            else if (IsPromptVersion)
+            {
+                promptVersion?.Invoke(PromptVersion!);
             }
             else if (IsSpan)
             {
@@ -1073,6 +1233,10 @@ namespace Phoenix
                 typeof(global::Phoenix.TraceContext),
                 Session,
                 typeof(global::Phoenix.SessionContext),
+                Prompt,
+                typeof(global::Phoenix.PromptContext),
+                PromptVersion,
+                typeof(global::Phoenix.PromptVersionContext),
                 Span,
                 typeof(global::Phoenix.AgentSpanContext),
                 Playground,
@@ -1109,6 +1273,8 @@ namespace Phoenix
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.ProjectContext?>.Default.Equals(Project, other.Project) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.TraceContext?>.Default.Equals(Trace, other.Trace) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.SessionContext?>.Default.Equals(Session, other.Session) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptContext?>.Default.Equals(Prompt, other.Prompt) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptVersionContext?>.Default.Equals(PromptVersion, other.PromptVersion) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.AgentSpanContext?>.Default.Equals(Span, other.Span) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundContext?>.Default.Equals(Playground, other.Playground) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.CodeEvaluatorContext?>.Default.Equals(CodeEvaluator, other.CodeEvaluator) &&

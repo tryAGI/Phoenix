@@ -39,6 +39,14 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        Prompt,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptVersion,
+        /// <summary>
+        /// 
+        /// </summary>
         Session,
         /// <summary>
         /// 
@@ -77,6 +85,8 @@ namespace Phoenix
                 ChatContextDiscriminatorType.LlmEvaluator => "llm_evaluator",
                 ChatContextDiscriminatorType.Playground => "playground",
                 ChatContextDiscriminatorType.Project => "project",
+                ChatContextDiscriminatorType.Prompt => "prompt",
+                ChatContextDiscriminatorType.PromptVersion => "prompt_version",
                 ChatContextDiscriminatorType.Session => "session",
                 ChatContextDiscriminatorType.Span => "span",
                 ChatContextDiscriminatorType.Subagents => "subagents",
@@ -99,6 +109,8 @@ namespace Phoenix
                 "llm_evaluator" => ChatContextDiscriminatorType.LlmEvaluator,
                 "playground" => ChatContextDiscriminatorType.Playground,
                 "project" => ChatContextDiscriminatorType.Project,
+                "prompt" => ChatContextDiscriminatorType.Prompt,
+                "prompt_version" => ChatContextDiscriminatorType.PromptVersion,
                 "session" => ChatContextDiscriminatorType.Session,
                 "span" => ChatContextDiscriminatorType.Span,
                 "subagents" => ChatContextDiscriminatorType.Subagents,
