@@ -23,6 +23,13 @@ namespace Phoenix
         public bool? ExportRemoteTraces { get; set; }
 
         /// <summary>
+        /// When true and the request is authenticated as a PhoenixUser, attaches the user's email as the OpenInference ``user.id`` span attribute on all traced work for this request.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attachUserId")]
+        public bool? AttachUserId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
@@ -54,6 +61,10 @@ namespace Phoenix
         /// <param name="exportRemoteTraces">
         /// Default Value: false
         /// </param>
+        /// <param name="attachUserId">
+        /// When true and the request is authenticated as a PhoenixUser, attaches the user's email as the OpenInference ``user.id`` span attribute on all traced work for this request.<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -61,10 +72,12 @@ namespace Phoenix
             global::System.Collections.Generic.IList<global::Phoenix.UIMessage> messages,
             global::Phoenix.Model3 model,
             bool? ingestTraces,
-            bool? exportRemoteTraces)
+            bool? exportRemoteTraces,
+            bool? attachUserId)
         {
             this.IngestTraces = ingestTraces;
             this.ExportRemoteTraces = exportRemoteTraces;
+            this.AttachUserId = attachUserId;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;
         }

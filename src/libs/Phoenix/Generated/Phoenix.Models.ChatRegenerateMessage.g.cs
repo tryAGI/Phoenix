@@ -48,6 +48,13 @@ namespace Phoenix
         public bool? ExportRemoteTraces { get; set; }
 
         /// <summary>
+        /// When true and the request is authenticated as a PhoenixUser, attaches the user's email as the OpenInference ``user.id`` span attribute on all traced work for this request.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attachUserId")]
+        public bool? AttachUserId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("contexts")]
@@ -93,6 +100,10 @@ namespace Phoenix
         /// <param name="exportRemoteTraces">
         /// Default Value: false
         /// </param>
+        /// <param name="attachUserId">
+        /// When true and the request is authenticated as a PhoenixUser, attaches the user's email as the OpenInference ``user.id`` span attribute on all traced work for this request.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="contexts"></param>
         /// <param name="editPermission">
         /// Default Value: manual
@@ -111,6 +122,7 @@ namespace Phoenix
             string? messageId,
             bool? ingestTraces,
             bool? exportRemoteTraces,
+            bool? attachUserId,
             global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? contexts,
             global::Phoenix.ChatRegenerateMessageEditPermission? editPermission,
             global::System.Collections.Generic.IList<string>? requestedSkills,
@@ -122,6 +134,7 @@ namespace Phoenix
             this.MessageId = messageId;
             this.IngestTraces = ingestTraces;
             this.ExportRemoteTraces = exportRemoteTraces;
+            this.AttachUserId = attachUserId;
             this.Contexts = contexts;
             this.EditPermission = editPermission;
             this.RequestedSkills = requestedSkills;
