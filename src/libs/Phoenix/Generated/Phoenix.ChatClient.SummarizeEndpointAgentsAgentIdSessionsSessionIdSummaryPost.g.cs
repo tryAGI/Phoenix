@@ -497,6 +497,10 @@ namespace Phoenix
         /// <param name="exportRemoteTraces">
         /// Default Value: false
         /// </param>
+        /// <param name="attachUserId">
+        /// When true and the request is authenticated as a PhoenixUser, attaches the user's email as the OpenInference ``user.id`` span attribute on all traced work for this request.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="messages"></param>
         /// <param name="model"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -509,6 +513,7 @@ namespace Phoenix
             global::Phoenix.Model3 model,
             bool? ingestTraces = default,
             bool? exportRemoteTraces = default,
+            bool? attachUserId = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -516,6 +521,7 @@ namespace Phoenix
             {
                 IngestTraces = ingestTraces,
                 ExportRemoteTraces = exportRemoteTraces,
+                AttachUserId = attachUserId,
                 Messages = messages,
                 Model = model,
             };
