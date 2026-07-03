@@ -1,0 +1,386 @@
+#pragma warning disable CS0618 // Type or member is obsolete
+
+#nullable enable
+
+namespace Phoenix
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public readonly partial struct Data7 : global::System.IEquatable<Data7>
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.CategoricalAnnotationConfig? Categorical { get; init; }
+#else
+        public global::Phoenix.CategoricalAnnotationConfig? Categorical { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Categorical))]
+#endif
+        public bool IsCategorical => Categorical != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCategorical(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.CategoricalAnnotationConfig? value)
+        {
+            value = Categorical;
+            return IsCategorical;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.CategoricalAnnotationConfig PickCategorical() => IsCategorical
+            ? Categorical!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Categorical' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.ContinuousAnnotationConfig? Continuous { get; init; }
+#else
+        public global::Phoenix.ContinuousAnnotationConfig? Continuous { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Continuous))]
+#endif
+        public bool IsContinuous => Continuous != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContinuous(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.ContinuousAnnotationConfig? value)
+        {
+            value = Continuous;
+            return IsContinuous;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.ContinuousAnnotationConfig PickContinuous() => IsContinuous
+            ? Continuous!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Continuous' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.FreeformAnnotationConfig? Freeform { get; init; }
+#else
+        public global::Phoenix.FreeformAnnotationConfig? Freeform { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Freeform))]
+#endif
+        public bool IsFreeform => Freeform != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFreeform(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.FreeformAnnotationConfig? value)
+        {
+            value = Freeform;
+            return IsFreeform;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Phoenix.FreeformAnnotationConfig PickFreeform() => IsFreeform
+            ? Freeform!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Freeform' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Data7(global::Phoenix.CategoricalAnnotationConfig value) => new Data7((global::Phoenix.CategoricalAnnotationConfig?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.CategoricalAnnotationConfig?(Data7 @this) => @this.Categorical;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Data7(global::Phoenix.CategoricalAnnotationConfig? value)
+        {
+            Categorical = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data7 FromCategorical(global::Phoenix.CategoricalAnnotationConfig? value) => new Data7(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Data7(global::Phoenix.ContinuousAnnotationConfig value) => new Data7((global::Phoenix.ContinuousAnnotationConfig?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.ContinuousAnnotationConfig?(Data7 @this) => @this.Continuous;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Data7(global::Phoenix.ContinuousAnnotationConfig? value)
+        {
+            Continuous = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data7 FromContinuous(global::Phoenix.ContinuousAnnotationConfig? value) => new Data7(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Data7(global::Phoenix.FreeformAnnotationConfig value) => new Data7((global::Phoenix.FreeformAnnotationConfig?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Phoenix.FreeformAnnotationConfig?(Data7 @this) => @this.Freeform;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Data7(global::Phoenix.FreeformAnnotationConfig? value)
+        {
+            Freeform = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data7 FromFreeform(global::Phoenix.FreeformAnnotationConfig? value) => new Data7(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Data7(
+            global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminatorType? type,
+            global::Phoenix.CategoricalAnnotationConfig? categorical,
+            global::Phoenix.ContinuousAnnotationConfig? continuous,
+            global::Phoenix.FreeformAnnotationConfig? freeform
+            )
+        {
+            Type = type;
+
+            Categorical = categorical;
+            Continuous = continuous;
+            Freeform = freeform;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Freeform as object ??
+            Continuous as object ??
+            Categorical as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Categorical?.ToString() ??
+            Continuous?.ToString() ??
+            Freeform?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsCategorical && !IsContinuous && !IsFreeform || !IsCategorical && IsContinuous && !IsFreeform || !IsCategorical && !IsContinuous && IsFreeform;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Phoenix.CategoricalAnnotationConfig, TResult>? categorical = null,
+            global::System.Func<global::Phoenix.ContinuousAnnotationConfig, TResult>? continuous = null,
+            global::System.Func<global::Phoenix.FreeformAnnotationConfig, TResult>? freeform = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCategorical && categorical != null)
+            {
+                return categorical(Categorical!);
+            }
+            else if (IsContinuous && continuous != null)
+            {
+                return continuous(Continuous!);
+            }
+            else if (IsFreeform && freeform != null)
+            {
+                return freeform(Freeform!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Phoenix.CategoricalAnnotationConfig>? categorical = null,
+
+            global::System.Action<global::Phoenix.ContinuousAnnotationConfig>? continuous = null,
+
+            global::System.Action<global::Phoenix.FreeformAnnotationConfig>? freeform = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCategorical)
+            {
+                categorical?.Invoke(Categorical!);
+            }
+            else if (IsContinuous)
+            {
+                continuous?.Invoke(Continuous!);
+            }
+            else if (IsFreeform)
+            {
+                freeform?.Invoke(Freeform!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Phoenix.CategoricalAnnotationConfig>? categorical = null,
+            global::System.Action<global::Phoenix.ContinuousAnnotationConfig>? continuous = null,
+            global::System.Action<global::Phoenix.FreeformAnnotationConfig>? freeform = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCategorical)
+            {
+                categorical?.Invoke(Categorical!);
+            }
+            else if (IsContinuous)
+            {
+                continuous?.Invoke(Continuous!);
+            }
+            else if (IsFreeform)
+            {
+                freeform?.Invoke(Freeform!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Categorical,
+                typeof(global::Phoenix.CategoricalAnnotationConfig),
+                Continuous,
+                typeof(global::Phoenix.ContinuousAnnotationConfig),
+                Freeform,
+                typeof(global::Phoenix.FreeformAnnotationConfig),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(Data7 other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.CategoricalAnnotationConfig?>.Default.Equals(Categorical, other.Categorical) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.ContinuousAnnotationConfig?>.Default.Equals(Continuous, other.Continuous) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.FreeformAnnotationConfig?>.Default.Equals(Freeform, other.Freeform) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(Data7 obj1, Data7 obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<Data7>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(Data7 obj1, Data7 obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is Data7 o && Equals(o);
+        }
+    }
+}
