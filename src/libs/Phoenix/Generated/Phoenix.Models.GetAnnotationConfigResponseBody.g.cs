@@ -12,9 +12,9 @@ namespace Phoenix
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.Data4JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.Data5JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Phoenix.Data4 Data { get; set; }
+        public required global::Phoenix.Data5 Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetAnnotationConfigResponseBody(
-            global::Phoenix.Data4 data)
+            global::Phoenix.Data5 data)
         {
             this.Data = data;
         }

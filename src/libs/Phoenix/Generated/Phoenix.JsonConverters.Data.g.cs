@@ -17,26 +17,26 @@ namespace Phoenix.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Phoenix.CategoricalAnnotationConfig? categorical = default;
-            if (discriminator?.Type == global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType.Categorical)
+            if (discriminator?.Type == global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType.Categorical)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.CategoricalAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.CategoricalAnnotationConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.CategoricalAnnotationConfig)}");
                 categorical = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Phoenix.ContinuousAnnotationConfig? continuous = default;
-            if (discriminator?.Type == global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType.Continuous)
+            if (discriminator?.Type == global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType.Continuous)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.ContinuousAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.ContinuousAnnotationConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.ContinuousAnnotationConfig)}");
                 continuous = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Phoenix.FreeformAnnotationConfig? freeform = default;
-            if (discriminator?.Type == global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType.Freeform)
+            if (discriminator?.Type == global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType.Freeform)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.FreeformAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.FreeformAnnotationConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.FreeformAnnotationConfig)}");

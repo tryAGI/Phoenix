@@ -30,14 +30,16 @@ namespace Phoenix
             ref string? cursor,
             ref int? limit,
             ref bool? includeExperimentProjects,
-            ref bool? includeDatasetEvaluatorProjects);
+            ref bool? includeDatasetEvaluatorProjects,
+            ref string? nameContains);
         partial void PrepareGetProjectsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? cursor,
             int? limit,
             bool? includeExperimentProjects,
-            bool? includeDatasetEvaluatorProjects);
+            bool? includeDatasetEvaluatorProjects,
+            string? nameContains);
         partial void ProcessGetProjectsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -66,6 +68,9 @@ namespace Phoenix
         /// Include dataset evaluator projects in the response. Dataset evaluator projects are created when running experiments with persisted evaluators.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="nameContains">
+        /// Return only projects whose name contains this substring (case-insensitive).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -74,6 +79,7 @@ namespace Phoenix
             int? limit = default,
             bool? includeExperimentProjects = default,
             bool? includeDatasetEvaluatorProjects = default,
+            string? nameContains = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -82,6 +88,7 @@ namespace Phoenix
                 limit: limit,
                 includeExperimentProjects: includeExperimentProjects,
                 includeDatasetEvaluatorProjects: includeDatasetEvaluatorProjects,
+                nameContains: nameContains,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -107,6 +114,9 @@ namespace Phoenix
         /// Include dataset evaluator projects in the response. Dataset evaluator projects are created when running experiments with persisted evaluators.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="nameContains">
+        /// Return only projects whose name contains this substring (case-insensitive).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -115,6 +125,7 @@ namespace Phoenix
             int? limit = default,
             bool? includeExperimentProjects = default,
             bool? includeDatasetEvaluatorProjects = default,
+            string? nameContains = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -125,7 +136,8 @@ namespace Phoenix
                 cursor: ref cursor,
                 limit: ref limit,
                 includeExperimentProjects: ref includeExperimentProjects,
-                includeDatasetEvaluatorProjects: ref includeDatasetEvaluatorProjects);
+                includeDatasetEvaluatorProjects: ref includeDatasetEvaluatorProjects,
+                nameContains: ref nameContains);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
@@ -158,6 +170,7 @@ namespace Phoenix
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("include_experiment_projects", includeExperimentProjects?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("include_dataset_evaluator_projects", includeDatasetEvaluatorProjects?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("name_contains", nameContains)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -202,7 +215,8 @@ namespace Phoenix
                     cursor: cursor,
                     limit: limit,
                     includeExperimentProjects: includeExperimentProjects,
-                    includeDatasetEvaluatorProjects: includeDatasetEvaluatorProjects);
+                    includeDatasetEvaluatorProjects: includeDatasetEvaluatorProjects,
+                    nameContains: nameContains);
 
                 return __httpRequest;
             }
