@@ -24,6 +24,12 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("turnTraceContext")]
+        public global::Phoenix.TurnTraceContext? TurnTraceContext { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::Phoenix.AssistantMessageMetadataUsage2? Usage { get; set; }
 
@@ -38,6 +44,7 @@ namespace Phoenix
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="trace"></param>
+        /// <param name="turnTraceContext"></param>
         /// <param name="usage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,10 +52,12 @@ namespace Phoenix
         public AssistantMessageMetadata(
             string sessionId,
             global::Phoenix.AssistantMessageMetadataTraceIds? trace,
+            global::Phoenix.TurnTraceContext? turnTraceContext,
             global::Phoenix.AssistantMessageMetadataUsage2? usage)
         {
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.Trace = trace;
+            this.TurnTraceContext = turnTraceContext;
             this.Usage = usage;
         }
 
