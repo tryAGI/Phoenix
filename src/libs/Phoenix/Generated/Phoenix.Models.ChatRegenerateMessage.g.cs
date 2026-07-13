@@ -82,6 +82,12 @@ namespace Phoenix
         public required global::Phoenix.Model Model { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("turnTraceContext")]
+        public global::Phoenix.TurnTraceContext? TurnTraceContext { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -111,6 +117,7 @@ namespace Phoenix
         /// <param name="requestedSkills">
         /// Skills the user explicitly requested via the prompt's slash-command affordance. The server force-loads each available skill by injecting a synthetic load_skill tool call/result at the tail of the message history. Unknown or context-unavailable names are ignored.
         /// </param>
+        /// <param name="turnTraceContext"></param>
         /// <param name="trigger"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -126,6 +133,7 @@ namespace Phoenix
             global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? contexts,
             global::Phoenix.ChatRegenerateMessageEditPermission? editPermission,
             global::System.Collections.Generic.IList<string>? requestedSkills,
+            global::Phoenix.TurnTraceContext? turnTraceContext,
             string trigger = "regenerate-message")
         {
             this.Trigger = trigger;
@@ -139,6 +147,7 @@ namespace Phoenix
             this.EditPermission = editPermission;
             this.RequestedSkills = requestedSkills;
             this.Model = model;
+            this.TurnTraceContext = turnTraceContext;
         }
 
         /// <summary>

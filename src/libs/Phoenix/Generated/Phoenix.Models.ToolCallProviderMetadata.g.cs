@@ -19,6 +19,12 @@ namespace Phoenix
         public required global::Phoenix.ToolCallProviderMetadataToolExecutionEnvironment ToolExecutionEnvironment { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_input_emitted_at")]
+        public string? ToolInputEmittedAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -28,13 +34,18 @@ namespace Phoenix
         /// Initializes a new instance of the <see cref="ToolCallProviderMetadata" /> class.
         /// </summary>
         /// <param name="toolExecutionEnvironment"></param>
+        /// <param name="toolInputEmittedAt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolCallProviderMetadata(
-            global::Phoenix.ToolCallProviderMetadataToolExecutionEnvironment toolExecutionEnvironment)
+            global::Phoenix.ToolCallProviderMetadataToolExecutionEnvironment toolExecutionEnvironment,
+            string? toolInputEmittedAt)
         {
             this.ToolExecutionEnvironment = toolExecutionEnvironment;
+            this.ToolInputEmittedAt = toolInputEmittedAt;
         }
 
         /// <summary>
