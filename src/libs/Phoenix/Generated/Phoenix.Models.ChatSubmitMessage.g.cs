@@ -26,7 +26,7 @@ namespace Phoenix
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Phoenix.AssistantMetadataUIMessage> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::Phoenix.PhoenixUIMessage> Messages { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -118,7 +118,7 @@ namespace Phoenix
 #endif
         public ChatSubmitMessage(
             string id,
-            global::System.Collections.Generic.IList<global::Phoenix.AssistantMetadataUIMessage> messages,
+            global::System.Collections.Generic.IList<global::Phoenix.PhoenixUIMessage> messages,
             global::Phoenix.Model2 model,
             string? trigger,
             bool? ingestTraces,

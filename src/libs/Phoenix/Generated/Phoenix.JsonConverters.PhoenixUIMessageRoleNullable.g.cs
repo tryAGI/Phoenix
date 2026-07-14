@@ -3,10 +3,10 @@
 namespace Phoenix.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class AssistantMetadataUIMessageRoleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Phoenix.AssistantMetadataUIMessageRole?>
+    public sealed class PhoenixUIMessageRoleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Phoenix.PhoenixUIMessageRole?>
     {
         /// <inheritdoc />
-        public override global::Phoenix.AssistantMetadataUIMessageRole? Read(
+        public override global::Phoenix.PhoenixUIMessageRole? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Phoenix.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Phoenix.AssistantMetadataUIMessageRoleExtensions.ToEnum(stringValue);
+                        return global::Phoenix.PhoenixUIMessageRoleExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Phoenix.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Phoenix.AssistantMetadataUIMessageRole)numValue;
+                    return (global::Phoenix.PhoenixUIMessageRole)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Phoenix.AssistantMetadataUIMessageRole?);
+                    return default(global::Phoenix.PhoenixUIMessageRole?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace Phoenix.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Phoenix.AssistantMetadataUIMessageRole? value,
+            global::Phoenix.PhoenixUIMessageRole? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace Phoenix.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::Phoenix.AssistantMetadataUIMessageRoleExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::Phoenix.PhoenixUIMessageRoleExtensions.ToValueString(value.Value));
             }
         }
     }

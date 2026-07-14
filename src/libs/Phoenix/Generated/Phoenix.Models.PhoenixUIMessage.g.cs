@@ -4,9 +4,9 @@
 namespace Phoenix
 {
     /// <summary>
-    /// `UIMessage` with `metadata` narrowed to `AssistantMessageMetadata`.
+    /// `UIMessage` with `metadata` narrowed to the Phoenix wire shapes.
     /// </summary>
-    public sealed partial class AssistantMetadataUIMessage
+    public sealed partial class PhoenixUIMessage
     {
         /// <summary>
         /// 
@@ -19,15 +19,15 @@ namespace Phoenix
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AssistantMetadataUIMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.PhoenixUIMessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Phoenix.AssistantMetadataUIMessageRole Role { get; set; }
+        public required global::Phoenix.PhoenixUIMessageRole Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::Phoenix.AssistantMessageMetadata? Metadata { get; set; }
+        public global::Phoenix.MetadataVariant1? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace Phoenix
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AssistantMetadataUIMessage" /> class.
+        /// Initializes a new instance of the <see cref="PhoenixUIMessage" /> class.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="role"></param>
@@ -52,11 +52,11 @@ namespace Phoenix
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public AssistantMetadataUIMessage(
+        public PhoenixUIMessage(
             string id,
-            global::Phoenix.AssistantMetadataUIMessageRole role,
+            global::Phoenix.PhoenixUIMessageRole role,
             global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>> parts,
-            global::Phoenix.AssistantMessageMetadata? metadata)
+            global::Phoenix.MetadataVariant1? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Role = role;
@@ -65,9 +65,9 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AssistantMetadataUIMessage" /> class.
+        /// Initializes a new instance of the <see cref="PhoenixUIMessage" /> class.
         /// </summary>
-        public AssistantMetadataUIMessage()
+        public PhoenixUIMessage()
         {
         }
 

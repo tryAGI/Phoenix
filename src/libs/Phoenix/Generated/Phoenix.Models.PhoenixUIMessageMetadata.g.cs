@@ -6,7 +6,7 @@ namespace Phoenix
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class AssistantMetadataUIMessageMetadata
+    public sealed partial class PhoenixUIMessageMetadata
     {
 
         /// <summary>
