@@ -9,6 +9,12 @@ namespace Phoenix
     public sealed partial class AssistantMessageMetadata
     {
         /// <summary>
+        /// Default Value: assistant
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sessionId")]
@@ -43,6 +49,9 @@ namespace Phoenix
         /// Initializes a new instance of the <see cref="AssistantMessageMetadata" /> class.
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="type">
+        /// Default Value: assistant
+        /// </param>
         /// <param name="trace"></param>
         /// <param name="turnTraceContext"></param>
         /// <param name="usage"></param>
@@ -51,10 +60,12 @@ namespace Phoenix
 #endif
         public AssistantMessageMetadata(
             string sessionId,
+            string? type,
             global::Phoenix.AssistantMessageMetadataTraceIds? trace,
             global::Phoenix.TurnTraceContext? turnTraceContext,
             global::Phoenix.AssistantMessageMetadataUsage2? usage)
         {
+            this.Type = type;
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.Trace = trace;
             this.TurnTraceContext = turnTraceContext;

@@ -27,7 +27,7 @@ namespace Phoenix
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Phoenix.AssistantMetadataUIMessage> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::Phoenix.PhoenixUIMessage> Messages { get; set; }
 
         /// <summary>
         /// 
@@ -124,7 +124,7 @@ namespace Phoenix
 #endif
         public ChatRegenerateMessage(
             string id,
-            global::System.Collections.Generic.IList<global::Phoenix.AssistantMetadataUIMessage> messages,
+            global::System.Collections.Generic.IList<global::Phoenix.PhoenixUIMessage> messages,
             global::Phoenix.Model model,
             string? messageId,
             bool? ingestTraces,

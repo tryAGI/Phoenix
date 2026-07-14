@@ -6,7 +6,7 @@ namespace Phoenix
     /// <summary>
     /// 
     /// </summary>
-    public enum AssistantMetadataUIMessageRole
+    public enum PhoenixUIMessageRole
     {
         /// <summary>
         /// 
@@ -25,31 +25,31 @@ namespace Phoenix
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class AssistantMetadataUIMessageRoleExtensions
+    public static class PhoenixUIMessageRoleExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this AssistantMetadataUIMessageRole value)
+        public static string ToValueString(this PhoenixUIMessageRole value)
         {
             return value switch
             {
-                AssistantMetadataUIMessageRole.Assistant => "assistant",
-                AssistantMetadataUIMessageRole.System => "system",
-                AssistantMetadataUIMessageRole.User => "user",
+                PhoenixUIMessageRole.Assistant => "assistant",
+                PhoenixUIMessageRole.System => "system",
+                PhoenixUIMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AssistantMetadataUIMessageRole? ToEnum(string value)
+        public static PhoenixUIMessageRole? ToEnum(string value)
         {
             return value switch
             {
-                "assistant" => AssistantMetadataUIMessageRole.Assistant,
-                "system" => AssistantMetadataUIMessageRole.System,
-                "user" => AssistantMetadataUIMessageRole.User,
+                "assistant" => PhoenixUIMessageRole.Assistant,
+                "system" => PhoenixUIMessageRole.System,
+                "user" => PhoenixUIMessageRole.User,
                 _ => null,
             };
         }
