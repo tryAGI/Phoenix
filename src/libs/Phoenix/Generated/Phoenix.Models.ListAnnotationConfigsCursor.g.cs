@@ -6,7 +6,7 @@ namespace Phoenix
     /// <summary>
     /// Cursor for pagination (base64-encoded annotation config ID)
     /// </summary>
-    public sealed partial class ListAnnotationConfigsV1AnnotationConfigsGetCursor
+    public sealed partial class ListAnnotationConfigsCursor
     {
 
         /// <summary>

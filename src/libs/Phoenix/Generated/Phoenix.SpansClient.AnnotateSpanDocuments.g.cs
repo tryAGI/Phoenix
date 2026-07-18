@@ -44,7 +44,7 @@ namespace Phoenix
             ref string content);
 
         /// <summary>
-        /// Annotate Span Documents
+        /// Create span document annotations
         /// </summary>
         /// <param name="sync">
         /// If set to true, the annotations are inserted synchronously.<br/>
@@ -72,7 +72,7 @@ namespace Phoenix
             return __response.Body;
         }
         /// <summary>
-        /// Annotate Span Documents
+        /// Create span document annotations
         /// </summary>
         /// <param name="sync">
         /// If set to true, the annotations are inserted synchronously.<br/>
@@ -561,7 +561,7 @@ namespace Phoenix
             }
         }
         /// <summary>
-        /// Annotate Span Documents
+        /// Create span document annotations
         /// </summary>
         /// <param name="sync">
         /// If set to true, the annotations are inserted synchronously.<br/>

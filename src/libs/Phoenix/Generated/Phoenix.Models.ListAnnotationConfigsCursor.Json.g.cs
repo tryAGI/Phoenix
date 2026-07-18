@@ -2,7 +2,7 @@
 
 namespace Phoenix
 {
-    public sealed partial class ListAnnotationConfigsV1AnnotationConfigsGetCursor
+    public sealed partial class ListAnnotationConfigsCursor
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace Phoenix
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor? FromJson(
+        public static global::Phoenix.ListAnnotationConfigsCursor? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor),
-                jsonSerializerContext) as global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor;
+                typeof(global::Phoenix.ListAnnotationConfigsCursor),
+                jsonSerializerContext) as global::Phoenix.ListAnnotationConfigsCursor;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor? FromJson(
+        public static global::Phoenix.ListAnnotationConfigsCursor? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor? FromJson(
+        public static global::Phoenix.ListAnnotationConfigsCursor? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace Phoenix
                     global::Phoenix.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Phoenix.ListAnnotationConfigsCursor>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace Phoenix
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Phoenix.ListAnnotationConfigsCursor?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor;
+                typeof(global::Phoenix.ListAnnotationConfigsCursor),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Phoenix.ListAnnotationConfigsCursor;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Phoenix.ListAnnotationConfigsCursor?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Phoenix.ListAnnotationConfigsCursor?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace Phoenix
                     global::Phoenix.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Phoenix.ListAnnotationConfigsV1AnnotationConfigsGetCursor?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Phoenix.ListAnnotationConfigsCursor?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

@@ -5,7 +5,7 @@ namespace Phoenix
     public partial interface ISpansClient
     {
         /// <summary>
-        /// Annotate Span Documents
+        /// Create span document annotations
         /// </summary>
         /// <param name="sync">
         /// If set to true, the annotations are inserted synchronously.<br/>
@@ -22,7 +22,7 @@ namespace Phoenix
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Annotate Span Documents
+        /// Create span document annotations
         /// </summary>
         /// <param name="sync">
         /// If set to true, the annotations are inserted synchronously.<br/>
@@ -39,7 +39,7 @@ namespace Phoenix
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Annotate Span Documents
+        /// Create span document annotations
         /// </summary>
         /// <param name="sync">
         /// If set to true, the annotations are inserted synchronously.<br/>
