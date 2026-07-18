@@ -7,7 +7,7 @@ namespace Phoenix
     {
 
 
-        private static readonly global::Phoenix.EndPointSecurityRequirement s_CreateAnnotationConfigV1AnnotationConfigsPostSecurityRequirement0 =
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_CreateAnnotationConfigSecurityRequirement0 =
             new global::Phoenix.EndPointSecurityRequirement
             {
                 Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
@@ -21,22 +21,22 @@ namespace Phoenix
                     },
                 },
             };
-        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_CreateAnnotationConfigV1AnnotationConfigsPostSecurityRequirements =
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_CreateAnnotationConfigSecurityRequirements =
             new global::Phoenix.EndPointSecurityRequirement[]
-            {                s_CreateAnnotationConfigV1AnnotationConfigsPostSecurityRequirement0,
+            {                s_CreateAnnotationConfigSecurityRequirement0,
             };
-        partial void PrepareCreateAnnotationConfigV1AnnotationConfigsPostArguments(
+        partial void PrepareCreateAnnotationConfigArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Phoenix.CreateAnnotationConfigData request);
-        partial void PrepareCreateAnnotationConfigV1AnnotationConfigsPostRequest(
+        partial void PrepareCreateAnnotationConfigRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::Phoenix.CreateAnnotationConfigData request);
-        partial void ProcessCreateAnnotationConfigV1AnnotationConfigsPostResponse(
+        partial void ProcessCreateAnnotationConfigResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateAnnotationConfigV1AnnotationConfigsPostResponseContent(
+        partial void ProcessCreateAnnotationConfigResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -48,13 +48,13 @@ namespace Phoenix
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.CreateAnnotationConfigResponseBody> CreateAnnotationConfigV1AnnotationConfigsPostAsync(
+        public async global::System.Threading.Tasks.Task<global::Phoenix.CreateAnnotationConfigResponseBody> CreateAnnotationConfigAsync(
 
             global::Phoenix.CreateAnnotationConfigData request,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateAnnotationConfigV1AnnotationConfigsPostAsResponseAsync(
+            var __response = await CreateAnnotationConfigAsResponseAsync(
 
                 request: request,
                 requestOptions: requestOptions,
@@ -70,7 +70,7 @@ namespace Phoenix
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.CreateAnnotationConfigResponseBody>> CreateAnnotationConfigV1AnnotationConfigsPostAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.CreateAnnotationConfigResponseBody>> CreateAnnotationConfigAsResponseAsync(
 
             global::Phoenix.CreateAnnotationConfigData request,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
@@ -78,15 +78,15 @@ namespace Phoenix
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateAnnotationConfigV1AnnotationConfigsPostArguments(
+            PrepareCreateAnnotationConfigArguments(
                 httpClient: HttpClient,
                 request: request);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateAnnotationConfigV1AnnotationConfigsPostSecurityRequirements,
-                operationName: "CreateAnnotationConfigV1AnnotationConfigsPostAsync");
+                securityRequirements: s_CreateAnnotationConfigSecurityRequirements,
+                operationName: "CreateAnnotationConfigAsync");
 
             using var __timeoutCancellationTokenSource = global::Phoenix.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -151,7 +151,7 @@ namespace Phoenix
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateAnnotationConfigV1AnnotationConfigsPostRequest(
+                PrepareCreateAnnotationConfigRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
@@ -171,8 +171,8 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAnnotationConfigV1AnnotationConfigsPost",
-                                methodName: "CreateAnnotationConfigV1AnnotationConfigsPostAsync",
+                                operationId: "CreateAnnotationConfig",
+                                methodName: "CreateAnnotationConfigAsync",
                                 pathTemplate: "\"/v1/annotation_configs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -205,8 +205,8 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAnnotationConfigV1AnnotationConfigsPost",
-                                methodName: "CreateAnnotationConfigV1AnnotationConfigsPostAsync",
+                                operationId: "CreateAnnotationConfig",
+                                methodName: "CreateAnnotationConfigAsync",
                                 pathTemplate: "\"/v1/annotation_configs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -246,8 +246,8 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAnnotationConfigV1AnnotationConfigsPost",
-                                methodName: "CreateAnnotationConfigV1AnnotationConfigsPostAsync",
+                                operationId: "CreateAnnotationConfig",
+                                methodName: "CreateAnnotationConfigAsync",
                                 pathTemplate: "\"/v1/annotation_configs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -286,7 +286,7 @@ namespace Phoenix
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateAnnotationConfigV1AnnotationConfigsPostResponse(
+                ProcessCreateAnnotationConfigResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -294,8 +294,8 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAnnotationConfigV1AnnotationConfigsPost",
-                                methodName: "CreateAnnotationConfigV1AnnotationConfigsPostAsync",
+                                operationId: "CreateAnnotationConfig",
+                                methodName: "CreateAnnotationConfigAsync",
                                 pathTemplate: "\"/v1/annotation_configs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -316,8 +316,8 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAnnotationConfigV1AnnotationConfigsPost",
-                                methodName: "CreateAnnotationConfigV1AnnotationConfigsPostAsync",
+                                operationId: "CreateAnnotationConfig",
+                                methodName: "CreateAnnotationConfigAsync",
                                 pathTemplate: "\"/v1/annotation_configs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -420,7 +420,7 @@ namespace Phoenix
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateAnnotationConfigV1AnnotationConfigsPostResponseContent(
+                                ProcessCreateAnnotationConfigResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);

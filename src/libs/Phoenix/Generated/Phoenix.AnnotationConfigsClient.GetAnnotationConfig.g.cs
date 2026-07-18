@@ -7,7 +7,7 @@ namespace Phoenix
     {
 
 
-        private static readonly global::Phoenix.EndPointSecurityRequirement s_DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteSecurityRequirement0 =
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_GetAnnotationConfigSecurityRequirement0 =
             new global::Phoenix.EndPointSecurityRequirement
             {
                 Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
@@ -21,42 +21,42 @@ namespace Phoenix
                     },
                 },
             };
-        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteSecurityRequirements =
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_GetAnnotationConfigSecurityRequirements =
             new global::Phoenix.EndPointSecurityRequirement[]
-            {                s_DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteSecurityRequirement0,
+            {                s_GetAnnotationConfigSecurityRequirement0,
             };
-        partial void PrepareDeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteArguments(
+        partial void PrepareGetAnnotationConfigArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string configId);
-        partial void PrepareDeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteRequest(
+            ref string configIdentifier);
+        partial void PrepareGetAnnotationConfigRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string configId);
-        partial void ProcessDeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteResponse(
+            string configIdentifier);
+        partial void ProcessGetAnnotationConfigResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessDeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteResponseContent(
+        partial void ProcessGetAnnotationConfigResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Delete an annotation configuration
+        /// Get an annotation configuration by ID or name
         /// </summary>
-        /// <param name="configId">
-        /// ID of the annotation configuration
+        /// <param name="configIdentifier">
+        /// ID or name of the annotation configuration
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.DeleteAnnotationConfigResponseBody> DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteAsync(
-            string configId,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.GetAnnotationConfigResponseBody> GetAnnotationConfigAsync(
+            string configIdentifier,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteAsResponseAsync(
-                configId: configId,
+            var __response = await GetAnnotationConfigAsResponseAsync(
+                configIdentifier: configIdentifier,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -64,30 +64,30 @@ namespace Phoenix
             return __response.Body;
         }
         /// <summary>
-        /// Delete an annotation configuration
+        /// Get an annotation configuration by ID or name
         /// </summary>
-        /// <param name="configId">
-        /// ID of the annotation configuration
+        /// <param name="configIdentifier">
+        /// ID or name of the annotation configuration
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.DeleteAnnotationConfigResponseBody>> DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteAsResponseAsync(
-            string configId,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetAnnotationConfigResponseBody>> GetAnnotationConfigAsResponseAsync(
+            string configIdentifier,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareDeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteArguments(
+            PrepareGetAnnotationConfigArguments(
                 httpClient: HttpClient,
-                configId: ref configId);
+                configIdentifier: ref configIdentifier);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteSecurityRequirements,
-                operationName: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteAsync");
+                securityRequirements: s_GetAnnotationConfigSecurityRequirements,
+                operationName: "GetAnnotationConfigAsync");
 
             using var __timeoutCancellationTokenSource = global::Phoenix.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -107,7 +107,7 @@ namespace Phoenix
             {
 
                             var __pathBuilder = new global::Phoenix.PathBuilder(
-                                path: $"/v1/annotation_configs/{configId}",
+                                path: $"/v1/annotation_configs/{configIdentifier}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -115,7 +115,7 @@ namespace Phoenix
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Delete,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -146,10 +146,10 @@ namespace Phoenix
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareDeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteRequest(
+                PrepareGetAnnotationConfigRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    configId: configId!);
+                    configIdentifier: configIdentifier!);
 
                 return __httpRequest;
             }
@@ -166,10 +166,10 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDelete",
-                                methodName: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteAsync",
-                                pathTemplate: "$\"/v1/annotation_configs/{configId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "GetAnnotationConfig",
+                                methodName: "GetAnnotationConfigAsync",
+                                pathTemplate: "$\"/v1/annotation_configs/{configIdentifier}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -200,10 +200,10 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDelete",
-                                methodName: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteAsync",
-                                pathTemplate: "$\"/v1/annotation_configs/{configId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "GetAnnotationConfig",
+                                methodName: "GetAnnotationConfigAsync",
+                                pathTemplate: "$\"/v1/annotation_configs/{configIdentifier}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -241,10 +241,10 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDelete",
-                                methodName: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteAsync",
-                                pathTemplate: "$\"/v1/annotation_configs/{configId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "GetAnnotationConfig",
+                                methodName: "GetAnnotationConfigAsync",
+                                pathTemplate: "$\"/v1/annotation_configs/{configIdentifier}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -281,7 +281,7 @@ namespace Phoenix
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessDeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteResponse(
+                ProcessGetAnnotationConfigResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -289,10 +289,10 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDelete",
-                                methodName: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteAsync",
-                                pathTemplate: "$\"/v1/annotation_configs/{configId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "GetAnnotationConfig",
+                                methodName: "GetAnnotationConfigAsync",
+                                pathTemplate: "$\"/v1/annotation_configs/{configIdentifier}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -311,10 +311,10 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDelete",
-                                methodName: "DeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteAsync",
-                                pathTemplate: "$\"/v1/annotation_configs/{configId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "GetAnnotationConfig",
+                                methodName: "GetAnnotationConfigAsync",
+                                pathTemplate: "$\"/v1/annotation_configs/{configIdentifier}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -415,7 +415,7 @@ namespace Phoenix
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessDeleteAnnotationConfigV1AnnotationConfigsConfigIdDeleteResponseContent(
+                                ProcessGetAnnotationConfigResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -424,9 +424,9 @@ namespace Phoenix
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Phoenix.DeleteAnnotationConfigResponseBody.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Phoenix.GetAnnotationConfigResponseBody.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.DeleteAnnotationConfigResponseBody>(
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetAnnotationConfigResponseBody>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -456,9 +456,9 @@ namespace Phoenix
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Phoenix.DeleteAnnotationConfigResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Phoenix.GetAnnotationConfigResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.DeleteAnnotationConfigResponseBody>(
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetAnnotationConfigResponseBody>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

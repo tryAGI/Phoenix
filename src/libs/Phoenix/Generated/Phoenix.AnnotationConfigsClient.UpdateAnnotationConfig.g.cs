@@ -7,7 +7,7 @@ namespace Phoenix
     {
 
 
-        private static readonly global::Phoenix.EndPointSecurityRequirement s_GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetSecurityRequirement0 =
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_UpdateAnnotationConfigSecurityRequirement0 =
             new global::Phoenix.EndPointSecurityRequirement
             {
                 Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
@@ -21,42 +21,49 @@ namespace Phoenix
                     },
                 },
             };
-        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetSecurityRequirements =
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_UpdateAnnotationConfigSecurityRequirements =
             new global::Phoenix.EndPointSecurityRequirement[]
-            {                s_GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetSecurityRequirement0,
+            {                s_UpdateAnnotationConfigSecurityRequirement0,
             };
-        partial void PrepareGetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetArguments(
+        partial void PrepareUpdateAnnotationConfigArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string configIdentifier);
-        partial void PrepareGetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetRequest(
+            ref string configId,
+            global::Phoenix.CreateAnnotationConfigData request);
+        partial void PrepareUpdateAnnotationConfigRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string configIdentifier);
-        partial void ProcessGetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetResponse(
+            string configId,
+            global::Phoenix.CreateAnnotationConfigData request);
+        partial void ProcessUpdateAnnotationConfigResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetResponseContent(
+        partial void ProcessUpdateAnnotationConfigResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get an annotation configuration by ID or name
+        /// Update an annotation configuration
         /// </summary>
-        /// <param name="configIdentifier">
-        /// ID or name of the annotation configuration
+        /// <param name="configId">
+        /// ID of the annotation configuration
         /// </param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.GetAnnotationConfigResponseBody> GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetAsync(
-            string configIdentifier,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.UpdateAnnotationConfigResponseBody> UpdateAnnotationConfigAsync(
+            string configId,
+
+            global::Phoenix.CreateAnnotationConfigData request,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetAsResponseAsync(
-                configIdentifier: configIdentifier,
+            var __response = await UpdateAnnotationConfigAsResponseAsync(
+                configId: configId,
+
+                request: request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -64,30 +71,34 @@ namespace Phoenix
             return __response.Body;
         }
         /// <summary>
-        /// Get an annotation configuration by ID or name
+        /// Update an annotation configuration
         /// </summary>
-        /// <param name="configIdentifier">
-        /// ID or name of the annotation configuration
+        /// <param name="configId">
+        /// ID of the annotation configuration
         /// </param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetAnnotationConfigResponseBody>> GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetAsResponseAsync(
-            string configIdentifier,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.UpdateAnnotationConfigResponseBody>> UpdateAnnotationConfigAsResponseAsync(
+            string configId,
+
+            global::Phoenix.CreateAnnotationConfigData request,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetArguments(
+            PrepareUpdateAnnotationConfigArguments(
                 httpClient: HttpClient,
-                configIdentifier: ref configIdentifier);
+                configId: ref configId,
+                request: request);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetSecurityRequirements,
-                operationName: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetAsync");
+                securityRequirements: s_UpdateAnnotationConfigSecurityRequirements,
+                operationName: "UpdateAnnotationConfigAsync");
 
             using var __timeoutCancellationTokenSource = global::Phoenix.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -107,7 +118,7 @@ namespace Phoenix
             {
 
                             var __pathBuilder = new global::Phoenix.PathBuilder(
-                                path: $"/v1/annotation_configs/{configIdentifier}",
+                                path: $"/v1/annotation_configs/{configId}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -115,7 +126,7 @@ namespace Phoenix
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Get,
+                    method: global::System.Net.Http.HttpMethod.Put,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -138,6 +149,12 @@ namespace Phoenix
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
+                            __httpRequest.Content = __httpRequestContent;
                 global::Phoenix.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -146,10 +163,11 @@ namespace Phoenix
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetRequest(
+                PrepareUpdateAnnotationConfigRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    configIdentifier: configIdentifier!);
+                    configId: configId!,
+                    request: request);
 
                 return __httpRequest;
             }
@@ -166,10 +184,10 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGet",
-                                methodName: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetAsync",
-                                pathTemplate: "$\"/v1/annotation_configs/{configIdentifier}\"",
-                                httpMethod: "GET",
+                                operationId: "UpdateAnnotationConfig",
+                                methodName: "UpdateAnnotationConfigAsync",
+                                pathTemplate: "$\"/v1/annotation_configs/{configId}\"",
+                                httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -200,10 +218,10 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGet",
-                                methodName: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetAsync",
-                                pathTemplate: "$\"/v1/annotation_configs/{configIdentifier}\"",
-                                httpMethod: "GET",
+                                operationId: "UpdateAnnotationConfig",
+                                methodName: "UpdateAnnotationConfigAsync",
+                                pathTemplate: "$\"/v1/annotation_configs/{configId}\"",
+                                httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -241,10 +259,10 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGet",
-                                methodName: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetAsync",
-                                pathTemplate: "$\"/v1/annotation_configs/{configIdentifier}\"",
-                                httpMethod: "GET",
+                                operationId: "UpdateAnnotationConfig",
+                                methodName: "UpdateAnnotationConfigAsync",
+                                pathTemplate: "$\"/v1/annotation_configs/{configId}\"",
+                                httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -281,7 +299,7 @@ namespace Phoenix
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetResponse(
+                ProcessUpdateAnnotationConfigResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -289,10 +307,10 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGet",
-                                methodName: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetAsync",
-                                pathTemplate: "$\"/v1/annotation_configs/{configIdentifier}\"",
-                                httpMethod: "GET",
+                                operationId: "UpdateAnnotationConfig",
+                                methodName: "UpdateAnnotationConfigAsync",
+                                pathTemplate: "$\"/v1/annotation_configs/{configId}\"",
+                                httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -311,10 +329,10 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGet",
-                                methodName: "GetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetAsync",
-                                pathTemplate: "$\"/v1/annotation_configs/{configIdentifier}\"",
-                                httpMethod: "GET",
+                                operationId: "UpdateAnnotationConfig",
+                                methodName: "UpdateAnnotationConfigAsync",
+                                pathTemplate: "$\"/v1/annotation_configs/{configId}\"",
+                                httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -415,7 +433,7 @@ namespace Phoenix
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetAnnotationConfigByNameOrIdV1AnnotationConfigsConfigIdentifierGetResponseContent(
+                                ProcessUpdateAnnotationConfigResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -424,9 +442,9 @@ namespace Phoenix
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Phoenix.GetAnnotationConfigResponseBody.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Phoenix.UpdateAnnotationConfigResponseBody.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetAnnotationConfigResponseBody>(
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.UpdateAnnotationConfigResponseBody>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -456,9 +474,9 @@ namespace Phoenix
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Phoenix.GetAnnotationConfigResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Phoenix.UpdateAnnotationConfigResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetAnnotationConfigResponseBody>(
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.UpdateAnnotationConfigResponseBody>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
