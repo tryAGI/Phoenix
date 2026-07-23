@@ -51,6 +51,12 @@ namespace Phoenix
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        public global::Phoenix.DatasetExampleSource2? Source { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -65,6 +71,7 @@ namespace Phoenix
         /// <param name="output"></param>
         /// <param name="metadata"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="source"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,7 +81,8 @@ namespace Phoenix
             object input,
             object output,
             object metadata,
-            global::System.DateTime updatedAt)
+            global::System.DateTime updatedAt,
+            global::Phoenix.DatasetExampleSource2? source)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
@@ -82,6 +90,7 @@ namespace Phoenix
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.UpdatedAt = updatedAt;
+            this.Source = source;
         }
 
         /// <summary>
