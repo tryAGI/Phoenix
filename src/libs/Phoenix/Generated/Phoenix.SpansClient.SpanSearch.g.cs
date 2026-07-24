@@ -33,6 +33,7 @@ namespace Phoenix
             global::System.DateTime? startTime,
             global::System.DateTime? endTime,
             global::System.Collections.Generic.IList<string>? traceId,
+            global::System.Collections.Generic.IList<string>? spanId,
             ref string? parentId,
             global::System.Collections.Generic.IList<string>? name,
             global::System.Collections.Generic.IList<string>? statusCode,
@@ -46,6 +47,7 @@ namespace Phoenix
             global::System.DateTime? startTime,
             global::System.DateTime? endTime,
             global::System.Collections.Generic.IList<string>? traceId,
+            global::System.Collections.Generic.IList<string>? spanId,
             string? parentId,
             global::System.Collections.Generic.IList<string>? name,
             global::System.Collections.Generic.IList<string>? statusCode,
@@ -82,6 +84,9 @@ namespace Phoenix
         /// <param name="traceId">
         /// Filter by one or more trace IDs
         /// </param>
+        /// <param name="spanId">
+        /// Filter by one or more span IDs
+        /// </param>
         /// <param name="parentId">
         /// Filter by parent span ID. Use "null" to get root spans only.
         /// </param>
@@ -104,6 +109,7 @@ namespace Phoenix
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::System.Collections.Generic.IList<string>? traceId = default,
+            global::System.Collections.Generic.IList<string>? spanId = default,
             string? parentId = default,
             global::System.Collections.Generic.IList<string>? name = default,
             global::System.Collections.Generic.IList<string>? statusCode = default,
@@ -118,6 +124,7 @@ namespace Phoenix
                 startTime: startTime,
                 endTime: endTime,
                 traceId: traceId,
+                spanId: spanId,
                 parentId: parentId,
                 name: name,
                 statusCode: statusCode,
@@ -151,6 +158,9 @@ namespace Phoenix
         /// <param name="traceId">
         /// Filter by one or more trace IDs
         /// </param>
+        /// <param name="spanId">
+        /// Filter by one or more span IDs
+        /// </param>
         /// <param name="parentId">
         /// Filter by parent span ID. Use "null" to get root spans only.
         /// </param>
@@ -173,6 +183,7 @@ namespace Phoenix
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::System.Collections.Generic.IList<string>? traceId = default,
+            global::System.Collections.Generic.IList<string>? spanId = default,
             string? parentId = default,
             global::System.Collections.Generic.IList<string>? name = default,
             global::System.Collections.Generic.IList<string>? statusCode = default,
@@ -190,6 +201,7 @@ namespace Phoenix
                 startTime: startTime,
                 endTime: endTime,
                 traceId: traceId,
+                spanId: spanId,
                 parentId: ref parentId,
                 name: name,
                 statusCode: statusCode,
@@ -227,6 +239,7 @@ namespace Phoenix
                                 .AddOptionalParameter("start_time", startTime?.ToString())
                                 .AddOptionalParameter("end_time", endTime?.ToString())
                                 .AddOptionalParameter("trace_id", traceId?.ToString())
+                                .AddOptionalParameter("span_id", spanId?.ToString())
                                 .AddOptionalParameter("parent_id", parentId)
                                 .AddOptionalParameter("name", name?.ToString())
                                 .AddOptionalParameter("status_code", statusCode?.ToString())
@@ -278,6 +291,7 @@ namespace Phoenix
                     startTime: startTime,
                     endTime: endTime,
                     traceId: traceId,
+                    spanId: spanId,
                     parentId: parentId,
                     name: name,
                     statusCode: statusCode,

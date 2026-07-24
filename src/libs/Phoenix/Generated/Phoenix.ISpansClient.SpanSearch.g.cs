@@ -27,6 +27,9 @@ namespace Phoenix
         /// <param name="traceId">
         /// Filter by one or more trace IDs
         /// </param>
+        /// <param name="spanId">
+        /// Filter by one or more span IDs
+        /// </param>
         /// <param name="parentId">
         /// Filter by parent span ID. Use "null" to get root spans only.
         /// </param>
@@ -49,6 +52,7 @@ namespace Phoenix
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::System.Collections.Generic.IList<string>? traceId = default,
+            global::System.Collections.Generic.IList<string>? spanId = default,
             string? parentId = default,
             global::System.Collections.Generic.IList<string>? name = default,
             global::System.Collections.Generic.IList<string>? statusCode = default,
@@ -78,6 +82,9 @@ namespace Phoenix
         /// <param name="traceId">
         /// Filter by one or more trace IDs
         /// </param>
+        /// <param name="spanId">
+        /// Filter by one or more span IDs
+        /// </param>
         /// <param name="parentId">
         /// Filter by parent span ID. Use "null" to get root spans only.
         /// </param>
@@ -100,6 +107,7 @@ namespace Phoenix
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::System.Collections.Generic.IList<string>? traceId = default,
+            global::System.Collections.Generic.IList<string>? spanId = default,
             string? parentId = default,
             global::System.Collections.Generic.IList<string>? name = default,
             global::System.Collections.Generic.IList<string>? statusCode = default,
