@@ -7,11 +7,9 @@ namespace Phoenix
     /// Project the user is currently viewing.<br/>
     /// ``span_filter`` carries the project-scoped span filter expression when the<br/>
     /// span filter field is mounted — empty string when the field is mounted with<br/>
-    /// no condition applied, ``None`` when the field is not present at all.<br/>
-    /// ``root_spans_only`` carries the current state of the spans-table root vs.<br/>
-    /// all toggle when that toggle is mounted — ``True`` when the table is<br/>
-    /// restricted to root spans, ``False`` when it shows every span, ``None``<br/>
-    /// when the toggle is not present (e.g. on the traces tab).
+    /// no condition applied, ``None`` when the field is not present at all. It<br/>
+    /// describes the view in full, root-span scoping included (which is expressed<br/>
+    /// within the filter DSL as ``parent_id is None``).
     /// </summary>
     public sealed partial class ProjectContext
     {
@@ -36,12 +34,6 @@ namespace Phoenix
         public string? SpanFilter { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("rootSpansOnly")]
-        public bool? RootSpansOnly { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,7 +44,6 @@ namespace Phoenix
         /// </summary>
         /// <param name="projectNodeId"></param>
         /// <param name="spanFilter"></param>
-        /// <param name="rootSpansOnly"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -60,13 +51,11 @@ namespace Phoenix
         public ProjectContext(
             string projectNodeId,
             string? spanFilter,
-            bool? rootSpansOnly,
             string type = "project")
         {
             this.Type = type;
             this.ProjectNodeId = projectNodeId ?? throw new global::System.ArgumentNullException(nameof(projectNodeId));
             this.SpanFilter = spanFilter;
-            this.RootSpansOnly = rootSpansOnly;
         }
 
         /// <summary>
