@@ -21,6 +21,10 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.BuiltInProviderModelSelectionOpenaiApiTypeNullableJsonConverter),
 
+            typeof(global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleNullableJsonConverter),
+
             typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeNullableJsonConverter),
@@ -425,6 +429,10 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.Model3JsonConverter),
 
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionTextPart>>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
+
             typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
 
             typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
@@ -548,6 +556,20 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.CategoricalAnnotationValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CategoricalAnnotationValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CategoricalAnnotationConfigData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletion))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionChoice>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionChoice))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionMessage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionErrorDetail))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionRequestMessage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionRequestMessageRole), TypeInfoPropertyName = "ChatCompletionRequestMessageRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionTextPart>>), TypeInfoPropertyName = "AnyOfStringIListChatCompletionTextPart2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionTextPart>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionTextPart))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionStreamOptions))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContext), TypeInfoPropertyName = "ChatContext2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ProjectContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TraceContext))]
@@ -566,7 +588,6 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRegenerateMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.PhoenixUIMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PhoenixUIMessage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.ChatContext>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRegenerateMessageEditPermission), TypeInfoPropertyName = "ChatRegenerateMessageEditPermission2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
@@ -594,6 +615,10 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateApiKeyRequestBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateApiKeyResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreatedApiKey))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateChatCompletionRequestBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionRequestMessage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>, object>), TypeInfoPropertyName = "AnyOfStringIListStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateDatasetLabelRequestBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateDatasetLabelResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateExperimentRequestBody))]
@@ -925,7 +950,6 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminatorType), TypeInfoPropertyName = "ToolCallContentPartToolCallDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>), TypeInfoPropertyName = "AnyOfBooleanInt32DoubleStringObjectIListObjectObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TraceAnnotation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TraceAnnotationSource), TypeInfoPropertyName = "TraceAnnotationSource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TraceAnnotationAnnotatorKind), TypeInfoPropertyName = "TraceAnnotationAnnotatorKind2")]
@@ -967,22 +991,6 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolCallProviderMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolCallProviderMetadataToolExecutionEnvironment), TypeInfoPropertyName = "ToolCallProviderMetadataToolExecutionEnvironment2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction), TypeInfoPropertyName = "UploadDatasetRequestAction2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>), TypeInfoPropertyName = "OneOfStringIListStringObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OneOf<string, object>), TypeInfoPropertyName = "OneOfStringObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequest2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction2), TypeInfoPropertyName = "UploadDatasetRequestAction22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesSort), TypeInfoPropertyName = "ListProjectTracesSort2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesOrder), TypeInfoPropertyName = "ListProjectTracesOrder2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectSessionsOrder), TypeInfoPropertyName = "ListProjectSessionsOrder2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data?), TypeInfoPropertyName = "NullableData2_3")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1001,6 +1009,10 @@ namespace Phoenix
             typeof(global::Phoenix.JsonConverters.BuiltInProviderModelSelectionOpenaiApiTypeJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.BuiltInProviderModelSelectionOpenaiApiTypeNullableJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter),
+
+            typeof(global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleNullableJsonConverter),
 
             typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeJsonConverter),
 
@@ -1406,6 +1418,10 @@ namespace Phoenix
 
             typeof(global::Phoenix.JsonConverters.Model3JsonConverter),
 
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionTextPart>>),
+
+            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
+
             typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
 
             typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
@@ -1468,14 +1484,32 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>), TypeInfoPropertyName = "StepStartUIPart_ee2f9588200af449")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>?), TypeInfoPropertyName = "StepStartUIPart_4f65f1009b57fac6")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.ToolOutputAvailablePart, global::Phoenix.ToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.DynamicToolOutputAvailablePart, global::Phoenix.DynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>>), TypeInfoPropertyName = "StepStartUIPart_6eee758df17ea469")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction), TypeInfoPropertyName = "UploadDatasetRequestAction2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>), TypeInfoPropertyName = "OneOfStringIListStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OneOf<string, object>), TypeInfoPropertyName = "OneOfStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequest2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction2), TypeInfoPropertyName = "UploadDatasetRequestAction22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesSort), TypeInfoPropertyName = "ListProjectTracesSort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesOrder), TypeInfoPropertyName = "ListProjectTracesOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectSessionsOrder), TypeInfoPropertyName = "ListProjectSessionsOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data?), TypeInfoPropertyName = "NullableData2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType?), TypeInfoPropertyName = "NullableAssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ModelProvider?), TypeInfoPropertyName = "NullableModelProvider2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.BuiltInProviderModelSelectionOpenaiApiType?), TypeInfoPropertyName = "NullableBuiltInProviderModelSelectionOpenaiApiType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OptimizationDirection?), TypeInfoPropertyName = "NullableOptimizationDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionRequestMessageRole?), TypeInfoPropertyName = "NullableChatCompletionRequestMessageRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionTextPart>>?), TypeInfoPropertyName = "NullableAnyOfStringIListChatCompletionTextPart2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContext?), TypeInfoPropertyName = "NullableChatContext2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContextDiscriminatorType?), TypeInfoPropertyName = "NullableChatContextDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRegenerateMessageEditPermission?), TypeInfoPropertyName = "NullableChatRegenerateMessageEditPermission2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Model?), TypeInfoPropertyName = "NullableModel2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatRegenerateMessageModelDiscriminatorProviderType?), TypeInfoPropertyName = "NullableChatRegenerateMessageModelDiscriminatorProviderType2")]
@@ -1488,6 +1522,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateAnnotationConfigDataDiscriminatorType?), TypeInfoPropertyName = "NullableCreateAnnotationConfigDataDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data2?), TypeInfoPropertyName = "NullableData22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType?), TypeInfoPropertyName = "NullableCreateAnnotationConfigResponseBodyDataDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>, object>?), TypeInfoPropertyName = "NullableAnyOfStringIListStringObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.User?), TypeInfoPropertyName = "NullableUser2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateUserRequestBodyUserDiscriminatorAuthMethod?), TypeInfoPropertyName = "NullableCreateUserRequestBodyUserDiscriminatorAuthMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data3?), TypeInfoPropertyName = "NullableData32")]
@@ -1598,9 +1633,15 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.TraceAnnotationData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.InsertedTraceAnnotation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.CategoricalAnnotationValue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.ChatCompletionChoice>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, global::System.Collections.Generic.List<global::Phoenix.ChatCompletionTextPart>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.ChatCompletionTextPart>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.PhoenixUIMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.ChatContext>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.ChatCompletionRequestMessage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, global::System.Collections.Generic.List<string>, object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.Span>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.UserApiKey>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.DataItem>))]
@@ -1639,7 +1680,6 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.SpanEvent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.SpanAnnotation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.List<object>, object>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.TraceAnnotation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.TraceSpanData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.SecretKeyValue>))]
@@ -1694,6 +1734,8 @@ namespace Phoenix
             options.Converters.Add(new global::Phoenix.JsonConverters.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorTypeNullableJsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.BuiltInProviderModelSelectionOpenaiApiTypeJsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.BuiltInProviderModelSelectionOpenaiApiTypeNullableJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleNullableJsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeJsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeNullableJsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.ChatRegenerateMessageEditPermissionJsonConverter());
@@ -1896,6 +1938,8 @@ namespace Phoenix
             options.Converters.Add(new global::Phoenix.JsonConverters.DataItem4JsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.Data7JsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.Model3JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionTextPart>>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>());
             options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
             options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
             options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>());
