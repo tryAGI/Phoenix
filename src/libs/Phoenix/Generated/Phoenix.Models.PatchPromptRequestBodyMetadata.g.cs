@@ -4,7 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// New metadata object for the prompt (replaces the existing metadata as a whole; null is rejected)
+    /// New metadata object for the prompt (replaces the existing metadata as a whole)
     /// </summary>
     public sealed partial class PatchPromptRequestBodyMetadata
     {

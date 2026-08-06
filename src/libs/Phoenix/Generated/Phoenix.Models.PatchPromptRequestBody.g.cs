@@ -15,7 +15,7 @@ namespace Phoenix
         public string? Description { get; set; }
 
         /// <summary>
-        /// New metadata object for the prompt (replaces the existing metadata as a whole; null is rejected)
+        /// New metadata object for the prompt (replaces the existing metadata as a whole)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
@@ -33,7 +33,7 @@ namespace Phoenix
         /// New description for the prompt (null clears the description)
         /// </param>
         /// <param name="metadata">
-        /// New metadata object for the prompt (replaces the existing metadata as a whole; null is rejected)
+        /// New metadata object for the prompt (replaces the existing metadata as a whole)
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
