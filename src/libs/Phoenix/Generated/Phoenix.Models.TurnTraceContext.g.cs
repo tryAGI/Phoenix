@@ -4,7 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    /// The trace identity a turn's spans are parented to.
     /// </summary>
     public sealed partial class TurnTraceContext
     {

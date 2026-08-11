@@ -7,8 +7,7 @@ namespace Phoenix
     /// Chat against a Phoenix built-in provider.<br/>
     /// Credentials and connection details (base URL, Azure endpoint, AWS<br/>
     /// region) are resolved from the secret store first and the process<br/>
-    /// environment second. ``openai_api_type`` is honoured by the OpenAI and<br/>
-    /// Azure OpenAI branches; other providers ignore it.
+    /// environment second.
     /// </summary>
     public sealed partial class BuiltInProviderModelSelection
     {
@@ -35,13 +34,6 @@ namespace Phoenix
         public required string ModelName { get; set; }
 
         /// <summary>
-        /// Default Value: responses
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("openaiApiType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.BuiltInProviderModelSelectionOpenaiApiTypeJsonConverter))]
-        public global::Phoenix.BuiltInProviderModelSelectionOpenaiApiType? OpenaiApiType { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,9 +44,6 @@ namespace Phoenix
         /// </summary>
         /// <param name="provider"></param>
         /// <param name="modelName"></param>
-        /// <param name="openaiApiType">
-        /// Default Value: responses
-        /// </param>
         /// <param name="providerType"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,13 +51,11 @@ namespace Phoenix
         public BuiltInProviderModelSelection(
             global::Phoenix.ModelProvider provider,
             string modelName,
-            global::Phoenix.BuiltInProviderModelSelectionOpenaiApiType? openaiApiType,
             string providerType = "builtin")
         {
             this.ProviderType = providerType;
             this.Provider = provider;
             this.ModelName = modelName ?? throw new global::System.ArgumentNullException(nameof(modelName));
-            this.OpenaiApiType = openaiApiType;
         }
 
         /// <summary>
