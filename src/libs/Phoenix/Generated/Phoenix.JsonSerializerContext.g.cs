@@ -13,487 +13,6 @@ namespace Phoenix
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::Phoenix.JsonConverters.AgentModelSelectionDiscriminatorProviderTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AgentModelSelectionDiscriminatorProviderTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AgentSessionConflictErrorCodeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AgentSessionConflictErrorCodeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatRequestBodyEditPermissionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatRequestBodyEditPermissionNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LDAPUserRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LDAPUserRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LDAPUserDataRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LDAPUserDataRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyAssistantMetadataUIMessageRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyAssistantMetadataUIMessageRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatRegenerateMessageEditPermissionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatRegenerateMessageEditPermissionNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatRequestDiscriminatorTriggerJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatRequestDiscriminatorTriggerNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatSubmitMessageEditPermissionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatSubmitMessageEditPermissionNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LocalUserRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LocalUserRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LocalUserDataRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LocalUserDataRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.MessageMetadataPhoenixVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.MessageMetadataPhoenixVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ModelProviderJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ModelProviderNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OAuth2UserRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OAuth2UserRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OAuth2UserDataRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OAuth2UserDataRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OptimizationDirectionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OptimizationDirectionNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OtlpDoubleValueJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OtlpDoubleValueNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OtlpKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OtlpKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixUIMessageRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixUIMessageRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMessageRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMessageRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTemplateFormatJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTemplateFormatNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTemplateTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTemplateTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ReasoningUIPartState2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ReasoningUIPartState2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationSourceJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationSourceNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationSourceJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationSourceNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TextUIPartState2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TextUIPartState2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationSourceJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationSourceNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironmentJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironmentNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixToolCallProviderMetadataToolExecutionEnvironmentJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixToolCallProviderMetadataToolExecutionEnvironmentNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestActionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestActionNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestAction2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestAction2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectTracesSortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectTracesSortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectTracesOrderJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectTracesOrderNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectSessionsOrderJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectSessionsOrderNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AgentModelSelectionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DataJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatContextJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigDataJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UserJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data3JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data4JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data5JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DataItemJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DataItem2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DataItem3JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data6JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatRequestJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixVariant1JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ModelVariant1JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ThinkingJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ContentVariant2ItemJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ToolsItemJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ToolChoiceJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TemplateJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.InvocationParametersJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ResponseFormatVariant1JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Template2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.InvocationParameters2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ResponseFormatVariant12JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DataItem4JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data7JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionTextPart>>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesToolOutputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesDynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<double?, global::Phoenix.OtlpDoubleValue?, string, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.OtlpKind?, int?, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Phoenix.ContentVariant2Item>>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, int?>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
-
-            typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>),
-
-            typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>),
-
-            typeof(global::Phoenix.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>>), TypeInfoPropertyName = "PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart_198866db9addcf54")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>), TypeInfoPropertyName = "PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart_faea56e939e4c398")]
@@ -1006,487 +525,6 @@ namespace Phoenix
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::Phoenix.JsonConverters.AgentModelSelectionDiscriminatorProviderTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AgentModelSelectionDiscriminatorProviderTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AgentSessionConflictErrorCodeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AgentSessionConflictErrorCodeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatRequestBodyEditPermissionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatRequestBodyEditPermissionNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LDAPUserRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LDAPUserRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LDAPUserDataRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LDAPUserDataRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyAssistantMetadataUIMessageRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyAssistantMetadataUIMessageRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatRegenerateMessageEditPermissionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatRegenerateMessageEditPermissionNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatRequestDiscriminatorTriggerJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatRequestDiscriminatorTriggerNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatSubmitMessageEditPermissionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatSubmitMessageEditPermissionNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LocalUserRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LocalUserRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LocalUserDataRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LocalUserDataRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.MessageMetadataPhoenixVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.MessageMetadataPhoenixVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ModelProviderJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ModelProviderNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OAuth2UserRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OAuth2UserRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OAuth2UserDataRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OAuth2UserDataRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OptimizationDirectionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OptimizationDirectionNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OtlpDoubleValueJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OtlpDoubleValueNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OtlpKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.OtlpKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixUIMessageRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixUIMessageRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMessageRoleJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMessageRoleNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTemplateFormatJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTemplateFormatNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTemplateTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTemplateTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ReasoningUIPartState2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ReasoningUIPartState2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationSourceJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationSourceNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationSourceJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationSourceNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TextUIPartState2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TextUIPartState2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationSourceJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationSourceNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironmentJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironmentNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixToolCallProviderMetadataToolExecutionEnvironmentJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixToolCallProviderMetadataToolExecutionEnvironmentNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestActionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestActionNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestAction2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UploadDatasetRequestAction2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2NullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectTracesSortJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectTracesSortNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectTracesOrderJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectTracesOrderNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectSessionsOrderJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ListProjectSessionsOrderNullableJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AgentModelSelectionJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DataJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ChatContextJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.CreateAnnotationConfigDataJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.UserJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data3JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data4JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data5JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DataItemJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DataItem2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DataItem3JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data6JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.LegacyChatRequestJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.PhoenixVariant1JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ModelVariant1JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ThinkingJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ContentVariant2ItemJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ToolsItemJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ToolChoiceJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.TemplateJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.InvocationParametersJsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ResponseFormatVariant1JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Template2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.InvocationParameters2JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.ResponseFormatVariant12JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.DataItem4JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.Data7JsonConverter),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionTextPart>>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesToolOutputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesDynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<double?, global::Phoenix.OtlpDoubleValue?, string, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.OtlpKind?, int?, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Phoenix.ContentVariant2Item>>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, int?>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>),
-
-            typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
-
-            typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>),
-
-            typeof(global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>),
-
-            typeof(global::Phoenix.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>>), TypeInfoPropertyName = "PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart_198866db9addcf54")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>), TypeInfoPropertyName = "PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart_faea56e939e4c398")]
@@ -1755,11 +793,7 @@ namespace Phoenix
     /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
-        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
-            SourceGenerationContextChunk0.Default,
-
-            SourceGenerationContextChunk1.Default
-            );
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
@@ -1789,182 +823,6 @@ namespace Phoenix
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 TypeInfoResolver = Resolver,
             };
-            options.Converters.Add(new global::Phoenix.JsonConverters.AgentModelSelectionDiscriminatorProviderTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AgentModelSelectionDiscriminatorProviderTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AgentSessionConflictErrorCodeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AgentSessionConflictErrorCodeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ChatRequestBodyEditPermissionJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ChatRequestBodyEditPermissionNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LDAPUserRoleJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LDAPUserRoleNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LDAPUserDataRoleJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LDAPUserDataRoleNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LegacyAssistantMetadataUIMessageRoleJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LegacyAssistantMetadataUIMessageRoleNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LegacyChatRegenerateMessageEditPermissionJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LegacyChatRegenerateMessageEditPermissionNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LegacyChatRequestDiscriminatorTriggerJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LegacyChatRequestDiscriminatorTriggerNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LegacyChatSubmitMessageEditPermissionJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LegacyChatSubmitMessageEditPermissionNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LocalUserRoleJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LocalUserRoleNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LocalUserDataRoleJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.LocalUserDataRoleNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.MessageMetadataPhoenixVariant1DiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.MessageMetadataPhoenixVariant1DiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ModelProviderJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ModelProviderNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OAuth2UserRoleJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OAuth2UserRoleNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OAuth2UserDataRoleJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OAuth2UserDataRoleNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OptimizationDirectionJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OptimizationDirectionNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OtlpDoubleValueJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OtlpDoubleValueNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OtlpKindJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OtlpKindNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PhoenixUIMessageRoleJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PhoenixUIMessageRoleNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMessageRoleJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMessageRoleNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTemplateFormatJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTemplateFormatNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTemplateTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTemplateTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ReasoningUIPartState2JsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ReasoningUIPartState2NullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationSourceJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationSourceNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationSourceJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationSourceNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.TextUIPartState2JsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.TextUIPartState2NullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationSourceJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationSourceNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironmentJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironmentNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PhoenixToolCallProviderMetadataToolExecutionEnvironmentJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.PhoenixToolCallProviderMetadataToolExecutionEnvironmentNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.UploadDatasetRequestActionJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.UploadDatasetRequestActionNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.UploadDatasetRequestAction2JsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.UploadDatasetRequestAction2NullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2JsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2NullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2JsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2NullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2JsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2NullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectTracesSortJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectTracesSortNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectTracesOrderJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectTracesOrderNullableJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectSessionsOrderJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.ListProjectSessionsOrderNullableJsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.AgentModelSelectionJsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.DataJsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.ChatContextJsonConverter());
@@ -2031,7 +889,1302 @@ namespace Phoenix
             options.Converters.Add(new global::Phoenix.JsonConverters.OneOfJsonConverter<string, object>());
             options.Converters.Add(new global::Phoenix.JsonConverters.UnixTimestampJsonConverter());
 
+            options.Converters.Add(new LazyEnumJsonConverterFactory());
+
             return options;
+        }
+
+
+        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
+        {
+            public override bool CanConvert(global::System.Type typeToConvert)
+            {
+                return
+                    typeToConvert == typeof(global::Phoenix.AgentModelSelectionDiscriminatorProviderType)
+
+                    || typeToConvert == typeof(global::Phoenix.AgentModelSelectionDiscriminatorProviderType?)
+
+                    || typeToConvert == typeof(global::Phoenix.AgentSessionConflictErrorCode)
+
+                    || typeToConvert == typeof(global::Phoenix.AgentSessionConflictErrorCode?)
+
+                    || typeToConvert == typeof(global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.ChatCompletionRequestMessageRole)
+
+                    || typeToConvert == typeof(global::Phoenix.ChatCompletionRequestMessageRole?)
+
+                    || typeToConvert == typeof(global::Phoenix.ChatContextDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.ChatContextDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.ChatRequestBodyEditPermission)
+
+                    || typeToConvert == typeof(global::Phoenix.ChatRequestBodyEditPermission?)
+
+                    || typeToConvert == typeof(global::Phoenix.CreateAnnotationConfigDataDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.CreateAnnotationConfigDataDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.CreateUserRequestBodyUserDiscriminatorAuthMethod)
+
+                    || typeToConvert == typeof(global::Phoenix.CreateUserRequestBodyUserDiscriminatorAuthMethod?)
+
+                    || typeToConvert == typeof(global::Phoenix.CreateUserResponseBodyDataDiscriminatorAuthMethod)
+
+                    || typeToConvert == typeof(global::Phoenix.CreateUserResponseBodyDataDiscriminatorAuthMethod?)
+
+                    || typeToConvert == typeof(global::Phoenix.DeleteAnnotationConfigResponseBodyDataDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.DeleteAnnotationConfigResponseBodyDataDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.GetAnnotationConfigResponseBodyDataDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.GetAnnotationConfigResponseBodyDataDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.GetAnnotationConfigsResponseBodyDataItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.GetAnnotationConfigsResponseBodyDataItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.GetUsersResponseBodyDataItemDiscriminatorAuthMethod)
+
+                    || typeToConvert == typeof(global::Phoenix.GetUsersResponseBodyDataItemDiscriminatorAuthMethod?)
+
+                    || typeToConvert == typeof(global::Phoenix.GetViewerResponseBodyDataDiscriminatorAuthMethod)
+
+                    || typeToConvert == typeof(global::Phoenix.GetViewerResponseBodyDataDiscriminatorAuthMethod?)
+
+                    || typeToConvert == typeof(global::Phoenix.LDAPUserRole)
+
+                    || typeToConvert == typeof(global::Phoenix.LDAPUserRole?)
+
+                    || typeToConvert == typeof(global::Phoenix.LDAPUserDataRole)
+
+                    || typeToConvert == typeof(global::Phoenix.LDAPUserDataRole?)
+
+                    || typeToConvert == typeof(global::Phoenix.LegacyAssistantMetadataUIMessageRole)
+
+                    || typeToConvert == typeof(global::Phoenix.LegacyAssistantMetadataUIMessageRole?)
+
+                    || typeToConvert == typeof(global::Phoenix.LegacyChatRegenerateMessageEditPermission)
+
+                    || typeToConvert == typeof(global::Phoenix.LegacyChatRegenerateMessageEditPermission?)
+
+                    || typeToConvert == typeof(global::Phoenix.LegacyChatRequestDiscriminatorTrigger)
+
+                    || typeToConvert == typeof(global::Phoenix.LegacyChatRequestDiscriminatorTrigger?)
+
+                    || typeToConvert == typeof(global::Phoenix.LegacyChatSubmitMessageEditPermission)
+
+                    || typeToConvert == typeof(global::Phoenix.LegacyChatSubmitMessageEditPermission?)
+
+                    || typeToConvert == typeof(global::Phoenix.LocalUserRole)
+
+                    || typeToConvert == typeof(global::Phoenix.LocalUserRole?)
+
+                    || typeToConvert == typeof(global::Phoenix.LocalUserDataRole)
+
+                    || typeToConvert == typeof(global::Phoenix.LocalUserDataRole?)
+
+                    || typeToConvert == typeof(global::Phoenix.MessageMetadataPhoenixVariant1DiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.MessageMetadataPhoenixVariant1DiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.ModelProvider)
+
+                    || typeToConvert == typeof(global::Phoenix.ModelProvider?)
+
+                    || typeToConvert == typeof(global::Phoenix.OAuth2UserRole)
+
+                    || typeToConvert == typeof(global::Phoenix.OAuth2UserRole?)
+
+                    || typeToConvert == typeof(global::Phoenix.OAuth2UserDataRole)
+
+                    || typeToConvert == typeof(global::Phoenix.OAuth2UserDataRole?)
+
+                    || typeToConvert == typeof(global::Phoenix.OptimizationDirection)
+
+                    || typeToConvert == typeof(global::Phoenix.OptimizationDirection?)
+
+                    || typeToConvert == typeof(global::Phoenix.OtlpDoubleValue)
+
+                    || typeToConvert == typeof(global::Phoenix.OtlpDoubleValue?)
+
+                    || typeToConvert == typeof(global::Phoenix.OtlpKind)
+
+                    || typeToConvert == typeof(global::Phoenix.OtlpKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.PhoenixUIMessageRole)
+
+                    || typeToConvert == typeof(global::Phoenix.PhoenixUIMessageRole?)
+
+                    || typeToConvert == typeof(global::Phoenix.PlaygroundEvaluatorContextKind)
+
+                    || typeToConvert == typeof(global::Phoenix.PlaygroundEvaluatorContextKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptAnthropicOutputConfigEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptAnthropicOutputConfigEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptiveDisplay)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptiveDisplay?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabledDisplay)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabledDisplay?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptAzureOpenAIInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptAzureOpenAIInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptCerebrasInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptCerebrasInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptDeepSeekInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptDeepSeekInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptFireworksInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptFireworksInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptGoogleThinkingConfigThinkingLevel)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptGoogleThinkingConfigThinkingLevel?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptGroqInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptGroqInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptMessageRole)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptMessageRole?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptMessageContentVariant2ItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptMessageContentVariant2ItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptMoonshotInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptMoonshotInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptOllamaInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptOllamaInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptOpenAIInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptOpenAIInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptPerplexityInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptPerplexityInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptTemplateFormat)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptTemplateFormat?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptTemplateType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptTemplateType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptTogetherInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptTogetherInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptToolsToolDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptToolsToolDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptToolsToolChoiceDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptToolsToolChoiceDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionTemplateDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionTemplateDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionInvocationParametersDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionInvocationParametersDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionResponseFormatVariant1DiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionResponseFormatVariant1DiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionDataTemplateDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionDataTemplateDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionDataInvocationParametersDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionDataInvocationParametersDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionDataResponseFormatVariant1DiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptVersionDataResponseFormatVariant1DiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptXAIInvocationParametersContentReasoningEffort)
+
+                    || typeToConvert == typeof(global::Phoenix.PromptXAIInvocationParametersContentReasoningEffort?)
+
+                    || typeToConvert == typeof(global::Phoenix.ReasoningUIPartState2)
+
+                    || typeToConvert == typeof(global::Phoenix.ReasoningUIPartState2?)
+
+                    || typeToConvert == typeof(global::Phoenix.SessionAnnotationSource)
+
+                    || typeToConvert == typeof(global::Phoenix.SessionAnnotationSource?)
+
+                    || typeToConvert == typeof(global::Phoenix.SessionAnnotationAnnotatorKind)
+
+                    || typeToConvert == typeof(global::Phoenix.SessionAnnotationAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.SessionAnnotationDataAnnotatorKind)
+
+                    || typeToConvert == typeof(global::Phoenix.SessionAnnotationDataAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.SpanAnnotationSource)
+
+                    || typeToConvert == typeof(global::Phoenix.SpanAnnotationSource?)
+
+                    || typeToConvert == typeof(global::Phoenix.SpanAnnotationAnnotatorKind)
+
+                    || typeToConvert == typeof(global::Phoenix.SpanAnnotationAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.SpanAnnotationDataAnnotatorKind)
+
+                    || typeToConvert == typeof(global::Phoenix.SpanAnnotationDataAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind)
+
+                    || typeToConvert == typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.TextUIPartState2)
+
+                    || typeToConvert == typeof(global::Phoenix.TextUIPartState2?)
+
+                    || typeToConvert == typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.TraceAnnotationSource)
+
+                    || typeToConvert == typeof(global::Phoenix.TraceAnnotationSource?)
+
+                    || typeToConvert == typeof(global::Phoenix.TraceAnnotationAnnotatorKind)
+
+                    || typeToConvert == typeof(global::Phoenix.TraceAnnotationAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.TraceAnnotationDataAnnotatorKind)
+
+                    || typeToConvert == typeof(global::Phoenix.TraceAnnotationDataAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind)
+
+                    || typeToConvert == typeof(global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironment)
+
+                    || typeToConvert == typeof(global::Phoenix.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironment?)
+
+                    || typeToConvert == typeof(global::Phoenix.PhoenixToolCallProviderMetadataToolExecutionEnvironment)
+
+                    || typeToConvert == typeof(global::Phoenix.PhoenixToolCallProviderMetadataToolExecutionEnvironment?)
+
+                    || typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction)
+
+                    || typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction?)
+
+                    || typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction2)
+
+                    || typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction2?)
+
+                    || typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2)
+
+                    || typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2?)
+
+                    || typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2)
+
+                    || typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2?)
+
+                    || typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2)
+
+                    || typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2?)
+
+                    || typeToConvert == typeof(global::Phoenix.ListProjectTracesSort)
+
+                    || typeToConvert == typeof(global::Phoenix.ListProjectTracesSort?)
+
+                    || typeToConvert == typeof(global::Phoenix.ListProjectTracesOrder)
+
+                    || typeToConvert == typeof(global::Phoenix.ListProjectTracesOrder?)
+
+                    || typeToConvert == typeof(global::Phoenix.ListProjectSessionsOrder)
+
+                    || typeToConvert == typeof(global::Phoenix.ListProjectSessionsOrder?);
+            }
+
+            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+                global::System.Type typeToConvert,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (typeToConvert == typeof(global::Phoenix.AgentModelSelectionDiscriminatorProviderType))
+                {
+                    return new global::Phoenix.JsonConverters.AgentModelSelectionDiscriminatorProviderTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.AgentModelSelectionDiscriminatorProviderType?))
+                {
+                    return new global::Phoenix.JsonConverters.AgentModelSelectionDiscriminatorProviderTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.AgentSessionConflictErrorCode))
+                {
+                    return new global::Phoenix.JsonConverters.AgentSessionConflictErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.AgentSessionConflictErrorCode?))
+                {
+                    return new global::Phoenix.JsonConverters.AgentSessionConflictErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ChatCompletionRequestMessageRole))
+                {
+                    return new global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ChatCompletionRequestMessageRole?))
+                {
+                    return new global::Phoenix.JsonConverters.ChatCompletionRequestMessageRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ChatContextDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ChatContextDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.ChatContextDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ChatRequestBodyEditPermission))
+                {
+                    return new global::Phoenix.JsonConverters.ChatRequestBodyEditPermissionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ChatRequestBodyEditPermission?))
+                {
+                    return new global::Phoenix.JsonConverters.ChatRequestBodyEditPermissionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.CreateAnnotationConfigDataDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.CreateAnnotationConfigDataDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.CreateAnnotationConfigDataDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.CreateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.CreateUserRequestBodyUserDiscriminatorAuthMethod))
+                {
+                    return new global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.CreateUserRequestBodyUserDiscriminatorAuthMethod?))
+                {
+                    return new global::Phoenix.JsonConverters.CreateUserRequestBodyUserDiscriminatorAuthMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.CreateUserResponseBodyDataDiscriminatorAuthMethod))
+                {
+                    return new global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.CreateUserResponseBodyDataDiscriminatorAuthMethod?))
+                {
+                    return new global::Phoenix.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.DeleteAnnotationConfigResponseBodyDataDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.DeleteAnnotationConfigResponseBodyDataDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.DeleteAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetAnnotationConfigResponseBodyDataDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetAnnotationConfigResponseBodyDataDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.GetAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetAnnotationConfigsResponseBodyDataItemDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetAnnotationConfigsResponseBodyDataItemDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.GetAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetUsersResponseBodyDataItemDiscriminatorAuthMethod))
+                {
+                    return new global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetUsersResponseBodyDataItemDiscriminatorAuthMethod?))
+                {
+                    return new global::Phoenix.JsonConverters.GetUsersResponseBodyDataItemDiscriminatorAuthMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetViewerResponseBodyDataDiscriminatorAuthMethod))
+                {
+                    return new global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetViewerResponseBodyDataDiscriminatorAuthMethod?))
+                {
+                    return new global::Phoenix.JsonConverters.GetViewerResponseBodyDataDiscriminatorAuthMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LDAPUserRole))
+                {
+                    return new global::Phoenix.JsonConverters.LDAPUserRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LDAPUserRole?))
+                {
+                    return new global::Phoenix.JsonConverters.LDAPUserRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LDAPUserDataRole))
+                {
+                    return new global::Phoenix.JsonConverters.LDAPUserDataRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LDAPUserDataRole?))
+                {
+                    return new global::Phoenix.JsonConverters.LDAPUserDataRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LegacyAssistantMetadataUIMessageRole))
+                {
+                    return new global::Phoenix.JsonConverters.LegacyAssistantMetadataUIMessageRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LegacyAssistantMetadataUIMessageRole?))
+                {
+                    return new global::Phoenix.JsonConverters.LegacyAssistantMetadataUIMessageRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LegacyChatRegenerateMessageEditPermission))
+                {
+                    return new global::Phoenix.JsonConverters.LegacyChatRegenerateMessageEditPermissionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LegacyChatRegenerateMessageEditPermission?))
+                {
+                    return new global::Phoenix.JsonConverters.LegacyChatRegenerateMessageEditPermissionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LegacyChatRequestDiscriminatorTrigger))
+                {
+                    return new global::Phoenix.JsonConverters.LegacyChatRequestDiscriminatorTriggerJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LegacyChatRequestDiscriminatorTrigger?))
+                {
+                    return new global::Phoenix.JsonConverters.LegacyChatRequestDiscriminatorTriggerNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LegacyChatSubmitMessageEditPermission))
+                {
+                    return new global::Phoenix.JsonConverters.LegacyChatSubmitMessageEditPermissionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LegacyChatSubmitMessageEditPermission?))
+                {
+                    return new global::Phoenix.JsonConverters.LegacyChatSubmitMessageEditPermissionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LocalUserRole))
+                {
+                    return new global::Phoenix.JsonConverters.LocalUserRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LocalUserRole?))
+                {
+                    return new global::Phoenix.JsonConverters.LocalUserRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LocalUserDataRole))
+                {
+                    return new global::Phoenix.JsonConverters.LocalUserDataRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.LocalUserDataRole?))
+                {
+                    return new global::Phoenix.JsonConverters.LocalUserDataRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.MessageMetadataPhoenixVariant1DiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.MessageMetadataPhoenixVariant1DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.MessageMetadataPhoenixVariant1DiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.MessageMetadataPhoenixVariant1DiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ModelProvider))
+                {
+                    return new global::Phoenix.JsonConverters.ModelProviderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ModelProvider?))
+                {
+                    return new global::Phoenix.JsonConverters.ModelProviderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.OAuth2UserRole))
+                {
+                    return new global::Phoenix.JsonConverters.OAuth2UserRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.OAuth2UserRole?))
+                {
+                    return new global::Phoenix.JsonConverters.OAuth2UserRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.OAuth2UserDataRole))
+                {
+                    return new global::Phoenix.JsonConverters.OAuth2UserDataRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.OAuth2UserDataRole?))
+                {
+                    return new global::Phoenix.JsonConverters.OAuth2UserDataRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.OptimizationDirection))
+                {
+                    return new global::Phoenix.JsonConverters.OptimizationDirectionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.OptimizationDirection?))
+                {
+                    return new global::Phoenix.JsonConverters.OptimizationDirectionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.OtlpDoubleValue))
+                {
+                    return new global::Phoenix.JsonConverters.OtlpDoubleValueJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.OtlpDoubleValue?))
+                {
+                    return new global::Phoenix.JsonConverters.OtlpDoubleValueNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.OtlpKind))
+                {
+                    return new global::Phoenix.JsonConverters.OtlpKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.OtlpKind?))
+                {
+                    return new global::Phoenix.JsonConverters.OtlpKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PhoenixUIMessageRole))
+                {
+                    return new global::Phoenix.JsonConverters.PhoenixUIMessageRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PhoenixUIMessageRole?))
+                {
+                    return new global::Phoenix.JsonConverters.PhoenixUIMessageRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PlaygroundEvaluatorContextKind))
+                {
+                    return new global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PlaygroundEvaluatorContextKind?))
+                {
+                    return new global::Phoenix.JsonConverters.PlaygroundEvaluatorContextKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PlaygroundInstanceContextModelVariant1DiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptAnthropicInvocationParametersContentThinkingDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptAnthropicInvocationParametersContentThinkingDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptAnthropicOutputConfigEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptAnthropicOutputConfigEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptAnthropicOutputConfigEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptiveDisplay))
+                {
+                    return new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptiveDisplay?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigAdaptiveDisplayNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabledDisplay))
+                {
+                    return new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabledDisplay?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptAzureOpenAIInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptAzureOpenAIInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptAzureOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptCerebrasInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptCerebrasInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptCerebrasInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptDeepSeekInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptDeepSeekInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptDeepSeekInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptFireworksInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptFireworksInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptFireworksInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptGoogleThinkingConfigThinkingLevel))
+                {
+                    return new global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptGoogleThinkingConfigThinkingLevel?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptGroqInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptGroqInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptGroqInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptMessageRole))
+                {
+                    return new global::Phoenix.JsonConverters.PromptMessageRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptMessageRole?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptMessageRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptMessageContentVariant2ItemDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptMessageContentVariant2ItemDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptMessageContentVariant2ItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptMoonshotInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptMoonshotInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptMoonshotInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptOllamaInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptOllamaInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptOllamaInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptOpenAIInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptOpenAIInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptPerplexityInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptPerplexityInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptPerplexityInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptTemplateFormat))
+                {
+                    return new global::Phoenix.JsonConverters.PromptTemplateFormatJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptTemplateFormat?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptTemplateFormatNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptTemplateType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptTemplateTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptTemplateType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptTemplateTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptTogetherInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptTogetherInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptTogetherInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptToolsToolDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptToolsToolDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptToolsToolDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptToolsToolChoiceDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptToolsToolChoiceDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptToolsToolChoiceDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionTemplateDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionTemplateDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionTemplateDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionInvocationParametersDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionInvocationParametersDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionInvocationParametersDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionResponseFormatVariant1DiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionResponseFormatVariant1DiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionResponseFormatVariant1DiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionDataTemplateDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionDataTemplateDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionDataTemplateDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionDataInvocationParametersDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionDataInvocationParametersDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionDataInvocationParametersDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionDataResponseFormatVariant1DiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptVersionDataResponseFormatVariant1DiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptVersionDataResponseFormatVariant1DiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptXAIInvocationParametersContentReasoningEffort))
+                {
+                    return new global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PromptXAIInvocationParametersContentReasoningEffort?))
+                {
+                    return new global::Phoenix.JsonConverters.PromptXAIInvocationParametersContentReasoningEffortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ReasoningUIPartState2))
+                {
+                    return new global::Phoenix.JsonConverters.ReasoningUIPartState2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ReasoningUIPartState2?))
+                {
+                    return new global::Phoenix.JsonConverters.ReasoningUIPartState2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SessionAnnotationSource))
+                {
+                    return new global::Phoenix.JsonConverters.SessionAnnotationSourceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SessionAnnotationSource?))
+                {
+                    return new global::Phoenix.JsonConverters.SessionAnnotationSourceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SessionAnnotationAnnotatorKind))
+                {
+                    return new global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SessionAnnotationAnnotatorKind?))
+                {
+                    return new global::Phoenix.JsonConverters.SessionAnnotationAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SessionAnnotationDataAnnotatorKind))
+                {
+                    return new global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SessionAnnotationDataAnnotatorKind?))
+                {
+                    return new global::Phoenix.JsonConverters.SessionAnnotationDataAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SpanAnnotationSource))
+                {
+                    return new global::Phoenix.JsonConverters.SpanAnnotationSourceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SpanAnnotationSource?))
+                {
+                    return new global::Phoenix.JsonConverters.SpanAnnotationSourceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SpanAnnotationAnnotatorKind))
+                {
+                    return new global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SpanAnnotationAnnotatorKind?))
+                {
+                    return new global::Phoenix.JsonConverters.SpanAnnotationAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SpanAnnotationDataAnnotatorKind))
+                {
+                    return new global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SpanAnnotationDataAnnotatorKind?))
+                {
+                    return new global::Phoenix.JsonConverters.SpanAnnotationDataAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind))
+                {
+                    return new global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind?))
+                {
+                    return new global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.TextUIPartState2))
+                {
+                    return new global::Phoenix.JsonConverters.TextUIPartState2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.TextUIPartState2?))
+                {
+                    return new global::Phoenix.JsonConverters.TextUIPartState2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.ToolCallContentPartToolCallDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.TraceAnnotationSource))
+                {
+                    return new global::Phoenix.JsonConverters.TraceAnnotationSourceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.TraceAnnotationSource?))
+                {
+                    return new global::Phoenix.JsonConverters.TraceAnnotationSourceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.TraceAnnotationAnnotatorKind))
+                {
+                    return new global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.TraceAnnotationAnnotatorKind?))
+                {
+                    return new global::Phoenix.JsonConverters.TraceAnnotationAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.TraceAnnotationDataAnnotatorKind))
+                {
+                    return new global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.TraceAnnotationDataAnnotatorKind?))
+                {
+                    return new global::Phoenix.JsonConverters.TraceAnnotationDataAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminatorType))
+                {
+                    return new global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.UpdateAnnotationConfigResponseBodyDataDiscriminatorType?))
+                {
+                    return new global::Phoenix.JsonConverters.UpdateAnnotationConfigResponseBodyDataDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind))
+                {
+                    return new global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind?))
+                {
+                    return new global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironment))
+                {
+                    return new global::Phoenix.JsonConverters.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironmentJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironment?))
+                {
+                    return new global::Phoenix.JsonConverters.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironmentNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PhoenixToolCallProviderMetadataToolExecutionEnvironment))
+                {
+                    return new global::Phoenix.JsonConverters.PhoenixToolCallProviderMetadataToolExecutionEnvironmentJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.PhoenixToolCallProviderMetadataToolExecutionEnvironment?))
+                {
+                    return new global::Phoenix.JsonConverters.PhoenixToolCallProviderMetadataToolExecutionEnvironmentNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction))
+                {
+                    return new global::Phoenix.JsonConverters.UploadDatasetRequestActionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction?))
+                {
+                    return new global::Phoenix.JsonConverters.UploadDatasetRequestActionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction2))
+                {
+                    return new global::Phoenix.JsonConverters.UploadDatasetRequestAction2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction2?))
+                {
+                    return new global::Phoenix.JsonConverters.UploadDatasetRequestAction2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2))
+                {
+                    return new global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2?))
+                {
+                    return new global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2))
+                {
+                    return new global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2?))
+                {
+                    return new global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2))
+                {
+                    return new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2?))
+                {
+                    return new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ListProjectTracesSort))
+                {
+                    return new global::Phoenix.JsonConverters.ListProjectTracesSortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ListProjectTracesSort?))
+                {
+                    return new global::Phoenix.JsonConverters.ListProjectTracesSortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ListProjectTracesOrder))
+                {
+                    return new global::Phoenix.JsonConverters.ListProjectTracesOrderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ListProjectTracesOrder?))
+                {
+                    return new global::Phoenix.JsonConverters.ListProjectTracesOrderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ListProjectSessionsOrder))
+                {
+                    return new global::Phoenix.JsonConverters.ListProjectSessionsOrderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ListProjectSessionsOrder?))
+                {
+                    return new global::Phoenix.JsonConverters.ListProjectSessionsOrderNullableJsonConverter();
+                }
+                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
+            }
+        }
+
+        private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            private readonly object _gate = new();
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[2];
+
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                for (var index = 0; index < _resolvers.Length; index++)
+                {
+                    var typeInfo = GetResolver(index).GetTypeInfo(type, options);
+                    if (typeInfo is not null)
+                    {
+                        return typeInfo;
+                    }
+                }
+
+                return null;
+            }
+
+            private global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver GetResolver(int index)
+            {
+                var resolver = global::System.Threading.Volatile.Read(ref _resolvers[index]);
+                if (resolver is not null)
+                {
+                    return resolver;
+                }
+
+                lock (_gate)
+                {
+                    return _resolvers[index] ??= CreateResolver(index);
+                }
+            }
+
+            private static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver CreateResolver(int index)
+            {
+                return index switch
+                {
+                    0 => new SourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+
+                    1 => new SourceGenerationContextChunk1(new global::System.Text.Json.JsonSerializerOptions()),
+                    _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
+                };
+            }
         }
     }
 }
