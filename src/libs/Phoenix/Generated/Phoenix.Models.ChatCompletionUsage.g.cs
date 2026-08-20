@@ -30,6 +30,12 @@ namespace Phoenix
         public required int TotalTokens { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
+        public global::Phoenix.ChatCompletionUsagePromptTokensDetails2? PromptTokensDetails { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,17 +47,20 @@ namespace Phoenix
         /// <param name="promptTokens"></param>
         /// <param name="completionTokens"></param>
         /// <param name="totalTokens"></param>
+        /// <param name="promptTokensDetails"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionUsage(
             int promptTokens,
             int completionTokens,
-            int totalTokens)
+            int totalTokens,
+            global::Phoenix.ChatCompletionUsagePromptTokensDetails2? promptTokensDetails)
         {
             this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
             this.TotalTokens = totalTokens;
+            this.PromptTokensDetails = promptTokensDetails;
         }
 
         /// <summary>
