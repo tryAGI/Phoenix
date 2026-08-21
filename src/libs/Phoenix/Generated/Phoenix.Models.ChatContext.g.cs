@@ -434,7 +434,7 @@ namespace Phoenix
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dataset' but the value was {ToString()}.");
 
         /// <summary>
-        /// GraphQL runtime state.
+        /// Deprecated GraphQL mutations opt-in.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.GraphQLContext? Graphql { get; init; }
