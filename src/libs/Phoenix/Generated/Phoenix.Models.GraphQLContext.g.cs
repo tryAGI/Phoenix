@@ -4,8 +4,9 @@
 namespace Phoenix
 {
     /// <summary>
-    /// GraphQL runtime state.
+    /// Deprecated GraphQL mutations opt-in.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class GraphQLContext
     {
         /// <summary>
@@ -13,6 +14,7 @@ namespace Phoenix
         /// </summary>
         /// <default>"graphql"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string Type { get; set; } = "graphql";
 
         /// <summary>
@@ -20,6 +22,7 @@ namespace Phoenix
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mutationsEnabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required bool MutationsEnabled { get; set; }
 
         /// <summary>
@@ -49,18 +52,6 @@ namespace Phoenix
         /// </summary>
         public GraphQLContext()
         {
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="GraphQLContext"/> from its single non-const required field,
-        /// hardcoding any const discriminator fields.
-        /// </summary>
-        public static GraphQLContext FromMutationsEnabled(bool mutationsEnabled)
-        {
-            return new GraphQLContext
-            {
-                MutationsEnabled = mutationsEnabled,
-            };
         }
 
     }

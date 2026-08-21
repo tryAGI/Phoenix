@@ -31,6 +31,10 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        AgentSessionToolApprovalsConflict,
+        /// <summary>
+        /// 
+        /// </summary>
         AgentSessionToolOutputsConflict,
     }
 
@@ -51,6 +55,7 @@ namespace Phoenix
                 AgentSessionConflictErrorCode.AgentSessionCompactionConflict => "agent_session_compaction_conflict",
                 AgentSessionConflictErrorCode.AgentSessionMessagesStale => "agent_session_messages_stale",
                 AgentSessionConflictErrorCode.AgentSessionModelStale => "agent_session_model_stale",
+                AgentSessionConflictErrorCode.AgentSessionToolApprovalsConflict => "agent_session_tool_approvals_conflict",
                 AgentSessionConflictErrorCode.AgentSessionToolOutputsConflict => "agent_session_tool_outputs_conflict",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -67,6 +72,7 @@ namespace Phoenix
                 "agent_session_compaction_conflict" => AgentSessionConflictErrorCode.AgentSessionCompactionConflict,
                 "agent_session_messages_stale" => AgentSessionConflictErrorCode.AgentSessionMessagesStale,
                 "agent_session_model_stale" => AgentSessionConflictErrorCode.AgentSessionModelStale,
+                "agent_session_tool_approvals_conflict" => AgentSessionConflictErrorCode.AgentSessionToolApprovalsConflict,
                 "agent_session_tool_outputs_conflict" => AgentSessionConflictErrorCode.AgentSessionToolOutputsConflict,
                 _ => null,
             };

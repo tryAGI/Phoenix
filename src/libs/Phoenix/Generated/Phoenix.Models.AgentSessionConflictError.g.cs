@@ -17,6 +17,12 @@ namespace Phoenix
     ///   mismatch). Unlike ``agent_session_messages_stale`` this is not a<br/>
     ///   concurrent-writer race but an inconsistent request; fix the client<br/>
     ///   rather than retrying.<br/>
+    /// - ``agent_session_tool_approvals_conflict``: the submitted ``toolApprovals``<br/>
+    ///   do not match the transcript's trailing assistant message (no trailing<br/>
+    ///   assistant message to answer, an unknown ``toolCallId``, a call that is<br/>
+    ///   not awaiting approval, or a reversal of an already-persisted answer).<br/>
+    ///   Like the tool-output conflict this is an inconsistent request rather than<br/>
+    ///   a concurrent-writer race; fix the client rather than retrying.<br/>
     /// - ``agent_session_already_compact``: there are no complete turns to<br/>
     ///   compact — either nothing new has finished since the transcript's latest<br/>
     ///   checkpoint, or a concurrent request's checkpoint already covers them.<br/>

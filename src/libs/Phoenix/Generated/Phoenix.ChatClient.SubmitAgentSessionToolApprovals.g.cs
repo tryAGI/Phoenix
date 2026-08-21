@@ -1,15 +1,13 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 namespace Phoenix
 {
     public partial class ChatClient
     {
 
 
-        private static readonly global::Phoenix.EndPointSecurityRequirement s_AgentSessionChatSecurityRequirement0 =
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_SubmitAgentSessionToolApprovalsSecurityRequirement0 =
             new global::Phoenix.EndPointSecurityRequirement
             {
                 Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
@@ -23,44 +21,45 @@ namespace Phoenix
                     },
                 },
             };
-        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_AgentSessionChatSecurityRequirements =
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_SubmitAgentSessionToolApprovalsSecurityRequirements =
             new global::Phoenix.EndPointSecurityRequirement[]
-            {                s_AgentSessionChatSecurityRequirement0,
+            {                s_SubmitAgentSessionToolApprovalsSecurityRequirement0,
             };
-        partial void PrepareAgentSessionChatArguments(
+        partial void PrepareSubmitAgentSessionToolApprovalsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string sessionId,
-            global::Phoenix.ChatRequestBody request);
-        partial void PrepareAgentSessionChatRequest(
+            global::Phoenix.SubmitAgentSessionToolApprovalsRequestBody request);
+        partial void PrepareSubmitAgentSessionToolApprovalsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string sessionId,
-            global::Phoenix.ChatRequestBody request);
-        partial void ProcessAgentSessionChatResponse(
+            global::Phoenix.SubmitAgentSessionToolApprovalsRequestBody request);
+        partial void ProcessSubmitAgentSessionToolApprovalsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessAgentSessionChatResponseContent(
+        partial void ProcessSubmitAgentSessionToolApprovalsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Chat
+        /// Submit Agent Session Tool Approvals<br/>
+        /// Persist answered tool approvals for the session's open turn.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> AgentSessionChatAsync(
+        public async global::System.Threading.Tasks.Task<global::Phoenix.SubmitAgentSessionToolApprovalsResponseBody> SubmitAgentSessionToolApprovalsAsync(
             string sessionId,
 
-            global::Phoenix.ChatRequestBody request,
+            global::Phoenix.SubmitAgentSessionToolApprovalsRequestBody request,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await AgentSessionChatAsResponseAsync(
+            var __response = await SubmitAgentSessionToolApprovalsAsResponseAsync(
                 sessionId: sessionId,
 
                 request: request,
@@ -71,17 +70,18 @@ namespace Phoenix
             return __response.Body;
         }
         /// <summary>
-        /// Chat
+        /// Submit Agent Session Tool Approvals<br/>
+        /// Persist answered tool approvals for the session's open turn.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<string>> AgentSessionChatAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.SubmitAgentSessionToolApprovalsResponseBody>> SubmitAgentSessionToolApprovalsAsResponseAsync(
             string sessionId,
 
-            global::Phoenix.ChatRequestBody request,
+            global::Phoenix.SubmitAgentSessionToolApprovalsRequestBody request,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -89,7 +89,7 @@ namespace Phoenix
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareAgentSessionChatArguments(
+            PrepareSubmitAgentSessionToolApprovalsArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
                 request: request);
@@ -97,8 +97,8 @@ namespace Phoenix
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_AgentSessionChatSecurityRequirements,
-                operationName: "AgentSessionChatAsync");
+                securityRequirements: s_SubmitAgentSessionToolApprovalsSecurityRequirements,
+                operationName: "SubmitAgentSessionToolApprovalsAsync");
 
             using var __timeoutCancellationTokenSource = global::Phoenix.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -118,7 +118,7 @@ namespace Phoenix
             {
 
                             var __pathBuilder = new global::Phoenix.PathBuilder(
-                                path: $"/v1/agent_sessions/{sessionId}/chat",
+                                path: $"/v1/agent_sessions/{sessionId}/tool_approvals",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -163,7 +163,7 @@ namespace Phoenix
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareAgentSessionChatRequest(
+                PrepareSubmitAgentSessionToolApprovalsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     sessionId: sessionId!,
@@ -184,9 +184,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "AgentSessionChat",
-                                methodName: "AgentSessionChatAsync",
-                                pathTemplate: "$\"/v1/agent_sessions/{sessionId}/chat\"",
+                                operationId: "SubmitAgentSessionToolApprovals",
+                                methodName: "SubmitAgentSessionToolApprovalsAsync",
+                                pathTemplate: "$\"/v1/agent_sessions/{sessionId}/tool_approvals\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -218,9 +218,9 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "AgentSessionChat",
-                                methodName: "AgentSessionChatAsync",
-                                pathTemplate: "$\"/v1/agent_sessions/{sessionId}/chat\"",
+                                operationId: "SubmitAgentSessionToolApprovals",
+                                methodName: "SubmitAgentSessionToolApprovalsAsync",
+                                pathTemplate: "$\"/v1/agent_sessions/{sessionId}/tool_approvals\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -259,9 +259,9 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "AgentSessionChat",
-                                methodName: "AgentSessionChatAsync",
-                                pathTemplate: "$\"/v1/agent_sessions/{sessionId}/chat\"",
+                                operationId: "SubmitAgentSessionToolApprovals",
+                                methodName: "SubmitAgentSessionToolApprovalsAsync",
+                                pathTemplate: "$\"/v1/agent_sessions/{sessionId}/tool_approvals\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -299,7 +299,7 @@ namespace Phoenix
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessAgentSessionChatResponse(
+                ProcessSubmitAgentSessionToolApprovalsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -307,9 +307,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "AgentSessionChat",
-                                methodName: "AgentSessionChatAsync",
-                                pathTemplate: "$\"/v1/agent_sessions/{sessionId}/chat\"",
+                                operationId: "SubmitAgentSessionToolApprovals",
+                                methodName: "SubmitAgentSessionToolApprovalsAsync",
+                                pathTemplate: "$\"/v1/agent_sessions/{sessionId}/tool_approvals\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -329,9 +329,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "AgentSessionChat",
-                                methodName: "AgentSessionChatAsync",
-                                pathTemplate: "$\"/v1/agent_sessions/{sessionId}/chat\"",
+                                operationId: "SubmitAgentSessionToolApprovals",
+                                methodName: "SubmitAgentSessionToolApprovalsAsync",
+                                pathTemplate: "$\"/v1/agent_sessions/{sessionId}/tool_approvals\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -618,7 +618,7 @@ namespace Phoenix
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessAgentSessionChatResponseContent(
+                                ProcessSubmitAgentSessionToolApprovalsResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -627,11 +627,13 @@ namespace Phoenix
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return new global::Phoenix.AutoSDKHttpResponse<string>(
+                                    var __value = global::Phoenix.SubmitAgentSessionToolApprovalsResponseBody.FromJson(__content, JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.SubmitAgentSessionToolApprovalsResponseBody>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -651,17 +653,19 @@ namespace Phoenix
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    var __content = await __response.Content.ReadAsStringAsync(
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return new global::Phoenix.AutoSDKHttpResponse<string>(
+                                    var __value = await global::Phoenix.SubmitAgentSessionToolApprovalsResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.SubmitAgentSessionToolApprovalsResponseBody>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -698,89 +702,33 @@ namespace Phoenix
             }
         }
         /// <summary>
-        /// Chat
+        /// Submit Agent Session Tool Approvals<br/>
+        /// Persist answered tool approvals for the session's open turn.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="headless">
-        /// Whether a headless client (terminal or scripted) is driving the turn, as opposed to the browser assistant. Selects the agent configuration the turn runs on.
-        /// </param>
-        /// <param name="contexts"></param>
-        /// <param name="editPermission">
-        /// Default Value: manual
-        /// </param>
-        /// <param name="requestedSkills">
-        /// Skills the user explicitly requested via the prompt's slash-command affordance. The server force-loads each available skill by injecting a synthetic load_skill tool call/result at the tail of the message history. Unknown or context-unavailable names are ignored.
-        /// </param>
-        /// <param name="model">
-        /// The model the client believes the session is set to. This is a precondition, not an instruction: the turn always runs on the session's persisted selection, and a mismatch is rejected with HTTP 409 and code ``agent_session_model_stale`` rather than silently running on — or switching to — an unexpected model. Change the session's model with ``PATCH .../agent_sessions/{session_id}``.
-        /// </param>
-        /// <param name="trigger">
-        /// Default Value: submit-message
-        /// </param>
-        /// <param name="id"></param>
-        /// <param name="message">
-        /// The turn's new user message to append. May be omitted for client-tool continuation, where ``toolOutputs`` resolve the trailing assistant message's pending tool calls instead.
-        /// </param>
-        /// <param name="toolOutputs">
-        /// Client-executed tool results for pending tool calls on the transcript's trailing assistant message, matched by ``toolCallId``. Submitted alone they continue the assistant turn; submitted with ``message`` they resolve dangling tool calls before the new user turn runs.
-        /// </param>
         /// <param name="toolApprovals">
-        /// Responses to tool calls awaiting approval on the trailing assistant message, matched by ``toolCallId``. Cannot be combined with ``message``.
+        /// Answers to tool calls awaiting approval on the trailing assistant message, matched by ``toolCallId``. Resending a persisted answer is a no-op; an answer that reverses one, or that matches no call awaiting approval, is rejected with HTTP 409 and code ``agent_session_tool_approvals_conflict``.
         /// </param>
         /// <param name="lastMessageId">
-        /// The id of the last transcript message the client has rendered, used for optimistic concurrency. Omit when the session has no messages; required (and validated against the persisted transcript) once it does. On mismatch the server rejects the send with HTTP 409 and code ``agent_session_messages_stale`` — the client should refetch the session before retrying.
-        /// </param>
-        /// <param name="recordLocalTraces">
-        /// Default Value: false
-        /// </param>
-        /// <param name="exportRemoteTraces">
-        /// Default Value: false
-        /// </param>
-        /// <param name="instrumentUserId">
-        /// When true and the request is authenticated as a PhoenixUser, attaches the user's email as the OpenInference ``user.id`` span attribute on all traced work for this request.<br/>
-        /// Default Value: false
+        /// The trailing assistant message's id. On mismatch the submission is rejected with HTTP 409 and code ``agent_session_messages_stale``.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> AgentSessionChatAsync(
+        public async global::System.Threading.Tasks.Task<global::Phoenix.SubmitAgentSessionToolApprovalsResponseBody> SubmitAgentSessionToolApprovalsAsync(
             string sessionId,
-            bool headless,
-            global::Phoenix.AgentModelSelection model,
-            string id,
-            global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? contexts = default,
-            global::Phoenix.ChatRequestBodyEditPermission? editPermission = default,
-            global::System.Collections.Generic.IList<string>? requestedSkills = default,
-            string? trigger = default,
-            global::Phoenix.PhoenixUIMessage? message = default,
-            global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>>? toolOutputs = default,
-            global::System.Collections.Generic.IList<global::Phoenix.ToolApproval>? toolApprovals = default,
-            string? lastMessageId = default,
-            bool? recordLocalTraces = default,
-            bool? exportRemoteTraces = default,
-            bool? instrumentUserId = default,
+            global::System.Collections.Generic.IList<global::Phoenix.ToolApproval> toolApprovals,
+            string lastMessageId,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Phoenix.ChatRequestBody
+            var __request = new global::Phoenix.SubmitAgentSessionToolApprovalsRequestBody
             {
-                Headless = headless,
-                Contexts = contexts,
-                EditPermission = editPermission,
-                RequestedSkills = requestedSkills,
-                Model = model,
-                Trigger = trigger,
-                Id = id,
-                Message = message,
-                ToolOutputs = toolOutputs,
                 ToolApprovals = toolApprovals,
                 LastMessageId = lastMessageId,
-                RecordLocalTraces = recordLocalTraces,
-                ExportRemoteTraces = exportRemoteTraces,
-                InstrumentUserId = instrumentUserId,
             };
 
-            return await AgentSessionChatAsync(
+            return await SubmitAgentSessionToolApprovalsAsync(
                 sessionId: sessionId,
                 request: __request,
                 requestOptions: requestOptions,

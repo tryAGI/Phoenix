@@ -1,5 +1,7 @@
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace Phoenix
 {
     public partial interface IChatClient
@@ -59,6 +61,9 @@ namespace Phoenix
         /// <param name="toolOutputs">
         /// Client-executed tool results for pending tool calls on the transcript's trailing assistant message, matched by ``toolCallId``. Submitted alone they continue the assistant turn; submitted with ``message`` they resolve dangling tool calls before the new user turn runs.
         /// </param>
+        /// <param name="toolApprovals">
+        /// Responses to tool calls awaiting approval on the trailing assistant message, matched by ``toolCallId``. Cannot be combined with ``message``.
+        /// </param>
         /// <param name="lastMessageId">
         /// The id of the last transcript message the client has rendered, used for optimistic concurrency. Omit when the session has no messages; required (and validated against the persisted transcript) once it does. On mismatch the server rejects the send with HTTP 409 and code ``agent_session_messages_stale`` — the client should refetch the session before retrying.
         /// </param>
@@ -86,6 +91,7 @@ namespace Phoenix
             string? trigger = default,
             global::Phoenix.PhoenixUIMessage? message = default,
             global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>>? toolOutputs = default,
+            global::System.Collections.Generic.IList<global::Phoenix.ToolApproval>? toolApprovals = default,
             string? lastMessageId = default,
             bool? recordLocalTraces = default,
             bool? exportRemoteTraces = default,
