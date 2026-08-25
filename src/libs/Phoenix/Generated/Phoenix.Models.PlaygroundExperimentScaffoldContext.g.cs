@@ -7,8 +7,8 @@ namespace Phoenix
     /// Experiment name/description/metadata the user has staged for the playground's<br/>
     /// *next* dataset-backed run, before that run has started.<br/>
     /// The playground UI lets the user pre-set how the next recorded run's experiment<br/>
-    /// will be named, described, and tagged (via the ``set_playground_experiment_recording``<br/>
-    /// tool or the recording form). That staged state is surfaced here so the agent can<br/>
+    /// will be named, described, and tagged (via the experiment-recording UI operation<br/>
+    /// or the recording form). That staged state is surfaced here so the agent can<br/>
     /// see what is already set and avoid re-staging it.<br/>
     /// Field semantics:<br/>
     /// - ``name`` / ``description``: the staged values, surfaced to the model verbatim,<br/>
