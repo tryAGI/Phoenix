@@ -83,6 +83,11 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
+        public ModelProvidersClient ModelProviders { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ProjectsClient Projects { get; }
 
         /// <summary>
