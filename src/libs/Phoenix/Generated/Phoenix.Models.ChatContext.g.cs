@@ -52,17 +52,12 @@ namespace Phoenix
             : throw new global::System.InvalidOperationException($"Expected union variant 'App' but the value was {ToString()}.");
 
         /// <summary>
-        /// Project the user is currently viewing.<br/>
-        /// ``span_filter`` carries the project-scoped span filter expression when the<br/>
-        /// span filter field is mounted — empty string when the field is mounted with<br/>
-        /// no condition applied, ``None`` when the field is not present at all. It<br/>
-        /// describes the view in full, root-span scoping included (which is expressed<br/>
-        /// within the filter DSL as ``parent_id is None``).
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.ProjectContext? Project { get; init; }
+        public global::Phoenix.ProjectUIContext? Project { get; init; }
 #else
-        public global::Phoenix.ProjectContext? Project { get; }
+        public global::Phoenix.ProjectUIContext? Project { get; }
 #endif
 
         /// <summary>
@@ -80,7 +75,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.ProjectContext? value)
+            out global::Phoenix.ProjectUIContext? value)
         {
             value = Project;
             return IsProject;
@@ -89,7 +84,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.ProjectContext PickProject() => IsProject
+        public global::Phoenix.ProjectUIContext PickProject() => IsProject
             ? Project!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Project' but the value was {ToString()}.");
 
@@ -97,9 +92,9 @@ namespace Phoenix
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.TraceContext? Trace { get; init; }
+        public global::Phoenix.TraceUIContext? Trace { get; init; }
 #else
-        public global::Phoenix.TraceContext? Trace { get; }
+        public global::Phoenix.TraceUIContext? Trace { get; }
 #endif
 
         /// <summary>
@@ -117,7 +112,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.TraceContext? value)
+            out global::Phoenix.TraceUIContext? value)
         {
             value = Trace;
             return IsTrace;
@@ -126,17 +121,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.TraceContext PickTrace() => IsTrace
+        public global::Phoenix.TraceUIContext PickTrace() => IsTrace
             ? Trace!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Trace' but the value was {ToString()}.");
 
         /// <summary>
-        /// Session the user is currently viewing.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.SessionContext? Session { get; init; }
+        public global::Phoenix.SessionUIContext? Session { get; init; }
 #else
-        public global::Phoenix.SessionContext? Session { get; }
+        public global::Phoenix.SessionUIContext? Session { get; }
 #endif
 
         /// <summary>
@@ -154,7 +149,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.SessionContext? value)
+            out global::Phoenix.SessionUIContext? value)
         {
             value = Session;
             return IsSession;
@@ -163,17 +158,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.SessionContext PickSession() => IsSession
+        public global::Phoenix.SessionUIContext PickSession() => IsSession
             ? Session!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Session' but the value was {ToString()}.");
 
         /// <summary>
-        /// Prompt the user is currently viewing.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.PromptContext? Prompt { get; init; }
+        public global::Phoenix.PromptUIContext? Prompt { get; init; }
 #else
-        public global::Phoenix.PromptContext? Prompt { get; }
+        public global::Phoenix.PromptUIContext? Prompt { get; }
 #endif
 
         /// <summary>
@@ -191,7 +186,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.PromptContext? value)
+            out global::Phoenix.PromptUIContext? value)
         {
             value = Prompt;
             return IsPrompt;
@@ -200,17 +195,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptContext PickPrompt() => IsPrompt
+        public global::Phoenix.PromptUIContext PickPrompt() => IsPrompt
             ? Prompt!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Prompt' but the value was {ToString()}.");
 
         /// <summary>
-        /// Prompt version the user is currently viewing.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.PromptVersionContext? PromptVersion { get; init; }
+        public global::Phoenix.PromptVersionUIContext? PromptVersion { get; init; }
 #else
-        public global::Phoenix.PromptVersionContext? PromptVersion { get; }
+        public global::Phoenix.PromptVersionUIContext? PromptVersion { get; }
 #endif
 
         /// <summary>
@@ -228,7 +223,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.PromptVersionContext? value)
+            out global::Phoenix.PromptVersionUIContext? value)
         {
             value = PromptVersion;
             return IsPromptVersion;
@@ -237,20 +232,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PromptVersionContext PickPromptVersion() => IsPromptVersion
+        public global::Phoenix.PromptVersionUIContext PickPromptVersion() => IsPromptVersion
             ? PromptVersion!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PromptVersion' but the value was {ToString()}.");
 
         /// <summary>
-        /// Span the user has selected.<br/>
-        /// Exactly one of ``span_node_id`` (relay) or ``otel_span_id`` (OpenTelemetry<br/>
-        /// hex) must be set. ``project_node_id`` is optional because a span can be<br/>
-        /// selected from views outside a project route.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.AgentSpanContext? Span { get; init; }
+        public global::Phoenix.SpanUIContext? Span { get; init; }
 #else
-        public global::Phoenix.AgentSpanContext? Span { get; }
+        public global::Phoenix.SpanUIContext? Span { get; }
 #endif
 
         /// <summary>
@@ -268,7 +260,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.AgentSpanContext? value)
+            out global::Phoenix.SpanUIContext? value)
         {
             value = Span;
             return IsSpan;
@@ -277,17 +269,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.AgentSpanContext PickSpan() => IsSpan
+        public global::Phoenix.SpanUIContext PickSpan() => IsSpan
             ? Span!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Span' but the value was {ToString()}.");
 
         /// <summary>
-        /// Playground prompt editor state mounted in the current browser route.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.PlaygroundContext? Playground { get; init; }
+        public global::Phoenix.PlaygroundUIContext? Playground { get; init; }
 #else
-        public global::Phoenix.PlaygroundContext? Playground { get; }
+        public global::Phoenix.PlaygroundUIContext? Playground { get; }
 #endif
 
         /// <summary>
@@ -305,7 +297,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.PlaygroundContext? value)
+            out global::Phoenix.PlaygroundUIContext? value)
         {
             value = Playground;
             return IsPlayground;
@@ -314,17 +306,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PlaygroundContext PickPlayground() => IsPlayground
+        public global::Phoenix.PlaygroundUIContext PickPlayground() => IsPlayground
             ? Playground!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Playground' but the value was {ToString()}.");
 
         /// <summary>
-        /// Code-evaluator create/edit form mounted in the current browser route.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.CodeEvaluatorContext? CodeEvaluator { get; init; }
+        public global::Phoenix.CodeEvaluatorUIContext? CodeEvaluator { get; init; }
 #else
-        public global::Phoenix.CodeEvaluatorContext? CodeEvaluator { get; }
+        public global::Phoenix.CodeEvaluatorUIContext? CodeEvaluator { get; }
 #endif
 
         /// <summary>
@@ -342,7 +334,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.CodeEvaluatorContext? value)
+            out global::Phoenix.CodeEvaluatorUIContext? value)
         {
             value = CodeEvaluator;
             return IsCodeEvaluator;
@@ -351,17 +343,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.CodeEvaluatorContext PickCodeEvaluator() => IsCodeEvaluator
+        public global::Phoenix.CodeEvaluatorUIContext PickCodeEvaluator() => IsCodeEvaluator
             ? CodeEvaluator!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeEvaluator' but the value was {ToString()}.");
 
         /// <summary>
-        /// LLM-evaluator create/edit form mounted in the current browser route.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.LlmEvaluatorContext? LlmEvaluator { get; init; }
+        public global::Phoenix.LlmEvaluatorUIContext? LlmEvaluator { get; init; }
 #else
-        public global::Phoenix.LlmEvaluatorContext? LlmEvaluator { get; }
+        public global::Phoenix.LlmEvaluatorUIContext? LlmEvaluator { get; }
 #endif
 
         /// <summary>
@@ -379,7 +371,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.LlmEvaluatorContext? value)
+            out global::Phoenix.LlmEvaluatorUIContext? value)
         {
             value = LlmEvaluator;
             return IsLlmEvaluator;
@@ -388,21 +380,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.LlmEvaluatorContext PickLlmEvaluator() => IsLlmEvaluator
+        public global::Phoenix.LlmEvaluatorUIContext PickLlmEvaluator() => IsLlmEvaluator
             ? LlmEvaluator!
             : throw new global::System.InvalidOperationException($"Expected union variant 'LlmEvaluator' but the value was {ToString()}.");
 
         /// <summary>
-        /// Dataset the user is currently viewing or has bound to a workflow.<br/>
-        /// Carries the dataset's relay node id and, when known, the active version<br/>
-        /// node id. These IDs scope the create-form handoff link and the sampling of<br/>
-        /// active dataset examples used as prompt context; the dataset schema itself<br/>
-        /// is open.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.DatasetContext? Dataset { get; init; }
+        public global::Phoenix.DatasetUIContext? Dataset { get; init; }
 #else
-        public global::Phoenix.DatasetContext? Dataset { get; }
+        public global::Phoenix.DatasetUIContext? Dataset { get; }
 #endif
 
         /// <summary>
@@ -420,7 +408,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.DatasetContext? value)
+            out global::Phoenix.DatasetUIContext? value)
         {
             value = Dataset;
             return IsDataset;
@@ -429,7 +417,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.DatasetContext PickDataset() => IsDataset
+        public global::Phoenix.DatasetUIContext PickDataset() => IsDataset
             ? Dataset!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dataset' but the value was {ToString()}.");
 
@@ -569,17 +557,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContext(global::Phoenix.ProjectContext value) => new ChatContext((global::Phoenix.ProjectContext?)value);
+        public static implicit operator ChatContext(global::Phoenix.ProjectUIContext value) => new ChatContext((global::Phoenix.ProjectUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.ProjectContext?(ChatContext @this) => @this.Project;
+        public static implicit operator global::Phoenix.ProjectUIContext?(ChatContext @this) => @this.Project;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContext(global::Phoenix.ProjectContext? value)
+        public ChatContext(global::Phoenix.ProjectUIContext? value)
         {
             Project = value;
         }
@@ -587,22 +575,22 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ChatContext FromProject(global::Phoenix.ProjectContext? value) => new ChatContext(value);
+        public static ChatContext FromProject(global::Phoenix.ProjectUIContext? value) => new ChatContext(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContext(global::Phoenix.TraceContext value) => new ChatContext((global::Phoenix.TraceContext?)value);
+        public static implicit operator ChatContext(global::Phoenix.TraceUIContext value) => new ChatContext((global::Phoenix.TraceUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.TraceContext?(ChatContext @this) => @this.Trace;
+        public static implicit operator global::Phoenix.TraceUIContext?(ChatContext @this) => @this.Trace;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContext(global::Phoenix.TraceContext? value)
+        public ChatContext(global::Phoenix.TraceUIContext? value)
         {
             Trace = value;
         }
@@ -610,22 +598,22 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ChatContext FromTrace(global::Phoenix.TraceContext? value) => new ChatContext(value);
+        public static ChatContext FromTrace(global::Phoenix.TraceUIContext? value) => new ChatContext(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContext(global::Phoenix.SessionContext value) => new ChatContext((global::Phoenix.SessionContext?)value);
+        public static implicit operator ChatContext(global::Phoenix.SessionUIContext value) => new ChatContext((global::Phoenix.SessionUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.SessionContext?(ChatContext @this) => @this.Session;
+        public static implicit operator global::Phoenix.SessionUIContext?(ChatContext @this) => @this.Session;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContext(global::Phoenix.SessionContext? value)
+        public ChatContext(global::Phoenix.SessionUIContext? value)
         {
             Session = value;
         }
@@ -633,22 +621,22 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ChatContext FromSession(global::Phoenix.SessionContext? value) => new ChatContext(value);
+        public static ChatContext FromSession(global::Phoenix.SessionUIContext? value) => new ChatContext(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContext(global::Phoenix.PromptContext value) => new ChatContext((global::Phoenix.PromptContext?)value);
+        public static implicit operator ChatContext(global::Phoenix.PromptUIContext value) => new ChatContext((global::Phoenix.PromptUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.PromptContext?(ChatContext @this) => @this.Prompt;
+        public static implicit operator global::Phoenix.PromptUIContext?(ChatContext @this) => @this.Prompt;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContext(global::Phoenix.PromptContext? value)
+        public ChatContext(global::Phoenix.PromptUIContext? value)
         {
             Prompt = value;
         }
@@ -656,22 +644,22 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ChatContext FromPrompt(global::Phoenix.PromptContext? value) => new ChatContext(value);
+        public static ChatContext FromPrompt(global::Phoenix.PromptUIContext? value) => new ChatContext(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContext(global::Phoenix.PromptVersionContext value) => new ChatContext((global::Phoenix.PromptVersionContext?)value);
+        public static implicit operator ChatContext(global::Phoenix.PromptVersionUIContext value) => new ChatContext((global::Phoenix.PromptVersionUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.PromptVersionContext?(ChatContext @this) => @this.PromptVersion;
+        public static implicit operator global::Phoenix.PromptVersionUIContext?(ChatContext @this) => @this.PromptVersion;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContext(global::Phoenix.PromptVersionContext? value)
+        public ChatContext(global::Phoenix.PromptVersionUIContext? value)
         {
             PromptVersion = value;
         }
@@ -679,22 +667,22 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ChatContext FromPromptVersion(global::Phoenix.PromptVersionContext? value) => new ChatContext(value);
+        public static ChatContext FromPromptVersion(global::Phoenix.PromptVersionUIContext? value) => new ChatContext(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContext(global::Phoenix.AgentSpanContext value) => new ChatContext((global::Phoenix.AgentSpanContext?)value);
+        public static implicit operator ChatContext(global::Phoenix.SpanUIContext value) => new ChatContext((global::Phoenix.SpanUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.AgentSpanContext?(ChatContext @this) => @this.Span;
+        public static implicit operator global::Phoenix.SpanUIContext?(ChatContext @this) => @this.Span;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContext(global::Phoenix.AgentSpanContext? value)
+        public ChatContext(global::Phoenix.SpanUIContext? value)
         {
             Span = value;
         }
@@ -702,22 +690,22 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ChatContext FromSpan(global::Phoenix.AgentSpanContext? value) => new ChatContext(value);
+        public static ChatContext FromSpan(global::Phoenix.SpanUIContext? value) => new ChatContext(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContext(global::Phoenix.PlaygroundContext value) => new ChatContext((global::Phoenix.PlaygroundContext?)value);
+        public static implicit operator ChatContext(global::Phoenix.PlaygroundUIContext value) => new ChatContext((global::Phoenix.PlaygroundUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.PlaygroundContext?(ChatContext @this) => @this.Playground;
+        public static implicit operator global::Phoenix.PlaygroundUIContext?(ChatContext @this) => @this.Playground;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContext(global::Phoenix.PlaygroundContext? value)
+        public ChatContext(global::Phoenix.PlaygroundUIContext? value)
         {
             Playground = value;
         }
@@ -725,22 +713,22 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ChatContext FromPlayground(global::Phoenix.PlaygroundContext? value) => new ChatContext(value);
+        public static ChatContext FromPlayground(global::Phoenix.PlaygroundUIContext? value) => new ChatContext(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContext(global::Phoenix.CodeEvaluatorContext value) => new ChatContext((global::Phoenix.CodeEvaluatorContext?)value);
+        public static implicit operator ChatContext(global::Phoenix.CodeEvaluatorUIContext value) => new ChatContext((global::Phoenix.CodeEvaluatorUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.CodeEvaluatorContext?(ChatContext @this) => @this.CodeEvaluator;
+        public static implicit operator global::Phoenix.CodeEvaluatorUIContext?(ChatContext @this) => @this.CodeEvaluator;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContext(global::Phoenix.CodeEvaluatorContext? value)
+        public ChatContext(global::Phoenix.CodeEvaluatorUIContext? value)
         {
             CodeEvaluator = value;
         }
@@ -748,22 +736,22 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ChatContext FromCodeEvaluator(global::Phoenix.CodeEvaluatorContext? value) => new ChatContext(value);
+        public static ChatContext FromCodeEvaluator(global::Phoenix.CodeEvaluatorUIContext? value) => new ChatContext(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContext(global::Phoenix.LlmEvaluatorContext value) => new ChatContext((global::Phoenix.LlmEvaluatorContext?)value);
+        public static implicit operator ChatContext(global::Phoenix.LlmEvaluatorUIContext value) => new ChatContext((global::Phoenix.LlmEvaluatorUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.LlmEvaluatorContext?(ChatContext @this) => @this.LlmEvaluator;
+        public static implicit operator global::Phoenix.LlmEvaluatorUIContext?(ChatContext @this) => @this.LlmEvaluator;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContext(global::Phoenix.LlmEvaluatorContext? value)
+        public ChatContext(global::Phoenix.LlmEvaluatorUIContext? value)
         {
             LlmEvaluator = value;
         }
@@ -771,22 +759,22 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ChatContext FromLlmEvaluator(global::Phoenix.LlmEvaluatorContext? value) => new ChatContext(value);
+        public static ChatContext FromLlmEvaluator(global::Phoenix.LlmEvaluatorUIContext? value) => new ChatContext(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContext(global::Phoenix.DatasetContext value) => new ChatContext((global::Phoenix.DatasetContext?)value);
+        public static implicit operator ChatContext(global::Phoenix.DatasetUIContext value) => new ChatContext((global::Phoenix.DatasetUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.DatasetContext?(ChatContext @this) => @this.Dataset;
+        public static implicit operator global::Phoenix.DatasetUIContext?(ChatContext @this) => @this.Dataset;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContext(global::Phoenix.DatasetContext? value)
+        public ChatContext(global::Phoenix.DatasetUIContext? value)
         {
             Dataset = value;
         }
@@ -794,7 +782,7 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ChatContext FromDataset(global::Phoenix.DatasetContext? value) => new ChatContext(value);
+        public static ChatContext FromDataset(global::Phoenix.DatasetUIContext? value) => new ChatContext(value);
 
         /// <summary>
         /// 
@@ -871,16 +859,16 @@ namespace Phoenix
         public ChatContext(
             global::Phoenix.ChatContextDiscriminatorType? type,
             global::Phoenix.AppContext? app,
-            global::Phoenix.ProjectContext? project,
-            global::Phoenix.TraceContext? trace,
-            global::Phoenix.SessionContext? session,
-            global::Phoenix.PromptContext? prompt,
-            global::Phoenix.PromptVersionContext? promptVersion,
-            global::Phoenix.AgentSpanContext? span,
-            global::Phoenix.PlaygroundContext? playground,
-            global::Phoenix.CodeEvaluatorContext? codeEvaluator,
-            global::Phoenix.LlmEvaluatorContext? llmEvaluator,
-            global::Phoenix.DatasetContext? dataset,
+            global::Phoenix.ProjectUIContext? project,
+            global::Phoenix.TraceUIContext? trace,
+            global::Phoenix.SessionUIContext? session,
+            global::Phoenix.PromptUIContext? prompt,
+            global::Phoenix.PromptVersionUIContext? promptVersion,
+            global::Phoenix.SpanUIContext? span,
+            global::Phoenix.PlaygroundUIContext? playground,
+            global::Phoenix.CodeEvaluatorUIContext? codeEvaluator,
+            global::Phoenix.LlmEvaluatorUIContext? llmEvaluator,
+            global::Phoenix.DatasetUIContext? dataset,
             global::Phoenix.GraphQLContext? graphql,
             global::Phoenix.WebAccessContext? webAccess,
             global::Phoenix.SubagentsContext? subagents
@@ -957,16 +945,16 @@ namespace Phoenix
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.AppContext, TResult>? app = null,
-            global::System.Func<global::Phoenix.ProjectContext, TResult>? project = null,
-            global::System.Func<global::Phoenix.TraceContext, TResult>? trace = null,
-            global::System.Func<global::Phoenix.SessionContext, TResult>? session = null,
-            global::System.Func<global::Phoenix.PromptContext, TResult>? prompt = null,
-            global::System.Func<global::Phoenix.PromptVersionContext, TResult>? promptVersion = null,
-            global::System.Func<global::Phoenix.AgentSpanContext, TResult>? span = null,
-            global::System.Func<global::Phoenix.PlaygroundContext, TResult>? playground = null,
-            global::System.Func<global::Phoenix.CodeEvaluatorContext, TResult>? codeEvaluator = null,
-            global::System.Func<global::Phoenix.LlmEvaluatorContext, TResult>? llmEvaluator = null,
-            global::System.Func<global::Phoenix.DatasetContext, TResult>? dataset = null,
+            global::System.Func<global::Phoenix.ProjectUIContext, TResult>? project = null,
+            global::System.Func<global::Phoenix.TraceUIContext, TResult>? trace = null,
+            global::System.Func<global::Phoenix.SessionUIContext, TResult>? session = null,
+            global::System.Func<global::Phoenix.PromptUIContext, TResult>? prompt = null,
+            global::System.Func<global::Phoenix.PromptVersionUIContext, TResult>? promptVersion = null,
+            global::System.Func<global::Phoenix.SpanUIContext, TResult>? span = null,
+            global::System.Func<global::Phoenix.PlaygroundUIContext, TResult>? playground = null,
+            global::System.Func<global::Phoenix.CodeEvaluatorUIContext, TResult>? codeEvaluator = null,
+            global::System.Func<global::Phoenix.LlmEvaluatorUIContext, TResult>? llmEvaluator = null,
+            global::System.Func<global::Phoenix.DatasetUIContext, TResult>? dataset = null,
             global::System.Func<global::Phoenix.GraphQLContext, TResult>? graphql = null,
             global::System.Func<global::Phoenix.WebAccessContext, TResult>? webAccess = null,
             global::System.Func<global::Phoenix.SubagentsContext, TResult>? subagents = null,
@@ -1043,25 +1031,25 @@ namespace Phoenix
         public void Match(
             global::System.Action<global::Phoenix.AppContext>? app = null,
 
-            global::System.Action<global::Phoenix.ProjectContext>? project = null,
+            global::System.Action<global::Phoenix.ProjectUIContext>? project = null,
 
-            global::System.Action<global::Phoenix.TraceContext>? trace = null,
+            global::System.Action<global::Phoenix.TraceUIContext>? trace = null,
 
-            global::System.Action<global::Phoenix.SessionContext>? session = null,
+            global::System.Action<global::Phoenix.SessionUIContext>? session = null,
 
-            global::System.Action<global::Phoenix.PromptContext>? prompt = null,
+            global::System.Action<global::Phoenix.PromptUIContext>? prompt = null,
 
-            global::System.Action<global::Phoenix.PromptVersionContext>? promptVersion = null,
+            global::System.Action<global::Phoenix.PromptVersionUIContext>? promptVersion = null,
 
-            global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
+            global::System.Action<global::Phoenix.SpanUIContext>? span = null,
 
-            global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
+            global::System.Action<global::Phoenix.PlaygroundUIContext>? playground = null,
 
-            global::System.Action<global::Phoenix.CodeEvaluatorContext>? codeEvaluator = null,
+            global::System.Action<global::Phoenix.CodeEvaluatorUIContext>? codeEvaluator = null,
 
-            global::System.Action<global::Phoenix.LlmEvaluatorContext>? llmEvaluator = null,
+            global::System.Action<global::Phoenix.LlmEvaluatorUIContext>? llmEvaluator = null,
 
-            global::System.Action<global::Phoenix.DatasetContext>? dataset = null,
+            global::System.Action<global::Phoenix.DatasetUIContext>? dataset = null,
 
             global::System.Action<global::Phoenix.GraphQLContext>? graphql = null,
 
@@ -1138,16 +1126,16 @@ namespace Phoenix
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.AppContext>? app = null,
-            global::System.Action<global::Phoenix.ProjectContext>? project = null,
-            global::System.Action<global::Phoenix.TraceContext>? trace = null,
-            global::System.Action<global::Phoenix.SessionContext>? session = null,
-            global::System.Action<global::Phoenix.PromptContext>? prompt = null,
-            global::System.Action<global::Phoenix.PromptVersionContext>? promptVersion = null,
-            global::System.Action<global::Phoenix.AgentSpanContext>? span = null,
-            global::System.Action<global::Phoenix.PlaygroundContext>? playground = null,
-            global::System.Action<global::Phoenix.CodeEvaluatorContext>? codeEvaluator = null,
-            global::System.Action<global::Phoenix.LlmEvaluatorContext>? llmEvaluator = null,
-            global::System.Action<global::Phoenix.DatasetContext>? dataset = null,
+            global::System.Action<global::Phoenix.ProjectUIContext>? project = null,
+            global::System.Action<global::Phoenix.TraceUIContext>? trace = null,
+            global::System.Action<global::Phoenix.SessionUIContext>? session = null,
+            global::System.Action<global::Phoenix.PromptUIContext>? prompt = null,
+            global::System.Action<global::Phoenix.PromptVersionUIContext>? promptVersion = null,
+            global::System.Action<global::Phoenix.SpanUIContext>? span = null,
+            global::System.Action<global::Phoenix.PlaygroundUIContext>? playground = null,
+            global::System.Action<global::Phoenix.CodeEvaluatorUIContext>? codeEvaluator = null,
+            global::System.Action<global::Phoenix.LlmEvaluatorUIContext>? llmEvaluator = null,
+            global::System.Action<global::Phoenix.DatasetUIContext>? dataset = null,
             global::System.Action<global::Phoenix.GraphQLContext>? graphql = null,
             global::System.Action<global::Phoenix.WebAccessContext>? webAccess = null,
             global::System.Action<global::Phoenix.SubagentsContext>? subagents = null,
@@ -1226,25 +1214,25 @@ namespace Phoenix
                 App,
                 typeof(global::Phoenix.AppContext),
                 Project,
-                typeof(global::Phoenix.ProjectContext),
+                typeof(global::Phoenix.ProjectUIContext),
                 Trace,
-                typeof(global::Phoenix.TraceContext),
+                typeof(global::Phoenix.TraceUIContext),
                 Session,
-                typeof(global::Phoenix.SessionContext),
+                typeof(global::Phoenix.SessionUIContext),
                 Prompt,
-                typeof(global::Phoenix.PromptContext),
+                typeof(global::Phoenix.PromptUIContext),
                 PromptVersion,
-                typeof(global::Phoenix.PromptVersionContext),
+                typeof(global::Phoenix.PromptVersionUIContext),
                 Span,
-                typeof(global::Phoenix.AgentSpanContext),
+                typeof(global::Phoenix.SpanUIContext),
                 Playground,
-                typeof(global::Phoenix.PlaygroundContext),
+                typeof(global::Phoenix.PlaygroundUIContext),
                 CodeEvaluator,
-                typeof(global::Phoenix.CodeEvaluatorContext),
+                typeof(global::Phoenix.CodeEvaluatorUIContext),
                 LlmEvaluator,
-                typeof(global::Phoenix.LlmEvaluatorContext),
+                typeof(global::Phoenix.LlmEvaluatorUIContext),
                 Dataset,
-                typeof(global::Phoenix.DatasetContext),
+                typeof(global::Phoenix.DatasetUIContext),
                 Graphql,
                 typeof(global::Phoenix.GraphQLContext),
                 WebAccess,
@@ -1268,16 +1256,16 @@ namespace Phoenix
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.AppContext?>.Default.Equals(App, other.App) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.ProjectContext?>.Default.Equals(Project, other.Project) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.TraceContext?>.Default.Equals(Trace, other.Trace) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.SessionContext?>.Default.Equals(Session, other.Session) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptContext?>.Default.Equals(Prompt, other.Prompt) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptVersionContext?>.Default.Equals(PromptVersion, other.PromptVersion) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.AgentSpanContext?>.Default.Equals(Span, other.Span) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundContext?>.Default.Equals(Playground, other.Playground) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.CodeEvaluatorContext?>.Default.Equals(CodeEvaluator, other.CodeEvaluator) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.LlmEvaluatorContext?>.Default.Equals(LlmEvaluator, other.LlmEvaluator) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.DatasetContext?>.Default.Equals(Dataset, other.Dataset) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.ProjectUIContext?>.Default.Equals(Project, other.Project) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.TraceUIContext?>.Default.Equals(Trace, other.Trace) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.SessionUIContext?>.Default.Equals(Session, other.Session) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptUIContext?>.Default.Equals(Prompt, other.Prompt) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptVersionUIContext?>.Default.Equals(PromptVersion, other.PromptVersion) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.SpanUIContext?>.Default.Equals(Span, other.Span) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundUIContext?>.Default.Equals(Playground, other.Playground) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.CodeEvaluatorUIContext?>.Default.Equals(CodeEvaluator, other.CodeEvaluator) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.LlmEvaluatorUIContext?>.Default.Equals(LlmEvaluator, other.LlmEvaluator) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.DatasetUIContext?>.Default.Equals(Dataset, other.Dataset) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.GraphQLContext?>.Default.Equals(Graphql, other.Graphql) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.WebAccessContext?>.Default.Equals(WebAccess, other.WebAccess) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.SubagentsContext?>.Default.Equals(Subagents, other.Subagents) 

@@ -17,22 +17,22 @@ namespace Phoenix.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundInstanceContextModelVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundInstanceContextModelVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PlaygroundInstanceContextModelVariant1Discriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundInstanceUIContextModelVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundInstanceUIContextModelVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PlaygroundInstanceUIContextModelVariant1Discriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Phoenix.PlaygroundBuiltinModelContext? builtin = default;
-            if (discriminator?.Type == global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType.Builtin)
+            global::Phoenix.PlaygroundBuiltinModelUIContext? builtin = default;
+            if (discriminator?.Type == global::Phoenix.PlaygroundInstanceUIContextModelVariant1DiscriminatorType.Builtin)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundBuiltinModelContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundBuiltinModelContext> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PlaygroundBuiltinModelContext)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundBuiltinModelUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundBuiltinModelUIContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PlaygroundBuiltinModelUIContext)}");
                 builtin = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Phoenix.PlaygroundCustomProviderModelContext? custom = default;
-            if (discriminator?.Type == global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType.Custom)
+            global::Phoenix.PlaygroundCustomProviderModelUIContext? custom = default;
+            if (discriminator?.Type == global::Phoenix.PlaygroundInstanceUIContextModelVariant1DiscriminatorType.Custom)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundCustomProviderModelContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundCustomProviderModelContext> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PlaygroundCustomProviderModelContext)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundCustomProviderModelUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundCustomProviderModelUIContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PlaygroundCustomProviderModelUIContext)}");
                 custom = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -57,14 +57,14 @@ namespace Phoenix.JsonConverters
 
             if (value.IsBuiltin)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundBuiltinModelContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundBuiltinModelContext?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PlaygroundBuiltinModelContext).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundBuiltinModelUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundBuiltinModelUIContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PlaygroundBuiltinModelUIContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Builtin!, typeInfo);
             }
             else if (value.IsCustom)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundCustomProviderModelContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundCustomProviderModelContext?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PlaygroundCustomProviderModelContext).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundCustomProviderModelUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundCustomProviderModelUIContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PlaygroundCustomProviderModelUIContext).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Custom!, typeInfo);
             }
         }
