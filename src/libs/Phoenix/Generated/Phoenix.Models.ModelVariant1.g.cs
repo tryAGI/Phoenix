@@ -12,15 +12,15 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType? Type { get; }
+        public global::Phoenix.PlaygroundInstanceUIContextModelVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Built-in playground model selection.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.PlaygroundBuiltinModelContext? Builtin { get; init; }
+        public global::Phoenix.PlaygroundBuiltinModelUIContext? Builtin { get; init; }
 #else
-        public global::Phoenix.PlaygroundBuiltinModelContext? Builtin { get; }
+        public global::Phoenix.PlaygroundBuiltinModelUIContext? Builtin { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.PlaygroundBuiltinModelContext? value)
+            out global::Phoenix.PlaygroundBuiltinModelUIContext? value)
         {
             value = Builtin;
             return IsBuiltin;
@@ -47,17 +47,17 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PlaygroundBuiltinModelContext PickBuiltin() => IsBuiltin
+        public global::Phoenix.PlaygroundBuiltinModelUIContext PickBuiltin() => IsBuiltin
             ? Builtin!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Builtin' but the value was {ToString()}.");
 
         /// <summary>
-        /// Custom-provider playground model selection.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.PlaygroundCustomProviderModelContext? Custom { get; init; }
+        public global::Phoenix.PlaygroundCustomProviderModelUIContext? Custom { get; init; }
 #else
-        public global::Phoenix.PlaygroundCustomProviderModelContext? Custom { get; }
+        public global::Phoenix.PlaygroundCustomProviderModelUIContext? Custom { get; }
 #endif
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Phoenix
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.PlaygroundCustomProviderModelContext? value)
+            out global::Phoenix.PlaygroundCustomProviderModelUIContext? value)
         {
             value = Custom;
             return IsCustom;
@@ -84,23 +84,23 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public global::Phoenix.PlaygroundCustomProviderModelContext PickCustom() => IsCustom
+        public global::Phoenix.PlaygroundCustomProviderModelUIContext PickCustom() => IsCustom
             ? Custom!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ModelVariant1(global::Phoenix.PlaygroundBuiltinModelContext value) => new ModelVariant1((global::Phoenix.PlaygroundBuiltinModelContext?)value);
+        public static implicit operator ModelVariant1(global::Phoenix.PlaygroundBuiltinModelUIContext value) => new ModelVariant1((global::Phoenix.PlaygroundBuiltinModelUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.PlaygroundBuiltinModelContext?(ModelVariant1 @this) => @this.Builtin;
+        public static implicit operator global::Phoenix.PlaygroundBuiltinModelUIContext?(ModelVariant1 @this) => @this.Builtin;
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelVariant1(global::Phoenix.PlaygroundBuiltinModelContext? value)
+        public ModelVariant1(global::Phoenix.PlaygroundBuiltinModelUIContext? value)
         {
             Builtin = value;
         }
@@ -108,22 +108,22 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ModelVariant1 FromBuiltin(global::Phoenix.PlaygroundBuiltinModelContext? value) => new ModelVariant1(value);
+        public static ModelVariant1 FromBuiltin(global::Phoenix.PlaygroundBuiltinModelUIContext? value) => new ModelVariant1(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ModelVariant1(global::Phoenix.PlaygroundCustomProviderModelContext value) => new ModelVariant1((global::Phoenix.PlaygroundCustomProviderModelContext?)value);
+        public static implicit operator ModelVariant1(global::Phoenix.PlaygroundCustomProviderModelUIContext value) => new ModelVariant1((global::Phoenix.PlaygroundCustomProviderModelUIContext?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Phoenix.PlaygroundCustomProviderModelContext?(ModelVariant1 @this) => @this.Custom;
+        public static implicit operator global::Phoenix.PlaygroundCustomProviderModelUIContext?(ModelVariant1 @this) => @this.Custom;
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelVariant1(global::Phoenix.PlaygroundCustomProviderModelContext? value)
+        public ModelVariant1(global::Phoenix.PlaygroundCustomProviderModelUIContext? value)
         {
             Custom = value;
         }
@@ -131,15 +131,15 @@ namespace Phoenix
         /// <summary>
         /// 
         /// </summary>
-        public static ModelVariant1 FromCustom(global::Phoenix.PlaygroundCustomProviderModelContext? value) => new ModelVariant1(value);
+        public static ModelVariant1 FromCustom(global::Phoenix.PlaygroundCustomProviderModelUIContext? value) => new ModelVariant1(value);
 
         /// <summary>
         /// 
         /// </summary>
         public ModelVariant1(
-            global::Phoenix.PlaygroundInstanceContextModelVariant1DiscriminatorType? type,
-            global::Phoenix.PlaygroundBuiltinModelContext? builtin,
-            global::Phoenix.PlaygroundCustomProviderModelContext? custom
+            global::Phoenix.PlaygroundInstanceUIContextModelVariant1DiscriminatorType? type,
+            global::Phoenix.PlaygroundBuiltinModelUIContext? builtin,
+            global::Phoenix.PlaygroundCustomProviderModelUIContext? custom
             )
         {
             Type = type;
@@ -176,8 +176,8 @@ namespace Phoenix
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.PlaygroundBuiltinModelContext, TResult>? builtin = null,
-            global::System.Func<global::Phoenix.PlaygroundCustomProviderModelContext, TResult>? custom = null,
+            global::System.Func<global::Phoenix.PlaygroundBuiltinModelUIContext, TResult>? builtin = null,
+            global::System.Func<global::Phoenix.PlaygroundCustomProviderModelUIContext, TResult>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -201,9 +201,9 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.PlaygroundBuiltinModelContext>? builtin = null,
+            global::System.Action<global::Phoenix.PlaygroundBuiltinModelUIContext>? builtin = null,
 
-            global::System.Action<global::Phoenix.PlaygroundCustomProviderModelContext>? custom = null,
+            global::System.Action<global::Phoenix.PlaygroundCustomProviderModelUIContext>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -225,8 +225,8 @@ namespace Phoenix
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::Phoenix.PlaygroundBuiltinModelContext>? builtin = null,
-            global::System.Action<global::Phoenix.PlaygroundCustomProviderModelContext>? custom = null,
+            global::System.Action<global::Phoenix.PlaygroundBuiltinModelUIContext>? builtin = null,
+            global::System.Action<global::Phoenix.PlaygroundCustomProviderModelUIContext>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -252,9 +252,9 @@ namespace Phoenix
             var fields = new object?[]
             {
                 Builtin,
-                typeof(global::Phoenix.PlaygroundBuiltinModelContext),
+                typeof(global::Phoenix.PlaygroundBuiltinModelUIContext),
                 Custom,
-                typeof(global::Phoenix.PlaygroundCustomProviderModelContext),
+                typeof(global::Phoenix.PlaygroundCustomProviderModelUIContext),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +271,8 @@ namespace Phoenix
         public bool Equals(ModelVariant1 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundBuiltinModelContext?>.Default.Equals(Builtin, other.Builtin) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundCustomProviderModelContext?>.Default.Equals(Custom, other.Custom) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundBuiltinModelUIContext?>.Default.Equals(Builtin, other.Builtin) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundCustomProviderModelUIContext?>.Default.Equals(Custom, other.Custom) 
                 ;
         }
 

@@ -37,6 +37,19 @@ namespace Phoenix
         public bool? IsCompactionMessage { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("uiContexts")]
+        public global::Phoenix.UIContexts? UiContexts { get; set; }
+
+        /// <summary>
+        /// Default Value: manual
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("editPermission")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.PhoenixUserMessageMetadataEditPermissionJsonConverter))]
+        public global::Phoenix.PhoenixUserMessageMetadataEditPermission? EditPermission { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -50,6 +63,10 @@ namespace Phoenix
         /// <param name="isCompactionMessage">
         /// Default Value: false
         /// </param>
+        /// <param name="uiContexts"></param>
+        /// <param name="editPermission">
+        /// Default Value: manual
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,12 +75,16 @@ namespace Phoenix
             string currentDateTime,
             string timeZone,
             bool? isCompactionMessage,
+            global::Phoenix.UIContexts? uiContexts,
+            global::Phoenix.PhoenixUserMessageMetadataEditPermission? editPermission,
             string type = "user")
         {
             this.Type = type;
             this.CurrentDateTime = currentDateTime ?? throw new global::System.ArgumentNullException(nameof(currentDateTime));
             this.TimeZone = timeZone ?? throw new global::System.ArgumentNullException(nameof(timeZone));
             this.IsCompactionMessage = isCompactionMessage;
+            this.UiContexts = uiContexts;
+            this.EditPermission = editPermission;
         }
 
         /// <summary>
