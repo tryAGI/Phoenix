@@ -9,11 +9,11 @@ namespace Phoenix
     public enum ChatRequestBodyEditPermission
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bypass,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Manual,
     }

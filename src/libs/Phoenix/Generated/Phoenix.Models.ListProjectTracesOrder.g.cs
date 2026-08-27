@@ -10,11 +10,11 @@ namespace Phoenix
     public enum ListProjectTracesOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

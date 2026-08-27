@@ -40,83 +40,83 @@ namespace Phoenix
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnnotationConfigsClient AnnotationConfigs { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnnotationsClient Annotations { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApiKeysClient ApiKeys { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatClient Chat { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCompletionsClient ChatCompletions { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatasetsClient Datasets { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ExperimentsClient Experiments { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelProvidersClient ModelProviders { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectsClient Projects { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptsClient Prompts { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SecretsClient Secrets { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SessionsClient Sessions { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpansClient Spans { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TracesClient Traces { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UsersClient Users { get; }
 

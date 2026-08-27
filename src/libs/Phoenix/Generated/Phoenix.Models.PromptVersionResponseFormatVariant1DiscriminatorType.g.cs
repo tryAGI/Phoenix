@@ -4,12 +4,12 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PromptVersionResponseFormatVariant1DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JsonSchema,
     }

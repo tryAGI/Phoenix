@@ -5,17 +5,17 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Template2 : global::System.IEquatable<Template2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptVersionDataTemplateDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptChatTemplate? Chat { get; init; }
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chat))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsChat => Chat != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChat(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptChatTemplate PickChat() => IsChat
             ? Chat!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptStringTemplate? String { get; init; }
@@ -61,7 +61,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(String))]
@@ -69,7 +69,7 @@ namespace Phoenix
         public bool IsString => String != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickString(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptStringTemplate PickString() => IsString
             ? String!
             : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Template2(global::Phoenix.PromptChatTemplate value) => new Template2((global::Phoenix.PromptChatTemplate?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptChatTemplate?(Template2 @this) => @this.Chat;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Template2(global::Phoenix.PromptChatTemplate? value)
         {
@@ -106,22 +106,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Template2 FromChat(global::Phoenix.PromptChatTemplate? value) => new Template2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Template2(global::Phoenix.PromptStringTemplate value) => new Template2((global::Phoenix.PromptStringTemplate?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptStringTemplate?(Template2 @this) => @this.String;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Template2(global::Phoenix.PromptStringTemplate? value)
         {
@@ -129,12 +129,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Template2 FromString(global::Phoenix.PromptStringTemplate? value) => new Template2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Template2(
             global::Phoenix.PromptVersionDataTemplateDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             String as object ??
-            Chat as object 
+            Chat as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Chat?.ToString() ??
-            String?.ToString() 
+            String?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.PromptChatTemplate, TResult>? chat = null,
@@ -198,7 +198,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.PromptChatTemplate>? chat = null,
@@ -222,7 +222,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.PromptChatTemplate>? chat = null,
@@ -245,7 +245,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Template2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptChatTemplate?>.Default.Equals(Chat, other.Chat) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptStringTemplate?>.Default.Equals(String, other.String) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptStringTemplate?>.Default.Equals(String, other.String)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Template2 obj1, Template2 obj2)
         {
@@ -285,7 +285,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Template2 obj1, Template2 obj2)
         {
@@ -293,7 +293,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

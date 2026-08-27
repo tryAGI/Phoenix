@@ -9,21 +9,21 @@ namespace Phoenix
     public sealed partial class AppContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"app"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "app";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("currentDateTime")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CurrentDateTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeZone")]
         [global::System.Text.Json.Serialization.JsonRequired]

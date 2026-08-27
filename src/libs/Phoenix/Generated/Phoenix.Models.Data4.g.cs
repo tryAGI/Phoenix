@@ -5,17 +5,17 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Data4 : global::System.IEquatable<Data4>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.DeleteAnnotationConfigResponseBodyDataDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.CategoricalAnnotationConfig? Categorical { get; init; }
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Categorical))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsCategorical => Categorical != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCategorical(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.CategoricalAnnotationConfig PickCategorical() => IsCategorical
             ? Categorical!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Categorical' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ContinuousAnnotationConfig? Continuous { get; init; }
@@ -61,7 +61,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Continuous))]
@@ -69,7 +69,7 @@ namespace Phoenix
         public bool IsContinuous => Continuous != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContinuous(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.ContinuousAnnotationConfig PickContinuous() => IsContinuous
             ? Continuous!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Continuous' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.FreeformAnnotationConfig? Freeform { get; init; }
@@ -98,7 +98,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Freeform))]
@@ -106,7 +106,7 @@ namespace Phoenix
         public bool IsFreeform => Freeform != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFreeform(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.FreeformAnnotationConfig PickFreeform() => IsFreeform
             ? Freeform!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Freeform' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Data4(global::Phoenix.CategoricalAnnotationConfig value) => new Data4((global::Phoenix.CategoricalAnnotationConfig?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.CategoricalAnnotationConfig?(Data4 @this) => @this.Categorical;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Data4(global::Phoenix.CategoricalAnnotationConfig? value)
         {
@@ -143,22 +143,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Data4 FromCategorical(global::Phoenix.CategoricalAnnotationConfig? value) => new Data4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Data4(global::Phoenix.ContinuousAnnotationConfig value) => new Data4((global::Phoenix.ContinuousAnnotationConfig?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.ContinuousAnnotationConfig?(Data4 @this) => @this.Continuous;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Data4(global::Phoenix.ContinuousAnnotationConfig? value)
         {
@@ -166,22 +166,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Data4 FromContinuous(global::Phoenix.ContinuousAnnotationConfig? value) => new Data4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Data4(global::Phoenix.FreeformAnnotationConfig value) => new Data4((global::Phoenix.FreeformAnnotationConfig?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.FreeformAnnotationConfig?(Data4 @this) => @this.Freeform;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Data4(global::Phoenix.FreeformAnnotationConfig? value)
         {
@@ -189,12 +189,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Data4 FromFreeform(global::Phoenix.FreeformAnnotationConfig? value) => new Data4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Data4(
             global::Phoenix.DeleteAnnotationConfigResponseBodyDataDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Freeform as object ??
             Continuous as object ??
-            Categorical as object 
+            Categorical as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Categorical?.ToString() ??
             Continuous?.ToString() ??
-            Freeform?.ToString() 
+            Freeform?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.CategoricalAnnotationConfig, TResult>? categorical = null,
@@ -267,7 +267,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.CategoricalAnnotationConfig>? categorical = null,
@@ -297,7 +297,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.CategoricalAnnotationConfig>? categorical = null,
@@ -325,7 +325,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Data4 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.CategoricalAnnotationConfig?>.Default.Equals(Categorical, other.Categorical) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.ContinuousAnnotationConfig?>.Default.Equals(Continuous, other.Continuous) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.FreeformAnnotationConfig?>.Default.Equals(Freeform, other.Freeform) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.FreeformAnnotationConfig?>.Default.Equals(Freeform, other.Freeform)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Data4 obj1, Data4 obj2)
         {
@@ -368,7 +368,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Data4 obj1, Data4 obj2)
         {
@@ -376,7 +376,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

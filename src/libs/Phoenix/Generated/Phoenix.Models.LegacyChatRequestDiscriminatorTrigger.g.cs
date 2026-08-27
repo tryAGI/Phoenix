@@ -4,16 +4,16 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LegacyChatRequestDiscriminatorTrigger
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RegenerateMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SubmitMessage,
     }

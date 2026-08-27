@@ -4,16 +4,16 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AgentModelSelectionDiscriminatorProviderType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Builtin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
     }

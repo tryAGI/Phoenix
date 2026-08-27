@@ -4,12 +4,12 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ToolCallContentPartToolCallDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

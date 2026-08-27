@@ -4,24 +4,24 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PromptToolsToolChoiceDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OneOrMore,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpecificFunction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZeroOrMore,
     }

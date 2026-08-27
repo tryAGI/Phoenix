@@ -10,21 +10,21 @@ namespace Phoenix
     public sealed partial class PhoenixUserMessageMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"user"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "user";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("currentDateTime")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CurrentDateTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeZone")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,7 +37,7 @@ namespace Phoenix
         public bool? IsCompactionMessage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uiContexts")]
         public global::Phoenix.UIContexts? UiContexts { get; set; }

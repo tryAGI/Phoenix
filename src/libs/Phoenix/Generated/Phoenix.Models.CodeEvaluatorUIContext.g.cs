@@ -4,19 +4,19 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CodeEvaluatorUIContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"code_evaluator"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "code_evaluator";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluatorNodeId")]
         public string? EvaluatorNodeId { get; set; }

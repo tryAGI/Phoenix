@@ -4,64 +4,64 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatContextDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         App,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeEvaluator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Graphql,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LlmEvaluator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Playground,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Project,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptVersion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Session,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Span,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Subagents,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebAccess,
     }

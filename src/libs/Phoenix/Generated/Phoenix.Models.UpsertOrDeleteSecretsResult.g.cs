@@ -9,14 +9,14 @@ namespace Phoenix
     public sealed partial class UpsertOrDeleteSecretsResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upserted_keys")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> UpsertedKeys { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_keys")]
         [global::System.Text.Json.Serialization.JsonRequired]

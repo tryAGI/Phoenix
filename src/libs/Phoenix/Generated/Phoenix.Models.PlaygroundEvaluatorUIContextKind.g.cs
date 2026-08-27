@@ -4,20 +4,20 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PlaygroundEvaluatorUIContextKind
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Builtin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Code,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Llm,
     }

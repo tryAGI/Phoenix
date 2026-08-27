@@ -4,12 +4,12 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnonymousUser
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"ANONYMOUS"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth_method")]

@@ -4,32 +4,32 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OtlpKind
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanKindClient,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanKindConsumer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanKindInternal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanKindProducer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanKindServer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanKindUnspecified,
     }

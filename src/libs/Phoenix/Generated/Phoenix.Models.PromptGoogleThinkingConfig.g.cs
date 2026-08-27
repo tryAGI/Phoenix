@@ -4,25 +4,25 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptGoogleThinkingConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinking_budget")]
         public int? ThinkingBudget { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinking_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.PromptGoogleThinkingConfigThinkingLevelJsonConverter))]
         public global::Phoenix.PromptGoogleThinkingConfigThinkingLevel? ThinkingLevel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include_thoughts")]
         public bool? IncludeThoughts { get; set; }

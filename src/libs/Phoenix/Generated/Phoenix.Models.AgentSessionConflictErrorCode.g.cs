@@ -9,31 +9,31 @@ namespace Phoenix
     public enum AgentSessionConflictErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentSessionAlreadyCompact,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentSessionBusy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentSessionCompactionConflict,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentSessionMessagesStale,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentSessionModelStale,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentSessionToolApprovalsConflict,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentSessionToolOutputsConflict,
     }

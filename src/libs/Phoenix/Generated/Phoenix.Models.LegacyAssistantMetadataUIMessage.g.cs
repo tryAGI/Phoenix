@@ -9,14 +9,14 @@ namespace Phoenix
     public sealed partial class LegacyAssistantMetadataUIMessage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.LegacyAssistantMetadataUIMessageRoleJsonConverter))]
@@ -24,13 +24,13 @@ namespace Phoenix
         public required global::Phoenix.LegacyAssistantMetadataUIMessageRole Role { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::Phoenix.LegacyAssistantMessageMetadata? Metadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parts")]
         [global::System.Text.Json.Serialization.JsonRequired]

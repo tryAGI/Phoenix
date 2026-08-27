@@ -5,17 +5,17 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ContentVariant2Item : global::System.IEquatable<ContentVariant2Item>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptMessageContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.TextContentPart? Text { get; init; }
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.TextContentPart PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ToolCallContentPart? ToolCall { get; init; }
@@ -61,7 +61,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCall))]
@@ -69,7 +69,7 @@ namespace Phoenix
         public bool IsToolCall => ToolCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolCall(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.ToolCallContentPart PickToolCall() => IsToolCall
             ? ToolCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ToolResultContentPart? ToolResult { get; init; }
@@ -98,7 +98,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
@@ -106,7 +106,7 @@ namespace Phoenix
         public bool IsToolResult => ToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolResult(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.ToolResultContentPart PickToolResult() => IsToolResult
             ? ToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentVariant2Item(global::Phoenix.TextContentPart value) => new ContentVariant2Item((global::Phoenix.TextContentPart?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.TextContentPart?(ContentVariant2Item @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentVariant2Item(global::Phoenix.TextContentPart? value)
         {
@@ -143,22 +143,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentVariant2Item FromText(global::Phoenix.TextContentPart? value) => new ContentVariant2Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentVariant2Item(global::Phoenix.ToolCallContentPart value) => new ContentVariant2Item((global::Phoenix.ToolCallContentPart?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.ToolCallContentPart?(ContentVariant2Item @this) => @this.ToolCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentVariant2Item(global::Phoenix.ToolCallContentPart? value)
         {
@@ -166,22 +166,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentVariant2Item FromToolCall(global::Phoenix.ToolCallContentPart? value) => new ContentVariant2Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentVariant2Item(global::Phoenix.ToolResultContentPart value) => new ContentVariant2Item((global::Phoenix.ToolResultContentPart?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.ToolResultContentPart?(ContentVariant2Item @this) => @this.ToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentVariant2Item(global::Phoenix.ToolResultContentPart? value)
         {
@@ -189,12 +189,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentVariant2Item FromToolResult(global::Phoenix.ToolResultContentPart? value) => new ContentVariant2Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentVariant2Item(
             global::Phoenix.PromptMessageContentVariant2ItemDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ToolResult as object ??
             ToolCall as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
             ToolCall?.ToString() ??
-            ToolResult?.ToString() 
+            ToolResult?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.TextContentPart, TResult>? text = null,
@@ -267,7 +267,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.TextContentPart>? text = null,
@@ -297,7 +297,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.TextContentPart>? text = null,
@@ -325,7 +325,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ContentVariant2Item other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.TextContentPart?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.ToolCallContentPart?>.Default.Equals(ToolCall, other.ToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.ToolResultContentPart?>.Default.Equals(ToolResult, other.ToolResult) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.ToolResultContentPart?>.Default.Equals(ToolResult, other.ToolResult)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ContentVariant2Item obj1, ContentVariant2Item obj2)
         {
@@ -368,7 +368,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ContentVariant2Item obj1, ContentVariant2Item obj2)
         {
@@ -376,7 +376,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

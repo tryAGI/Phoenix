@@ -4,26 +4,26 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TraceUIContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"trace"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "trace";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectNodeId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectNodeId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("otelTraceId")]
         [global::System.Text.Json.Serialization.JsonRequired]

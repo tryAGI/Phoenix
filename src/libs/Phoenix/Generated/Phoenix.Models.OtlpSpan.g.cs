@@ -4,7 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OtlpSpan
     {
@@ -77,7 +77,7 @@ namespace Phoenix
         public global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?, object>? Kind { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("links")]
         public object? Links { get; set; }

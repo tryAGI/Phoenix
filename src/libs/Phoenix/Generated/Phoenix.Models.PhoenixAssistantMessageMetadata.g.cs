@@ -9,27 +9,27 @@ namespace Phoenix
     public sealed partial class PhoenixAssistantMessageMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"assistant"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "assistant";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sessionId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SessionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("turnTraceContext")]
         public global::Phoenix.TurnTraceContext? TurnTraceContext { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::Phoenix.AssistantMessageMetadataUsage? Usage { get; set; }

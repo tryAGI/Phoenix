@@ -4,24 +4,24 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetViewerResponseBodyDataDiscriminatorAuthMethod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anonymous,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ldap,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Local,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Oauth2,
     }

@@ -4,20 +4,20 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateUserRequestBodyUserDiscriminatorAuthMethod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ldap,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Local,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Oauth2,
     }

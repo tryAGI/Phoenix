@@ -4,20 +4,20 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OtlpDoubleValue
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MinusInfinity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Infinity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NaN,
     }

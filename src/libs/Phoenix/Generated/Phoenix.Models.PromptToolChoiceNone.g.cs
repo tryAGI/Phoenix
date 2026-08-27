@@ -4,12 +4,12 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptToolChoiceNone
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"none"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

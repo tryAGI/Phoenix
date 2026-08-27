@@ -4,26 +4,26 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DatasetUIContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"dataset"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "dataset";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("datasetNodeId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DatasetNodeId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("datasetVersionNodeId")]
         public string? DatasetVersionNodeId { get; set; }

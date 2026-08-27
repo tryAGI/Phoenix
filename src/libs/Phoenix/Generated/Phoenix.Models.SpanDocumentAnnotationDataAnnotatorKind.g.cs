@@ -9,15 +9,15 @@ namespace Phoenix
     public enum SpanDocumentAnnotationDataAnnotatorKind
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Code,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Human,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Llm,
     }

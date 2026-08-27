@@ -11,7 +11,7 @@ namespace Phoenix
     public sealed partial class PhoenixToolCallCallbackProviderMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toolExecutionEnvironment")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironmentJsonConverter))]

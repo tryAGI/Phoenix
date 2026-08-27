@@ -5,12 +5,12 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AgentModelSelection : global::System.IEquatable<AgentModelSelection>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.AgentModelSelectionDiscriminatorProviderType? ProviderType { get; }
 
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsCustom => Custom != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustom(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.CustomProviderModelSelection PickCustom() => IsCustom
             ? Custom!
@@ -64,7 +64,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Builtin))]
@@ -72,7 +72,7 @@ namespace Phoenix
         public bool IsBuiltin => Builtin != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBuiltin(
 #if NET6_0_OR_GREATER
@@ -85,23 +85,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.BuiltInProviderModelSelection PickBuiltin() => IsBuiltin
             ? Builtin!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Builtin' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AgentModelSelection(global::Phoenix.CustomProviderModelSelection value) => new AgentModelSelection((global::Phoenix.CustomProviderModelSelection?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.CustomProviderModelSelection?(AgentModelSelection @this) => @this.Custom;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentModelSelection(global::Phoenix.CustomProviderModelSelection? value)
         {
@@ -109,22 +109,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AgentModelSelection FromCustom(global::Phoenix.CustomProviderModelSelection? value) => new AgentModelSelection(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AgentModelSelection(global::Phoenix.BuiltInProviderModelSelection value) => new AgentModelSelection((global::Phoenix.BuiltInProviderModelSelection?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.BuiltInProviderModelSelection?(AgentModelSelection @this) => @this.Builtin;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentModelSelection(global::Phoenix.BuiltInProviderModelSelection? value)
         {
@@ -132,12 +132,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AgentModelSelection FromBuiltin(global::Phoenix.BuiltInProviderModelSelection? value) => new AgentModelSelection(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentModelSelection(
             global::Phoenix.AgentModelSelectionDiscriminatorProviderType? providerType,
@@ -152,23 +152,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Builtin as object ??
-            Custom as object 
+            Custom as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Custom?.ToString() ??
-            Builtin?.ToString() 
+            Builtin?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -176,7 +176,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.CustomProviderModelSelection, TResult>? custom = null,
@@ -201,7 +201,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.CustomProviderModelSelection>? custom = null,
@@ -225,7 +225,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.CustomProviderModelSelection>? custom = null,
@@ -248,7 +248,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -269,18 +269,18 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AgentModelSelection other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.CustomProviderModelSelection?>.Default.Equals(Custom, other.Custom) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.BuiltInProviderModelSelection?>.Default.Equals(Builtin, other.Builtin) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.BuiltInProviderModelSelection?>.Default.Equals(Builtin, other.Builtin)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AgentModelSelection obj1, AgentModelSelection obj2)
         {
@@ -288,7 +288,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AgentModelSelection obj1, AgentModelSelection obj2)
         {
@@ -296,7 +296,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

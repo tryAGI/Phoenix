@@ -9,11 +9,11 @@ namespace Phoenix
     public enum LegacyChatRegenerateMessageEditPermission
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bypass,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Manual,
     }

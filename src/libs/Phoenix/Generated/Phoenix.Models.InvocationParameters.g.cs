@@ -5,17 +5,17 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct InvocationParameters : global::System.IEquatable<InvocationParameters>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptVersionInvocationParametersDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptOpenAIInvocationParameters? Openai { get; init; }
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Openai))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsOpenai => Openai != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenai(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptOpenAIInvocationParameters PickOpenai() => IsOpenai
             ? Openai!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Openai' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptAzureOpenAIInvocationParameters? AzureOpenai { get; init; }
@@ -61,7 +61,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureOpenai))]
@@ -69,7 +69,7 @@ namespace Phoenix
         public bool IsAzureOpenai => AzureOpenai != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAzureOpenai(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptAzureOpenAIInvocationParameters PickAzureOpenai() => IsAzureOpenai
             ? AzureOpenai!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AzureOpenai' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptAnthropicInvocationParameters? Anthropic { get; init; }
@@ -98,7 +98,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Anthropic))]
@@ -106,7 +106,7 @@ namespace Phoenix
         public bool IsAnthropic => Anthropic != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropic(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptAnthropicInvocationParameters PickAnthropic() => IsAnthropic
             ? Anthropic!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptGoogleInvocationParameters? Google { get; init; }
@@ -135,7 +135,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Google))]
@@ -143,7 +143,7 @@ namespace Phoenix
         public bool IsGoogle => Google != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGoogle(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptGoogleInvocationParameters PickGoogle() => IsGoogle
             ? Google!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Google' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptDeepSeekInvocationParameters? Deepseek { get; init; }
@@ -172,7 +172,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Deepseek))]
@@ -180,7 +180,7 @@ namespace Phoenix
         public bool IsDeepseek => Deepseek != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDeepseek(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptDeepSeekInvocationParameters PickDeepseek() => IsDeepseek
             ? Deepseek!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Deepseek' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptXAIInvocationParameters? Xai { get; init; }
@@ -209,7 +209,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Xai))]
@@ -217,7 +217,7 @@ namespace Phoenix
         public bool IsXai => Xai != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickXai(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptXAIInvocationParameters PickXai() => IsXai
             ? Xai!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Xai' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptOllamaInvocationParameters? Ollama { get; init; }
@@ -246,7 +246,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ollama))]
@@ -254,7 +254,7 @@ namespace Phoenix
         public bool IsOllama => Ollama != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOllama(
 #if NET6_0_OR_GREATER
@@ -267,14 +267,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptOllamaInvocationParameters PickOllama() => IsOllama
             ? Ollama!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ollama' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptAwsInvocationParameters? Aws { get; init; }
@@ -283,7 +283,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Aws))]
@@ -291,7 +291,7 @@ namespace Phoenix
         public bool IsAws => Aws != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAws(
 #if NET6_0_OR_GREATER
@@ -304,14 +304,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptAwsInvocationParameters PickAws() => IsAws
             ? Aws!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Aws' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptCerebrasInvocationParameters? Cerebras { get; init; }
@@ -320,7 +320,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cerebras))]
@@ -328,7 +328,7 @@ namespace Phoenix
         public bool IsCerebras => Cerebras != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCerebras(
 #if NET6_0_OR_GREATER
@@ -341,14 +341,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptCerebrasInvocationParameters PickCerebras() => IsCerebras
             ? Cerebras!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cerebras' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptFireworksInvocationParameters? Fireworks { get; init; }
@@ -357,7 +357,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fireworks))]
@@ -365,7 +365,7 @@ namespace Phoenix
         public bool IsFireworks => Fireworks != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFireworks(
 #if NET6_0_OR_GREATER
@@ -378,14 +378,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptFireworksInvocationParameters PickFireworks() => IsFireworks
             ? Fireworks!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Fireworks' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptGroqInvocationParameters? Groq { get; init; }
@@ -394,7 +394,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Groq))]
@@ -402,7 +402,7 @@ namespace Phoenix
         public bool IsGroq => Groq != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGroq(
 #if NET6_0_OR_GREATER
@@ -415,14 +415,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptGroqInvocationParameters PickGroq() => IsGroq
             ? Groq!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Groq' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptMoonshotInvocationParameters? Moonshot { get; init; }
@@ -431,7 +431,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Moonshot))]
@@ -439,7 +439,7 @@ namespace Phoenix
         public bool IsMoonshot => Moonshot != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMoonshot(
 #if NET6_0_OR_GREATER
@@ -452,14 +452,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptMoonshotInvocationParameters PickMoonshot() => IsMoonshot
             ? Moonshot!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Moonshot' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptPerplexityInvocationParameters? Perplexity { get; init; }
@@ -468,7 +468,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Perplexity))]
@@ -476,7 +476,7 @@ namespace Phoenix
         public bool IsPerplexity => Perplexity != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPerplexity(
 #if NET6_0_OR_GREATER
@@ -489,14 +489,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptPerplexityInvocationParameters PickPerplexity() => IsPerplexity
             ? Perplexity!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Perplexity' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptTogetherInvocationParameters? Together { get; init; }
@@ -505,7 +505,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Together))]
@@ -513,7 +513,7 @@ namespace Phoenix
         public bool IsTogether => Together != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTogether(
 #if NET6_0_OR_GREATER
@@ -526,23 +526,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptTogetherInvocationParameters PickTogether() => IsTogether
             ? Together!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Together' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptOpenAIInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptOpenAIInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptOpenAIInvocationParameters?(InvocationParameters @this) => @this.Openai;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptOpenAIInvocationParameters? value)
         {
@@ -550,22 +550,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromOpenai(global::Phoenix.PromptOpenAIInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptAzureOpenAIInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptAzureOpenAIInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptAzureOpenAIInvocationParameters?(InvocationParameters @this) => @this.AzureOpenai;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptAzureOpenAIInvocationParameters? value)
         {
@@ -573,22 +573,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromAzureOpenai(global::Phoenix.PromptAzureOpenAIInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptAnthropicInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptAnthropicInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptAnthropicInvocationParameters?(InvocationParameters @this) => @this.Anthropic;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptAnthropicInvocationParameters? value)
         {
@@ -596,22 +596,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromAnthropic(global::Phoenix.PromptAnthropicInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptGoogleInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptGoogleInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptGoogleInvocationParameters?(InvocationParameters @this) => @this.Google;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptGoogleInvocationParameters? value)
         {
@@ -619,22 +619,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromGoogle(global::Phoenix.PromptGoogleInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptDeepSeekInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptDeepSeekInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptDeepSeekInvocationParameters?(InvocationParameters @this) => @this.Deepseek;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptDeepSeekInvocationParameters? value)
         {
@@ -642,22 +642,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromDeepseek(global::Phoenix.PromptDeepSeekInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptXAIInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptXAIInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptXAIInvocationParameters?(InvocationParameters @this) => @this.Xai;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptXAIInvocationParameters? value)
         {
@@ -665,22 +665,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromXai(global::Phoenix.PromptXAIInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptOllamaInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptOllamaInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptOllamaInvocationParameters?(InvocationParameters @this) => @this.Ollama;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptOllamaInvocationParameters? value)
         {
@@ -688,22 +688,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromOllama(global::Phoenix.PromptOllamaInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptAwsInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptAwsInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptAwsInvocationParameters?(InvocationParameters @this) => @this.Aws;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptAwsInvocationParameters? value)
         {
@@ -711,22 +711,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromAws(global::Phoenix.PromptAwsInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptCerebrasInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptCerebrasInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptCerebrasInvocationParameters?(InvocationParameters @this) => @this.Cerebras;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptCerebrasInvocationParameters? value)
         {
@@ -734,22 +734,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromCerebras(global::Phoenix.PromptCerebrasInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptFireworksInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptFireworksInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptFireworksInvocationParameters?(InvocationParameters @this) => @this.Fireworks;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptFireworksInvocationParameters? value)
         {
@@ -757,22 +757,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromFireworks(global::Phoenix.PromptFireworksInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptGroqInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptGroqInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptGroqInvocationParameters?(InvocationParameters @this) => @this.Groq;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptGroqInvocationParameters? value)
         {
@@ -780,22 +780,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromGroq(global::Phoenix.PromptGroqInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptMoonshotInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptMoonshotInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptMoonshotInvocationParameters?(InvocationParameters @this) => @this.Moonshot;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptMoonshotInvocationParameters? value)
         {
@@ -803,22 +803,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromMoonshot(global::Phoenix.PromptMoonshotInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptPerplexityInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptPerplexityInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptPerplexityInvocationParameters?(InvocationParameters @this) => @this.Perplexity;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptPerplexityInvocationParameters? value)
         {
@@ -826,22 +826,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromPerplexity(global::Phoenix.PromptPerplexityInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InvocationParameters(global::Phoenix.PromptTogetherInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptTogetherInvocationParameters?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptTogetherInvocationParameters?(InvocationParameters @this) => @this.Together;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(global::Phoenix.PromptTogetherInvocationParameters? value)
         {
@@ -849,12 +849,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InvocationParameters FromTogether(global::Phoenix.PromptTogetherInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvocationParameters(
             global::Phoenix.PromptVersionInvocationParametersDiscriminatorType? type,
@@ -893,7 +893,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Together as object ??
@@ -909,11 +909,11 @@ namespace Phoenix
             Google as object ??
             Anthropic as object ??
             AzureOpenai as object ??
-            Openai as object 
+            Openai as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Openai?.ToString() ??
@@ -929,11 +929,11 @@ namespace Phoenix
             Groq?.ToString() ??
             Moonshot?.ToString() ??
             Perplexity?.ToString() ??
-            Together?.ToString() 
+            Together?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -941,7 +941,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.PromptOpenAIInvocationParameters, TResult>? openai = null,
@@ -1026,7 +1026,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.PromptOpenAIInvocationParameters>? openai = null,
@@ -1122,7 +1122,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.PromptOpenAIInvocationParameters>? openai = null,
@@ -1205,7 +1205,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1250,7 +1250,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(InvocationParameters other)
         {
@@ -1268,12 +1268,12 @@ namespace Phoenix
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptGroqInvocationParameters?>.Default.Equals(Groq, other.Groq) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptMoonshotInvocationParameters?>.Default.Equals(Moonshot, other.Moonshot) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptPerplexityInvocationParameters?>.Default.Equals(Perplexity, other.Perplexity) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptTogetherInvocationParameters?>.Default.Equals(Together, other.Together) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptTogetherInvocationParameters?>.Default.Equals(Together, other.Together)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(InvocationParameters obj1, InvocationParameters obj2)
         {
@@ -1281,7 +1281,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(InvocationParameters obj1, InvocationParameters obj2)
         {
@@ -1289,7 +1289,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {
