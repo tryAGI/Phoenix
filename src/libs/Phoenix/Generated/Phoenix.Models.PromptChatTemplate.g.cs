@@ -4,19 +4,19 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptChatTemplate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"chat"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "chat";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]

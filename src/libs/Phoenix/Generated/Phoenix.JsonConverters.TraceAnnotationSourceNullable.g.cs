@@ -20,7 +20,7 @@ namespace Phoenix.JsonConverters
                     {
                         return global::Phoenix.TraceAnnotationSourceExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

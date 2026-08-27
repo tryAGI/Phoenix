@@ -20,7 +20,7 @@ namespace Phoenix.JsonConverters
                     {
                         return global::Phoenix.ChatCompletionRequestMessageRoleExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

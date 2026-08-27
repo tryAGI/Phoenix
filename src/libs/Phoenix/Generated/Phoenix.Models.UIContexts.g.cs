@@ -4,66 +4,66 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UIContexts
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project")]
         public global::Phoenix.ProjectUIContext? Project { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace")]
         public global::Phoenix.TraceUIContext? Trace { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         public global::Phoenix.SessionUIContext? Session { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("span")]
         public global::Phoenix.SpanUIContext? Span { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public global::Phoenix.PromptUIContext? Prompt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("promptVersion")]
         public global::Phoenix.PromptVersionUIContext? PromptVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset")]
         public global::Phoenix.DatasetUIContext? Dataset { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("playground")]
         public global::Phoenix.PlaygroundUIContext? Playground { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("codeEvaluator")]
         public global::Phoenix.CodeEvaluatorUIContext? CodeEvaluator { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llmEvaluator")]
         public global::Phoenix.LlmEvaluatorUIContext? LlmEvaluator { get; set; }

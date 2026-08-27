@@ -5,17 +5,17 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ResponseFormatVariant12 : global::System.IEquatable<ResponseFormatVariant12>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptVersionDataResponseFormatVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptResponseFormatJSONSchema? JsonSchema { get; init; }
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsJsonSchema => JsonSchema != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickJsonSchema(
 #if NET6_0_OR_GREATER
@@ -45,23 +45,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptResponseFormatJSONSchema PickJsonSchema() => IsJsonSchema
             ? JsonSchema!
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseFormatVariant12(global::Phoenix.PromptResponseFormatJSONSchema value) => new ResponseFormatVariant12((global::Phoenix.PromptResponseFormatJSONSchema?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptResponseFormatJSONSchema?(ResponseFormatVariant12 @this) => @this.JsonSchema;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseFormatVariant12(global::Phoenix.PromptResponseFormatJSONSchema? value)
         {
@@ -69,12 +69,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseFormatVariant12 FromJsonSchema(global::Phoenix.PromptResponseFormatJSONSchema? value) => new ResponseFormatVariant12(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseFormatVariant12(
             global::Phoenix.PromptVersionDataResponseFormatVariant1DiscriminatorType? type,
@@ -87,21 +87,21 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            JsonSchema as object 
+            JsonSchema as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            JsonSchema?.ToString() 
+            JsonSchema?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -109,7 +109,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.PromptResponseFormatJSONSchema, TResult>? jsonSchema = null,
@@ -129,7 +129,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.PromptResponseFormatJSONSchema>? jsonSchema = null,
@@ -147,7 +147,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.PromptResponseFormatJSONSchema>? jsonSchema = null,
@@ -165,7 +165,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -184,17 +184,17 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ResponseFormatVariant12 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptResponseFormatJSONSchema?>.Default.Equals(JsonSchema, other.JsonSchema) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptResponseFormatJSONSchema?>.Default.Equals(JsonSchema, other.JsonSchema)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ResponseFormatVariant12 obj1, ResponseFormatVariant12 obj2)
         {
@@ -202,7 +202,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ResponseFormatVariant12 obj1, ResponseFormatVariant12 obj2)
         {
@@ -210,7 +210,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

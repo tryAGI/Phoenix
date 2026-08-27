@@ -4,12 +4,12 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PlaygroundUIContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"playground"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -28,19 +28,19 @@ namespace Phoenix
         public int? Repetitions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nextExperimentScaffold")]
         public global::Phoenix.PlaygroundExperimentScaffoldUIContext? NextExperimentScaffold { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instances")]
         public global::System.Collections.Generic.IList<global::Phoenix.PlaygroundInstanceUIContext>? Instances { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluators")]
         public global::System.Collections.Generic.IList<global::Phoenix.PlaygroundEvaluatorUIContext>? Evaluators { get; set; }

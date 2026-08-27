@@ -5,12 +5,12 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct PhoenixVariant1 : global::System.IEquatable<PhoenixVariant1>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.MessageMetadataPhoenixVariant1DiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsAssistant => Assistant != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAssistant(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PhoenixAssistantMessageMetadata PickAssistant() => IsAssistant
             ? Assistant!
@@ -62,7 +62,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
@@ -70,7 +70,7 @@ namespace Phoenix
         public bool IsUser => User != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUser(
 #if NET6_0_OR_GREATER
@@ -83,23 +83,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PhoenixUserMessageMetadata PickUser() => IsUser
             ? User!
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PhoenixVariant1(global::Phoenix.PhoenixAssistantMessageMetadata value) => new PhoenixVariant1((global::Phoenix.PhoenixAssistantMessageMetadata?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PhoenixAssistantMessageMetadata?(PhoenixVariant1 @this) => @this.Assistant;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PhoenixVariant1(global::Phoenix.PhoenixAssistantMessageMetadata? value)
         {
@@ -107,22 +107,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PhoenixVariant1 FromAssistant(global::Phoenix.PhoenixAssistantMessageMetadata? value) => new PhoenixVariant1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PhoenixVariant1(global::Phoenix.PhoenixUserMessageMetadata value) => new PhoenixVariant1((global::Phoenix.PhoenixUserMessageMetadata?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PhoenixUserMessageMetadata?(PhoenixVariant1 @this) => @this.User;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PhoenixVariant1(global::Phoenix.PhoenixUserMessageMetadata? value)
         {
@@ -130,12 +130,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PhoenixVariant1 FromUser(global::Phoenix.PhoenixUserMessageMetadata? value) => new PhoenixVariant1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PhoenixVariant1(
             global::Phoenix.MessageMetadataPhoenixVariant1DiscriminatorType? type,
@@ -150,23 +150,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             User as object ??
-            Assistant as object 
+            Assistant as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Assistant?.ToString() ??
-            User?.ToString() 
+            User?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -174,7 +174,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.PhoenixAssistantMessageMetadata, TResult>? assistant = null,
@@ -199,7 +199,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.PhoenixAssistantMessageMetadata>? assistant = null,
@@ -223,7 +223,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.PhoenixAssistantMessageMetadata>? assistant = null,
@@ -246,7 +246,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -267,18 +267,18 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(PhoenixVariant1 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PhoenixAssistantMessageMetadata?>.Default.Equals(Assistant, other.Assistant) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PhoenixUserMessageMetadata?>.Default.Equals(User, other.User) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PhoenixUserMessageMetadata?>.Default.Equals(User, other.User)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(PhoenixVariant1 obj1, PhoenixVariant1 obj2)
         {
@@ -286,7 +286,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(PhoenixVariant1 obj1, PhoenixVariant1 obj2)
         {
@@ -294,7 +294,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

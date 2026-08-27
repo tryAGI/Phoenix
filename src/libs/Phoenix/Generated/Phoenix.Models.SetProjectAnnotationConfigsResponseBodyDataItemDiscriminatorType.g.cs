@@ -4,20 +4,20 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Categorical,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Continuous,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Freeform,
     }

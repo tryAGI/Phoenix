@@ -20,7 +20,7 @@ namespace Phoenix.JsonConverters
                     {
                         return global::Phoenix.PlaygroundInstanceUIContextModelVariant1DiscriminatorTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

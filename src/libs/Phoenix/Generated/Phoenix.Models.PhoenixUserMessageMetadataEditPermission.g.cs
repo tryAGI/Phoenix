@@ -9,11 +9,11 @@ namespace Phoenix
     public enum PhoenixUserMessageMetadataEditPermission
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bypass,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Manual,
     }

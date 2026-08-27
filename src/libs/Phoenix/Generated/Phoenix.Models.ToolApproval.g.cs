@@ -9,7 +9,7 @@ namespace Phoenix
     public sealed partial class ToolApproval
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toolCallId")]
         [global::System.Text.Json.Serialization.JsonRequired]

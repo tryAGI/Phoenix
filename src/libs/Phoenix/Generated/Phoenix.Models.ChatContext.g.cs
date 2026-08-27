@@ -10,7 +10,7 @@ namespace Phoenix
     public readonly partial struct ChatContext : global::System.IEquatable<ChatContext>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.ChatContextDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(App))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsApp => App != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApp(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.AppContext PickApp() => IsApp
             ? App!
             : throw new global::System.InvalidOperationException($"Expected union variant 'App' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.ProjectUIContext? Project { get; init; }
@@ -61,7 +61,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Project))]
@@ -69,7 +69,7 @@ namespace Phoenix
         public bool IsProject => Project != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProject(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.ProjectUIContext PickProject() => IsProject
             ? Project!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Project' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.TraceUIContext? Trace { get; init; }
@@ -98,7 +98,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Trace))]
@@ -106,7 +106,7 @@ namespace Phoenix
         public bool IsTrace => Trace != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTrace(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.TraceUIContext PickTrace() => IsTrace
             ? Trace!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Trace' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.SessionUIContext? Session { get; init; }
@@ -135,7 +135,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Session))]
@@ -143,7 +143,7 @@ namespace Phoenix
         public bool IsSession => Session != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSession(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.SessionUIContext PickSession() => IsSession
             ? Session!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Session' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptUIContext? Prompt { get; init; }
@@ -172,7 +172,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Prompt))]
@@ -180,7 +180,7 @@ namespace Phoenix
         public bool IsPrompt => Prompt != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPrompt(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptUIContext PickPrompt() => IsPrompt
             ? Prompt!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Prompt' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptVersionUIContext? PromptVersion { get; init; }
@@ -209,7 +209,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PromptVersion))]
@@ -217,7 +217,7 @@ namespace Phoenix
         public bool IsPromptVersion => PromptVersion != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPromptVersion(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptVersionUIContext PickPromptVersion() => IsPromptVersion
             ? PromptVersion!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PromptVersion' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.SpanUIContext? Span { get; init; }
@@ -246,7 +246,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Span))]
@@ -254,7 +254,7 @@ namespace Phoenix
         public bool IsSpan => Span != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpan(
 #if NET6_0_OR_GREATER
@@ -267,14 +267,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.SpanUIContext PickSpan() => IsSpan
             ? Span!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Span' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PlaygroundUIContext? Playground { get; init; }
@@ -283,7 +283,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Playground))]
@@ -291,7 +291,7 @@ namespace Phoenix
         public bool IsPlayground => Playground != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPlayground(
 #if NET6_0_OR_GREATER
@@ -304,14 +304,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PlaygroundUIContext PickPlayground() => IsPlayground
             ? Playground!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Playground' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.CodeEvaluatorUIContext? CodeEvaluator { get; init; }
@@ -320,7 +320,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeEvaluator))]
@@ -328,7 +328,7 @@ namespace Phoenix
         public bool IsCodeEvaluator => CodeEvaluator != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeEvaluator(
 #if NET6_0_OR_GREATER
@@ -341,14 +341,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.CodeEvaluatorUIContext PickCodeEvaluator() => IsCodeEvaluator
             ? CodeEvaluator!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeEvaluator' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.LlmEvaluatorUIContext? LlmEvaluator { get; init; }
@@ -357,7 +357,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LlmEvaluator))]
@@ -365,7 +365,7 @@ namespace Phoenix
         public bool IsLlmEvaluator => LlmEvaluator != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLlmEvaluator(
 #if NET6_0_OR_GREATER
@@ -378,14 +378,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.LlmEvaluatorUIContext PickLlmEvaluator() => IsLlmEvaluator
             ? LlmEvaluator!
             : throw new global::System.InvalidOperationException($"Expected union variant 'LlmEvaluator' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.DatasetUIContext? Dataset { get; init; }
@@ -394,7 +394,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dataset))]
@@ -402,7 +402,7 @@ namespace Phoenix
         public bool IsDataset => Dataset != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDataset(
 #if NET6_0_OR_GREATER
@@ -415,7 +415,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.DatasetUIContext PickDataset() => IsDataset
             ? Dataset!
@@ -431,7 +431,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Graphql))]
@@ -439,7 +439,7 @@ namespace Phoenix
         public bool IsGraphql => Graphql != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGraphql(
 #if NET6_0_OR_GREATER
@@ -452,7 +452,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.GraphQLContext PickGraphql() => IsGraphql
             ? Graphql!
@@ -468,7 +468,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebAccess))]
@@ -476,7 +476,7 @@ namespace Phoenix
         public bool IsWebAccess => WebAccess != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebAccess(
 #if NET6_0_OR_GREATER
@@ -489,7 +489,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.WebAccessContext PickWebAccess() => IsWebAccess
             ? WebAccess!
@@ -505,7 +505,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Subagents))]
@@ -513,7 +513,7 @@ namespace Phoenix
         public bool IsSubagents => Subagents != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSubagents(
 #if NET6_0_OR_GREATER
@@ -526,23 +526,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.SubagentsContext PickSubagents() => IsSubagents
             ? Subagents!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Subagents' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.AppContext value) => new ChatContext((global::Phoenix.AppContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.AppContext?(ChatContext @this) => @this.App;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.AppContext? value)
         {
@@ -550,22 +550,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromApp(global::Phoenix.AppContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.ProjectUIContext value) => new ChatContext((global::Phoenix.ProjectUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.ProjectUIContext?(ChatContext @this) => @this.Project;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.ProjectUIContext? value)
         {
@@ -573,22 +573,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromProject(global::Phoenix.ProjectUIContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.TraceUIContext value) => new ChatContext((global::Phoenix.TraceUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.TraceUIContext?(ChatContext @this) => @this.Trace;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.TraceUIContext? value)
         {
@@ -596,22 +596,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromTrace(global::Phoenix.TraceUIContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.SessionUIContext value) => new ChatContext((global::Phoenix.SessionUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.SessionUIContext?(ChatContext @this) => @this.Session;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.SessionUIContext? value)
         {
@@ -619,22 +619,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromSession(global::Phoenix.SessionUIContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.PromptUIContext value) => new ChatContext((global::Phoenix.PromptUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptUIContext?(ChatContext @this) => @this.Prompt;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.PromptUIContext? value)
         {
@@ -642,22 +642,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromPrompt(global::Phoenix.PromptUIContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.PromptVersionUIContext value) => new ChatContext((global::Phoenix.PromptVersionUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptVersionUIContext?(ChatContext @this) => @this.PromptVersion;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.PromptVersionUIContext? value)
         {
@@ -665,22 +665,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromPromptVersion(global::Phoenix.PromptVersionUIContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.SpanUIContext value) => new ChatContext((global::Phoenix.SpanUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.SpanUIContext?(ChatContext @this) => @this.Span;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.SpanUIContext? value)
         {
@@ -688,22 +688,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromSpan(global::Phoenix.SpanUIContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.PlaygroundUIContext value) => new ChatContext((global::Phoenix.PlaygroundUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PlaygroundUIContext?(ChatContext @this) => @this.Playground;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.PlaygroundUIContext? value)
         {
@@ -711,22 +711,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromPlayground(global::Phoenix.PlaygroundUIContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.CodeEvaluatorUIContext value) => new ChatContext((global::Phoenix.CodeEvaluatorUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.CodeEvaluatorUIContext?(ChatContext @this) => @this.CodeEvaluator;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.CodeEvaluatorUIContext? value)
         {
@@ -734,22 +734,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromCodeEvaluator(global::Phoenix.CodeEvaluatorUIContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.LlmEvaluatorUIContext value) => new ChatContext((global::Phoenix.LlmEvaluatorUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.LlmEvaluatorUIContext?(ChatContext @this) => @this.LlmEvaluator;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.LlmEvaluatorUIContext? value)
         {
@@ -757,22 +757,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromLlmEvaluator(global::Phoenix.LlmEvaluatorUIContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.DatasetUIContext value) => new ChatContext((global::Phoenix.DatasetUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.DatasetUIContext?(ChatContext @this) => @this.Dataset;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.DatasetUIContext? value)
         {
@@ -780,22 +780,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromDataset(global::Phoenix.DatasetUIContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.GraphQLContext value) => new ChatContext((global::Phoenix.GraphQLContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.GraphQLContext?(ChatContext @this) => @this.Graphql;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.GraphQLContext? value)
         {
@@ -803,22 +803,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromGraphql(global::Phoenix.GraphQLContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.WebAccessContext value) => new ChatContext((global::Phoenix.WebAccessContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.WebAccessContext?(ChatContext @this) => @this.WebAccess;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.WebAccessContext? value)
         {
@@ -826,22 +826,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromWebAccess(global::Phoenix.WebAccessContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatContext(global::Phoenix.SubagentsContext value) => new ChatContext((global::Phoenix.SubagentsContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.SubagentsContext?(ChatContext @this) => @this.Subagents;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(global::Phoenix.SubagentsContext? value)
         {
@@ -849,12 +849,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatContext FromSubagents(global::Phoenix.SubagentsContext? value) => new ChatContext(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatContext(
             global::Phoenix.ChatContextDiscriminatorType? type,
@@ -893,7 +893,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Subagents as object ??
@@ -909,11 +909,11 @@ namespace Phoenix
             Session as object ??
             Trace as object ??
             Project as object ??
-            App as object 
+            App as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             App?.ToString() ??
@@ -929,11 +929,11 @@ namespace Phoenix
             Dataset?.ToString() ??
             Graphql?.ToString() ??
             WebAccess?.ToString() ??
-            Subagents?.ToString() 
+            Subagents?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -941,7 +941,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.AppContext, TResult>? app = null,
@@ -1026,7 +1026,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.AppContext>? app = null,
@@ -1122,7 +1122,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.AppContext>? app = null,
@@ -1205,7 +1205,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1250,7 +1250,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatContext other)
         {
@@ -1268,12 +1268,12 @@ namespace Phoenix
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.DatasetUIContext?>.Default.Equals(Dataset, other.Dataset) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.GraphQLContext?>.Default.Equals(Graphql, other.Graphql) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.WebAccessContext?>.Default.Equals(WebAccess, other.WebAccess) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.SubagentsContext?>.Default.Equals(Subagents, other.Subagents) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.SubagentsContext?>.Default.Equals(Subagents, other.Subagents)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatContext obj1, ChatContext obj2)
         {
@@ -1281,7 +1281,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatContext obj1, ChatContext obj2)
         {
@@ -1289,7 +1289,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

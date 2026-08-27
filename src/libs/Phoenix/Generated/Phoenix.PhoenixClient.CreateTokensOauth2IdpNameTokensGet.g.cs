@@ -196,7 +196,7 @@ namespace Phoenix
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __phoenixOauth2State = phoenixOauth2State;
                             if (__phoenixOauth2State is not null)

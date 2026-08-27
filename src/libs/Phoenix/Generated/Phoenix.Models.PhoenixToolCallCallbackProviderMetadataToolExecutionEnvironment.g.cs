@@ -4,16 +4,16 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PhoenixToolCallCallbackProviderMetadataToolExecutionEnvironment
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Client,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Server,
     }

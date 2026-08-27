@@ -4,19 +4,19 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptPerplexityInvocationParameters
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"perplexity"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "perplexity";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("perplexity")]
         [global::System.Text.Json.Serialization.JsonRequired]

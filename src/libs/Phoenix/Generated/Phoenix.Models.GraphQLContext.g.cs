@@ -10,7 +10,7 @@ namespace Phoenix
     public sealed partial class GraphQLContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"graphql"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -18,7 +18,7 @@ namespace Phoenix
         public string Type { get; set; } = "graphql";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mutationsEnabled")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -10,11 +10,11 @@ namespace Phoenix
     public enum ListProjectTracesSort
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyMs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StartTime,
     }

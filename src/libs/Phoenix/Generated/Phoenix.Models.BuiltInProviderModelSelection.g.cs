@@ -12,14 +12,14 @@ namespace Phoenix
     public sealed partial class BuiltInProviderModelSelection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"builtin"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerType")]
         public string ProviderType { get; set; } = "builtin";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.ModelProviderJsonConverter))]
@@ -27,7 +27,7 @@ namespace Phoenix
         public required global::Phoenix.ModelProvider Provider { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modelName")]
         [global::System.Text.Json.Serialization.JsonRequired]

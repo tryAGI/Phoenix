@@ -4,19 +4,19 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptToolChoiceSpecificFunctionTool
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"specific_function"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "specific_function";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_name")]
         [global::System.Text.Json.Serialization.JsonRequired]

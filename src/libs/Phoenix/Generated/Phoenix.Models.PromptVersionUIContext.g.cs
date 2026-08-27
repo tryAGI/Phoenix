@@ -4,26 +4,26 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptVersionUIContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"prompt_version"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "prompt_version";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("promptNodeId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PromptNodeId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("promptVersionNodeId")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -20,7 +20,7 @@ namespace Phoenix.JsonConverters
                     {
                         return global::Phoenix.PromptGroqInvocationParametersContentReasoningEffortExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

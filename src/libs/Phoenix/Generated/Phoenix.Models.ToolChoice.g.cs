@@ -5,17 +5,17 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ToolChoice : global::System.IEquatable<ToolChoice>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptToolsToolChoiceDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptToolChoiceNone? None { get; init; }
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsNone => None != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickNone(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptToolChoiceNone PickNone() => IsNone
             ? None!
             : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptToolChoiceZeroOrMore? ZeroOrMore { get; init; }
@@ -61,7 +61,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ZeroOrMore))]
@@ -69,7 +69,7 @@ namespace Phoenix
         public bool IsZeroOrMore => ZeroOrMore != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickZeroOrMore(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptToolChoiceZeroOrMore PickZeroOrMore() => IsZeroOrMore
             ? ZeroOrMore!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ZeroOrMore' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptToolChoiceOneOrMore? OneOrMore { get; init; }
@@ -98,7 +98,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OneOrMore))]
@@ -106,7 +106,7 @@ namespace Phoenix
         public bool IsOneOrMore => OneOrMore != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOneOrMore(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptToolChoiceOneOrMore PickOneOrMore() => IsOneOrMore
             ? OneOrMore!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OneOrMore' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptToolChoiceSpecificFunctionTool? SpecificFunction { get; init; }
@@ -135,7 +135,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpecificFunction))]
@@ -143,7 +143,7 @@ namespace Phoenix
         public bool IsSpecificFunction => SpecificFunction != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpecificFunction(
 #if NET6_0_OR_GREATER
@@ -156,23 +156,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptToolChoiceSpecificFunctionTool PickSpecificFunction() => IsSpecificFunction
             ? SpecificFunction!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificFunction' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoice(global::Phoenix.PromptToolChoiceNone value) => new ToolChoice((global::Phoenix.PromptToolChoiceNone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptToolChoiceNone?(ToolChoice @this) => @this.None;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoice(global::Phoenix.PromptToolChoiceNone? value)
         {
@@ -180,22 +180,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoice FromNone(global::Phoenix.PromptToolChoiceNone? value) => new ToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoice(global::Phoenix.PromptToolChoiceZeroOrMore value) => new ToolChoice((global::Phoenix.PromptToolChoiceZeroOrMore?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptToolChoiceZeroOrMore?(ToolChoice @this) => @this.ZeroOrMore;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoice(global::Phoenix.PromptToolChoiceZeroOrMore? value)
         {
@@ -203,22 +203,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoice FromZeroOrMore(global::Phoenix.PromptToolChoiceZeroOrMore? value) => new ToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoice(global::Phoenix.PromptToolChoiceOneOrMore value) => new ToolChoice((global::Phoenix.PromptToolChoiceOneOrMore?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptToolChoiceOneOrMore?(ToolChoice @this) => @this.OneOrMore;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoice(global::Phoenix.PromptToolChoiceOneOrMore? value)
         {
@@ -226,22 +226,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoice FromOneOrMore(global::Phoenix.PromptToolChoiceOneOrMore? value) => new ToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoice(global::Phoenix.PromptToolChoiceSpecificFunctionTool value) => new ToolChoice((global::Phoenix.PromptToolChoiceSpecificFunctionTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptToolChoiceSpecificFunctionTool?(ToolChoice @this) => @this.SpecificFunction;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoice(global::Phoenix.PromptToolChoiceSpecificFunctionTool? value)
         {
@@ -249,12 +249,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoice FromSpecificFunction(global::Phoenix.PromptToolChoiceSpecificFunctionTool? value) => new ToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoice(
             global::Phoenix.PromptToolsToolChoiceDiscriminatorType? type,
@@ -273,27 +273,27 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SpecificFunction as object ??
             OneOrMore as object ??
             ZeroOrMore as object ??
-            None as object 
+            None as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             None?.ToString() ??
             ZeroOrMore?.ToString() ??
             OneOrMore?.ToString() ??
-            SpecificFunction?.ToString() 
+            SpecificFunction?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -301,7 +301,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.PromptToolChoiceNone, TResult>? none = null,
@@ -336,7 +336,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.PromptToolChoiceNone>? none = null,
@@ -372,7 +372,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.PromptToolChoiceNone>? none = null,
@@ -405,7 +405,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -430,7 +430,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ToolChoice other)
         {
@@ -438,12 +438,12 @@ namespace Phoenix
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolChoiceNone?>.Default.Equals(None, other.None) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolChoiceZeroOrMore?>.Default.Equals(ZeroOrMore, other.ZeroOrMore) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolChoiceOneOrMore?>.Default.Equals(OneOrMore, other.OneOrMore) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolChoiceSpecificFunctionTool?>.Default.Equals(SpecificFunction, other.SpecificFunction) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolChoiceSpecificFunctionTool?>.Default.Equals(SpecificFunction, other.SpecificFunction)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ToolChoice obj1, ToolChoice obj2)
         {
@@ -451,7 +451,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ToolChoice obj1, ToolChoice obj2)
         {
@@ -459,7 +459,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

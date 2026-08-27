@@ -9,14 +9,14 @@ namespace Phoenix
     public sealed partial class SubagentsContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"subagents"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "subagents";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,19 +4,19 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptGroqInvocationParameters
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"groq"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "groq";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groq")]
         [global::System.Text.Json.Serialization.JsonRequired]

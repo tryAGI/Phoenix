@@ -4,16 +4,16 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PlaygroundInstanceUIContextModelVariant1DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Builtin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
     }

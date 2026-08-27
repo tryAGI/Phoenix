@@ -9,7 +9,7 @@ namespace Phoenix
     public sealed partial class AgentErrorData
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errorText")]
         [global::System.Text.Json.Serialization.JsonRequired]

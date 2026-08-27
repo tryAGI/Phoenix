@@ -9,13 +9,13 @@ namespace Phoenix
     public sealed partial class MessageMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phoenix")]
         public global::Phoenix.PhoenixVariant1? Phoenix { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pydantic_ai")]
         public global::Phoenix.PydanticAIMessageMetadata? PydanticAi { get; set; }

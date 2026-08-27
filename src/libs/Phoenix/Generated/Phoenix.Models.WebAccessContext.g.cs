@@ -9,14 +9,14 @@ namespace Phoenix
     public sealed partial class WebAccessContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"web_access"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "web_access";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]

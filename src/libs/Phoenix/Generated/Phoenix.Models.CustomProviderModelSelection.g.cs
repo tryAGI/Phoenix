@@ -9,21 +9,21 @@ namespace Phoenix
     public sealed partial class CustomProviderModelSelection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"custom"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerType")]
         public string ProviderType { get; set; } = "custom";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProviderId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modelName")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,7 +9,7 @@ namespace Phoenix
     public sealed partial class SecretKeyValue
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]

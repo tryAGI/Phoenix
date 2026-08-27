@@ -4,19 +4,19 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptAnthropicInvocationParameters
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"anthropic"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "anthropic";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anthropic")]
         [global::System.Text.Json.Serialization.JsonRequired]

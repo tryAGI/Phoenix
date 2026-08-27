@@ -4,19 +4,19 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptOpenAIInvocationParameters
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"openai"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "openai";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("openai")]
         [global::System.Text.Json.Serialization.JsonRequired]

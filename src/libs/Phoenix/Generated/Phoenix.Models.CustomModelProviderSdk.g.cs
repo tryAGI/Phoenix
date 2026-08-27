@@ -9,23 +9,23 @@ namespace Phoenix
     public enum CustomModelProviderSdk
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anthropic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AwsBedrock,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureOpenai,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GoogleGenai,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openai,
     }

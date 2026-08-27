@@ -4,16 +4,16 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PromptAnthropicThinkingConfigEnabledDisplay
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Omitted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Summarized,
     }

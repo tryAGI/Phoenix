@@ -4,26 +4,26 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PlaygroundEvaluatorUIContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("datasetEvaluatorId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DatasetEvaluatorId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.PlaygroundEvaluatorUIContextKindJsonConverter))]
@@ -31,14 +31,14 @@ namespace Phoenix
         public required global::Phoenix.PlaygroundEvaluatorUIContextKind Kind { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isBuiltin")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsBuiltin { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isApplied")]
         [global::System.Text.Json.Serialization.JsonRequired]

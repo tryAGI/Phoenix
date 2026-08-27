@@ -4,12 +4,12 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptAnthropicThinkingConfigDisabled
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"disabled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

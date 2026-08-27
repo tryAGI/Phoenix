@@ -11,28 +11,28 @@ namespace Phoenix
     public sealed partial class LegacyChatRegenerateMessage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"regenerate-message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("trigger")]
         public string Trigger { get; set; } = "regenerate-message";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::Phoenix.LegacyAssistantMetadataUIMessage> Messages { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messageId")]
         public string? MessageId { get; set; }
@@ -57,7 +57,7 @@ namespace Phoenix
         public bool? AttachUserId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("contexts")]
         public global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? Contexts { get; set; }
@@ -76,7 +76,7 @@ namespace Phoenix
         public global::System.Collections.Generic.IList<string>? RequestedSkills { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AgentModelSelectionJsonConverter))]

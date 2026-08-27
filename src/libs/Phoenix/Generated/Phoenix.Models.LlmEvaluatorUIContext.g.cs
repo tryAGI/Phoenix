@@ -4,19 +4,19 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class LlmEvaluatorUIContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"llm_evaluator"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "llm_evaluator";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluatorNodeId")]
         public string? EvaluatorNodeId { get; set; }

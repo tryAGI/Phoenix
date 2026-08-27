@@ -4,20 +4,20 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PromptMessageContentVariant2ItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolResult,
     }

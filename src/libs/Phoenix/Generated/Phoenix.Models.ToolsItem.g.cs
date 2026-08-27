@@ -5,17 +5,17 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ToolsItem : global::System.IEquatable<ToolsItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptToolsToolDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptToolFunction? Function { get; init; }
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsFunction => Function != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunction(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptToolFunction PickFunction() => IsFunction
             ? Function!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PromptToolRaw? Raw { get; init; }
@@ -61,7 +61,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Raw))]
@@ -69,7 +69,7 @@ namespace Phoenix
         public bool IsRaw => Raw != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRaw(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PromptToolRaw PickRaw() => IsRaw
             ? Raw!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Raw' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolsItem(global::Phoenix.PromptToolFunction value) => new ToolsItem((global::Phoenix.PromptToolFunction?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptToolFunction?(ToolsItem @this) => @this.Function;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(global::Phoenix.PromptToolFunction? value)
         {
@@ -106,22 +106,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolsItem FromFunction(global::Phoenix.PromptToolFunction? value) => new ToolsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolsItem(global::Phoenix.PromptToolRaw value) => new ToolsItem((global::Phoenix.PromptToolRaw?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PromptToolRaw?(ToolsItem @this) => @this.Raw;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(global::Phoenix.PromptToolRaw? value)
         {
@@ -129,12 +129,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolsItem FromRaw(global::Phoenix.PromptToolRaw? value) => new ToolsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsItem(
             global::Phoenix.PromptToolsToolDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Raw as object ??
-            Function as object 
+            Function as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Function?.ToString() ??
-            Raw?.ToString() 
+            Raw?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.PromptToolFunction, TResult>? function = null,
@@ -198,7 +198,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.PromptToolFunction>? function = null,
@@ -222,7 +222,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.PromptToolFunction>? function = null,
@@ -245,7 +245,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ToolsItem other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolFunction?>.Default.Equals(Function, other.Function) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolRaw?>.Default.Equals(Raw, other.Raw) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptToolRaw?>.Default.Equals(Raw, other.Raw)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ToolsItem obj1, ToolsItem obj2)
         {
@@ -285,7 +285,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ToolsItem obj1, ToolsItem obj2)
         {
@@ -293,7 +293,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

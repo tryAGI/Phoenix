@@ -4,19 +4,19 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AssistantMessageMetadataUsage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Phoenix.AssistantMessageMetadataUsageTokens Tokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("promptDetails")]
         public global::Phoenix.AssistantMessageMetadataUsageCacheTokenDetails? PromptDetails { get; set; }

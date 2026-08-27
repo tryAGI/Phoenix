@@ -5,17 +5,17 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DataItem3 : global::System.IEquatable<DataItem3>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.GetUsersResponseBodyDataItemDiscriminatorAuthMethod? AuthMethod { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.LocalUser? Local { get; init; }
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Local))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsLocal => Local != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLocal(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.LocalUser PickLocal() => IsLocal
             ? Local!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.OAuth2User? Oauth2 { get; init; }
@@ -61,7 +61,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Oauth2))]
@@ -69,7 +69,7 @@ namespace Phoenix
         public bool IsOauth2 => Oauth2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOauth2(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.OAuth2User PickOauth2() => IsOauth2
             ? Oauth2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.LDAPUser? Ldap { get; init; }
@@ -98,7 +98,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ldap))]
@@ -106,7 +106,7 @@ namespace Phoenix
         public bool IsLdap => Ldap != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLdap(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.LDAPUser PickLdap() => IsLdap
             ? Ldap!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ldap' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DataItem3(global::Phoenix.LocalUser value) => new DataItem3((global::Phoenix.LocalUser?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.LocalUser?(DataItem3 @this) => @this.Local;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataItem3(global::Phoenix.LocalUser? value)
         {
@@ -143,22 +143,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DataItem3 FromLocal(global::Phoenix.LocalUser? value) => new DataItem3(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DataItem3(global::Phoenix.OAuth2User value) => new DataItem3((global::Phoenix.OAuth2User?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.OAuth2User?(DataItem3 @this) => @this.Oauth2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataItem3(global::Phoenix.OAuth2User? value)
         {
@@ -166,22 +166,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DataItem3 FromOauth2(global::Phoenix.OAuth2User? value) => new DataItem3(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DataItem3(global::Phoenix.LDAPUser value) => new DataItem3((global::Phoenix.LDAPUser?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.LDAPUser?(DataItem3 @this) => @this.Ldap;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataItem3(global::Phoenix.LDAPUser? value)
         {
@@ -189,12 +189,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DataItem3 FromLdap(global::Phoenix.LDAPUser? value) => new DataItem3(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataItem3(
             global::Phoenix.GetUsersResponseBodyDataItemDiscriminatorAuthMethod? authMethod,
@@ -211,25 +211,25 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Ldap as object ??
             Oauth2 as object ??
-            Local as object 
+            Local as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Local?.ToString() ??
             Oauth2?.ToString() ??
-            Ldap?.ToString() 
+            Ldap?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.LocalUser, TResult>? local = null,
@@ -267,7 +267,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.LocalUser>? local = null,
@@ -297,7 +297,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.LocalUser>? local = null,
@@ -325,7 +325,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DataItem3 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.LocalUser?>.Default.Equals(Local, other.Local) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.OAuth2User?>.Default.Equals(Oauth2, other.Oauth2) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.LDAPUser?>.Default.Equals(Ldap, other.Ldap) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.LDAPUser?>.Default.Equals(Ldap, other.Ldap)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DataItem3 obj1, DataItem3 obj2)
         {
@@ -368,7 +368,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DataItem3 obj1, DataItem3 obj2)
         {
@@ -376,7 +376,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

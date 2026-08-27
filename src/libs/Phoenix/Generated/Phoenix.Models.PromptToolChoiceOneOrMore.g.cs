@@ -4,12 +4,12 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptToolChoiceOneOrMore
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"one_or_more"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

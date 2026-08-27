@@ -4,20 +4,20 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OptimizationDirection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Maximize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minimize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

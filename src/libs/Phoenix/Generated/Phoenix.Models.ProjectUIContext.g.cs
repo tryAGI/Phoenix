@@ -4,26 +4,26 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ProjectUIContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"project"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "project";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectNodeId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectNodeId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spanFilter")]
         public string? SpanFilter { get; set; }

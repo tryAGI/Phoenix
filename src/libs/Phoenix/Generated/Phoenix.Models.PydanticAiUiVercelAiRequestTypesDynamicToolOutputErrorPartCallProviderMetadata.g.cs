@@ -4,7 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PydanticAiUiVercelAiRequestTypesDynamicToolOutputErrorPartCallProviderMetadata
     {

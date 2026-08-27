@@ -4,26 +4,26 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SessionUIContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"session"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "session";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectNodeId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectNodeId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sessionNodeId")]
         [global::System.Text.Json.Serialization.JsonRequired]

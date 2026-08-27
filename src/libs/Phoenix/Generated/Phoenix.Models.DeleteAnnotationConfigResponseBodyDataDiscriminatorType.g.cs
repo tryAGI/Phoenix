@@ -4,20 +4,20 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DeleteAnnotationConfigResponseBodyDataDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Categorical,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Continuous,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Freeform,
     }

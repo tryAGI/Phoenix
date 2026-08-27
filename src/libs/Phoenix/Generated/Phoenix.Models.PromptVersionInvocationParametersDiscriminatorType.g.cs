@@ -4,64 +4,64 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PromptVersionInvocationParametersDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anthropic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Aws,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureOpenai,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cerebras,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deepseek,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fireworks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Google,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Groq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Moonshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ollama,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openai,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Perplexity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Together,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xai,
     }

@@ -4,26 +4,26 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptAnthropicThinkingConfigEnabled
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"enabled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "enabled";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("budget_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int BudgetTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.PromptAnthropicThinkingConfigEnabledDisplayJsonConverter))]

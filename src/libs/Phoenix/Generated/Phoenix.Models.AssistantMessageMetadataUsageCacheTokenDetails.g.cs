@@ -10,14 +10,14 @@ namespace Phoenix
     public sealed partial class AssistantMessageMetadataUsageCacheTokenDetails
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cacheRead")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int CacheRead { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cacheWrite")]
         [global::System.Text.Json.Serialization.JsonRequired]

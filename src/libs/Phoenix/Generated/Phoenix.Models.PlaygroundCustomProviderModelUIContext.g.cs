@@ -4,7 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PlaygroundCustomProviderModelUIContext
     {
@@ -15,28 +15,28 @@ namespace Phoenix
         public string? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("customProviderId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CustomProviderId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("customProviderName")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CustomProviderName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Provider { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modelName")]
         [global::System.Text.Json.Serialization.JsonRequired]

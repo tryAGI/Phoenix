@@ -4,26 +4,26 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class LDAPUserData
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("username")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Username { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.LDAPUserDataRoleJsonConverter))]
@@ -31,7 +31,7 @@ namespace Phoenix
         public required global::Phoenix.LDAPUserDataRole Role { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"LDAP"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth_method")]

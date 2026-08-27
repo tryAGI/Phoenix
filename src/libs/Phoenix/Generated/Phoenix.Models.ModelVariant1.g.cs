@@ -5,17 +5,17 @@
 namespace Phoenix
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ModelVariant1 : global::System.IEquatable<ModelVariant1>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PlaygroundInstanceUIContextModelVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PlaygroundBuiltinModelUIContext? Builtin { get; init; }
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Builtin))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsBuiltin => Builtin != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBuiltin(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PlaygroundBuiltinModelUIContext PickBuiltin() => IsBuiltin
             ? Builtin!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Builtin' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Phoenix.PlaygroundCustomProviderModelUIContext? Custom { get; init; }
@@ -61,7 +61,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
@@ -69,7 +69,7 @@ namespace Phoenix
         public bool IsCustom => Custom != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustom(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.PlaygroundCustomProviderModelUIContext PickCustom() => IsCustom
             ? Custom!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ModelVariant1(global::Phoenix.PlaygroundBuiltinModelUIContext value) => new ModelVariant1((global::Phoenix.PlaygroundBuiltinModelUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PlaygroundBuiltinModelUIContext?(ModelVariant1 @this) => @this.Builtin;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelVariant1(global::Phoenix.PlaygroundBuiltinModelUIContext? value)
         {
@@ -106,22 +106,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ModelVariant1 FromBuiltin(global::Phoenix.PlaygroundBuiltinModelUIContext? value) => new ModelVariant1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ModelVariant1(global::Phoenix.PlaygroundCustomProviderModelUIContext value) => new ModelVariant1((global::Phoenix.PlaygroundCustomProviderModelUIContext?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.PlaygroundCustomProviderModelUIContext?(ModelVariant1 @this) => @this.Custom;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelVariant1(global::Phoenix.PlaygroundCustomProviderModelUIContext? value)
         {
@@ -129,12 +129,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ModelVariant1 FromCustom(global::Phoenix.PlaygroundCustomProviderModelUIContext? value) => new ModelVariant1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelVariant1(
             global::Phoenix.PlaygroundInstanceUIContextModelVariant1DiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Custom as object ??
-            Builtin as object 
+            Builtin as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Builtin?.ToString() ??
-            Custom?.ToString() 
+            Custom?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.PlaygroundBuiltinModelUIContext, TResult>? builtin = null,
@@ -198,7 +198,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.PlaygroundBuiltinModelUIContext>? builtin = null,
@@ -222,7 +222,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.PlaygroundBuiltinModelUIContext>? builtin = null,
@@ -245,7 +245,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ModelVariant1 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundBuiltinModelUIContext?>.Default.Equals(Builtin, other.Builtin) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundCustomProviderModelUIContext?>.Default.Equals(Custom, other.Custom) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PlaygroundCustomProviderModelUIContext?>.Default.Equals(Custom, other.Custom)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ModelVariant1 obj1, ModelVariant1 obj2)
         {
@@ -285,7 +285,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ModelVariant1 obj1, ModelVariant1 obj2)
         {
@@ -293,7 +293,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

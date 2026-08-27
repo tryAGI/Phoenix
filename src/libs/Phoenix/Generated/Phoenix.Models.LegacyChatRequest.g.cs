@@ -10,7 +10,7 @@ namespace Phoenix
     public readonly partial struct LegacyChatRequest : global::System.IEquatable<LegacyChatRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.LegacyChatRequestDiscriminatorTrigger? Trigger { get; }
 
@@ -24,7 +24,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SubmitMessage))]
@@ -32,7 +32,7 @@ namespace Phoenix
         public bool IsSubmitMessage => SubmitMessage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSubmitMessage(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.LegacyChatSubmitMessage PickSubmitMessage() => IsSubmitMessage
             ? SubmitMessage!
@@ -61,7 +61,7 @@ namespace Phoenix
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RegenerateMessage))]
@@ -69,7 +69,7 @@ namespace Phoenix
         public bool IsRegenerateMessage => RegenerateMessage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRegenerateMessage(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Phoenix.LegacyChatRegenerateMessage PickRegenerateMessage() => IsRegenerateMessage
             ? RegenerateMessage!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RegenerateMessage' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator LegacyChatRequest(global::Phoenix.LegacyChatSubmitMessage value) => new LegacyChatRequest((global::Phoenix.LegacyChatSubmitMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.LegacyChatSubmitMessage?(LegacyChatRequest @this) => @this.SubmitMessage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LegacyChatRequest(global::Phoenix.LegacyChatSubmitMessage? value)
         {
@@ -106,22 +106,22 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static LegacyChatRequest FromSubmitMessage(global::Phoenix.LegacyChatSubmitMessage? value) => new LegacyChatRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator LegacyChatRequest(global::Phoenix.LegacyChatRegenerateMessage value) => new LegacyChatRequest((global::Phoenix.LegacyChatRegenerateMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Phoenix.LegacyChatRegenerateMessage?(LegacyChatRequest @this) => @this.RegenerateMessage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LegacyChatRequest(global::Phoenix.LegacyChatRegenerateMessage? value)
         {
@@ -129,12 +129,12 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static LegacyChatRequest FromRegenerateMessage(global::Phoenix.LegacyChatRegenerateMessage? value) => new LegacyChatRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LegacyChatRequest(
             global::Phoenix.LegacyChatRequestDiscriminatorTrigger? trigger,
@@ -149,23 +149,23 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             RegenerateMessage as object ??
-            SubmitMessage as object 
+            SubmitMessage as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SubmitMessage?.ToString() ??
-            RegenerateMessage?.ToString() 
+            RegenerateMessage?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Phoenix.LegacyChatSubmitMessage, TResult>? submitMessage = null,
@@ -198,7 +198,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Phoenix.LegacyChatSubmitMessage>? submitMessage = null,
@@ -222,7 +222,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Phoenix.LegacyChatSubmitMessage>? submitMessage = null,
@@ -245,7 +245,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(LegacyChatRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.LegacyChatSubmitMessage?>.Default.Equals(SubmitMessage, other.SubmitMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.LegacyChatRegenerateMessage?>.Default.Equals(RegenerateMessage, other.RegenerateMessage) 
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.LegacyChatRegenerateMessage?>.Default.Equals(RegenerateMessage, other.RegenerateMessage)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(LegacyChatRequest obj1, LegacyChatRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(LegacyChatRequest obj1, LegacyChatRequest obj2)
         {
@@ -293,7 +293,7 @@ namespace Phoenix
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

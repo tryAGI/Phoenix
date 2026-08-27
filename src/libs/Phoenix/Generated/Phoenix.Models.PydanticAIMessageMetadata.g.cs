@@ -11,7 +11,7 @@ namespace Phoenix
     public sealed partial class PydanticAIMessageMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timestamp")]
         public global::System.DateTime? Timestamp { get; set; }

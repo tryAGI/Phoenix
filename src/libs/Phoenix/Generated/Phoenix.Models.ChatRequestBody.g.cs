@@ -18,7 +18,7 @@ namespace Phoenix
         public required bool Headless { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("contexts")]
         public global::System.Collections.Generic.IList<global::Phoenix.ChatContext>? Contexts { get; set; }
@@ -51,7 +51,7 @@ namespace Phoenix
         public string? Trigger { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
