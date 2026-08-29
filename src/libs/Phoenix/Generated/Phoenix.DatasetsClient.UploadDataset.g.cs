@@ -594,8 +594,8 @@ namespace Phoenix
             global::System.Collections.Generic.IList<object>? outputs = default,
             global::System.Collections.Generic.IList<object>? metadata = default,
             global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? splits = default,
-            global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? spanIds = default,
-            global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? exampleIds = default,
+            global::System.Collections.Generic.IList<string?>? spanIds = default,
+            global::System.Collections.Generic.IList<string?>? exampleIds = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
