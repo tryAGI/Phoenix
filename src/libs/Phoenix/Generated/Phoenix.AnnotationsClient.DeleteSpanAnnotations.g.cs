@@ -30,7 +30,7 @@ namespace Phoenix
             ref string projectIdentifier,
             ref string? name,
             ref string? identifier,
-            global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2? annotatorKind,
+            ref global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2? annotatorKind,
             global::System.DateTime? startTime,
             global::System.DateTime? endTime,
             ref bool? deleteAll);
@@ -189,7 +189,7 @@ namespace Phoenix
                 projectIdentifier: ref projectIdentifier,
                 name: ref name,
                 identifier: ref identifier,
-                annotatorKind: annotatorKind,
+                annotatorKind: ref annotatorKind,
                 startTime: startTime,
                 endTime: endTime,
                 deleteAll: ref deleteAll);

@@ -17,6 +17,12 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
@@ -46,6 +52,7 @@ namespace Phoenix
         /// <param name="type">
         /// Default Value: reasoning
         /// </param>
+        /// <param name="id"></param>
         /// <param name="state"></param>
         /// <param name="providerMetadata"></param>
 #if NET7_0_OR_GREATER
@@ -54,10 +61,12 @@ namespace Phoenix
         public ReasoningUIPart(
             string text,
             string? type,
+            string? id,
             global::Phoenix.ReasoningUIPartState2? state,
             global::System.Collections.Generic.Dictionary<string, object>? providerMetadata)
         {
             this.Type = type;
+            this.Id = id;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.State = state;
             this.ProviderMetadata = providerMetadata;

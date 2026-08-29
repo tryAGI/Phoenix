@@ -57,13 +57,13 @@ namespace Phoenix
         /// Span IDs to link examples back to spans
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("span_ids")]
-        public global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? SpanIds { get; set; }
+        public global::System.Collections.Generic.IList<string?>? SpanIds { get; set; }
 
         /// <summary>
         /// Optional example ID per example. If provided, it is used as the example's stable public ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_ids")]
-        public global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? ExampleIds { get; set; }
+        public global::System.Collections.Generic.IList<string?>? ExampleIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -100,8 +100,8 @@ namespace Phoenix
             global::System.Collections.Generic.IList<object>? outputs,
             global::System.Collections.Generic.IList<object>? metadata,
             global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? splits,
-            global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? spanIds,
-            global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, object>>? exampleIds)
+            global::System.Collections.Generic.IList<string?>? spanIds,
+            global::System.Collections.Generic.IList<string?>? exampleIds)
         {
             this.Action = action;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
