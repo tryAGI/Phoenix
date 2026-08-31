@@ -82,7 +82,7 @@ namespace Phoenix
         /// Default Value: 100
         /// </param>
         /// <param name="cursor">
-        /// Pagination cursor (Trace GlobalID)
+        /// Pagination cursor returned by a previous request
         /// </param>
         /// <param name="includeSpans">
         /// If true, include full span details for each trace. This significantly increases response size and query latency, especially with large page sizes. Prefer fetching spans lazily for individual traces when possible.<br/>
@@ -148,7 +148,7 @@ namespace Phoenix
         /// Default Value: 100
         /// </param>
         /// <param name="cursor">
-        /// Pagination cursor (Trace GlobalID)
+        /// Pagination cursor returned by a previous request
         /// </param>
         /// <param name="includeSpans">
         /// If true, include full span details for each trace. This significantly increases response size and query latency, especially with large page sizes. Prefer fetching spans lazily for individual traces when possible.<br/>
