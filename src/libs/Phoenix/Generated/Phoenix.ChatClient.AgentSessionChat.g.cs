@@ -730,6 +730,9 @@ namespace Phoenix
         /// <param name="lastMessageId">
         /// The id of the last transcript message the client has rendered, used for optimistic concurrency. Omit when the session has no messages; required (and validated against the persisted transcript) once it does. On mismatch the server rejects the send with HTTP 409 and code ``agent_session_messages_stale`` — the client should refetch the session before retrying.
         /// </param>
+        /// <param name="credentials">
+        /// Client-held credentials for optional integrations (e.g. the user's own GitHub personal access token under the key ``GITHUB_PERSONAL_ACCESS_TOKEN``), used only for the duration of the turn and never persisted. Unknown keys are rejected.
+        /// </param>
         /// <param name="recordLocalTraces">
         /// Default Value: false
         /// </param>
@@ -756,6 +759,7 @@ namespace Phoenix
             global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>>? toolOutputs = default,
             global::System.Collections.Generic.IList<global::Phoenix.ToolApproval>? toolApprovals = default,
             string? lastMessageId = default,
+            global::System.Collections.Generic.IList<global::Phoenix.ChatRequestCredential>? credentials = default,
             bool? recordLocalTraces = default,
             bool? exportRemoteTraces = default,
             bool? instrumentUserId = default,
@@ -775,6 +779,7 @@ namespace Phoenix
                 ToolOutputs = toolOutputs,
                 ToolApprovals = toolApprovals,
                 LastMessageId = lastMessageId,
+                Credentials = credentials,
                 RecordLocalTraces = recordLocalTraces,
                 ExportRemoteTraces = exportRemoteTraces,
                 InstrumentUserId = instrumentUserId,
