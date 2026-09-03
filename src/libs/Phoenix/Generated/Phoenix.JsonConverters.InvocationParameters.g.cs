@@ -119,6 +119,13 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PromptTogetherInvocationParameters)}");
                 together = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.PromptZAIInvocationParameters? zai = default;
+            if (discriminator?.Type == global::Phoenix.PromptVersionInvocationParametersDiscriminatorType.Zai)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptZAIInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptZAIInvocationParameters> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PromptZAIInvocationParameters)}");
+                zai = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Phoenix.InvocationParameters(
                 discriminator?.Type,
@@ -148,7 +155,9 @@ namespace Phoenix.JsonConverters
 
                 perplexity,
 
-                together
+                together,
+
+                zai
                 );
 
             return __value;
@@ -246,6 +255,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptTogetherInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptTogetherInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptTogetherInvocationParameters).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Together!, typeInfo);
+            }
+            else if (value.IsZai)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptZAIInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptZAIInvocationParameters?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptZAIInvocationParameters).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Zai!, typeInfo);
             }
         }
     }

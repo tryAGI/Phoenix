@@ -3,11 +3,11 @@
 
 namespace Phoenix
 {
-    public partial class ChatCompletionsClient
+    public partial class TracesClient
     {
 
 
-        private static readonly global::Phoenix.EndPointSecurityRequirement s_CreateChatCompletionSecurityRequirement0 =
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_DeleteProjectTracesSecurityRequirement0 =
             new global::Phoenix.EndPointSecurityRequirement
             {
                 Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
@@ -21,78 +21,92 @@ namespace Phoenix
                     },
                 },
             };
-        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_CreateChatCompletionSecurityRequirements =
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_DeleteProjectTracesSecurityRequirements =
             new global::Phoenix.EndPointSecurityRequirement[]
-            {                s_CreateChatCompletionSecurityRequirement0,
+            {                s_DeleteProjectTracesSecurityRequirement0,
             };
-        partial void PrepareCreateChatCompletionArguments(
+        partial void PrepareDeleteProjectTracesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Phoenix.CreateChatCompletionRequestBody request);
-        partial void PrepareCreateChatCompletionRequest(
+            ref string projectIdentifier,
+            ref global::System.DateTime startTime,
+            ref global::System.DateTime endTime);
+        partial void PrepareDeleteProjectTracesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Phoenix.CreateChatCompletionRequestBody request);
-        partial void ProcessCreateChatCompletionResponse(
+            string projectIdentifier,
+            global::System.DateTime startTime,
+            global::System.DateTime endTime);
+        partial void ProcessDeleteProjectTracesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateChatCompletionResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
-        /// OpenAI-compatible chat completions<br/>
-        /// Creates a chat completion using the OpenAI wire format, proxying to the selected provider with credentials resolved on the server (secret store first, environment second) — callers never handle provider API keys. Model must be '{provider}:{model_name}' for a built-in provider (one of anthropic, aws, azure_openai, cerebras, deepseek, fireworks, google, groq, moonshot, ollama, openai, perplexity, together, xai, zai) or 'custom:{provider_id}:{model_name}' for a stored custom provider, e.g. 'openai:gpt-4o' or 'anthropic:claude-sonnet-4-5'. Set `stream: true` for server-sent events of `chat.completion.chunk` payloads terminated by `data: [DONE]`. Tool calling is not supported.<br/>
-        /// **Phoenix is not an AI gateway.** The same server also takes on trace ingestion traffic, so routing production LLM calls through it competes with ingestion. Use this endpoint only to quickly try out different models in non-production environments.
+        /// Delete traces from a project<br/>
+        /// Delete traces from a project without deleting the project or its configuration. Only traces whose start time is within the required `[start_time, end_time)` interval are deleted. Associated spans are cascade deleted, and project sessions left with no remaining traces are also deleted. Naive datetimes are interpreted as UTC.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="projectIdentifier">
+        /// The project identifier: either project ID or project name.
+        /// </param>
+        /// <param name="startTime">
+        /// Required inclusive lower bound on trace start time (ISO 8601).
+        /// </param>
+        /// <param name="endTime">
+        /// Required exclusive upper bound on trace start time (ISO 8601).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.ChatCompletion> CreateChatCompletionAsync(
-
-            global::Phoenix.CreateChatCompletionRequestBody request,
+        public async global::System.Threading.Tasks.Task DeleteProjectTracesAsync(
+            string projectIdentifier,
+            global::System.DateTime startTime,
+            global::System.DateTime endTime,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateChatCompletionAsResponseAsync(
-
-                request: request,
+            await DeleteProjectTracesAsResponseAsync(
+                projectIdentifier: projectIdentifier,
+                startTime: startTime,
+                endTime: endTime,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
-
-            return __response.Body;
         }
         /// <summary>
-        /// OpenAI-compatible chat completions<br/>
-        /// Creates a chat completion using the OpenAI wire format, proxying to the selected provider with credentials resolved on the server (secret store first, environment second) — callers never handle provider API keys. Model must be '{provider}:{model_name}' for a built-in provider (one of anthropic, aws, azure_openai, cerebras, deepseek, fireworks, google, groq, moonshot, ollama, openai, perplexity, together, xai, zai) or 'custom:{provider_id}:{model_name}' for a stored custom provider, e.g. 'openai:gpt-4o' or 'anthropic:claude-sonnet-4-5'. Set `stream: true` for server-sent events of `chat.completion.chunk` payloads terminated by `data: [DONE]`. Tool calling is not supported.<br/>
-        /// **Phoenix is not an AI gateway.** The same server also takes on trace ingestion traffic, so routing production LLM calls through it competes with ingestion. Use this endpoint only to quickly try out different models in non-production environments.
+        /// Delete traces from a project<br/>
+        /// Delete traces from a project without deleting the project or its configuration. Only traces whose start time is within the required `[start_time, end_time)` interval are deleted. Associated spans are cascade deleted, and project sessions left with no remaining traces are also deleted. Naive datetimes are interpreted as UTC.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="projectIdentifier">
+        /// The project identifier: either project ID or project name.
+        /// </param>
+        /// <param name="startTime">
+        /// Required inclusive lower bound on trace start time (ISO 8601).
+        /// </param>
+        /// <param name="endTime">
+        /// Required exclusive upper bound on trace start time (ISO 8601).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.ChatCompletion>> CreateChatCompletionAsResponseAsync(
-
-            global::Phoenix.CreateChatCompletionRequestBody request,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse> DeleteProjectTracesAsResponseAsync(
+            string projectIdentifier,
+            global::System.DateTime startTime,
+            global::System.DateTime endTime,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateChatCompletionArguments(
+            PrepareDeleteProjectTracesArguments(
                 httpClient: HttpClient,
-                request: request);
+                projectIdentifier: ref projectIdentifier,
+                startTime: ref startTime,
+                endTime: ref endTime);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateChatCompletionSecurityRequirements,
-                operationName: "CreateChatCompletionAsync");
+                securityRequirements: s_DeleteProjectTracesSecurityRequirements,
+                operationName: "DeleteProjectTracesAsync");
 
             using var __timeoutCancellationTokenSource = global::Phoenix.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -106,21 +120,25 @@ namespace Phoenix
             var __maxAttempts = global::Phoenix.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: false);
+                supportsRetry: true);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
 
                             var __pathBuilder = new global::Phoenix.PathBuilder(
-                                path: "/v1/chat/completions",
+                                path: $"/v1/projects/{projectIdentifier}/traces",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddRequiredParameter("start_time", startTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Delete,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -143,12 +161,6 @@ namespace Phoenix
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::Phoenix.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -157,10 +169,12 @@ namespace Phoenix
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateChatCompletionRequest(
+                PrepareDeleteProjectTracesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    request: request);
+                    projectIdentifier: projectIdentifier!,
+                    startTime: startTime!,
+                    endTime: endTime!);
 
                 return __httpRequest;
             }
@@ -177,10 +191,10 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateChatCompletion",
-                                methodName: "CreateChatCompletionAsync",
-                                pathTemplate: "\"/v1/chat/completions\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteProjectTraces",
+                                methodName: "DeleteProjectTracesAsync",
+                                pathTemplate: "$\"/v1/projects/{projectIdentifier}/traces\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -211,10 +225,10 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateChatCompletion",
-                                methodName: "CreateChatCompletionAsync",
-                                pathTemplate: "\"/v1/chat/completions\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteProjectTraces",
+                                methodName: "DeleteProjectTracesAsync",
+                                pathTemplate: "$\"/v1/projects/{projectIdentifier}/traces\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -252,10 +266,10 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateChatCompletion",
-                                methodName: "CreateChatCompletionAsync",
-                                pathTemplate: "\"/v1/chat/completions\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteProjectTraces",
+                                methodName: "DeleteProjectTracesAsync",
+                                pathTemplate: "$\"/v1/projects/{projectIdentifier}/traces\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -292,7 +306,7 @@ namespace Phoenix
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateChatCompletionResponse(
+                ProcessDeleteProjectTracesResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -300,10 +314,10 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateChatCompletion",
-                                methodName: "CreateChatCompletionAsync",
-                                pathTemplate: "\"/v1/chat/completions\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteProjectTraces",
+                                methodName: "DeleteProjectTracesAsync",
+                                pathTemplate: "$\"/v1/projects/{projectIdentifier}/traces\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -322,10 +336,10 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateChatCompletion",
-                                methodName: "CreateChatCompletionAsync",
-                                pathTemplate: "\"/v1/chat/completions\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteProjectTraces",
+                                methodName: "DeleteProjectTracesAsync",
+                                pathTemplate: "$\"/v1/projects/{projectIdentifier}/traces\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -376,61 +390,24 @@ namespace Phoenix
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Bad Request
-                            if ((int)__response.StatusCode == 400)
-                            {
-                                string? __content_400 = null;
-                                global::System.Exception? __exception_400 = null;
-                                global::Phoenix.ChatCompletionErrorResponse? __value_400 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::Phoenix.ChatCompletionErrorResponse.FromJson(__content_400, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_400 = global::Phoenix.ChatCompletionErrorResponse.FromJson(__content_400, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_400 = __ex;
-                                }
-
-
-                                throw global::Phoenix.ApiException<global::Phoenix.ChatCompletionErrorResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_400,
-                                    responseBody: __content_400,
-                                    responseObject: __value_400,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
                             // Not Found
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::Phoenix.ChatCompletionErrorResponse? __value_404 = null;
+                                string? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::Phoenix.ChatCompletionErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_404, typeof(string), JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::Phoenix.ChatCompletionErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_404, typeof(string), JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -439,7 +416,7 @@ namespace Phoenix
                                 }
 
 
-                                throw global::Phoenix.ApiException<global::Phoenix.ChatCompletionErrorResponse>.Create(
+                                throw global::Phoenix.ApiException<string>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
@@ -455,19 +432,19 @@ namespace Phoenix
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::Phoenix.ChatCompletionErrorResponse? __value_422 = null;
+                                string? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::Phoenix.ChatCompletionErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(string), JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::Phoenix.ChatCompletionErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(string), JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -476,7 +453,7 @@ namespace Phoenix
                                 }
 
 
-                                throw global::Phoenix.ApiException<global::Phoenix.ChatCompletionErrorResponse>.Create(
+                                throw global::Phoenix.ApiException<string>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -500,22 +477,15 @@ namespace Phoenix
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateChatCompletionResponseContent(
-                                    httpClient: HttpClient,
-                                    httpResponseMessage: __response,
-                                    content: ref __content);
 
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Phoenix.ChatCompletion.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.ChatCompletion>(
+                return new global::Phoenix.AutoSDKHttpResponse(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -535,19 +505,10 @@ namespace Phoenix
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
-                #if NET5_0_OR_GREATER
-                                        __effectiveCancellationToken
-                #endif
-                                    ).ConfigureAwait(false);
-
-                                    var __value = await global::Phoenix.ChatCompletion.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.ChatCompletion>(
+                                    return new global::Phoenix.AutoSDKHttpResponse(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -582,79 +543,6 @@ namespace Phoenix
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// OpenAI-compatible chat completions<br/>
-        /// Creates a chat completion using the OpenAI wire format, proxying to the selected provider with credentials resolved on the server (secret store first, environment second) — callers never handle provider API keys. Model must be '{provider}:{model_name}' for a built-in provider (one of anthropic, aws, azure_openai, cerebras, deepseek, fireworks, google, groq, moonshot, ollama, openai, perplexity, together, xai, zai) or 'custom:{provider_id}:{model_name}' for a stored custom provider, e.g. 'openai:gpt-4o' or 'anthropic:claude-sonnet-4-5'. Set `stream: true` for server-sent events of `chat.completion.chunk` payloads terminated by `data: [DONE]`. Tool calling is not supported.<br/>
-        /// **Phoenix is not an AI gateway.** The same server also takes on trace ingestion traffic, so routing production LLM calls through it competes with ingestion. Use this endpoint only to quickly try out different models in non-production environments.
-        /// </summary>
-        /// <param name="model">
-        /// Model must be '{provider}:{model_name}' for a built-in provider (one of anthropic, aws, azure_openai, cerebras, deepseek, fireworks, google, groq, moonshot, ollama, openai, perplexity, together, xai, zai) or 'custom:{provider_id}:{model_name}' for a stored custom provider, e.g. 'openai:gpt-4o' or 'anthropic:claude-sonnet-4-5'.
-        /// </param>
-        /// <param name="messages"></param>
-        /// <param name="stream">
-        /// Default Value: false
-        /// </param>
-        /// <param name="temperature"></param>
-        /// <param name="topP"></param>
-        /// <param name="maxTokens"></param>
-        /// <param name="maxCompletionTokens"></param>
-        /// <param name="stop"></param>
-        /// <param name="frequencyPenalty"></param>
-        /// <param name="presencePenalty"></param>
-        /// <param name="seed"></param>
-        /// <param name="n"></param>
-        /// <param name="streamOptions"></param>
-        /// <param name="tools"></param>
-        /// <param name="toolChoice"></param>
-        /// <param name="responseFormat"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.ChatCompletion> CreateChatCompletionAsync(
-            string model,
-            global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionRequestMessage> messages,
-            bool? stream = default,
-            double? temperature = default,
-            double? topP = default,
-            int? maxTokens = default,
-            int? maxCompletionTokens = default,
-            global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop = default,
-            double? frequencyPenalty = default,
-            double? presencePenalty = default,
-            int? seed = default,
-            int? n = default,
-            global::Phoenix.ChatCompletionStreamOptions? streamOptions = default,
-            global::System.Collections.Generic.IList<object>? tools = default,
-            object? toolChoice = default,
-            object? responseFormat = default,
-            global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::Phoenix.CreateChatCompletionRequestBody
-            {
-                Model = model,
-                Messages = messages,
-                Stream = stream,
-                Temperature = temperature,
-                TopP = topP,
-                MaxTokens = maxTokens,
-                MaxCompletionTokens = maxCompletionTokens,
-                Stop = stop,
-                FrequencyPenalty = frequencyPenalty,
-                PresencePenalty = presencePenalty,
-                Seed = seed,
-                N = n,
-                StreamOptions = streamOptions,
-                Tools = tools,
-                ToolChoice = toolChoice,
-                ResponseFormat = responseFormat,
-            };
-
-            return await CreateChatCompletionAsync(
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
