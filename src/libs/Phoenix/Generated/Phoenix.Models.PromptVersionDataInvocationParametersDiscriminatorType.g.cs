@@ -64,6 +64,10 @@ namespace Phoenix
         ///
         /// </summary>
         Xai,
+        /// <summary>
+        ///
+        /// </summary>
+        Zai,
     }
 
     /// <summary>
@@ -92,6 +96,7 @@ namespace Phoenix
                 PromptVersionDataInvocationParametersDiscriminatorType.Perplexity => "perplexity",
                 PromptVersionDataInvocationParametersDiscriminatorType.Together => "together",
                 PromptVersionDataInvocationParametersDiscriminatorType.Xai => "xai",
+                PromptVersionDataInvocationParametersDiscriminatorType.Zai => "zai",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -116,6 +121,7 @@ namespace Phoenix
                 "perplexity" => PromptVersionDataInvocationParametersDiscriminatorType.Perplexity,
                 "together" => PromptVersionDataInvocationParametersDiscriminatorType.Together,
                 "xai" => PromptVersionDataInvocationParametersDiscriminatorType.Xai,
+                "zai" => PromptVersionDataInvocationParametersDiscriminatorType.Zai,
                 _ => null,
             };
         }

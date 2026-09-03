@@ -64,6 +64,10 @@ namespace Phoenix
         ///
         /// </summary>
         Xai,
+        /// <summary>
+        ///
+        /// </summary>
+        Zai,
     }
 
     /// <summary>
@@ -92,6 +96,7 @@ namespace Phoenix
                 ModelProvider.Perplexity => "PERPLEXITY",
                 ModelProvider.Together => "TOGETHER",
                 ModelProvider.Xai => "XAI",
+                ModelProvider.Zai => "ZAI",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -116,6 +121,7 @@ namespace Phoenix
                 "PERPLEXITY" => ModelProvider.Perplexity,
                 "TOGETHER" => ModelProvider.Together,
                 "XAI" => ModelProvider.Xai,
+                "ZAI" => ModelProvider.Zai,
                 _ => null,
             };
         }
