@@ -35,7 +35,10 @@ namespace Phoenix
             ref int? limit,
             ref string? cursor,
             ref bool? includeSpans,
-            global::System.Collections.Generic.IList<string>? sessionIdentifier);
+            global::System.Collections.Generic.IList<string>? sessionIdentifier,
+            bool? error,
+            double? minLatencyMs,
+            double? maxLatencyMs);
         partial void PrepareListProjectTracesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -47,7 +50,10 @@ namespace Phoenix
             int? limit,
             string? cursor,
             bool? includeSpans,
-            global::System.Collections.Generic.IList<string>? sessionIdentifier);
+            global::System.Collections.Generic.IList<string>? sessionIdentifier,
+            bool? error,
+            double? minLatencyMs,
+            double? maxLatencyMs);
         partial void ProcessListProjectTracesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -91,6 +97,15 @@ namespace Phoenix
         /// <param name="sessionIdentifier">
         /// List of session identifiers to filter traces by. Each value can be either a session_id string or a session GlobalID. Only traces belonging to the specified sessions will be returned.
         /// </param>
+        /// <param name="error">
+        /// Filter by trace error status. If true, only return traces that contain at least one span with `status_code == ERROR`. If false, only return traces with no errored spans. If omitted, traces are not filtered by error status. Matches the error indicator shown in the UI.
+        /// </param>
+        /// <param name="minLatencyMs">
+        /// Inclusive lower bound on trace latency in milliseconds.
+        /// </param>
+        /// <param name="maxLatencyMs">
+        /// Inclusive upper bound on trace latency in milliseconds.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -104,6 +119,9 @@ namespace Phoenix
             string? cursor = default,
             bool? includeSpans = default,
             global::System.Collections.Generic.IList<string>? sessionIdentifier = default,
+            bool? error = default,
+            double? minLatencyMs = default,
+            double? maxLatencyMs = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -117,6 +135,9 @@ namespace Phoenix
                 cursor: cursor,
                 includeSpans: includeSpans,
                 sessionIdentifier: sessionIdentifier,
+                error: error,
+                minLatencyMs: minLatencyMs,
+                maxLatencyMs: maxLatencyMs,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -157,6 +178,15 @@ namespace Phoenix
         /// <param name="sessionIdentifier">
         /// List of session identifiers to filter traces by. Each value can be either a session_id string or a session GlobalID. Only traces belonging to the specified sessions will be returned.
         /// </param>
+        /// <param name="error">
+        /// Filter by trace error status. If true, only return traces that contain at least one span with `status_code == ERROR`. If false, only return traces with no errored spans. If omitted, traces are not filtered by error status. Matches the error indicator shown in the UI.
+        /// </param>
+        /// <param name="minLatencyMs">
+        /// Inclusive lower bound on trace latency in milliseconds.
+        /// </param>
+        /// <param name="maxLatencyMs">
+        /// Inclusive upper bound on trace latency in milliseconds.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -170,6 +200,9 @@ namespace Phoenix
             string? cursor = default,
             bool? includeSpans = default,
             global::System.Collections.Generic.IList<string>? sessionIdentifier = default,
+            bool? error = default,
+            double? minLatencyMs = default,
+            double? maxLatencyMs = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -185,7 +218,10 @@ namespace Phoenix
                 limit: ref limit,
                 cursor: ref cursor,
                 includeSpans: ref includeSpans,
-                sessionIdentifier: sessionIdentifier);
+                sessionIdentifier: sessionIdentifier,
+                error: error,
+                minLatencyMs: minLatencyMs,
+                maxLatencyMs: maxLatencyMs);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
@@ -222,6 +258,9 @@ namespace Phoenix
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("include_spans", includeSpans?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("session_identifier", sessionIdentifier?.ToString())
+                                .AddOptionalParameter("error", error?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("min_latency_ms", minLatencyMs?.ToString())
+                                .AddOptionalParameter("max_latency_ms", maxLatencyMs?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -271,7 +310,10 @@ namespace Phoenix
                     limit: limit,
                     cursor: cursor,
                     includeSpans: includeSpans,
-                    sessionIdentifier: sessionIdentifier);
+                    sessionIdentifier: sessionIdentifier,
+                    error: error,
+                    minLatencyMs: minLatencyMs,
+                    maxLatencyMs: maxLatencyMs);
 
                 return __httpRequest;
             }
