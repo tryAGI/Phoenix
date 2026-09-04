@@ -38,6 +38,15 @@ namespace Phoenix
         /// <param name="sessionIdentifier">
         /// List of session identifiers to filter traces by. Each value can be either a session_id string or a session GlobalID. Only traces belonging to the specified sessions will be returned.
         /// </param>
+        /// <param name="error">
+        /// Filter by trace error status. If true, only return traces that contain at least one span with `status_code == ERROR`. If false, only return traces with no errored spans. If omitted, traces are not filtered by error status. Matches the error indicator shown in the UI.
+        /// </param>
+        /// <param name="minLatencyMs">
+        /// Inclusive lower bound on trace latency in milliseconds.
+        /// </param>
+        /// <param name="maxLatencyMs">
+        /// Inclusive upper bound on trace latency in milliseconds.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -51,6 +60,9 @@ namespace Phoenix
             string? cursor = default,
             bool? includeSpans = default,
             global::System.Collections.Generic.IList<string>? sessionIdentifier = default,
+            bool? error = default,
+            double? minLatencyMs = default,
+            double? maxLatencyMs = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -87,6 +99,15 @@ namespace Phoenix
         /// <param name="sessionIdentifier">
         /// List of session identifiers to filter traces by. Each value can be either a session_id string or a session GlobalID. Only traces belonging to the specified sessions will be returned.
         /// </param>
+        /// <param name="error">
+        /// Filter by trace error status. If true, only return traces that contain at least one span with `status_code == ERROR`. If false, only return traces with no errored spans. If omitted, traces are not filtered by error status. Matches the error indicator shown in the UI.
+        /// </param>
+        /// <param name="minLatencyMs">
+        /// Inclusive lower bound on trace latency in milliseconds.
+        /// </param>
+        /// <param name="maxLatencyMs">
+        /// Inclusive upper bound on trace latency in milliseconds.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -100,6 +121,9 @@ namespace Phoenix
             string? cursor = default,
             bool? includeSpans = default,
             global::System.Collections.Generic.IList<string>? sessionIdentifier = default,
+            bool? error = default,
+            double? minLatencyMs = default,
+            double? maxLatencyMs = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
