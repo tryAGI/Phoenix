@@ -110,7 +110,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.ChatCompletionTextPart>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionTextPart))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionStreamOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionUsagePromptTokensDetails2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatCompletionUsagePromptTokensDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContext), TypeInfoPropertyName = "ChatContext2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ProjectUIContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TraceUIContext))]
@@ -215,7 +215,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DataUIPart))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Dataset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DatasetExample))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DatasetExampleSource2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DatasetExampleSource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DatasetVersion))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DatasetWithExampleCount))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteAnnotationConfigResponseBody))]
@@ -500,7 +500,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptXAIInvocationParametersContentReasoningEffort), TypeInfoPropertyName = "PromptXAIInvocationParametersContentReasoningEffort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptZAIInvocationParametersContent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptZAIInvocationParametersContentReasoningEffort), TypeInfoPropertyName = "PromptZAIInvocationParametersContentReasoningEffort2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ReasoningUIPartState2), TypeInfoPropertyName = "ReasoningUIPartState22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ReasoningUIPartState), TypeInfoPropertyName = "ReasoningUIPartState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ResponseBodyUpsertOrDeleteSecretsResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UpsertOrDeleteSecretsResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SecretKeyValue))]
@@ -567,7 +567,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SubmitAgentSessionToolApprovalsResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SubmitAgentSessionToolOutputsRequestBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SubmitAgentSessionToolOutputsResponseBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TextUIPartState2), TypeInfoPropertyName = "TextUIPartState22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TextUIPartState), TypeInfoPropertyName = "TextUIPartState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolCallFunction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminatorType), TypeInfoPropertyName = "ToolCallContentPartToolCallDiscriminatorType2")]
@@ -621,9 +621,9 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequest2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction2), TypeInfoPropertyName = "UploadDatasetRequestAction22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2), TypeInfoPropertyName = "DeleteSpanAnnotationsAnnotatorKind22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2), TypeInfoPropertyName = "DeleteTraceAnnotationsAnnotatorKind22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2), TypeInfoPropertyName = "DeleteSessionAnnotationsAnnotatorKind22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind), TypeInfoPropertyName = "DeleteSpanAnnotationsAnnotatorKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind), TypeInfoPropertyName = "DeleteTraceAnnotationsAnnotatorKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind), TypeInfoPropertyName = "DeleteSessionAnnotationsAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesSort), TypeInfoPropertyName = "ListProjectTracesSort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesOrder), TypeInfoPropertyName = "ListProjectTracesOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectSessionsOrder), TypeInfoPropertyName = "ListProjectSessionsOrder2")]
@@ -726,7 +726,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptVersionDataResponseFormatVariant1DiscriminatorType?), TypeInfoPropertyName = "NullablePromptVersionDataResponseFormatVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptXAIInvocationParametersContentReasoningEffort?), TypeInfoPropertyName = "NullablePromptXAIInvocationParametersContentReasoningEffort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.PromptZAIInvocationParametersContentReasoningEffort?), TypeInfoPropertyName = "NullablePromptZAIInvocationParametersContentReasoningEffort2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ReasoningUIPartState2?), TypeInfoPropertyName = "NullableReasoningUIPartState22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ReasoningUIPartState?), TypeInfoPropertyName = "NullableReasoningUIPartState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SessionAnnotationSource?), TypeInfoPropertyName = "NullableSessionAnnotationSource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SessionAnnotationAnnotatorKind?), TypeInfoPropertyName = "NullableSessionAnnotationAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SessionAnnotationDataAnnotatorKind?), TypeInfoPropertyName = "NullableSessionAnnotationDataAnnotatorKind2")]
@@ -736,7 +736,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SpanAnnotationAnnotatorKind?), TypeInfoPropertyName = "NullableSpanAnnotationAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SpanAnnotationDataAnnotatorKind?), TypeInfoPropertyName = "NullableSpanAnnotationDataAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind?), TypeInfoPropertyName = "NullableSpanDocumentAnnotationDataAnnotatorKind2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TextUIPartState2?), TypeInfoPropertyName = "NullableTextUIPartState22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TextUIPartState?), TypeInfoPropertyName = "NullableTextUIPartState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminatorType?), TypeInfoPropertyName = "NullableToolCallContentPartToolCallDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>?), TypeInfoPropertyName = "NullableAnyOfBooleanInt32DoubleStringObjectIListObjectObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.TraceAnnotationSource?), TypeInfoPropertyName = "NullableTraceAnnotationSource2")]
@@ -751,9 +751,9 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction?), TypeInfoPropertyName = "NullableUploadDatasetRequestAction2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>?), TypeInfoPropertyName = "NullableOneOfStringIListStringObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction2?), TypeInfoPropertyName = "NullableUploadDatasetRequestAction22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2?), TypeInfoPropertyName = "NullableDeleteSpanAnnotationsAnnotatorKind22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2?), TypeInfoPropertyName = "NullableDeleteTraceAnnotationsAnnotatorKind22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2?), TypeInfoPropertyName = "NullableDeleteSessionAnnotationsAnnotatorKind22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind?), TypeInfoPropertyName = "NullableDeleteSpanAnnotationsAnnotatorKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind?), TypeInfoPropertyName = "NullableDeleteTraceAnnotationsAnnotatorKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind?), TypeInfoPropertyName = "NullableDeleteSessionAnnotationsAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesSort?), TypeInfoPropertyName = "NullableListProjectTracesSort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesOrder?), TypeInfoPropertyName = "NullableListProjectTracesOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectSessionsOrder?), TypeInfoPropertyName = "NullableListProjectSessionsOrder2")]
@@ -1203,9 +1203,9 @@ namespace Phoenix
 
                     || typeToConvert == typeof(global::Phoenix.PromptZAIInvocationParametersContentReasoningEffort?)
 
-                    || typeToConvert == typeof(global::Phoenix.ReasoningUIPartState2)
+                    || typeToConvert == typeof(global::Phoenix.ReasoningUIPartState)
 
-                    || typeToConvert == typeof(global::Phoenix.ReasoningUIPartState2?)
+                    || typeToConvert == typeof(global::Phoenix.ReasoningUIPartState?)
 
                     || typeToConvert == typeof(global::Phoenix.SessionAnnotationSource)
 
@@ -1239,9 +1239,9 @@ namespace Phoenix
 
                     || typeToConvert == typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind?)
 
-                    || typeToConvert == typeof(global::Phoenix.TextUIPartState2)
+                    || typeToConvert == typeof(global::Phoenix.TextUIPartState)
 
-                    || typeToConvert == typeof(global::Phoenix.TextUIPartState2?)
+                    || typeToConvert == typeof(global::Phoenix.TextUIPartState?)
 
                     || typeToConvert == typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminatorType)
 
@@ -1283,17 +1283,17 @@ namespace Phoenix
 
                     || typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction2?)
 
-                    || typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2)
+                    || typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind)
 
-                    || typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2?)
+                    || typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind?)
 
-                    || typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2)
+                    || typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind)
 
-                    || typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2?)
+                    || typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind?)
 
-                    || typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2)
+                    || typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind)
 
-                    || typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2?)
+                    || typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind?)
 
                     || typeToConvert == typeof(global::Phoenix.ListProjectTracesSort)
 
@@ -1962,14 +1962,14 @@ namespace Phoenix
                     return new global::Phoenix.JsonConverters.PromptZAIInvocationParametersContentReasoningEffortNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Phoenix.ReasoningUIPartState2))
+                if (typeToConvert == typeof(global::Phoenix.ReasoningUIPartState))
                 {
-                    return new global::Phoenix.JsonConverters.ReasoningUIPartState2JsonConverter();
+                    return new global::Phoenix.JsonConverters.ReasoningUIPartStateJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Phoenix.ReasoningUIPartState2?))
+                if (typeToConvert == typeof(global::Phoenix.ReasoningUIPartState?))
                 {
-                    return new global::Phoenix.JsonConverters.ReasoningUIPartState2NullableJsonConverter();
+                    return new global::Phoenix.JsonConverters.ReasoningUIPartStateNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Phoenix.SessionAnnotationSource))
@@ -2052,14 +2052,14 @@ namespace Phoenix
                     return new global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Phoenix.TextUIPartState2))
+                if (typeToConvert == typeof(global::Phoenix.TextUIPartState))
                 {
-                    return new global::Phoenix.JsonConverters.TextUIPartState2JsonConverter();
+                    return new global::Phoenix.JsonConverters.TextUIPartStateJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Phoenix.TextUIPartState2?))
+                if (typeToConvert == typeof(global::Phoenix.TextUIPartState?))
                 {
-                    return new global::Phoenix.JsonConverters.TextUIPartState2NullableJsonConverter();
+                    return new global::Phoenix.JsonConverters.TextUIPartStateNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Phoenix.ToolCallContentPartToolCallDiscriminatorType))
@@ -2162,34 +2162,34 @@ namespace Phoenix
                     return new global::Phoenix.JsonConverters.UploadDatasetRequestAction2NullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2))
+                if (typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind))
                 {
-                    return new global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2JsonConverter();
+                    return new global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKindJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2?))
+                if (typeToConvert == typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind?))
                 {
-                    return new global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKind2NullableJsonConverter();
+                    return new global::Phoenix.JsonConverters.DeleteSpanAnnotationsAnnotatorKindNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2))
+                if (typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind))
                 {
-                    return new global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2JsonConverter();
+                    return new global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKindJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2?))
+                if (typeToConvert == typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind?))
                 {
-                    return new global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKind2NullableJsonConverter();
+                    return new global::Phoenix.JsonConverters.DeleteTraceAnnotationsAnnotatorKindNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2))
+                if (typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind))
                 {
-                    return new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2JsonConverter();
+                    return new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKindJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2?))
+                if (typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind?))
                 {
-                    return new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKind2NullableJsonConverter();
+                    return new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKindNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Phoenix.ListProjectTracesSort))

@@ -4,7 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// New JSON metadata that replaces the existing metadata.
+    ///
     /// </summary>
     public sealed partial class UpdateDatasetSplitRequestBodyMetadata
     {

@@ -4,7 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// Metadata for the experiment
+    ///
     /// </summary>
     public sealed partial class CreateExperimentRequestBodyMetadata
     {

@@ -33,7 +33,7 @@ namespace Phoenix
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
-        public global::Phoenix.ChatCompletionUsagePromptTokensDetails2? PromptTokensDetails { get; set; }
+        public global::Phoenix.ChatCompletionUsagePromptTokensDetails? PromptTokensDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +55,7 @@ namespace Phoenix
             int promptTokens,
             int completionTokens,
             int totalTokens,
-            global::Phoenix.ChatCompletionUsagePromptTokensDetails2? promptTokensDetails)
+            global::Phoenix.ChatCompletionUsagePromptTokensDetails? promptTokensDetails)
         {
             this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
