@@ -337,7 +337,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ChatCompletionUsagePromptTokensDetails2? Type76 { get; set; }
+        public global::Phoenix.ChatCompletionUsagePromptTokensDetails? Type76 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -757,7 +757,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DatasetExampleSource2? Type181 { get; set; }
+        public global::Phoenix.DatasetExampleSource? Type181 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1901,7 +1901,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ReasoningUIPartState2? Type467 { get; set; }
+        public global::Phoenix.ReasoningUIPartState? Type467 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2057,7 +2057,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.TextUIPartState2? Type506 { get; set; }
+        public global::Phoenix.TextUIPartState? Type506 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2273,15 +2273,15 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DeleteSpanAnnotationsAnnotatorKind2? Type560 { get; set; }
+        public global::Phoenix.DeleteSpanAnnotationsAnnotatorKind? Type560 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DeleteTraceAnnotationsAnnotatorKind2? Type561 { get; set; }
+        public global::Phoenix.DeleteTraceAnnotationsAnnotatorKind? Type561 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DeleteSessionAnnotationsAnnotatorKind2? Type562 { get; set; }
+        public global::Phoenix.DeleteSessionAnnotationsAnnotatorKind? Type562 { get; set; }
         /// <summary>
         ///
         /// </summary>

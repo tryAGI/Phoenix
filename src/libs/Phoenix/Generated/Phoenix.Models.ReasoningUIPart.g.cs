@@ -31,7 +31,7 @@ namespace Phoenix
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        public global::Phoenix.ReasoningUIPartState2? State { get; set; }
+        public global::Phoenix.ReasoningUIPartState? State { get; set; }
 
         /// <summary>
         ///
@@ -62,7 +62,7 @@ namespace Phoenix
             string text,
             string? type,
             string? id,
-            global::Phoenix.ReasoningUIPartState2? state,
+            global::Phoenix.ReasoningUIPartState? state,
             global::System.Collections.Generic.Dictionary<string, object>? providerMetadata)
         {
             this.Type = type;

@@ -4,7 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// Metadata for the annotation
+    ///
     /// </summary>
     public sealed partial class SessionAnnotationMetadata
     {

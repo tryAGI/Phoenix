@@ -4,7 +4,7 @@
 namespace Phoenix
 {
     /// <summary>
-    /// Metadata for the evaluation
+    ///
     /// </summary>
     public sealed partial class UpsertExperimentEvaluationRequestBodyMetadata
     {

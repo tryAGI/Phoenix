@@ -4,16 +4,54 @@
 namespace Phoenix
 {
     /// <summary>
-    /// Optional annotator kind. When provided, narrows the delete to annotations produced by this annotator kind.
+    ///
     /// </summary>
-    public sealed partial class DeleteSpanAnnotationsAnnotatorKind
+    public enum DeleteSpanAnnotationsAnnotatorKind
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Code,
+        /// <summary>
+        ///
+        /// </summary>
+        Human,
+        /// <summary>
+        ///
+        /// </summary>
+        Llm,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class DeleteSpanAnnotationsAnnotatorKindExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this DeleteSpanAnnotationsAnnotatorKind value)
+        {
+            return value switch
+            {
+                DeleteSpanAnnotationsAnnotatorKind.Code => "CODE",
+                DeleteSpanAnnotationsAnnotatorKind.Human => "HUMAN",
+                DeleteSpanAnnotationsAnnotatorKind.Llm => "LLM",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static DeleteSpanAnnotationsAnnotatorKind? ToEnum(string value)
+        {
+            return value switch
+            {
+                "CODE" => DeleteSpanAnnotationsAnnotatorKind.Code,
+                "HUMAN" => DeleteSpanAnnotationsAnnotatorKind.Human,
+                "LLM" => DeleteSpanAnnotationsAnnotatorKind.Llm,
+                _ => null,
+            };
+        }
     }
 }

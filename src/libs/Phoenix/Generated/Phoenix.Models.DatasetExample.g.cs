@@ -54,7 +54,7 @@ namespace Phoenix
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        public global::Phoenix.DatasetExampleSource2? Source { get; set; }
+        public global::Phoenix.DatasetExampleSource? Source { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -82,7 +82,7 @@ namespace Phoenix
             object output,
             object metadata,
             global::System.DateTime updatedAt,
-            global::Phoenix.DatasetExampleSource2? source)
+            global::Phoenix.DatasetExampleSource? source)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
