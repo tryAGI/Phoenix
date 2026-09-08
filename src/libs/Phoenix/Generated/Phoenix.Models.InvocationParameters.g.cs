@@ -568,6 +568,43 @@ namespace Phoenix
         public global::Phoenix.PromptZAIInvocationParameters PickZai() => IsZai
             ? Zai!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Zai' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Phoenix.PromptMetaInvocationParameters? Meta { get; init; }
+#else
+        public global::Phoenix.PromptMetaInvocationParameters? Meta { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Meta))]
+#endif
+        public bool IsMeta => Meta != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMeta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Phoenix.PromptMetaInvocationParameters? value)
+        {
+            value = Meta;
+            return IsMeta;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Phoenix.PromptMetaInvocationParameters PickMeta() => IsMeta
+            ? Meta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Meta' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -916,6 +953,29 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator InvocationParameters(global::Phoenix.PromptMetaInvocationParameters value) => new InvocationParameters((global::Phoenix.PromptMetaInvocationParameters?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Phoenix.PromptMetaInvocationParameters?(InvocationParameters @this) => @this.Meta;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public InvocationParameters(global::Phoenix.PromptMetaInvocationParameters? value)
+        {
+            Meta = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static InvocationParameters FromMeta(global::Phoenix.PromptMetaInvocationParameters? value) => new InvocationParameters(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public InvocationParameters(
             global::Phoenix.PromptVersionInvocationParametersDiscriminatorType? type,
             global::Phoenix.PromptOpenAIInvocationParameters? openai,
@@ -932,7 +992,8 @@ namespace Phoenix
             global::Phoenix.PromptMoonshotInvocationParameters? moonshot,
             global::Phoenix.PromptPerplexityInvocationParameters? perplexity,
             global::Phoenix.PromptTogetherInvocationParameters? together,
-            global::Phoenix.PromptZAIInvocationParameters? zai
+            global::Phoenix.PromptZAIInvocationParameters? zai,
+            global::Phoenix.PromptMetaInvocationParameters? meta
             )
         {
             Type = type;
@@ -952,12 +1013,14 @@ namespace Phoenix
             Perplexity = perplexity;
             Together = together;
             Zai = zai;
+            Meta = meta;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Meta as object ??
             Zai as object ??
             Together as object ??
             Perplexity as object ??
@@ -993,7 +1056,8 @@ namespace Phoenix
             Moonshot?.ToString() ??
             Perplexity?.ToString() ??
             Together?.ToString() ??
-            Zai?.ToString()
+            Zai?.ToString() ??
+            Meta?.ToString()
             ;
 
         /// <summary>
@@ -1001,7 +1065,7 @@ namespace Phoenix
         /// </summary>
         public bool Validate()
         {
-            return IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && IsMoonshot && !IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && IsPerplexity && !IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && IsTogether && !IsZai || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && IsZai;
+            return IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && IsPerplexity && !IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && IsTogether && !IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && IsZai && !IsMeta || !IsOpenai && !IsAzureOpenai && !IsAnthropic && !IsGoogle && !IsDeepseek && !IsXai && !IsOllama && !IsAws && !IsCerebras && !IsFireworks && !IsGroq && !IsMoonshot && !IsPerplexity && !IsTogether && !IsZai && IsMeta;
         }
 
         /// <summary>
@@ -1023,6 +1087,7 @@ namespace Phoenix
             global::System.Func<global::Phoenix.PromptPerplexityInvocationParameters, TResult>? perplexity = null,
             global::System.Func<global::Phoenix.PromptTogetherInvocationParameters, TResult>? together = null,
             global::System.Func<global::Phoenix.PromptZAIInvocationParameters, TResult>? zai = null,
+            global::System.Func<global::Phoenix.PromptMetaInvocationParameters, TResult>? meta = null,
             bool validate = true)
         {
             if (validate)
@@ -1090,6 +1155,10 @@ namespace Phoenix
             {
                 return zai(Zai!);
             }
+            else if (IsMeta && meta != null)
+            {
+                return meta(Meta!);
+            }
 
             return default(TResult);
         }
@@ -1127,6 +1196,8 @@ namespace Phoenix
             global::System.Action<global::Phoenix.PromptTogetherInvocationParameters>? together = null,
 
             global::System.Action<global::Phoenix.PromptZAIInvocationParameters>? zai = null,
+
+            global::System.Action<global::Phoenix.PromptMetaInvocationParameters>? meta = null,
             bool validate = true)
         {
             if (validate)
@@ -1193,6 +1264,10 @@ namespace Phoenix
             else if (IsZai)
             {
                 zai?.Invoke(Zai!);
+            }
+            else if (IsMeta)
+            {
+                meta?.Invoke(Meta!);
             }
         }
 
@@ -1215,6 +1290,7 @@ namespace Phoenix
             global::System.Action<global::Phoenix.PromptPerplexityInvocationParameters>? perplexity = null,
             global::System.Action<global::Phoenix.PromptTogetherInvocationParameters>? together = null,
             global::System.Action<global::Phoenix.PromptZAIInvocationParameters>? zai = null,
+            global::System.Action<global::Phoenix.PromptMetaInvocationParameters>? meta = null,
             bool validate = true)
         {
             if (validate)
@@ -1281,6 +1357,10 @@ namespace Phoenix
             else if (IsZai)
             {
                 zai?.Invoke(Zai!);
+            }
+            else if (IsMeta)
+            {
+                meta?.Invoke(Meta!);
             }
         }
 
@@ -1321,6 +1401,8 @@ namespace Phoenix
                 typeof(global::Phoenix.PromptTogetherInvocationParameters),
                 Zai,
                 typeof(global::Phoenix.PromptZAIInvocationParameters),
+                Meta,
+                typeof(global::Phoenix.PromptMetaInvocationParameters),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1351,7 +1433,8 @@ namespace Phoenix
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptMoonshotInvocationParameters?>.Default.Equals(Moonshot, other.Moonshot) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptPerplexityInvocationParameters?>.Default.Equals(Perplexity, other.Perplexity) &&
                 global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptTogetherInvocationParameters?>.Default.Equals(Together, other.Together) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptZAIInvocationParameters?>.Default.Equals(Zai, other.Zai)
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptZAIInvocationParameters?>.Default.Equals(Zai, other.Zai) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.PromptMetaInvocationParameters?>.Default.Equals(Meta, other.Meta)
                 ;
         }
 

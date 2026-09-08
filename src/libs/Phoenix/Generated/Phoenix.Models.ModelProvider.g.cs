@@ -43,6 +43,10 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
+        Meta,
+        /// <summary>
+        ///
+        /// </summary>
         Minimax,
         /// <summary>
         ///
@@ -94,6 +98,7 @@ namespace Phoenix
                 ModelProvider.Fireworks => "FIREWORKS",
                 ModelProvider.Google => "GOOGLE",
                 ModelProvider.Groq => "GROQ",
+                ModelProvider.Meta => "META",
                 ModelProvider.Minimax => "MINIMAX",
                 ModelProvider.Moonshot => "MOONSHOT",
                 ModelProvider.Ollama => "OLLAMA",
@@ -120,6 +125,7 @@ namespace Phoenix
                 "FIREWORKS" => ModelProvider.Fireworks,
                 "GOOGLE" => ModelProvider.Google,
                 "GROQ" => ModelProvider.Groq,
+                "META" => ModelProvider.Meta,
                 "MINIMAX" => ModelProvider.Minimax,
                 "MOONSHOT" => ModelProvider.Moonshot,
                 "OLLAMA" => ModelProvider.Ollama,
