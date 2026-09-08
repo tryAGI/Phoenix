@@ -126,6 +126,13 @@ namespace Phoenix.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PromptZAIInvocationParameters)}");
                 zai = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Phoenix.PromptMetaInvocationParameters? meta = default;
+            if (discriminator?.Type == global::Phoenix.PromptVersionInvocationParametersDiscriminatorType.Meta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptMetaInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptMetaInvocationParameters> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.PromptMetaInvocationParameters)}");
+                meta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Phoenix.InvocationParameters(
                 discriminator?.Type,
@@ -157,7 +164,9 @@ namespace Phoenix.JsonConverters
 
                 together,
 
-                zai
+                zai,
+
+                meta
                 );
 
             return __value;
@@ -261,6 +270,12 @@ namespace Phoenix.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptZAIInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptZAIInvocationParameters?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptZAIInvocationParameters).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Zai!, typeInfo);
+            }
+            else if (value.IsMeta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptMetaInvocationParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptMetaInvocationParameters?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptMetaInvocationParameters).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Meta!, typeInfo);
             }
         }
     }

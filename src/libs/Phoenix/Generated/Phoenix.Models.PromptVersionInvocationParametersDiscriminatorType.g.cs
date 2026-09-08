@@ -43,6 +43,10 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
+        Meta,
+        /// <summary>
+        ///
+        /// </summary>
         Moonshot,
         /// <summary>
         ///
@@ -90,6 +94,7 @@ namespace Phoenix
                 PromptVersionInvocationParametersDiscriminatorType.Fireworks => "fireworks",
                 PromptVersionInvocationParametersDiscriminatorType.Google => "google",
                 PromptVersionInvocationParametersDiscriminatorType.Groq => "groq",
+                PromptVersionInvocationParametersDiscriminatorType.Meta => "meta",
                 PromptVersionInvocationParametersDiscriminatorType.Moonshot => "moonshot",
                 PromptVersionInvocationParametersDiscriminatorType.Ollama => "ollama",
                 PromptVersionInvocationParametersDiscriminatorType.Openai => "openai",
@@ -115,6 +120,7 @@ namespace Phoenix
                 "fireworks" => PromptVersionInvocationParametersDiscriminatorType.Fireworks,
                 "google" => PromptVersionInvocationParametersDiscriminatorType.Google,
                 "groq" => PromptVersionInvocationParametersDiscriminatorType.Groq,
+                "meta" => PromptVersionInvocationParametersDiscriminatorType.Meta,
                 "moonshot" => PromptVersionInvocationParametersDiscriminatorType.Moonshot,
                 "ollama" => PromptVersionInvocationParametersDiscriminatorType.Ollama,
                 "openai" => PromptVersionInvocationParametersDiscriminatorType.Openai,
