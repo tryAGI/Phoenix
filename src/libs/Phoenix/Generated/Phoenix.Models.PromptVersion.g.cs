@@ -15,6 +15,12 @@ namespace Phoenix
         public string? Description { get; set; }
 
         /// <summary>
+        /// Arbitrary JSON metadata for the prompt version.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_provider")]
@@ -97,6 +103,9 @@ namespace Phoenix
         /// <param name="invocationParameters"></param>
         /// <param name="id"></param>
         /// <param name="description"></param>
+        /// <param name="metadata">
+        /// Arbitrary JSON metadata for the prompt version.
+        /// </param>
         /// <param name="tools"></param>
         /// <param name="responseFormat"></param>
 #if NET7_0_OR_GREATER
@@ -111,10 +120,12 @@ namespace Phoenix
             global::Phoenix.InvocationParameters invocationParameters,
             string id,
             string? description,
+            object? metadata,
             global::Phoenix.PromptTools? tools,
             global::Phoenix.ResponseFormatVariant1? responseFormat)
         {
             this.Description = description;
+            this.Metadata = metadata;
             this.ModelProvider = modelProvider;
             this.ModelName = modelName ?? throw new global::System.ArgumentNullException(nameof(modelName));
             this.Template = template;
