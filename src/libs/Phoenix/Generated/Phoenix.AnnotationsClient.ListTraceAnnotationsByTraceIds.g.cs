@@ -186,10 +186,10 @@ namespace Phoenix
                                 path: $"/v1/projects/{projectIdentifier}/trace_annotations",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("trace_ids", traceIds?.ToString())
-                                .AddOptionalParameter("identifier", identifier?.ToString())
-                                .AddOptionalParameter("include_annotation_names", includeAnnotationNames?.ToString())
-                                .AddOptionalParameter("exclude_annotation_names", excludeAnnotationNames?.ToString())
+                                .AddOptionalParameter("trace_ids", traceIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("identifier", identifier, delimiter: ",", explode: true)
+                                .AddOptionalParameter("include_annotation_names", includeAnnotationNames, delimiter: ",", explode: true)
+                                .AddOptionalParameter("exclude_annotation_names", excludeAnnotationNames, delimiter: ",", explode: true)
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 ;

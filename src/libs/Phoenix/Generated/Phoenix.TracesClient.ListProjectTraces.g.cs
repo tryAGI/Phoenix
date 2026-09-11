@@ -257,7 +257,7 @@ namespace Phoenix
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("include_spans", includeSpans?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("session_identifier", sessionIdentifier?.ToString())
+                                .AddOptionalParameter("session_identifier", sessionIdentifier, delimiter: ",", explode: true)
                                 .AddOptionalParameter("error", error?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("min_latency_ms", minLatencyMs?.ToString())
                                 .AddOptionalParameter("max_latency_ms", maxLatencyMs?.ToString())
