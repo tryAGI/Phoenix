@@ -135,7 +135,7 @@ namespace Phoenix
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("version_id", versionId)
-                                .AddOptionalParameter("split", split?.ToString())
+                                .AddOptionalParameter("split", split, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(

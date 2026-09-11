@@ -250,13 +250,13 @@ namespace Phoenix
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("start_time", startTime?.ToString())
                                 .AddOptionalParameter("end_time", endTime?.ToString())
-                                .AddOptionalParameter("trace_id", traceId?.ToString())
-                                .AddOptionalParameter("span_id", spanId?.ToString())
+                                .AddOptionalParameter("trace_id", traceId, delimiter: ",", explode: true)
+                                .AddOptionalParameter("span_id", spanId, delimiter: ",", explode: true)
                                 .AddOptionalParameter("parent_id", parentId)
-                                .AddOptionalParameter("name", name?.ToString())
-                                .AddOptionalParameter("span_kind", spanKind?.ToString())
-                                .AddOptionalParameter("status_code", statusCode?.ToString())
-                                .AddOptionalParameter("attribute", attribute?.ToString())
+                                .AddOptionalParameter("name", name, delimiter: ",", explode: true)
+                                .AddOptionalParameter("span_kind", spanKind, delimiter: ",", explode: true)
+                                .AddOptionalParameter("status_code", statusCode, delimiter: ",", explode: true)
+                                .AddOptionalParameter("attribute", attribute, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(

@@ -223,7 +223,7 @@ namespace Phoenix
                             __pathBuilder
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("identifier", identifier)
-                                .AddOptionalParameter("annotator_kind", annotatorKind?.ToString())
+                                .AddOptionalParameter("annotator_kind", annotatorKind?.ToValueString())
                                 .AddOptionalParameter("start_time", startTime?.ToString())
                                 .AddOptionalParameter("end_time", endTime?.ToString())
                                 .AddOptionalParameter("delete_all", deleteAll?.ToString().ToLowerInvariant())
