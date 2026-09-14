@@ -1,5 +1,7 @@
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace Phoenix
 {
     public partial interface ITracesClient
@@ -39,13 +41,16 @@ namespace Phoenix
         /// List of session identifiers to filter traces by. Each value can be either a session_id string or a session GlobalID. Only traces belonging to the specified sessions will be returned.
         /// </param>
         /// <param name="error">
-        /// Filter by trace error status. If true, only return traces that contain at least one span with `status_code == ERROR`. If false, only return traces with no errored spans. If omitted, traces are not filtered by error status. Matches the error indicator shown in the UI.
+        /// Deprecated: use `filter=error_count &gt; 0` or `filter=error_count == 0`. Filter by trace error status. If true, only return traces that contain at least one span with `status_code == ERROR`. If false, only return traces with no errored spans. If omitted, traces are not filtered by error status.
         /// </param>
         /// <param name="minLatencyMs">
-        /// Inclusive lower bound on trace latency in milliseconds.
+        /// Inclusive lower bound on trace latency in milliseconds. Deprecated: use `filter=latency_ms &gt;= N`.
         /// </param>
         /// <param name="maxLatencyMs">
-        /// Inclusive upper bound on trace latency in milliseconds.
+        /// Inclusive upper bound on trace latency in milliseconds. Deprecated: use `filter=latency_ms &lt;= N`.
+        /// </param>
+        /// <param name="filter">
+        /// Trace filter expression, as documented at https://arize.com/docs/phoenix/tracing/how-to-tracing/filter-expressions. Combined with other filters using AND. Empty expressions do not filter. Invalid expressions return 400.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -63,6 +68,7 @@ namespace Phoenix
             bool? error = default,
             double? minLatencyMs = default,
             double? maxLatencyMs = default,
+            string? filter = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -100,13 +106,16 @@ namespace Phoenix
         /// List of session identifiers to filter traces by. Each value can be either a session_id string or a session GlobalID. Only traces belonging to the specified sessions will be returned.
         /// </param>
         /// <param name="error">
-        /// Filter by trace error status. If true, only return traces that contain at least one span with `status_code == ERROR`. If false, only return traces with no errored spans. If omitted, traces are not filtered by error status. Matches the error indicator shown in the UI.
+        /// Deprecated: use `filter=error_count &gt; 0` or `filter=error_count == 0`. Filter by trace error status. If true, only return traces that contain at least one span with `status_code == ERROR`. If false, only return traces with no errored spans. If omitted, traces are not filtered by error status.
         /// </param>
         /// <param name="minLatencyMs">
-        /// Inclusive lower bound on trace latency in milliseconds.
+        /// Inclusive lower bound on trace latency in milliseconds. Deprecated: use `filter=latency_ms &gt;= N`.
         /// </param>
         /// <param name="maxLatencyMs">
-        /// Inclusive upper bound on trace latency in milliseconds.
+        /// Inclusive upper bound on trace latency in milliseconds. Deprecated: use `filter=latency_ms &lt;= N`.
+        /// </param>
+        /// <param name="filter">
+        /// Trace filter expression, as documented at https://arize.com/docs/phoenix/tracing/how-to-tracing/filter-expressions. Combined with other filters using AND. Empty expressions do not filter. Invalid expressions return 400.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -124,6 +133,7 @@ namespace Phoenix
             bool? error = default,
             double? minLatencyMs = default,
             double? maxLatencyMs = default,
+            string? filter = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

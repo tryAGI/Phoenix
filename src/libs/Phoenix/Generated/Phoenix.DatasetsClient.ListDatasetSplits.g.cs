@@ -3,11 +3,11 @@
 
 namespace Phoenix
 {
-    public partial class SessionsClient
+    public partial class DatasetsClient
     {
 
 
-        private static readonly global::Phoenix.EndPointSecurityRequirement s_ListProjectSessionsSecurityRequirement0 =
+        private static readonly global::Phoenix.EndPointSecurityRequirement s_ListDatasetSplitsSecurityRequirement0 =
             new global::Phoenix.EndPointSecurityRequirement
             {
                 Authorizations = new global::Phoenix.EndPointAuthorizationRequirement[]
@@ -21,72 +21,57 @@ namespace Phoenix
                     },
                 },
             };
-        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_ListProjectSessionsSecurityRequirements =
+        private static readonly global::Phoenix.EndPointSecurityRequirement[] s_ListDatasetSplitsSecurityRequirements =
             new global::Phoenix.EndPointSecurityRequirement[]
-            {                s_ListProjectSessionsSecurityRequirement0,
+            {                s_ListDatasetSplitsSecurityRequirement0,
             };
-        partial void PrepareListProjectSessionsArguments(
+        partial void PrepareListDatasetSplitsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string projectIdentifier,
+            ref string datasetIdentifier,
             ref string? cursor,
-            ref int? limit,
-            ref global::Phoenix.ListProjectSessionsOrder? order,
-            ref string? filter);
-        partial void PrepareListProjectSessionsRequest(
+            ref int? limit);
+        partial void PrepareListDatasetSplitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string projectIdentifier,
+            string datasetIdentifier,
             string? cursor,
-            int? limit,
-            global::Phoenix.ListProjectSessionsOrder? order,
-            string? filter);
-        partial void ProcessListProjectSessionsResponse(
+            int? limit);
+        partial void ProcessListDatasetSplitsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListProjectSessionsResponseContent(
+        partial void ProcessListDatasetSplitsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List sessions for a project
+        /// List dataset splits
         /// </summary>
-        /// <param name="projectIdentifier">
-        /// The project identifier: either project ID or project name.
+        /// <param name="datasetIdentifier">
+        /// The dataset identifier: either dataset ID or dataset name.
         /// </param>
         /// <param name="cursor">
-        /// Cursor for pagination (session ID)
+        /// Cursor for pagination
         /// </param>
         /// <param name="limit">
-        /// The max number of sessions to return at a time.<br/>
-        /// Default Value: 100
-        /// </param>
-        /// <param name="order">
-        /// Sort order by ID: 'asc' (ascending) or 'desc' (descending).<br/>
-        /// Default Value: asc
-        /// </param>
-        /// <param name="filter">
-        /// Session filter expression, as documented at https://arize.com/docs/phoenix/tracing/how-to-tracing/filter-expressions. Empty expressions do not filter. Invalid expressions return 400.
+        /// The max number of dataset splits to return at a time.<br/>
+        /// Default Value: 10
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.GetSessionsResponseBody> ListProjectSessionsAsync(
-            string projectIdentifier,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.ListDatasetSplitsResponseBody> ListDatasetSplitsAsync(
+            string datasetIdentifier,
             string? cursor = default,
             int? limit = default,
-            global::Phoenix.ListProjectSessionsOrder? order = default,
-            string? filter = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListProjectSessionsAsResponseAsync(
-                projectIdentifier: projectIdentifier,
+            var __response = await ListDatasetSplitsAsResponseAsync(
+                datasetIdentifier: datasetIdentifier,
                 cursor: cursor,
                 limit: limit,
-                order: order,
-                filter: filter,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -94,52 +79,41 @@ namespace Phoenix
             return __response.Body;
         }
         /// <summary>
-        /// List sessions for a project
+        /// List dataset splits
         /// </summary>
-        /// <param name="projectIdentifier">
-        /// The project identifier: either project ID or project name.
+        /// <param name="datasetIdentifier">
+        /// The dataset identifier: either dataset ID or dataset name.
         /// </param>
         /// <param name="cursor">
-        /// Cursor for pagination (session ID)
+        /// Cursor for pagination
         /// </param>
         /// <param name="limit">
-        /// The max number of sessions to return at a time.<br/>
-        /// Default Value: 100
-        /// </param>
-        /// <param name="order">
-        /// Sort order by ID: 'asc' (ascending) or 'desc' (descending).<br/>
-        /// Default Value: asc
-        /// </param>
-        /// <param name="filter">
-        /// Session filter expression, as documented at https://arize.com/docs/phoenix/tracing/how-to-tracing/filter-expressions. Empty expressions do not filter. Invalid expressions return 400.
+        /// The max number of dataset splits to return at a time.<br/>
+        /// Default Value: 10
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetSessionsResponseBody>> ListProjectSessionsAsResponseAsync(
-            string projectIdentifier,
+        public async global::System.Threading.Tasks.Task<global::Phoenix.AutoSDKHttpResponse<global::Phoenix.ListDatasetSplitsResponseBody>> ListDatasetSplitsAsResponseAsync(
+            string datasetIdentifier,
             string? cursor = default,
             int? limit = default,
-            global::Phoenix.ListProjectSessionsOrder? order = default,
-            string? filter = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListProjectSessionsArguments(
+            PrepareListDatasetSplitsArguments(
                 httpClient: HttpClient,
-                projectIdentifier: ref projectIdentifier,
+                datasetIdentifier: ref datasetIdentifier,
                 cursor: ref cursor,
-                limit: ref limit,
-                order: ref order,
-                filter: ref filter);
+                limit: ref limit);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListProjectSessionsSecurityRequirements,
-                operationName: "ListProjectSessionsAsync");
+                securityRequirements: s_ListDatasetSplitsSecurityRequirements,
+                operationName: "ListDatasetSplitsAsync");
 
             using var __timeoutCancellationTokenSource = global::Phoenix.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -159,13 +133,11 @@ namespace Phoenix
             {
 
                             var __pathBuilder = new global::Phoenix.PathBuilder(
-                                path: $"/v1/projects/{projectIdentifier}/sessions",
+                                path: $"/v1/datasets/{datasetIdentifier}/splits",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("order", order?.ToValueString())
-                                .AddOptionalParameter("filter", filter)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -204,14 +176,12 @@ namespace Phoenix
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListProjectSessionsRequest(
+                PrepareListDatasetSplitsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier!,
+                    datasetIdentifier: datasetIdentifier!,
                     cursor: cursor,
-                    limit: limit,
-                    order: order,
-                    filter: filter);
+                    limit: limit);
 
                 return __httpRequest;
             }
@@ -228,9 +198,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListProjectSessions",
-                                methodName: "ListProjectSessionsAsync",
-                                pathTemplate: "$\"/v1/projects/{projectIdentifier}/sessions\"",
+                                operationId: "ListDatasetSplits",
+                                methodName: "ListDatasetSplitsAsync",
+                                pathTemplate: "$\"/v1/datasets/{datasetIdentifier}/splits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,9 +232,9 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListProjectSessions",
-                                methodName: "ListProjectSessionsAsync",
-                                pathTemplate: "$\"/v1/projects/{projectIdentifier}/sessions\"",
+                                operationId: "ListDatasetSplits",
+                                methodName: "ListDatasetSplitsAsync",
+                                pathTemplate: "$\"/v1/datasets/{datasetIdentifier}/splits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -303,9 +273,9 @@ namespace Phoenix
                         await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListProjectSessions",
-                                methodName: "ListProjectSessionsAsync",
-                                pathTemplate: "$\"/v1/projects/{projectIdentifier}/sessions\"",
+                                operationId: "ListDatasetSplits",
+                                methodName: "ListDatasetSplitsAsync",
+                                pathTemplate: "$\"/v1/datasets/{datasetIdentifier}/splits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -343,7 +313,7 @@ namespace Phoenix
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListProjectSessionsResponse(
+                ProcessListDatasetSplitsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -351,9 +321,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListProjectSessions",
-                                methodName: "ListProjectSessionsAsync",
-                                pathTemplate: "$\"/v1/projects/{projectIdentifier}/sessions\"",
+                                operationId: "ListDatasetSplits",
+                                methodName: "ListDatasetSplitsAsync",
+                                pathTemplate: "$\"/v1/datasets/{datasetIdentifier}/splits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -373,9 +343,9 @@ namespace Phoenix
                     await global::Phoenix.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Phoenix.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListProjectSessions",
-                                methodName: "ListProjectSessionsAsync",
-                                pathTemplate: "$\"/v1/projects/{projectIdentifier}/sessions\"",
+                                operationId: "ListDatasetSplits",
+                                methodName: "ListDatasetSplitsAsync",
+                                pathTemplate: "$\"/v1/datasets/{datasetIdentifier}/splits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -427,44 +397,7 @@ namespace Phoenix
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Bad Request
-                            if ((int)__response.StatusCode == 400)
-                            {
-                                string? __content_400 = null;
-                                global::System.Exception? __exception_400 = null;
-                                string? __value_400 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_400, typeof(string), JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_400 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_400, typeof(string), JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_400 = __ex;
-                                }
-
-
-                                throw global::Phoenix.ApiException<string>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_400,
-                                    responseBody: __content_400,
-                                    responseObject: __value_400,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Not Found
+                            // Dataset not found
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -501,7 +434,7 @@ namespace Phoenix
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Unprocessable Entity
+                            // Invalid request
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -551,7 +484,7 @@ namespace Phoenix
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListProjectSessionsResponseContent(
+                                ProcessListDatasetSplitsResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -560,9 +493,9 @@ namespace Phoenix
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Phoenix.GetSessionsResponseBody.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Phoenix.ListDatasetSplitsResponseBody.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetSessionsResponseBody>(
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.ListDatasetSplitsResponseBody>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -592,9 +525,9 @@ namespace Phoenix
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Phoenix.GetSessionsResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Phoenix.ListDatasetSplitsResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.GetSessionsResponseBody>(
+                                    return new global::Phoenix.AutoSDKHttpResponse<global::Phoenix.ListDatasetSplitsResponseBody>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Phoenix.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

@@ -21,6 +21,9 @@ namespace Phoenix
         /// Sort order by ID: 'asc' (ascending) or 'desc' (descending).<br/>
         /// Default Value: asc
         /// </param>
+        /// <param name="filter">
+        /// Session filter expression, as documented at https://arize.com/docs/phoenix/tracing/how-to-tracing/filter-expressions. Empty expressions do not filter. Invalid expressions return 400.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -29,6 +32,7 @@ namespace Phoenix
             string? cursor = default,
             int? limit = default,
             global::Phoenix.ListProjectSessionsOrder? order = default,
+            string? filter = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -48,6 +52,9 @@ namespace Phoenix
         /// Sort order by ID: 'asc' (ascending) or 'desc' (descending).<br/>
         /// Default Value: asc
         /// </param>
+        /// <param name="filter">
+        /// Session filter expression, as documented at https://arize.com/docs/phoenix/tracing/how-to-tracing/filter-expressions. Empty expressions do not filter. Invalid expressions return 400.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -56,6 +63,7 @@ namespace Phoenix
             string? cursor = default,
             int? limit = default,
             global::Phoenix.ListProjectSessionsOrder? order = default,
+            string? filter = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
