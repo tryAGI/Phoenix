@@ -338,6 +338,8 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.DatasetExample>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListDatasetExamplesResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListDatasetLabelsForDatasetResponseBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListDatasetSplitsResponseBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.DatasetSplit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListDatasetVersionsResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.DatasetVersion>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListDatasetsResponseBody))]
@@ -512,8 +514,6 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SessionAnnotationAnnotatorKind), TypeInfoPropertyName = "SessionAnnotationAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SessionAnnotationDataAnnotatorKind), TypeInfoPropertyName = "SessionAnnotationDataAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SessionAnnotationsResponseBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.SessionAnnotation>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.SessionTraceData>))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -542,6 +542,8 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesToolOutputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesDynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>>), TypeInfoPropertyName = "StepStartUIPart_6acc55c7ea28c3c2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>>), TypeInfoPropertyName = "StepStartUIPart_5ccc90de5246b03f")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.SessionAnnotation>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.SessionTraceData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SessionTraceData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SetDatasetLabelsForDatasetResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SetDatasetLabelsRequestBody))]
@@ -802,6 +804,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.PhoenixUIMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.AgentSessionSummary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.DatasetExample>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.DatasetSplit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.DatasetVersion>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.Dataset>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.ExperimentRun>))]
