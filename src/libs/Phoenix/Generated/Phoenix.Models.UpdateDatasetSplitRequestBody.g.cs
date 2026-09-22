@@ -33,13 +33,13 @@ namespace Phoenix
         public object? Metadata { get; set; }
 
         /// <summary>
-        /// Dataset example IDs (GlobalIDs) to add to the split. Each example must belong to this dataset. Adding an example already in the split is a no-op.
+        /// Dataset example identifiers (GlobalIDs or user-provided IDs) to add to the split. Each example must belong to this dataset. Adding an example already in the split is a no-op.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_example_ids")]
         public global::System.Collections.Generic.IList<string>? AddExampleIds { get; set; }
 
         /// <summary>
-        /// Dataset example IDs (GlobalIDs) to remove from the split.
+        /// Dataset example identifiers (GlobalIDs or user-provided IDs) to remove from the split.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("remove_example_ids")]
         public global::System.Collections.Generic.IList<string>? RemoveExampleIds { get; set; }
@@ -66,10 +66,10 @@ namespace Phoenix
         /// New JSON metadata that replaces the existing metadata.
         /// </param>
         /// <param name="addExampleIds">
-        /// Dataset example IDs (GlobalIDs) to add to the split. Each example must belong to this dataset. Adding an example already in the split is a no-op.
+        /// Dataset example identifiers (GlobalIDs or user-provided IDs) to add to the split. Each example must belong to this dataset. Adding an example already in the split is a no-op.
         /// </param>
         /// <param name="removeExampleIds">
-        /// Dataset example IDs (GlobalIDs) to remove from the split.
+        /// Dataset example identifiers (GlobalIDs or user-provided IDs) to remove from the split.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

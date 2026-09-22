@@ -55,7 +55,7 @@ namespace Phoenix
         /// Arbitrary JSON metadata for the split.
         /// </param>
         /// <param name="exampleIds">
-        /// Optional dataset example IDs (GlobalIDs) to seed the split with. Each example must belong to this dataset. Omit to create an empty split.
+        /// Optional dataset example identifiers (GlobalIDs or user-provided IDs) to seed the split with. Each example must belong to this dataset. Omit to create an empty split.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

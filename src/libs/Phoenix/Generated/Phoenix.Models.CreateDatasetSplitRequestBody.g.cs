@@ -34,7 +34,7 @@ namespace Phoenix
         public object? Metadata { get; set; }
 
         /// <summary>
-        /// Optional dataset example IDs (GlobalIDs) to seed the split with. Each example must belong to this dataset. Omit to create an empty split.
+        /// Optional dataset example identifiers (GlobalIDs or user-provided IDs) to seed the split with. Each example must belong to this dataset. Omit to create an empty split.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_ids")]
         public global::System.Collections.Generic.IList<string>? ExampleIds { get; set; }
@@ -61,7 +61,7 @@ namespace Phoenix
         /// Arbitrary JSON metadata for the split.
         /// </param>
         /// <param name="exampleIds">
-        /// Optional dataset example IDs (GlobalIDs) to seed the split with. Each example must belong to this dataset. Omit to create an empty split.
+        /// Optional dataset example identifiers (GlobalIDs or user-provided IDs) to seed the split with. Each example must belong to this dataset. Omit to create an empty split.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

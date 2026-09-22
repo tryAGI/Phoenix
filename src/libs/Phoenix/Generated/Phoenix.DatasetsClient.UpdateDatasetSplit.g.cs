@@ -627,10 +627,10 @@ namespace Phoenix
         /// New JSON metadata that replaces the existing metadata.
         /// </param>
         /// <param name="addExampleIds">
-        /// Dataset example IDs (GlobalIDs) to add to the split. Each example must belong to this dataset. Adding an example already in the split is a no-op.
+        /// Dataset example identifiers (GlobalIDs or user-provided IDs) to add to the split. Each example must belong to this dataset. Adding an example already in the split is a no-op.
         /// </param>
         /// <param name="removeExampleIds">
-        /// Dataset example IDs (GlobalIDs) to remove from the split.
+        /// Dataset example identifiers (GlobalIDs or user-provided IDs) to remove from the split.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
