@@ -74,6 +74,8 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SpansResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, int?>), TypeInfoPropertyName = "AnyOfStringInt322")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpansSort), TypeInfoPropertyName = "GetSpansSort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpansOrder), TypeInfoPropertyName = "GetSpansOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
@@ -87,6 +89,8 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SpanAnnotationDataAnnotatorKind?), TypeInfoPropertyName = "NullableSpanAnnotationDataAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind?), TypeInfoPropertyName = "NullableSpanDocumentAnnotationDataAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpansSort?), TypeInfoPropertyName = "NullableGetSpansSort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpansOrder?), TypeInfoPropertyName = "NullableGetSpansOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.SpanDocumentAnnotationData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.InsertedSpanDocumentAnnotation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.SpanAnnotationData>))]
@@ -190,7 +194,15 @@ namespace Phoenix
 
                     || typeToConvert == typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind)
 
-                    || typeToConvert == typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind?);
+                    || typeToConvert == typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.GetSpansSort)
+
+                    || typeToConvert == typeof(global::Phoenix.GetSpansSort?)
+
+                    || typeToConvert == typeof(global::Phoenix.GetSpansOrder)
+
+                    || typeToConvert == typeof(global::Phoenix.GetSpansOrder?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -235,6 +247,26 @@ namespace Phoenix
                 if (typeToConvert == typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind?))
                 {
                     return new global::Phoenix.JsonConverters.SpanDocumentAnnotationDataAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetSpansSort))
+                {
+                    return new global::Phoenix.JsonConverters.GetSpansSortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetSpansSort?))
+                {
+                    return new global::Phoenix.JsonConverters.GetSpansSortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetSpansOrder))
+                {
+                    return new global::Phoenix.JsonConverters.GetSpansOrderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetSpansOrder?))
+                {
+                    return new global::Phoenix.JsonConverters.GetSpansOrderNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

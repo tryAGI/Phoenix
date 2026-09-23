@@ -631,6 +631,8 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind), TypeInfoPropertyName = "DeleteSessionAnnotationsAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesSort), TypeInfoPropertyName = "ListProjectTracesSort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesOrder), TypeInfoPropertyName = "ListProjectTracesOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpansSort), TypeInfoPropertyName = "GetSpansSort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpansOrder), TypeInfoPropertyName = "GetSpansOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectSessionsOrder), TypeInfoPropertyName = "ListProjectSessionsOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AgentModelSelection?), TypeInfoPropertyName = "NullableAgentModelSelection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AgentModelSelectionDiscriminatorProviderType?), TypeInfoPropertyName = "NullableAgentModelSelectionDiscriminatorProviderType2")]
@@ -762,6 +764,8 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind?), TypeInfoPropertyName = "NullableDeleteSessionAnnotationsAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesSort?), TypeInfoPropertyName = "NullableListProjectTracesSort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesOrder?), TypeInfoPropertyName = "NullableListProjectTracesOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpansSort?), TypeInfoPropertyName = "NullableGetSpansSort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpansOrder?), TypeInfoPropertyName = "NullableGetSpansOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectSessionsOrder?), TypeInfoPropertyName = "NullableListProjectSessionsOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.SessionAnnotationData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.InsertedSessionAnnotation>))]
@@ -1313,6 +1317,14 @@ namespace Phoenix
                     || typeToConvert == typeof(global::Phoenix.ListProjectTracesOrder)
 
                     || typeToConvert == typeof(global::Phoenix.ListProjectTracesOrder?)
+
+                    || typeToConvert == typeof(global::Phoenix.GetSpansSort)
+
+                    || typeToConvert == typeof(global::Phoenix.GetSpansSort?)
+
+                    || typeToConvert == typeof(global::Phoenix.GetSpansOrder)
+
+                    || typeToConvert == typeof(global::Phoenix.GetSpansOrder?)
 
                     || typeToConvert == typeof(global::Phoenix.ListProjectSessionsOrder)
 
@@ -2231,6 +2243,26 @@ namespace Phoenix
                 if (typeToConvert == typeof(global::Phoenix.ListProjectTracesOrder?))
                 {
                     return new global::Phoenix.JsonConverters.ListProjectTracesOrderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetSpansSort))
+                {
+                    return new global::Phoenix.JsonConverters.GetSpansSortJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetSpansSort?))
+                {
+                    return new global::Phoenix.JsonConverters.GetSpansSortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetSpansOrder))
+                {
+                    return new global::Phoenix.JsonConverters.GetSpansOrderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.GetSpansOrder?))
+                {
+                    return new global::Phoenix.JsonConverters.GetSpansOrderNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Phoenix.ListProjectSessionsOrder))
