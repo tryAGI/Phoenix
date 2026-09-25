@@ -12,11 +12,19 @@ namespace Phoenix
         /// The project identifier: either project ID or project name. If using a project name, it cannot contain slash (/), question mark (?), or pound sign (#) characters.
         /// </param>
         /// <param name="cursor">
-        /// Pagination cursor (Span Global ID)
+        /// Pagination cursor: the next_cursor of a previous response with the same sort
         /// </param>
         /// <param name="limit">
         /// Maximum number of spans to return<br/>
         /// Default Value: 100
+        /// </param>
+        /// <param name="sort">
+        /// Sort field. 'id' orders by insertion; 'start_time' orders by when the span started, breaking ties by id.<br/>
+        /// Default Value: id
+        /// </param>
+        /// <param name="order">
+        /// Sort direction<br/>
+        /// Default Value: desc
         /// </param>
         /// <param name="startTime">
         /// Inclusive lower bound time
@@ -52,6 +60,8 @@ namespace Phoenix
             string projectIdentifier,
             string? cursor = default,
             int? limit = default,
+            global::Phoenix.GetSpansSort? sort = default,
+            global::Phoenix.GetSpansOrder? order = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::System.Collections.Generic.IList<string>? traceId = default,
@@ -71,11 +81,19 @@ namespace Phoenix
         /// The project identifier: either project ID or project name. If using a project name, it cannot contain slash (/), question mark (?), or pound sign (#) characters.
         /// </param>
         /// <param name="cursor">
-        /// Pagination cursor (Span Global ID)
+        /// Pagination cursor: the next_cursor of a previous response with the same sort
         /// </param>
         /// <param name="limit">
         /// Maximum number of spans to return<br/>
         /// Default Value: 100
+        /// </param>
+        /// <param name="sort">
+        /// Sort field. 'id' orders by insertion; 'start_time' orders by when the span started, breaking ties by id.<br/>
+        /// Default Value: id
+        /// </param>
+        /// <param name="order">
+        /// Sort direction<br/>
+        /// Default Value: desc
         /// </param>
         /// <param name="startTime">
         /// Inclusive lower bound time
@@ -111,6 +129,8 @@ namespace Phoenix
             string projectIdentifier,
             string? cursor = default,
             int? limit = default,
+            global::Phoenix.GetSpansSort? sort = default,
+            global::Phoenix.GetSpansOrder? order = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::System.Collections.Generic.IList<string>? traceId = default,

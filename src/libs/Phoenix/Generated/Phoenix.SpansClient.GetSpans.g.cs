@@ -30,6 +30,8 @@ namespace Phoenix
             ref string projectIdentifier,
             ref string? cursor,
             ref int? limit,
+            ref global::Phoenix.GetSpansSort? sort,
+            ref global::Phoenix.GetSpansOrder? order,
             global::System.DateTime? startTime,
             global::System.DateTime? endTime,
             global::System.Collections.Generic.IList<string>? traceId,
@@ -45,6 +47,8 @@ namespace Phoenix
             string projectIdentifier,
             string? cursor,
             int? limit,
+            global::Phoenix.GetSpansSort? sort,
+            global::Phoenix.GetSpansOrder? order,
             global::System.DateTime? startTime,
             global::System.DateTime? endTime,
             global::System.Collections.Generic.IList<string>? traceId,
@@ -71,11 +75,19 @@ namespace Phoenix
         /// The project identifier: either project ID or project name. If using a project name, it cannot contain slash (/), question mark (?), or pound sign (#) characters.
         /// </param>
         /// <param name="cursor">
-        /// Pagination cursor (Span Global ID)
+        /// Pagination cursor: the next_cursor of a previous response with the same sort
         /// </param>
         /// <param name="limit">
         /// Maximum number of spans to return<br/>
         /// Default Value: 100
+        /// </param>
+        /// <param name="sort">
+        /// Sort field. 'id' orders by insertion; 'start_time' orders by when the span started, breaking ties by id.<br/>
+        /// Default Value: id
+        /// </param>
+        /// <param name="order">
+        /// Sort direction<br/>
+        /// Default Value: desc
         /// </param>
         /// <param name="startTime">
         /// Inclusive lower bound time
@@ -111,6 +123,8 @@ namespace Phoenix
             string projectIdentifier,
             string? cursor = default,
             int? limit = default,
+            global::Phoenix.GetSpansSort? sort = default,
+            global::Phoenix.GetSpansOrder? order = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::System.Collections.Generic.IList<string>? traceId = default,
@@ -127,6 +141,8 @@ namespace Phoenix
                 projectIdentifier: projectIdentifier,
                 cursor: cursor,
                 limit: limit,
+                sort: sort,
+                order: order,
                 startTime: startTime,
                 endTime: endTime,
                 traceId: traceId,
@@ -150,11 +166,19 @@ namespace Phoenix
         /// The project identifier: either project ID or project name. If using a project name, it cannot contain slash (/), question mark (?), or pound sign (#) characters.
         /// </param>
         /// <param name="cursor">
-        /// Pagination cursor (Span Global ID)
+        /// Pagination cursor: the next_cursor of a previous response with the same sort
         /// </param>
         /// <param name="limit">
         /// Maximum number of spans to return<br/>
         /// Default Value: 100
+        /// </param>
+        /// <param name="sort">
+        /// Sort field. 'id' orders by insertion; 'start_time' orders by when the span started, breaking ties by id.<br/>
+        /// Default Value: id
+        /// </param>
+        /// <param name="order">
+        /// Sort direction<br/>
+        /// Default Value: desc
         /// </param>
         /// <param name="startTime">
         /// Inclusive lower bound time
@@ -190,6 +214,8 @@ namespace Phoenix
             string projectIdentifier,
             string? cursor = default,
             int? limit = default,
+            global::Phoenix.GetSpansSort? sort = default,
+            global::Phoenix.GetSpansOrder? order = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::System.Collections.Generic.IList<string>? traceId = default,
@@ -209,6 +235,8 @@ namespace Phoenix
                 projectIdentifier: ref projectIdentifier,
                 cursor: ref cursor,
                 limit: ref limit,
+                sort: ref sort,
+                order: ref order,
                 startTime: startTime,
                 endTime: endTime,
                 traceId: traceId,
@@ -248,6 +276,8 @@ namespace Phoenix
                             __pathBuilder
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("sort", sort?.ToValueString())
+                                .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("start_time", startTime?.ToString())
                                 .AddOptionalParameter("end_time", endTime?.ToString())
                                 .AddOptionalParameter("trace_id", traceId, delimiter: ",", explode: true)
@@ -301,6 +331,8 @@ namespace Phoenix
                     projectIdentifier: projectIdentifier!,
                     cursor: cursor,
                     limit: limit,
+                    sort: sort,
+                    order: order,
                     startTime: startTime,
                     endTime: endTime,
                     traceId: traceId,
