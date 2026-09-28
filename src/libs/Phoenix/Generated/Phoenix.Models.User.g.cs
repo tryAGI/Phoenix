@@ -47,8 +47,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.LocalUserData PickLocal() => IsLocal
-            ? Local!
+        public global::Phoenix.LocalUserData PickLocal() => Local is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.OAuth2UserData PickOauth2() => IsOauth2
-            ? Oauth2!
+        public global::Phoenix.OAuth2UserData PickOauth2() => Oauth2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.LDAPUserData PickLdap() => IsLdap
-            ? Ldap!
+        public global::Phoenix.LDAPUserData PickLdap() => Ldap is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ldap' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsLocal && local != null)
+            if (Local is { } __value0 && local != null)
             {
-                return local(Local!);
+                return local(__value0);
             }
-            else if (IsOauth2 && oauth2 != null)
+            else if (Oauth2 is { } __value1 && oauth2 != null)
             {
-                return oauth2(Oauth2!);
+                return oauth2(__value1);
             }
-            else if (IsLdap && ldap != null)
+            else if (Ldap is { } __value2 && ldap != null)
             {
-                return ldap(Ldap!);
+                return ldap(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsLocal)
+            if (Local is { } __value0)
             {
-                local?.Invoke(Local!);
+                local?.Invoke(__value0);
             }
-            else if (IsOauth2)
+            else if (Oauth2 is { } __value1)
             {
-                oauth2?.Invoke(Oauth2!);
+                oauth2?.Invoke(__value1);
             }
-            else if (IsLdap)
+            else if (Ldap is { } __value2)
             {
-                ldap?.Invoke(Ldap!);
+                ldap?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsLocal)
+            if (Local is { } __value0)
             {
-                local?.Invoke(Local!);
+                local?.Invoke(__value0);
             }
-            else if (IsOauth2)
+            else if (Oauth2 is { } __value1)
             {
-                oauth2?.Invoke(Oauth2!);
+                oauth2?.Invoke(__value1);
             }
-            else if (IsLdap)
+            else if (Ldap is { } __value2)
             {
-                ldap?.Invoke(Ldap!);
+                ldap?.Invoke(__value2);
             }
         }
 

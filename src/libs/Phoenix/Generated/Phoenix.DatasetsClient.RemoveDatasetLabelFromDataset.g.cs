@@ -156,8 +156,8 @@ namespace Phoenix
                 PrepareRemoveDatasetLabelFromDatasetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetIdentifier: datasetIdentifier!,
-                    labelId: labelId!);
+                    datasetIdentifier: datasetIdentifier,
+                    labelId: labelId);
 
                 return __httpRequest;
             }
@@ -179,7 +179,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/datasets/{datasetIdentifier}/labels/{labelId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -213,7 +213,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/datasets/{datasetIdentifier}/labels/{labelId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -254,7 +254,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/datasets/{datasetIdentifier}/labels/{labelId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -302,7 +302,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/datasets/{datasetIdentifier}/labels/{labelId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -324,7 +324,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/datasets/{datasetIdentifier}/labels/{labelId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

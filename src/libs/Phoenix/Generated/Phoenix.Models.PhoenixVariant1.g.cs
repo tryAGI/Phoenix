@@ -47,8 +47,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PhoenixAssistantMessageMetadata PickAssistant() => IsAssistant
-            ? Assistant!
+        public global::Phoenix.PhoenixAssistantMessageMetadata PickAssistant() => Assistant is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PhoenixUserMessageMetadata PickUser() => IsUser
-            ? User!
+        public global::Phoenix.PhoenixUserMessageMetadata PickUser() => User is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -186,13 +186,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsAssistant && assistant != null)
+            if (Assistant is { } __value0 && assistant != null)
             {
-                return assistant(Assistant!);
+                return assistant(__value0);
             }
-            else if (IsUser && user != null)
+            else if (User is { } __value1 && user != null)
             {
-                return user(User!);
+                return user(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsAssistant)
+            if (Assistant is { } __value0)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value0);
             }
-            else if (IsUser)
+            else if (User is { } __value1)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsAssistant)
+            if (Assistant is { } __value0)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value0);
             }
-            else if (IsUser)
+            else if (User is { } __value1)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value1);
             }
         }
 

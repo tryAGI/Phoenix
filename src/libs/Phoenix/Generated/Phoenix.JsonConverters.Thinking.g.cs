@@ -68,19 +68,19 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAnthropicThinkingConfigDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAnthropicThinkingConfigDisabled?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptAnthropicThinkingConfigDisabled).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDisabled(), typeInfo);
             }
             else if (value.IsEnabled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAnthropicThinkingConfigEnabled?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptAnthropicThinkingConfigEnabled).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enabled!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnabled(), typeInfo);
             }
             else if (value.IsAdaptive)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptive), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptAnthropicThinkingConfigAdaptive?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptAnthropicThinkingConfigAdaptive).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Adaptive!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAdaptive(), typeInfo);
             }
         }
     }

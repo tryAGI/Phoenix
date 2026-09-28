@@ -47,8 +47,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.CustomProviderModelSelection PickCustom() => IsCustom
-            ? Custom!
+        public global::Phoenix.CustomProviderModelSelection PickCustom() => Custom is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.BuiltInProviderModelSelection PickBuiltin() => IsBuiltin
-            ? Builtin!
+        public global::Phoenix.BuiltInProviderModelSelection PickBuiltin() => Builtin is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Builtin' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -188,13 +188,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsCustom && custom != null)
+            if (Custom is { } __value0 && custom != null)
             {
-                return custom(Custom!);
+                return custom(__value0);
             }
-            else if (IsBuiltin && builtin != null)
+            else if (Builtin is { } __value1 && builtin != null)
             {
-                return builtin(Builtin!);
+                return builtin(__value1);
             }
 
             return default(TResult);
@@ -214,13 +214,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsCustom)
+            if (Custom is { } __value0)
             {
-                custom?.Invoke(Custom!);
+                custom?.Invoke(__value0);
             }
-            else if (IsBuiltin)
+            else if (Builtin is { } __value1)
             {
-                builtin?.Invoke(Builtin!);
+                builtin?.Invoke(__value1);
             }
         }
 
@@ -237,13 +237,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsCustom)
+            if (Custom is { } __value0)
             {
-                custom?.Invoke(Custom!);
+                custom?.Invoke(__value0);
             }
-            else if (IsBuiltin)
+            else if (Builtin is { } __value1)
             {
-                builtin?.Invoke(Builtin!);
+                builtin?.Invoke(__value1);
             }
         }
 

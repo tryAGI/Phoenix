@@ -47,8 +47,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.AppContext PickApp() => IsApp
-            ? App!
+        public global::Phoenix.AppContext PickApp() => App is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'App' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ProjectUIContext PickProject() => IsProject
-            ? Project!
+        public global::Phoenix.ProjectUIContext PickProject() => Project is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Project' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.TraceUIContext PickTrace() => IsTrace
-            ? Trace!
+        public global::Phoenix.TraceUIContext PickTrace() => Trace is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Trace' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.SessionUIContext PickSession() => IsSession
-            ? Session!
+        public global::Phoenix.SessionUIContext PickSession() => Session is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Session' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PromptUIContext PickPrompt() => IsPrompt
-            ? Prompt!
+        public global::Phoenix.PromptUIContext PickPrompt() => Prompt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Prompt' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PromptVersionUIContext PickPromptVersion() => IsPromptVersion
-            ? PromptVersion!
+        public global::Phoenix.PromptVersionUIContext PickPromptVersion() => PromptVersion is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PromptVersion' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.SpanUIContext PickSpan() => IsSpan
-            ? Span!
+        public global::Phoenix.SpanUIContext PickSpan() => Span is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Span' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PlaygroundUIContext PickPlayground() => IsPlayground
-            ? Playground!
+        public global::Phoenix.PlaygroundUIContext PickPlayground() => Playground is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Playground' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.CodeEvaluatorUIContext PickCodeEvaluator() => IsCodeEvaluator
-            ? CodeEvaluator!
+        public global::Phoenix.CodeEvaluatorUIContext PickCodeEvaluator() => CodeEvaluator is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeEvaluator' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.LlmEvaluatorUIContext PickLlmEvaluator() => IsLlmEvaluator
-            ? LlmEvaluator!
+        public global::Phoenix.LlmEvaluatorUIContext PickLlmEvaluator() => LlmEvaluator is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LlmEvaluator' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DatasetUIContext PickDataset() => IsDataset
-            ? Dataset!
+        public global::Phoenix.DatasetUIContext PickDataset() => Dataset is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dataset' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.GraphQLContext PickGraphql() => IsGraphql
-            ? Graphql!
+        public global::Phoenix.GraphQLContext PickGraphql() => Graphql is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Graphql' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.WebAccessContext PickWebAccess() => IsWebAccess
-            ? WebAccess!
+        public global::Phoenix.WebAccessContext PickWebAccess() => WebAccess is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebAccess' but the value was {ToString()}.");
 
         /// <summary>
@@ -528,8 +528,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.SubagentsContext PickSubagents() => IsSubagents
-            ? Subagents!
+        public global::Phoenix.SubagentsContext PickSubagents() => Subagents is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Subagents' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -965,61 +965,61 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsApp && app != null)
+            if (App is { } __value0 && app != null)
             {
-                return app(App!);
+                return app(__value0);
             }
-            else if (IsProject && project != null)
+            else if (Project is { } __value1 && project != null)
             {
-                return project(Project!);
+                return project(__value1);
             }
-            else if (IsTrace && trace != null)
+            else if (Trace is { } __value2 && trace != null)
             {
-                return trace(Trace!);
+                return trace(__value2);
             }
-            else if (IsSession && session != null)
+            else if (Session is { } __value3 && session != null)
             {
-                return session(Session!);
+                return session(__value3);
             }
-            else if (IsPrompt && prompt != null)
+            else if (Prompt is { } __value4 && prompt != null)
             {
-                return prompt(Prompt!);
+                return prompt(__value4);
             }
-            else if (IsPromptVersion && promptVersion != null)
+            else if (PromptVersion is { } __value5 && promptVersion != null)
             {
-                return promptVersion(PromptVersion!);
+                return promptVersion(__value5);
             }
-            else if (IsSpan && span != null)
+            else if (Span is { } __value6 && span != null)
             {
-                return span(Span!);
+                return span(__value6);
             }
-            else if (IsPlayground && playground != null)
+            else if (Playground is { } __value7 && playground != null)
             {
-                return playground(Playground!);
+                return playground(__value7);
             }
-            else if (IsCodeEvaluator && codeEvaluator != null)
+            else if (CodeEvaluator is { } __value8 && codeEvaluator != null)
             {
-                return codeEvaluator(CodeEvaluator!);
+                return codeEvaluator(__value8);
             }
-            else if (IsLlmEvaluator && llmEvaluator != null)
+            else if (LlmEvaluator is { } __value9 && llmEvaluator != null)
             {
-                return llmEvaluator(LlmEvaluator!);
+                return llmEvaluator(__value9);
             }
-            else if (IsDataset && dataset != null)
+            else if (Dataset is { } __value10 && dataset != null)
             {
-                return dataset(Dataset!);
+                return dataset(__value10);
             }
-            else if (IsGraphql && graphql != null)
+            else if (Graphql is { } __value11 && graphql != null)
             {
-                return graphql(Graphql!);
+                return graphql(__value11);
             }
-            else if (IsWebAccess && webAccess != null)
+            else if (WebAccess is { } __value12 && webAccess != null)
             {
-                return webAccess(WebAccess!);
+                return webAccess(__value12);
             }
-            else if (IsSubagents && subagents != null)
+            else if (Subagents is { } __value13 && subagents != null)
             {
-                return subagents(Subagents!);
+                return subagents(__value13);
             }
 
             return default(TResult);
@@ -1063,61 +1063,61 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsApp)
+            if (App is { } __value0)
             {
-                app?.Invoke(App!);
+                app?.Invoke(__value0);
             }
-            else if (IsProject)
+            else if (Project is { } __value1)
             {
-                project?.Invoke(Project!);
+                project?.Invoke(__value1);
             }
-            else if (IsTrace)
+            else if (Trace is { } __value2)
             {
-                trace?.Invoke(Trace!);
+                trace?.Invoke(__value2);
             }
-            else if (IsSession)
+            else if (Session is { } __value3)
             {
-                session?.Invoke(Session!);
+                session?.Invoke(__value3);
             }
-            else if (IsPrompt)
+            else if (Prompt is { } __value4)
             {
-                prompt?.Invoke(Prompt!);
+                prompt?.Invoke(__value4);
             }
-            else if (IsPromptVersion)
+            else if (PromptVersion is { } __value5)
             {
-                promptVersion?.Invoke(PromptVersion!);
+                promptVersion?.Invoke(__value5);
             }
-            else if (IsSpan)
+            else if (Span is { } __value6)
             {
-                span?.Invoke(Span!);
+                span?.Invoke(__value6);
             }
-            else if (IsPlayground)
+            else if (Playground is { } __value7)
             {
-                playground?.Invoke(Playground!);
+                playground?.Invoke(__value7);
             }
-            else if (IsCodeEvaluator)
+            else if (CodeEvaluator is { } __value8)
             {
-                codeEvaluator?.Invoke(CodeEvaluator!);
+                codeEvaluator?.Invoke(__value8);
             }
-            else if (IsLlmEvaluator)
+            else if (LlmEvaluator is { } __value9)
             {
-                llmEvaluator?.Invoke(LlmEvaluator!);
+                llmEvaluator?.Invoke(__value9);
             }
-            else if (IsDataset)
+            else if (Dataset is { } __value10)
             {
-                dataset?.Invoke(Dataset!);
+                dataset?.Invoke(__value10);
             }
-            else if (IsGraphql)
+            else if (Graphql is { } __value11)
             {
-                graphql?.Invoke(Graphql!);
+                graphql?.Invoke(__value11);
             }
-            else if (IsWebAccess)
+            else if (WebAccess is { } __value12)
             {
-                webAccess?.Invoke(WebAccess!);
+                webAccess?.Invoke(__value12);
             }
-            else if (IsSubagents)
+            else if (Subagents is { } __value13)
             {
-                subagents?.Invoke(Subagents!);
+                subagents?.Invoke(__value13);
             }
         }
 
@@ -1146,61 +1146,61 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsApp)
+            if (App is { } __value0)
             {
-                app?.Invoke(App!);
+                app?.Invoke(__value0);
             }
-            else if (IsProject)
+            else if (Project is { } __value1)
             {
-                project?.Invoke(Project!);
+                project?.Invoke(__value1);
             }
-            else if (IsTrace)
+            else if (Trace is { } __value2)
             {
-                trace?.Invoke(Trace!);
+                trace?.Invoke(__value2);
             }
-            else if (IsSession)
+            else if (Session is { } __value3)
             {
-                session?.Invoke(Session!);
+                session?.Invoke(__value3);
             }
-            else if (IsPrompt)
+            else if (Prompt is { } __value4)
             {
-                prompt?.Invoke(Prompt!);
+                prompt?.Invoke(__value4);
             }
-            else if (IsPromptVersion)
+            else if (PromptVersion is { } __value5)
             {
-                promptVersion?.Invoke(PromptVersion!);
+                promptVersion?.Invoke(__value5);
             }
-            else if (IsSpan)
+            else if (Span is { } __value6)
             {
-                span?.Invoke(Span!);
+                span?.Invoke(__value6);
             }
-            else if (IsPlayground)
+            else if (Playground is { } __value7)
             {
-                playground?.Invoke(Playground!);
+                playground?.Invoke(__value7);
             }
-            else if (IsCodeEvaluator)
+            else if (CodeEvaluator is { } __value8)
             {
-                codeEvaluator?.Invoke(CodeEvaluator!);
+                codeEvaluator?.Invoke(__value8);
             }
-            else if (IsLlmEvaluator)
+            else if (LlmEvaluator is { } __value9)
             {
-                llmEvaluator?.Invoke(LlmEvaluator!);
+                llmEvaluator?.Invoke(__value9);
             }
-            else if (IsDataset)
+            else if (Dataset is { } __value10)
             {
-                dataset?.Invoke(Dataset!);
+                dataset?.Invoke(__value10);
             }
-            else if (IsGraphql)
+            else if (Graphql is { } __value11)
             {
-                graphql?.Invoke(Graphql!);
+                graphql?.Invoke(__value11);
             }
-            else if (IsWebAccess)
+            else if (WebAccess is { } __value12)
             {
-                webAccess?.Invoke(WebAccess!);
+                webAccess?.Invoke(__value12);
             }
-            else if (IsSubagents)
+            else if (Subagents is { } __value13)
             {
-                subagents?.Invoke(Subagents!);
+                subagents?.Invoke(__value13);
             }
         }
 

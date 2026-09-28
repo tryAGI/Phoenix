@@ -47,8 +47,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.LegacyChatSubmitMessage PickSubmitMessage() => IsSubmitMessage
-            ? SubmitMessage!
+        public global::Phoenix.LegacyChatSubmitMessage PickSubmitMessage() => SubmitMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SubmitMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.LegacyChatRegenerateMessage PickRegenerateMessage() => IsRegenerateMessage
-            ? RegenerateMessage!
+        public global::Phoenix.LegacyChatRegenerateMessage PickRegenerateMessage() => RegenerateMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RegenerateMessage' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsSubmitMessage && submitMessage != null)
+            if (SubmitMessage is { } __value0 && submitMessage != null)
             {
-                return submitMessage(SubmitMessage!);
+                return submitMessage(__value0);
             }
-            else if (IsRegenerateMessage && regenerateMessage != null)
+            else if (RegenerateMessage is { } __value1 && regenerateMessage != null)
             {
-                return regenerateMessage(RegenerateMessage!);
+                return regenerateMessage(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsSubmitMessage)
+            if (SubmitMessage is { } __value0)
             {
-                submitMessage?.Invoke(SubmitMessage!);
+                submitMessage?.Invoke(__value0);
             }
-            else if (IsRegenerateMessage)
+            else if (RegenerateMessage is { } __value1)
             {
-                regenerateMessage?.Invoke(RegenerateMessage!);
+                regenerateMessage?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsSubmitMessage)
+            if (SubmitMessage is { } __value0)
             {
-                submitMessage?.Invoke(SubmitMessage!);
+                submitMessage?.Invoke(__value0);
             }
-            else if (IsRegenerateMessage)
+            else if (RegenerateMessage is { } __value1)
             {
-                regenerateMessage?.Invoke(RegenerateMessage!);
+                regenerateMessage?.Invoke(__value1);
             }
         }
 

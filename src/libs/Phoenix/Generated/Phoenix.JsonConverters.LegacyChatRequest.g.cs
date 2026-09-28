@@ -59,13 +59,13 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LegacyChatSubmitMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LegacyChatSubmitMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.LegacyChatSubmitMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SubmitMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSubmitMessage(), typeInfo);
             }
             else if (value.IsRegenerateMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LegacyChatRegenerateMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LegacyChatRegenerateMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.LegacyChatRegenerateMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RegenerateMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRegenerateMessage(), typeInfo);
             }
         }
     }

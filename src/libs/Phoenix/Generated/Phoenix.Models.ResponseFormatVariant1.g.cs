@@ -47,8 +47,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PromptResponseFormatJSONSchema PickJsonSchema() => IsJsonSchema
-            ? JsonSchema!
+        public global::Phoenix.PromptResponseFormatJSONSchema PickJsonSchema() => JsonSchema is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsJsonSchema && jsonSchema != null)
+            if (JsonSchema is { } __value0 && jsonSchema != null)
             {
-                return jsonSchema(JsonSchema!);
+                return jsonSchema(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsJsonSchema)
+            if (JsonSchema is { } __value0)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsJsonSchema)
+            if (JsonSchema is { } __value0)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value0);
             }
         }
 
