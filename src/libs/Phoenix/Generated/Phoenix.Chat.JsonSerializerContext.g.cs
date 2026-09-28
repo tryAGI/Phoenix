@@ -1,19 +1,14 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
-
 namespace Phoenix
 {
     /// <summary>
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>>), TypeInfoPropertyName = "PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart_198866db9addcf54")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>), TypeInfoPropertyName = "PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart_faea56e939e4c398")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.TextUIPart, global::Phoenix.ReasoningUIPart, global::Phoenix.ToolInputStreamingPart, global::Phoenix.ToolInputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesToolOutputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesToolOutputErrorPart, global::Phoenix.ToolApprovalRequestedPart, global::Phoenix.ToolApprovalRespondedPart, global::Phoenix.ToolOutputDeniedPart, global::Phoenix.DynamicToolInputStreamingPart, global::Phoenix.DynamicToolInputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PydanticAiUiVercelAiRequestTypesDynamicToolOutputErrorPart, global::Phoenix.DynamicToolApprovalRequestedPart, global::Phoenix.DynamicToolApprovalRespondedPart, global::Phoenix.DynamicToolOutputDeniedPart, global::Phoenix.SourceUrlUIPart, global::Phoenix.SourceDocumentUIPart, global::Phoenix.FileUIPart, global::Phoenix.DataUIPart, global::Phoenix.StepStartUIPart>>), TypeInfoPropertyName = "StepStartUIPart_9389b9b50c246b69")]
@@ -60,7 +55,9 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CodeEvaluatorUIContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.LlmEvaluatorUIContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DatasetUIContext))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GraphQLContext))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.WebAccessContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SubagentsContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContextDiscriminator))]

@@ -1,19 +1,14 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
-
 namespace Phoenix
 {
     /// <summary>
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>), TypeInfoPropertyName = "IListString_System_Collections_Generic_IList_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>>), TypeInfoPropertyName = "PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart_198866db9addcf54")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>), TypeInfoPropertyName = "PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart_faea56e939e4c398")]
@@ -122,7 +117,9 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CodeEvaluatorUIContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.LlmEvaluatorUIContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DatasetUIContext))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GraphQLContext))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.WebAccessContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SubagentsContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ChatContextDiscriminator))]
@@ -522,10 +519,8 @@ namespace Phoenix
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>), TypeInfoPropertyName = "IListString_System_Collections_Generic_IList_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>>), TypeInfoPropertyName = "PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart_198866db9addcf54")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesToolOutputErrorPart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputAvailablePart, global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart>), TypeInfoPropertyName = "PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolOutputErrorPart_faea56e939e4c398")]
