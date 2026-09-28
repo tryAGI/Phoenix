@@ -156,8 +156,8 @@ namespace Phoenix
                 PrepareUnassignAnnotationConfigFromProjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectIdentifier: projectIdentifier!,
-                    configIdentifier: configIdentifier!);
+                    projectIdentifier: projectIdentifier,
+                    configIdentifier: configIdentifier);
 
                 return __httpRequest;
             }
@@ -179,7 +179,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/projects/{projectIdentifier}/annotation_configs/{configIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -213,7 +213,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/projects/{projectIdentifier}/annotation_configs/{configIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -254,7 +254,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/projects/{projectIdentifier}/annotation_configs/{configIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -302,7 +302,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/projects/{projectIdentifier}/annotation_configs/{configIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -324,7 +324,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/projects/{projectIdentifier}/annotation_configs/{configIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

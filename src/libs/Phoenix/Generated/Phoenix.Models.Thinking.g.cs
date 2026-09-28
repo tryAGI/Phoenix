@@ -47,8 +47,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PromptAnthropicThinkingConfigDisabled PickDisabled() => IsDisabled
-            ? Disabled!
+        public global::Phoenix.PromptAnthropicThinkingConfigDisabled PickDisabled() => Disabled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PromptAnthropicThinkingConfigEnabled PickEnabled() => IsEnabled
-            ? Enabled!
+        public global::Phoenix.PromptAnthropicThinkingConfigEnabled PickEnabled() => Enabled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enabled' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PromptAnthropicThinkingConfigAdaptive PickAdaptive() => IsAdaptive
-            ? Adaptive!
+        public global::Phoenix.PromptAnthropicThinkingConfigAdaptive PickAdaptive() => Adaptive is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Adaptive' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsDisabled && disabled != null)
+            if (Disabled is { } __value0 && disabled != null)
             {
-                return disabled(Disabled!);
+                return disabled(__value0);
             }
-            else if (IsEnabled && enabled != null)
+            else if (Enabled is { } __value1 && enabled != null)
             {
-                return enabled(Enabled!);
+                return enabled(__value1);
             }
-            else if (IsAdaptive && adaptive != null)
+            else if (Adaptive is { } __value2 && adaptive != null)
             {
-                return adaptive(Adaptive!);
+                return adaptive(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsDisabled)
+            if (Disabled is { } __value0)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value0);
             }
-            else if (IsEnabled)
+            else if (Enabled is { } __value1)
             {
-                enabled?.Invoke(Enabled!);
+                enabled?.Invoke(__value1);
             }
-            else if (IsAdaptive)
+            else if (Adaptive is { } __value2)
             {
-                adaptive?.Invoke(Adaptive!);
+                adaptive?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsDisabled)
+            if (Disabled is { } __value0)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value0);
             }
-            else if (IsEnabled)
+            else if (Enabled is { } __value1)
             {
-                enabled?.Invoke(Enabled!);
+                enabled?.Invoke(__value1);
             }
-            else if (IsAdaptive)
+            else if (Adaptive is { } __value2)
             {
-                adaptive?.Invoke(Adaptive!);
+                adaptive?.Invoke(__value2);
             }
         }
 

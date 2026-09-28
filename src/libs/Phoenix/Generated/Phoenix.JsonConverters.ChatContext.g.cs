@@ -167,85 +167,85 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.AppContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.AppContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.AppContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.App!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickApp(), typeInfo);
             }
             else if (value.IsProject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.ProjectUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.ProjectUIContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.ProjectUIContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Project!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProject(), typeInfo);
             }
             else if (value.IsTrace)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.TraceUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.TraceUIContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.TraceUIContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Trace!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTrace(), typeInfo);
             }
             else if (value.IsSession)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SessionUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SessionUIContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.SessionUIContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Session!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSession(), typeInfo);
             }
             else if (value.IsPrompt)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptUIContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptUIContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Prompt!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPrompt(), typeInfo);
             }
             else if (value.IsPromptVersion)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PromptVersionUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PromptVersionUIContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PromptVersionUIContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PromptVersion!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPromptVersion(), typeInfo);
             }
             else if (value.IsSpan)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SpanUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SpanUIContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.SpanUIContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Span!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSpan(), typeInfo);
             }
             else if (value.IsPlayground)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.PlaygroundUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.PlaygroundUIContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.PlaygroundUIContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Playground!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPlayground(), typeInfo);
             }
             else if (value.IsCodeEvaluator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.CodeEvaluatorUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.CodeEvaluatorUIContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.CodeEvaluatorUIContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeEvaluator!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCodeEvaluator(), typeInfo);
             }
             else if (value.IsLlmEvaluator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LlmEvaluatorUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LlmEvaluatorUIContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.LlmEvaluatorUIContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LlmEvaluator!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLlmEvaluator(), typeInfo);
             }
             else if (value.IsDataset)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.DatasetUIContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.DatasetUIContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.DatasetUIContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dataset!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDataset(), typeInfo);
             }
             else if (value.IsGraphql)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.GraphQLContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.GraphQLContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.GraphQLContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Graphql!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGraphql(), typeInfo);
             }
             else if (value.IsWebAccess)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.WebAccessContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.WebAccessContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.WebAccessContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebAccess!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebAccess(), typeInfo);
             }
             else if (value.IsSubagents)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.SubagentsContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.SubagentsContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.SubagentsContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Subagents!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSubagents(), typeInfo);
             }
         }
     }

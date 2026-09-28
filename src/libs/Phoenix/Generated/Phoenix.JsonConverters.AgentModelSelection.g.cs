@@ -59,13 +59,13 @@ namespace Phoenix.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.CustomProviderModelSelection), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.CustomProviderModelSelection?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.CustomProviderModelSelection).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Custom!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCustom(), typeInfo);
             }
             else if (value.IsBuiltin)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.BuiltInProviderModelSelection), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.BuiltInProviderModelSelection?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.BuiltInProviderModelSelection).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Builtin!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBuiltin(), typeInfo);
             }
         }
     }

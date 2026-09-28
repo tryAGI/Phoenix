@@ -47,8 +47,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PromptToolFunction PickFunction() => IsFunction
-            ? Function!
+        public global::Phoenix.PromptToolFunction PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.PromptToolRaw PickRaw() => IsRaw
-            ? Raw!
+        public global::Phoenix.PromptToolRaw PickRaw() => Raw is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Raw' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsFunction && function != null)
+            if (Function is { } __value0 && function != null)
             {
-                return function(Function!);
+                return function(__value0);
             }
-            else if (IsRaw && raw != null)
+            else if (Raw is { } __value1 && raw != null)
             {
-                return raw(Raw!);
+                return raw(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsRaw)
+            else if (Raw is { } __value1)
             {
-                raw?.Invoke(Raw!);
+                raw?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsRaw)
+            else if (Raw is { } __value1)
             {
-                raw?.Invoke(Raw!);
+                raw?.Invoke(__value1);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.TextContentPart PickText() => IsText
-            ? Text!
+        public global::Phoenix.TextContentPart PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ToolCallContentPart PickToolCall() => IsToolCall
-            ? ToolCall!
+        public global::Phoenix.ToolCallContentPart PickToolCall() => ToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ToolResultContentPart PickToolResult() => IsToolResult
-            ? ToolResult!
+        public global::Phoenix.ToolResultContentPart PickToolResult() => ToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsToolCall && toolCall != null)
+            else if (ToolCall is { } __value1 && toolCall != null)
             {
-                return toolCall(ToolCall!);
+                return toolCall(__value1);
             }
-            else if (IsToolResult && toolResult != null)
+            else if (ToolResult is { } __value2 && toolResult != null)
             {
-                return toolResult(ToolResult!);
+                return toolResult(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsToolCall)
+            else if (ToolCall is { } __value1)
             {
-                toolCall?.Invoke(ToolCall!);
+                toolCall?.Invoke(__value1);
             }
-            else if (IsToolResult)
+            else if (ToolResult is { } __value2)
             {
-                toolResult?.Invoke(ToolResult!);
+                toolResult?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsToolCall)
+            else if (ToolCall is { } __value1)
             {
-                toolCall?.Invoke(ToolCall!);
+                toolCall?.Invoke(__value1);
             }
-            else if (IsToolResult)
+            else if (ToolResult is { } __value2)
             {
-                toolResult?.Invoke(ToolResult!);
+                toolResult?.Invoke(__value2);
             }
         }
 

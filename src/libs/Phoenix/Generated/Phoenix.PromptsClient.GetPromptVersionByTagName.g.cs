@@ -163,8 +163,8 @@ namespace Phoenix
                 PrepareGetPromptVersionByTagNameRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptIdentifier: promptIdentifier!,
-                    tagName: tagName!);
+                    promptIdentifier: promptIdentifier,
+                    tagName: tagName);
 
                 return __httpRequest;
             }
@@ -186,7 +186,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/prompts/{promptIdentifier}/tags/{tagName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -220,7 +220,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/prompts/{promptIdentifier}/tags/{tagName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -261,7 +261,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/prompts/{promptIdentifier}/tags/{tagName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -309,7 +309,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/prompts/{promptIdentifier}/tags/{tagName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -331,7 +331,7 @@ namespace Phoenix
                                 pathTemplate: "$\"/v1/prompts/{promptIdentifier}/tags/{tagName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

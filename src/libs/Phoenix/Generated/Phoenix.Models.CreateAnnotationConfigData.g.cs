@@ -47,8 +47,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.CategoricalAnnotationConfigData PickCategorical() => IsCategorical
-            ? Categorical!
+        public global::Phoenix.CategoricalAnnotationConfigData PickCategorical() => Categorical is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Categorical' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ContinuousAnnotationConfigData PickContinuous() => IsContinuous
-            ? Continuous!
+        public global::Phoenix.ContinuousAnnotationConfigData PickContinuous() => Continuous is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Continuous' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.FreeformAnnotationConfigData PickFreeform() => IsFreeform
-            ? Freeform!
+        public global::Phoenix.FreeformAnnotationConfigData PickFreeform() => Freeform is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Freeform' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsCategorical && categorical != null)
+            if (Categorical is { } __value0 && categorical != null)
             {
-                return categorical(Categorical!);
+                return categorical(__value0);
             }
-            else if (IsContinuous && continuous != null)
+            else if (Continuous is { } __value1 && continuous != null)
             {
-                return continuous(Continuous!);
+                return continuous(__value1);
             }
-            else if (IsFreeform && freeform != null)
+            else if (Freeform is { } __value2 && freeform != null)
             {
-                return freeform(Freeform!);
+                return freeform(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsCategorical)
+            if (Categorical is { } __value0)
             {
-                categorical?.Invoke(Categorical!);
+                categorical?.Invoke(__value0);
             }
-            else if (IsContinuous)
+            else if (Continuous is { } __value1)
             {
-                continuous?.Invoke(Continuous!);
+                continuous?.Invoke(__value1);
             }
-            else if (IsFreeform)
+            else if (Freeform is { } __value2)
             {
-                freeform?.Invoke(Freeform!);
+                freeform?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (IsCategorical)
+            if (Categorical is { } __value0)
             {
-                categorical?.Invoke(Categorical!);
+                categorical?.Invoke(__value0);
             }
-            else if (IsContinuous)
+            else if (Continuous is { } __value1)
             {
-                continuous?.Invoke(Continuous!);
+                continuous?.Invoke(__value1);
             }
-            else if (IsFreeform)
+            else if (Freeform is { } __value2)
             {
-                freeform?.Invoke(Freeform!);
+                freeform?.Invoke(__value2);
             }
         }
 
