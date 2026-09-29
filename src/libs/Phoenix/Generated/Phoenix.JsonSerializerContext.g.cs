@@ -624,6 +624,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind), TypeInfoPropertyName = "DeleteSpanAnnotationsAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind), TypeInfoPropertyName = "DeleteTraceAnnotationsAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind), TypeInfoPropertyName = "DeleteSessionAnnotationsAnnotatorKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListExperimentsSortDir), TypeInfoPropertyName = "ListExperimentsSortDir2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesSort), TypeInfoPropertyName = "ListProjectTracesSort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesOrder), TypeInfoPropertyName = "ListProjectTracesOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpansSort), TypeInfoPropertyName = "GetSpansSort2")]
@@ -757,6 +758,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSpanAnnotationsAnnotatorKind?), TypeInfoPropertyName = "NullableDeleteSpanAnnotationsAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteTraceAnnotationsAnnotatorKind?), TypeInfoPropertyName = "NullableDeleteTraceAnnotationsAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind?), TypeInfoPropertyName = "NullableDeleteSessionAnnotationsAnnotatorKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListExperimentsSortDir?), TypeInfoPropertyName = "NullableListExperimentsSortDir2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesSort?), TypeInfoPropertyName = "NullableListProjectTracesSort2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListProjectTracesOrder?), TypeInfoPropertyName = "NullableListProjectTracesOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpansSort?), TypeInfoPropertyName = "NullableGetSpansSort2")]
@@ -1307,6 +1309,10 @@ namespace Phoenix
                     || typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind)
 
                     || typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.ListExperimentsSortDir)
+
+                    || typeToConvert == typeof(global::Phoenix.ListExperimentsSortDir?)
 
                     || typeToConvert == typeof(global::Phoenix.ListProjectTracesSort)
 
@@ -2221,6 +2227,16 @@ namespace Phoenix
                 if (typeToConvert == typeof(global::Phoenix.DeleteSessionAnnotationsAnnotatorKind?))
                 {
                     return new global::Phoenix.JsonConverters.DeleteSessionAnnotationsAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ListExperimentsSortDir))
+                {
+                    return new global::Phoenix.JsonConverters.ListExperimentsSortDirJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ListExperimentsSortDir?))
+                {
+                    return new global::Phoenix.JsonConverters.ListExperimentsSortDirNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Phoenix.ListProjectTracesSort))

@@ -58,11 +58,13 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UpsertExperimentEvaluationResponseBodyData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, int?>), TypeInfoPropertyName = "AnyOfStringInt322")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListExperimentsSortDir), TypeInfoPropertyName = "ListExperimentsSortDir2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind?), TypeInfoPropertyName = "NullableUpsertExperimentEvaluationRequestBodyAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ListExperimentsSortDir?), TypeInfoPropertyName = "NullableListExperimentsSortDir2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.IncompleteExperimentEvaluation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.IncompleteExperimentRun>))]
@@ -151,7 +153,11 @@ namespace Phoenix
                 return
                     typeToConvert == typeof(global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind)
 
-                    || typeToConvert == typeof(global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind?);
+                    || typeToConvert == typeof(global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind?)
+
+                    || typeToConvert == typeof(global::Phoenix.ListExperimentsSortDir)
+
+                    || typeToConvert == typeof(global::Phoenix.ListExperimentsSortDir?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -166,6 +172,16 @@ namespace Phoenix
                 if (typeToConvert == typeof(global::Phoenix.UpsertExperimentEvaluationRequestBodyAnnotatorKind?))
                 {
                     return new global::Phoenix.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ListExperimentsSortDir))
+                {
+                    return new global::Phoenix.JsonConverters.ListExperimentsSortDirJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Phoenix.ListExperimentsSortDir?))
+                {
+                    return new global::Phoenix.JsonConverters.ListExperimentsSortDirNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

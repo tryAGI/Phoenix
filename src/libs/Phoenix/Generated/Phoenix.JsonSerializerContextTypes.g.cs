@@ -2305,23 +2305,27 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ListProjectTracesSort? Type568 { get; set; }
+        public global::Phoenix.ListExperimentsSortDir? Type568 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ListProjectTracesOrder? Type569 { get; set; }
+        public global::Phoenix.ListProjectTracesSort? Type569 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.GetSpansSort? Type570 { get; set; }
+        public global::Phoenix.ListProjectTracesOrder? Type570 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.GetSpansOrder? Type571 { get; set; }
+        public global::Phoenix.GetSpansSort? Type571 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ListProjectSessionsOrder? Type572 { get; set; }
+        public global::Phoenix.GetSpansOrder? Type572 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Phoenix.ListProjectSessionsOrder? Type573 { get; set; }
 
         /// <summary>
         ///
