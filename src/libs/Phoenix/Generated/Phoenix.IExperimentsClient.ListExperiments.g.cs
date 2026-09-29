@@ -16,6 +16,13 @@ namespace Phoenix
         /// The max number of experiments to return at a time.<br/>
         /// Default Value: 50
         /// </param>
+        /// <param name="sortDir">
+        /// Order by creation: 'desc' (default) returns newest experiments first, 'asc' returns oldest first so the lowest sequence numbers are on the first page.<br/>
+        /// Default Value: desc
+        /// </param>
+        /// <param name="sequenceNumbers">
+        /// When provided, return only the experiments with these 1-based per-dataset sequence numbers.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -23,6 +30,8 @@ namespace Phoenix
             string datasetId,
             string? cursor = default,
             int? limit = default,
+            global::Phoenix.ListExperimentsSortDir? sortDir = default,
+            global::System.Collections.Generic.IList<int>? sequenceNumbers = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -37,6 +46,13 @@ namespace Phoenix
         /// The max number of experiments to return at a time.<br/>
         /// Default Value: 50
         /// </param>
+        /// <param name="sortDir">
+        /// Order by creation: 'desc' (default) returns newest experiments first, 'asc' returns oldest first so the lowest sequence numbers are on the first page.<br/>
+        /// Default Value: desc
+        /// </param>
+        /// <param name="sequenceNumbers">
+        /// When provided, return only the experiments with these 1-based per-dataset sequence numbers.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -44,6 +60,8 @@ namespace Phoenix
             string datasetId,
             string? cursor = default,
             int? limit = default,
+            global::Phoenix.ListExperimentsSortDir? sortDir = default,
+            global::System.Collections.Generic.IList<int>? sequenceNumbers = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -29,13 +29,17 @@ namespace Phoenix
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
             ref string? cursor,
-            ref int? limit);
+            ref int? limit,
+            ref global::Phoenix.ListExperimentsSortDir? sortDir,
+            global::System.Collections.Generic.IList<int>? sequenceNumbers);
         partial void PrepareListExperimentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
             string? cursor,
-            int? limit);
+            int? limit,
+            global::Phoenix.ListExperimentsSortDir? sortDir,
+            global::System.Collections.Generic.IList<int>? sequenceNumbers);
         partial void ProcessListExperimentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -57,6 +61,13 @@ namespace Phoenix
         /// The max number of experiments to return at a time.<br/>
         /// Default Value: 50
         /// </param>
+        /// <param name="sortDir">
+        /// Order by creation: 'desc' (default) returns newest experiments first, 'asc' returns oldest first so the lowest sequence numbers are on the first page.<br/>
+        /// Default Value: desc
+        /// </param>
+        /// <param name="sequenceNumbers">
+        /// When provided, return only the experiments with these 1-based per-dataset sequence numbers.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -64,6 +75,8 @@ namespace Phoenix
             string datasetId,
             string? cursor = default,
             int? limit = default,
+            global::Phoenix.ListExperimentsSortDir? sortDir = default,
+            global::System.Collections.Generic.IList<int>? sequenceNumbers = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -71,6 +84,8 @@ namespace Phoenix
                 datasetId: datasetId,
                 cursor: cursor,
                 limit: limit,
+                sortDir: sortDir,
+                sequenceNumbers: sequenceNumbers,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -89,6 +104,13 @@ namespace Phoenix
         /// The max number of experiments to return at a time.<br/>
         /// Default Value: 50
         /// </param>
+        /// <param name="sortDir">
+        /// Order by creation: 'desc' (default) returns newest experiments first, 'asc' returns oldest first so the lowest sequence numbers are on the first page.<br/>
+        /// Default Value: desc
+        /// </param>
+        /// <param name="sequenceNumbers">
+        /// When provided, return only the experiments with these 1-based per-dataset sequence numbers.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Phoenix.ApiException"></exception>
@@ -96,6 +118,8 @@ namespace Phoenix
             string datasetId,
             string? cursor = default,
             int? limit = default,
+            global::Phoenix.ListExperimentsSortDir? sortDir = default,
+            global::System.Collections.Generic.IList<int>? sequenceNumbers = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -105,7 +129,9 @@ namespace Phoenix
                 httpClient: HttpClient,
                 datasetId: ref datasetId,
                 cursor: ref cursor,
-                limit: ref limit);
+                limit: ref limit,
+                sortDir: ref sortDir,
+                sequenceNumbers: sequenceNumbers);
 
 
             var __authorizations = global::Phoenix.EndPointSecurityResolver.ResolveAuthorizations(
@@ -136,6 +162,8 @@ namespace Phoenix
                             __pathBuilder
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("sort_dir", sortDir?.ToValueString())
+                                .AddOptionalParameter("sequence_numbers", sequenceNumbers, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Phoenix.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -179,7 +207,9 @@ namespace Phoenix
                     httpRequestMessage: __httpRequest,
                     datasetId: datasetId,
                     cursor: cursor,
-                    limit: limit);
+                    limit: limit,
+                    sortDir: sortDir,
+                    sequenceNumbers: sequenceNumbers);
 
                 return __httpRequest;
             }
