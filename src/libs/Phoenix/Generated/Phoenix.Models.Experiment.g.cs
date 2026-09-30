@@ -43,13 +43,6 @@ namespace Phoenix
         public string? Description { get; set; }
 
         /// <summary>
-        /// The 1-based sequence number of the experiment within its dataset, in creation order.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SequenceNumber { get; set; }
-
-        /// <summary>
         /// Number of times the experiment is repeated
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repetitions")]
@@ -132,9 +125,6 @@ namespace Phoenix
         /// <param name="name">
         /// The name of the experiment
         /// </param>
-        /// <param name="sequenceNumber">
-        /// The 1-based sequence number of the experiment within its dataset, in creation order.
-        /// </param>
         /// <param name="repetitions">
         /// Number of times the experiment is repeated
         /// </param>
@@ -173,7 +163,6 @@ namespace Phoenix
             string datasetId,
             string datasetVersionId,
             string name,
-            int sequenceNumber,
             int repetitions,
             object metadata,
             global::System.DateTime createdAt,
@@ -190,7 +179,6 @@ namespace Phoenix
             this.DatasetVersionId = datasetVersionId ?? throw new global::System.ArgumentNullException(nameof(datasetVersionId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
-            this.SequenceNumber = sequenceNumber;
             this.Repetitions = repetitions;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.ProjectName = projectName;
