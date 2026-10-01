@@ -108,7 +108,7 @@ namespace Phoenix
         /// Filter by span name(s)
         /// </param>
         /// <param name="spanKind">
-        /// Filter by span kind(s). Values: LLM, CHAIN, TOOL, RETRIEVER, EMBEDDING, AGENT, RERANKER, GUARDRAIL, EVALUATOR, UNKNOWN
+        /// Filter by span kind(s). Values: LLM, CHAIN, TOOL, RETRIEVER, EMBEDDING, AGENT, RERANKER, GUARDRAIL, EVALUATOR, DECISION, UNKNOWN
         /// </param>
         /// <param name="statusCode">
         /// Filter by status code(s). Values: OK, ERROR, UNSET
@@ -199,7 +199,7 @@ namespace Phoenix
         /// Filter by span name(s)
         /// </param>
         /// <param name="spanKind">
-        /// Filter by span kind(s). Values: LLM, CHAIN, TOOL, RETRIEVER, EMBEDDING, AGENT, RERANKER, GUARDRAIL, EVALUATOR, UNKNOWN
+        /// Filter by span kind(s). Values: LLM, CHAIN, TOOL, RETRIEVER, EMBEDDING, AGENT, RERANKER, GUARDRAIL, EVALUATOR, DECISION, UNKNOWN
         /// </param>
         /// <param name="statusCode">
         /// Filter by status code(s). Values: OK, ERROR, UNSET
