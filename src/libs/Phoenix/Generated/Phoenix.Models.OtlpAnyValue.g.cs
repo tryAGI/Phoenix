@@ -30,15 +30,15 @@ namespace Phoenix
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("double_value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<double?, global::Phoenix.OtlpDoubleValue?, string, object>))]
-        public global::Phoenix.AnyOf<double?, global::Phoenix.OtlpDoubleValue?, string, object>? DoubleValue { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<double?, global::Phoenix.OtlpDoubleValue?, string>))]
+        public global::Phoenix.AnyOf<double?, global::Phoenix.OtlpDoubleValue?, string>? DoubleValue { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("int_value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::Phoenix.AnyOf<int?, string, object>? IntValue { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::Phoenix.AnyOf<int?, string>? IntValue { get; set; }
 
         /// <summary>
         ///
@@ -75,8 +75,8 @@ namespace Phoenix
             global::Phoenix.OtlpArrayValue? arrayValue,
             bool? boolValue,
             string? bytesValue,
-            global::Phoenix.AnyOf<double?, global::Phoenix.OtlpDoubleValue?, string, object>? doubleValue,
-            global::Phoenix.AnyOf<int?, string, object>? intValue,
+            global::Phoenix.AnyOf<double?, global::Phoenix.OtlpDoubleValue?, string>? doubleValue,
+            global::Phoenix.AnyOf<int?, string>? intValue,
             object? kvlistValue,
             string? stringValue)
         {

@@ -619,7 +619,7 @@ namespace Phoenix
             double? topP = default,
             int? maxTokens = default,
             int? maxCompletionTokens = default,
-            global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop = default,
+            global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             double? frequencyPenalty = default,
             double? presencePenalty = default,
             int? seed = default,

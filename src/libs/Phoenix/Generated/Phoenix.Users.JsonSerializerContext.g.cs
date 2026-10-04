@@ -117,14 +117,14 @@ namespace Phoenix
             options.Converters.Add(new global::Phoenix.JsonConverters.Data3JsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.DataItem3JsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.Data6JsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>());
             options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, int?>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Phoenix.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }

@@ -45,19 +45,19 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ValidationError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpAnyValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpArrayValue))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<double?, global::Phoenix.OtlpDoubleValue?, string, object>), TypeInfoPropertyName = "AnyOfDoubleOtlpDoubleValueStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<double?, global::Phoenix.OtlpDoubleValue?, string>), TypeInfoPropertyName = "AnyOfDoubleOtlpDoubleValueString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpDoubleValue), TypeInfoPropertyName = "OtlpDoubleValue2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<int?, string, object>), TypeInfoPropertyName = "AnyOfInt32StringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<int?, string>), TypeInfoPropertyName = "AnyOfInt32String2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OtlpAnyValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OtlpKeyValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpKeyValue))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<long?, string, object>), TypeInfoPropertyName = "AnyOfInt64StringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<long?, string>), TypeInfoPropertyName = "AnyOfInt64String2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpKind), TypeInfoPropertyName = "OtlpKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpSpan))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OtlpEvent>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?, object>), TypeInfoPropertyName = "AnyOfOtlpKindInt32Object2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?>), TypeInfoPropertyName = "AnyOfOtlpKindInt322")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpSpansResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OtlpSpan>))]
@@ -74,13 +74,13 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<double?, global::Phoenix.OtlpDoubleValue?, string, object>?), TypeInfoPropertyName = "NullableAnyOfDoubleOtlpDoubleValueStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<double?, global::Phoenix.OtlpDoubleValue?, string>?), TypeInfoPropertyName = "NullableAnyOfDoubleOtlpDoubleValueString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpDoubleValue?), TypeInfoPropertyName = "NullableOtlpDoubleValue2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<int?, string, object>?), TypeInfoPropertyName = "NullableAnyOfInt32StringObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<long?, string, object>?), TypeInfoPropertyName = "NullableAnyOfInt64StringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<int?, string>?), TypeInfoPropertyName = "NullableAnyOfInt32String2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<long?, string>?), TypeInfoPropertyName = "NullableAnyOfInt64String2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OtlpKind?), TypeInfoPropertyName = "NullableOtlpKind2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?, object>?), TypeInfoPropertyName = "NullableAnyOfOtlpKindInt32Object2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?>?), TypeInfoPropertyName = "NullableAnyOfOtlpKindInt322")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SpanAnnotationDataAnnotatorKind?), TypeInfoPropertyName = "NullableSpanAnnotationDataAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.SpanDocumentAnnotationDataAnnotatorKind?), TypeInfoPropertyName = "NullableSpanDocumentAnnotationDataAnnotatorKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
@@ -146,16 +146,16 @@ namespace Phoenix
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<double?, global::Phoenix.OtlpDoubleValue?, string, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.OtlpKind?, int?, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<double?, global::Phoenix.OtlpDoubleValue?, string>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.OtlpKind?, int?>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>());
             options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, int?>());
-            options.Converters.Add(new global::Phoenix.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>());
+            options.Converters.Add(new global::Phoenix.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Phoenix.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
