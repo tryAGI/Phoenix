@@ -529,7 +529,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type124 { get; set; }
+        public global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type124 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -797,7 +797,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.AnyOf<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded, object>? Type191 { get; set; }
+        public global::Phoenix.AnyOf<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded>? Type191 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1353,7 +1353,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.AnyOf<double?, global::Phoenix.OtlpDoubleValue?, string, object>? Type330 { get; set; }
+        public global::Phoenix.AnyOf<double?, global::Phoenix.OtlpDoubleValue?, string>? Type330 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1361,7 +1361,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.AnyOf<int?, string, object>? Type332 { get; set; }
+        public global::Phoenix.AnyOf<int?, string>? Type332 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1381,7 +1381,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.AnyOf<long?, string, object>? Type337 { get; set; }
+        public global::Phoenix.AnyOf<long?, string>? Type337 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1401,7 +1401,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?, object>? Type342 { get; set; }
+        public global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?>? Type342 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2093,7 +2093,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>? Type515 { get; set; }
+        public global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>? Type515 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2273,11 +2273,11 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? Type560 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>>?>? Type560 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>, object>? Type561 { get; set; }
+        public global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>>? Type561 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2390,7 +2390,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.AnyOf<string, global::System.Collections.Generic.List<string>, object>? ListType16 { get; set; }
+        public global::Phoenix.AnyOf<string, global::System.Collections.Generic.List<string>>? ListType16 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2578,7 +2578,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.List<object>, object>? ListType63 { get; set; }
+        public global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.List<object>>? ListType63 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2598,10 +2598,10 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.OneOf<string, global::System.Collections.Generic.List<string>, object>>? ListType68 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.OneOf<string, global::System.Collections.Generic.List<string>>?>? ListType68 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.OneOf<string, global::System.Collections.Generic.List<string>, object>? ListType69 { get; set; }
+        public global::Phoenix.OneOf<string, global::System.Collections.Generic.List<string>>? ListType69 { get; set; }
     }
 }

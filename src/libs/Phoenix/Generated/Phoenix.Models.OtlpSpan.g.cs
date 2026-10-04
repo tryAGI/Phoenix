@@ -45,8 +45,8 @@ namespace Phoenix
         /// This field is semantically required and it is expected that end_time &gt;= start_time.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time_unix_nano")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>))]
-        public global::Phoenix.AnyOf<long?, string, object>? EndTimeUnixNano { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string>))]
+        public global::Phoenix.AnyOf<long?, string>? EndTimeUnixNano { get; set; }
 
         /// <summary>
         /// events is a collection of Event items. A span with no events is valid.
@@ -73,8 +73,8 @@ namespace Phoenix
         /// Default Value: SPAN_KIND_INTERNAL
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.OtlpKind?, int?, object>))]
-        public global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?, object>? Kind { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.OtlpKind?, int?>))]
+        public global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?>? Kind { get; set; }
 
         /// <summary>
         ///
@@ -110,8 +110,8 @@ namespace Phoenix
         /// This field is semantically required and it is expected that end_time &gt;= start_time.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time_unix_nano")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string, object>))]
-        public global::Phoenix.AnyOf<long?, string, object>? StartTimeUnixNano { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string>))]
+        public global::Phoenix.AnyOf<long?, string>? StartTimeUnixNano { get; set; }
 
         /// <summary>
         /// An optional final status for this span. Semantically when Status isn't set, it means span's status code is unset, i.e. assume STATUS_CODE_UNSET (code = 0).
@@ -222,15 +222,15 @@ namespace Phoenix
             int? droppedAttributesCount,
             int? droppedEventsCount,
             int? droppedLinksCount,
-            global::Phoenix.AnyOf<long?, string, object>? endTimeUnixNano,
+            global::Phoenix.AnyOf<long?, string>? endTimeUnixNano,
             global::System.Collections.Generic.IList<global::Phoenix.OtlpEvent>? events,
             int? flags,
-            global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?, object>? kind,
+            global::Phoenix.AnyOf<global::Phoenix.OtlpKind?, int?>? kind,
             object? links,
             string? name,
             string? parentSpanId,
             string? spanId,
-            global::Phoenix.AnyOf<long?, string, object>? startTimeUnixNano,
+            global::Phoenix.AnyOf<long?, string>? startTimeUnixNano,
             global::Phoenix.OtlpStatus? status,
             string? traceId,
             string? traceState)

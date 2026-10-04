@@ -26,9 +26,8 @@ namespace Phoenix
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object> ToolResult { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>))]
+        public global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>? ToolResult { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,7 +46,7 @@ namespace Phoenix
 #endif
         public ToolResultContentPart(
             string toolCallId,
-            global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object> toolResult,
+            global::Phoenix.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>? toolResult,
             string type = "tool_result")
         {
             this.Type = type;
@@ -60,6 +59,18 @@ namespace Phoenix
         /// </summary>
         public ToolResultContentPart()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ToolResultContentPart"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ToolResultContentPart FromToolCallId(string toolCallId)
+        {
+            return new ToolResultContentPart
+            {
+                ToolCallId = toolCallId,
+            };
         }
 
     }

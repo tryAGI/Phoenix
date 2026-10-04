@@ -56,8 +56,8 @@ namespace Phoenix
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
-        public global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Stop { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         ///
@@ -147,7 +147,7 @@ namespace Phoenix
             double? topP,
             int? maxTokens,
             int? maxCompletionTokens,
-            global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
+            global::Phoenix.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
             double? frequencyPenalty,
             double? presencePenalty,
             int? seed,
