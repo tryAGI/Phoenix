@@ -6,7 +6,7 @@ namespace Phoenix
     /// <summary>
     /// Dynamic tool part in input-streaming state.
     /// </summary>
-    public sealed partial class DynamicToolInputStreamingPart
+    public sealed partial class PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart
     {
         /// <summary>
         /// Default Value: dynamic-tool
@@ -49,6 +49,12 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rawInput")]
+        public string? RawInput { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerExecuted")]
         public bool? ProviderExecuted { get; set; }
 
@@ -72,7 +78,7 @@ namespace Phoenix
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DynamicToolInputStreamingPart" /> class.
+        /// Initializes a new instance of the <see cref="PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart" /> class.
         /// </summary>
         /// <param name="toolName"></param>
         /// <param name="toolCallId"></param>
@@ -84,19 +90,21 @@ namespace Phoenix
         /// Default Value: input-streaming
         /// </param>
         /// <param name="input"></param>
+        /// <param name="rawInput"></param>
         /// <param name="providerExecuted"></param>
         /// <param name="callProviderMetadata"></param>
         /// <param name="approval"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public DynamicToolInputStreamingPart(
+        public PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart(
             string toolName,
             string toolCallId,
             string? type,
             string? title,
             string? state,
             object? input,
+            string? rawInput,
             bool? providerExecuted,
             global::System.Collections.Generic.Dictionary<string, object>? callProviderMetadata,
             global::Phoenix.AnyOf<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded>? approval)
@@ -107,15 +115,16 @@ namespace Phoenix
             this.Title = title;
             this.State = state;
             this.Input = input;
+            this.RawInput = rawInput;
             this.ProviderExecuted = providerExecuted;
             this.CallProviderMetadata = callProviderMetadata;
             this.Approval = approval;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DynamicToolInputStreamingPart" /> class.
+        /// Initializes a new instance of the <see cref="PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart" /> class.
         /// </summary>
-        public DynamicToolInputStreamingPart()
+        public PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart()
         {
         }
 

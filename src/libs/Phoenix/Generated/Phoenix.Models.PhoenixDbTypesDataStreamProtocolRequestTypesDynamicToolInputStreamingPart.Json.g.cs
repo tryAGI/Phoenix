@@ -2,7 +2,7 @@
 
 namespace Phoenix
 {
-    public sealed partial class DynamicToolInputStreamingPartCallProviderMetadata2
+    public sealed partial class PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace Phoenix
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2? FromJson(
+        public static global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2),
-                jsonSerializerContext) as global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2;
+                typeof(global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart),
+                jsonSerializerContext) as global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2? FromJson(
+        public static global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2? FromJson(
+        public static global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace Phoenix
                     global::Phoenix.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace Phoenix
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2;
+                typeof(global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace Phoenix
                     global::Phoenix.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Phoenix.DynamicToolInputStreamingPartCallProviderMetadata2?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Phoenix.PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPart?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

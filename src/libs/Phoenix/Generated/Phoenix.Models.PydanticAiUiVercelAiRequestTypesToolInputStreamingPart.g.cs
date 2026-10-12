@@ -1,0 +1,112 @@
+
+#nullable enable
+
+namespace Phoenix
+{
+    /// <summary>
+    /// Tool part in input-streaming state.
+    /// </summary>
+    public sealed partial class PydanticAiUiVercelAiRequestTypesToolInputStreamingPart
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("toolCallId")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ToolCallId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
+        /// Default Value: input-streaming
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        public string? State { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        public object? Input { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("providerExecuted")]
+        public bool? ProviderExecuted { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("callProviderMetadata")]
+        public global::System.Collections.Generic.Dictionary<string, object>? CallProviderMetadata { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("approval")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.AnyOfJsonConverter<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded>))]
+        public global::Phoenix.AnyOf<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded>? Approval { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PydanticAiUiVercelAiRequestTypesToolInputStreamingPart" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="toolCallId"></param>
+        /// <param name="title"></param>
+        /// <param name="state">
+        /// Default Value: input-streaming
+        /// </param>
+        /// <param name="input"></param>
+        /// <param name="providerExecuted"></param>
+        /// <param name="callProviderMetadata"></param>
+        /// <param name="approval"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public PydanticAiUiVercelAiRequestTypesToolInputStreamingPart(
+            string type,
+            string toolCallId,
+            string? title,
+            string? state,
+            object? input,
+            bool? providerExecuted,
+            global::System.Collections.Generic.Dictionary<string, object>? callProviderMetadata,
+            global::Phoenix.AnyOf<global::Phoenix.ToolApprovalRequested, global::Phoenix.ToolApprovalResponded>? approval)
+        {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
+            this.Title = title;
+            this.State = state;
+            this.Input = input;
+            this.ProviderExecuted = providerExecuted;
+            this.CallProviderMetadata = callProviderMetadata;
+            this.Approval = approval;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PydanticAiUiVercelAiRequestTypesToolInputStreamingPart" /> class.
+        /// </summary>
+        public PydanticAiUiVercelAiRequestTypesToolInputStreamingPart()
+        {
+        }
+
+    }
+}

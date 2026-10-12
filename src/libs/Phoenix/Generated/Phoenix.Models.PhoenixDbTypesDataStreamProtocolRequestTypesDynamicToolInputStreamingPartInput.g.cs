@@ -6,7 +6,7 @@ namespace Phoenix
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class DynamicToolInputStreamingPartInput
+    public sealed partial class PhoenixDbTypesDataStreamProtocolRequestTypesDynamicToolInputStreamingPartInput
     {
 
         /// <summary>

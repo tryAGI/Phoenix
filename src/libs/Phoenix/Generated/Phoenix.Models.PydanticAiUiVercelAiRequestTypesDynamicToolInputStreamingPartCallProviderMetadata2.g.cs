@@ -6,7 +6,7 @@ namespace Phoenix
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class ToolInputStreamingPartCallProviderMetadata2
+    public sealed partial class PydanticAiUiVercelAiRequestTypesDynamicToolInputStreamingPartCallProviderMetadata2
     {
 
         /// <summary>
