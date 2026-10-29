@@ -87,6 +87,13 @@ namespace Phoenix
         public required string Id { get; set; }
 
         /// <summary>
+        /// The creation timestamp of the prompt version.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTime CreatedAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -102,6 +109,9 @@ namespace Phoenix
         /// <param name="templateFormat"></param>
         /// <param name="invocationParameters"></param>
         /// <param name="id"></param>
+        /// <param name="createdAt">
+        /// The creation timestamp of the prompt version.
+        /// </param>
         /// <param name="description"></param>
         /// <param name="metadata">
         /// Arbitrary JSON metadata for the prompt version.
@@ -119,6 +129,7 @@ namespace Phoenix
             global::Phoenix.PromptTemplateFormat templateFormat,
             global::Phoenix.InvocationParameters invocationParameters,
             string id,
+            global::System.DateTime createdAt,
             string? description,
             object? metadata,
             global::Phoenix.PromptTools? tools,
@@ -135,6 +146,7 @@ namespace Phoenix
             this.Tools = tools;
             this.ResponseFormat = responseFormat;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
         }
 
         /// <summary>
