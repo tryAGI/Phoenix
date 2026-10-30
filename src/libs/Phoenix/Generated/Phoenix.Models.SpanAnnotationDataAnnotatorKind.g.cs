@@ -11,7 +11,15 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
+        Agent,
+        /// <summary>
+        ///
+        /// </summary>
         Code,
+        /// <summary>
+        ///
+        /// </summary>
+        Decision,
         /// <summary>
         ///
         /// </summary>
@@ -34,7 +42,9 @@ namespace Phoenix
         {
             return value switch
             {
+                SpanAnnotationDataAnnotatorKind.Agent => "AGENT",
                 SpanAnnotationDataAnnotatorKind.Code => "CODE",
+                SpanAnnotationDataAnnotatorKind.Decision => "DECISION",
                 SpanAnnotationDataAnnotatorKind.Human => "HUMAN",
                 SpanAnnotationDataAnnotatorKind.Llm => "LLM",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -47,7 +57,9 @@ namespace Phoenix
         {
             return value switch
             {
+                "AGENT" => SpanAnnotationDataAnnotatorKind.Agent,
                 "CODE" => SpanAnnotationDataAnnotatorKind.Code,
+                "DECISION" => SpanAnnotationDataAnnotatorKind.Decision,
                 "HUMAN" => SpanAnnotationDataAnnotatorKind.Human,
                 "LLM" => SpanAnnotationDataAnnotatorKind.Llm,
                 _ => null,

@@ -11,7 +11,15 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
+        Agent,
+        /// <summary>
+        ///
+        /// </summary>
         Code,
+        /// <summary>
+        ///
+        /// </summary>
+        Decision,
         /// <summary>
         ///
         /// </summary>
@@ -34,7 +42,9 @@ namespace Phoenix
         {
             return value switch
             {
+                DeleteSessionAnnotationsAnnotatorKind.Agent => "AGENT",
                 DeleteSessionAnnotationsAnnotatorKind.Code => "CODE",
+                DeleteSessionAnnotationsAnnotatorKind.Decision => "DECISION",
                 DeleteSessionAnnotationsAnnotatorKind.Human => "HUMAN",
                 DeleteSessionAnnotationsAnnotatorKind.Llm => "LLM",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -47,7 +57,9 @@ namespace Phoenix
         {
             return value switch
             {
+                "AGENT" => DeleteSessionAnnotationsAnnotatorKind.Agent,
                 "CODE" => DeleteSessionAnnotationsAnnotatorKind.Code,
+                "DECISION" => DeleteSessionAnnotationsAnnotatorKind.Decision,
                 "HUMAN" => DeleteSessionAnnotationsAnnotatorKind.Human,
                 "LLM" => DeleteSessionAnnotationsAnnotatorKind.Llm,
                 _ => null,

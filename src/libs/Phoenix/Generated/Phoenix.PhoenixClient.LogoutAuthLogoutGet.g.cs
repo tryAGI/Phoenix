@@ -41,7 +41,7 @@ namespace Phoenix
 
         /// <summary>
         ///  Logout<br/>
-        /// Log out user by revoking tokens and clearing cookies.
+        /// Log out of every browser session by revoking its tokens, and clear the cookies.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -59,7 +59,7 @@ namespace Phoenix
         }
         /// <summary>
         ///  Logout<br/>
-        /// Log out user by revoking tokens and clearing cookies.
+        /// Log out of every browser session by revoking its tokens, and clear the cookies.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
