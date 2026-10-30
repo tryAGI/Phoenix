@@ -33,6 +33,7 @@ namespace Phoenix
             ref string? error,
             ref string? errorDescription,
             ref string phoenixOauth2State,
+            ref string? phoenixOauth2LoginContext,
             ref string phoenixOauth2Nonce,
             ref string? phoenixOauth2CodeVerifier);
         partial void PrepareCreateTokensOauth2IdpNameTokensGetRequest(
@@ -44,6 +45,7 @@ namespace Phoenix
             string? error,
             string? errorDescription,
             string phoenixOauth2State,
+            string? phoenixOauth2LoginContext,
             string phoenixOauth2Nonce,
             string? phoenixOauth2CodeVerifier);
         partial void ProcessCreateTokensOauth2IdpNameTokensGetResponse(
@@ -64,6 +66,7 @@ namespace Phoenix
         /// <param name="error"></param>
         /// <param name="errorDescription"></param>
         /// <param name="phoenixOauth2State"></param>
+        /// <param name="phoenixOauth2LoginContext"></param>
         /// <param name="phoenixOauth2Nonce"></param>
         /// <param name="phoenixOauth2CodeVerifier"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -77,6 +80,7 @@ namespace Phoenix
             string? code = default,
             string? error = default,
             string? errorDescription = default,
+            string? phoenixOauth2LoginContext = default,
             string? phoenixOauth2CodeVerifier = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -89,6 +93,7 @@ namespace Phoenix
                 code: code,
                 error: error,
                 errorDescription: errorDescription,
+                phoenixOauth2LoginContext: phoenixOauth2LoginContext,
                 phoenixOauth2CodeVerifier: phoenixOauth2CodeVerifier,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -105,6 +110,7 @@ namespace Phoenix
         /// <param name="error"></param>
         /// <param name="errorDescription"></param>
         /// <param name="phoenixOauth2State"></param>
+        /// <param name="phoenixOauth2LoginContext"></param>
         /// <param name="phoenixOauth2Nonce"></param>
         /// <param name="phoenixOauth2CodeVerifier"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -118,6 +124,7 @@ namespace Phoenix
             string? code = default,
             string? error = default,
             string? errorDescription = default,
+            string? phoenixOauth2LoginContext = default,
             string? phoenixOauth2CodeVerifier = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -132,6 +139,7 @@ namespace Phoenix
                 error: ref error,
                 errorDescription: ref errorDescription,
                 phoenixOauth2State: ref phoenixOauth2State,
+                phoenixOauth2LoginContext: ref phoenixOauth2LoginContext,
                 phoenixOauth2Nonce: ref phoenixOauth2Nonce,
                 phoenixOauth2CodeVerifier: ref phoenixOauth2CodeVerifier);
 
@@ -203,6 +211,11 @@ namespace Phoenix
                             {
                                 __cookies.Add("phoenix-oauth2-state=" + (__phoenixOauth2State ?? string.Empty));
                             }
+                            var __phoenixOauth2LoginContext = phoenixOauth2LoginContext;
+                            if (__phoenixOauth2LoginContext is not null)
+                            {
+                                __cookies.Add("phoenix-oauth2-login-context=" + (__phoenixOauth2LoginContext ?? string.Empty));
+                            }
                             var __phoenixOauth2Nonce = phoenixOauth2Nonce;
                             if (__phoenixOauth2Nonce is not null)
                             {
@@ -235,6 +248,7 @@ namespace Phoenix
                     error: error,
                     errorDescription: errorDescription,
                     phoenixOauth2State: phoenixOauth2State,
+                    phoenixOauth2LoginContext: phoenixOauth2LoginContext,
                     phoenixOauth2Nonce: phoenixOauth2Nonce,
                     phoenixOauth2CodeVerifier: phoenixOauth2CodeVerifier);
 

@@ -11,7 +11,15 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
+        Agent,
+        /// <summary>
+        ///
+        /// </summary>
         Code,
+        /// <summary>
+        ///
+        /// </summary>
+        Decision,
         /// <summary>
         ///
         /// </summary>
@@ -34,7 +42,9 @@ namespace Phoenix
         {
             return value switch
             {
+                TraceAnnotationAnnotatorKind.Agent => "AGENT",
                 TraceAnnotationAnnotatorKind.Code => "CODE",
+                TraceAnnotationAnnotatorKind.Decision => "DECISION",
                 TraceAnnotationAnnotatorKind.Human => "HUMAN",
                 TraceAnnotationAnnotatorKind.Llm => "LLM",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -47,7 +57,9 @@ namespace Phoenix
         {
             return value switch
             {
+                "AGENT" => TraceAnnotationAnnotatorKind.Agent,
                 "CODE" => TraceAnnotationAnnotatorKind.Code,
+                "DECISION" => TraceAnnotationAnnotatorKind.Decision,
                 "HUMAN" => TraceAnnotationAnnotatorKind.Human,
                 "LLM" => TraceAnnotationAnnotatorKind.Llm,
                 _ => null,

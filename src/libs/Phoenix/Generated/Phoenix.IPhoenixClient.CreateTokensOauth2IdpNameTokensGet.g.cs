@@ -13,6 +13,7 @@ namespace Phoenix
         /// <param name="error"></param>
         /// <param name="errorDescription"></param>
         /// <param name="phoenixOauth2State"></param>
+        /// <param name="phoenixOauth2LoginContext"></param>
         /// <param name="phoenixOauth2Nonce"></param>
         /// <param name="phoenixOauth2CodeVerifier"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -26,6 +27,7 @@ namespace Phoenix
             string? code = default,
             string? error = default,
             string? errorDescription = default,
+            string? phoenixOauth2LoginContext = default,
             string? phoenixOauth2CodeVerifier = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -38,6 +40,7 @@ namespace Phoenix
         /// <param name="error"></param>
         /// <param name="errorDescription"></param>
         /// <param name="phoenixOauth2State"></param>
+        /// <param name="phoenixOauth2LoginContext"></param>
         /// <param name="phoenixOauth2Nonce"></param>
         /// <param name="phoenixOauth2CodeVerifier"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -51,6 +54,7 @@ namespace Phoenix
             string? code = default,
             string? error = default,
             string? errorDescription = default,
+            string? phoenixOauth2LoginContext = default,
             string? phoenixOauth2CodeVerifier = default,
             global::Phoenix.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
