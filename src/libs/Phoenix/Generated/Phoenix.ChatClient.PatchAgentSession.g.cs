@@ -531,7 +531,7 @@ namespace Phoenix
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Unprocessable Content
+                            // Unprocessable Entity
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
