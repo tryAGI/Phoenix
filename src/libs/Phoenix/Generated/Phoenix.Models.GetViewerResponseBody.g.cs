@@ -12,9 +12,9 @@ namespace Phoenix
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.Data6JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.DataJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Phoenix.Data6 Data { get; set; }
+        public required global::Phoenix.Data Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetViewerResponseBody(
-            global::Phoenix.Data6 data)
+            global::Phoenix.Data data)
         {
             this.Data = data;
         }

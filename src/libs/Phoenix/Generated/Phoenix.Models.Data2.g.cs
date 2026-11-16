@@ -12,220 +12,220 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType? Type { get; }
+        public global::Phoenix.CreateUserResponseBodyDataDiscriminatorAuthMethod? AuthMethod { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.CategoricalAnnotationConfig? Categorical { get; init; }
+        public global::Phoenix.LocalUser? Local { get; init; }
 #else
-        public global::Phoenix.CategoricalAnnotationConfig? Categorical { get; }
+        public global::Phoenix.LocalUser? Local { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Categorical))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Local))]
 #endif
-        public bool IsCategorical => Categorical != null;
+        public bool IsLocal => Local != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickCategorical(
+        public bool TryPickLocal(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.CategoricalAnnotationConfig? value)
+            out global::Phoenix.LocalUser? value)
         {
-            value = Categorical;
-            return IsCategorical;
+            value = Local;
+            return IsLocal;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.CategoricalAnnotationConfig PickCategorical() => Categorical is { } value
+        public global::Phoenix.LocalUser PickLocal() => Local is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Categorical' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.ContinuousAnnotationConfig? Continuous { get; init; }
+        public global::Phoenix.OAuth2User? Oauth2 { get; init; }
 #else
-        public global::Phoenix.ContinuousAnnotationConfig? Continuous { get; }
+        public global::Phoenix.OAuth2User? Oauth2 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Continuous))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Oauth2))]
 #endif
-        public bool IsContinuous => Continuous != null;
+        public bool IsOauth2 => Oauth2 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickContinuous(
+        public bool TryPickOauth2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.ContinuousAnnotationConfig? value)
+            out global::Phoenix.OAuth2User? value)
         {
-            value = Continuous;
-            return IsContinuous;
+            value = Oauth2;
+            return IsOauth2;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ContinuousAnnotationConfig PickContinuous() => Continuous is { } value
+        public global::Phoenix.OAuth2User PickOauth2() => Oauth2 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Continuous' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Phoenix.FreeformAnnotationConfig? Freeform { get; init; }
+        public global::Phoenix.LDAPUser? Ldap { get; init; }
 #else
-        public global::Phoenix.FreeformAnnotationConfig? Freeform { get; }
+        public global::Phoenix.LDAPUser? Ldap { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Freeform))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ldap))]
 #endif
-        public bool IsFreeform => Freeform != null;
+        public bool IsLdap => Ldap != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickFreeform(
+        public bool TryPickLdap(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Phoenix.FreeformAnnotationConfig? value)
+            out global::Phoenix.LDAPUser? value)
         {
-            value = Freeform;
-            return IsFreeform;
+            value = Ldap;
+            return IsLdap;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.FreeformAnnotationConfig PickFreeform() => Freeform is { } value
+        public global::Phoenix.LDAPUser PickLdap() => Ldap is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Freeform' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ldap' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Data2(global::Phoenix.CategoricalAnnotationConfig value) => new Data2((global::Phoenix.CategoricalAnnotationConfig?)value);
+        public static implicit operator Data2(global::Phoenix.LocalUser value) => new Data2((global::Phoenix.LocalUser?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Phoenix.CategoricalAnnotationConfig?(Data2 @this) => @this.Categorical;
+        public static implicit operator global::Phoenix.LocalUser?(Data2 @this) => @this.Local;
 
         /// <summary>
         ///
         /// </summary>
-        public Data2(global::Phoenix.CategoricalAnnotationConfig? value)
+        public Data2(global::Phoenix.LocalUser? value)
         {
-            Categorical = value;
+            Local = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Data2 FromCategorical(global::Phoenix.CategoricalAnnotationConfig? value) => new Data2(value);
+        public static Data2 FromLocal(global::Phoenix.LocalUser? value) => new Data2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Data2(global::Phoenix.ContinuousAnnotationConfig value) => new Data2((global::Phoenix.ContinuousAnnotationConfig?)value);
+        public static implicit operator Data2(global::Phoenix.OAuth2User value) => new Data2((global::Phoenix.OAuth2User?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Phoenix.ContinuousAnnotationConfig?(Data2 @this) => @this.Continuous;
+        public static implicit operator global::Phoenix.OAuth2User?(Data2 @this) => @this.Oauth2;
 
         /// <summary>
         ///
         /// </summary>
-        public Data2(global::Phoenix.ContinuousAnnotationConfig? value)
+        public Data2(global::Phoenix.OAuth2User? value)
         {
-            Continuous = value;
+            Oauth2 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Data2 FromContinuous(global::Phoenix.ContinuousAnnotationConfig? value) => new Data2(value);
+        public static Data2 FromOauth2(global::Phoenix.OAuth2User? value) => new Data2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Data2(global::Phoenix.FreeformAnnotationConfig value) => new Data2((global::Phoenix.FreeformAnnotationConfig?)value);
+        public static implicit operator Data2(global::Phoenix.LDAPUser value) => new Data2((global::Phoenix.LDAPUser?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Phoenix.FreeformAnnotationConfig?(Data2 @this) => @this.Freeform;
+        public static implicit operator global::Phoenix.LDAPUser?(Data2 @this) => @this.Ldap;
 
         /// <summary>
         ///
         /// </summary>
-        public Data2(global::Phoenix.FreeformAnnotationConfig? value)
+        public Data2(global::Phoenix.LDAPUser? value)
         {
-            Freeform = value;
+            Ldap = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Data2 FromFreeform(global::Phoenix.FreeformAnnotationConfig? value) => new Data2(value);
+        public static Data2 FromLdap(global::Phoenix.LDAPUser? value) => new Data2(value);
 
         /// <summary>
         ///
         /// </summary>
         public Data2(
-            global::Phoenix.CreateAnnotationConfigResponseBodyDataDiscriminatorType? type,
-            global::Phoenix.CategoricalAnnotationConfig? categorical,
-            global::Phoenix.ContinuousAnnotationConfig? continuous,
-            global::Phoenix.FreeformAnnotationConfig? freeform
+            global::Phoenix.CreateUserResponseBodyDataDiscriminatorAuthMethod? authMethod,
+            global::Phoenix.LocalUser? local,
+            global::Phoenix.OAuth2User? oauth2,
+            global::Phoenix.LDAPUser? ldap
             )
         {
-            Type = type;
+            AuthMethod = authMethod;
 
-            Categorical = categorical;
-            Continuous = continuous;
-            Freeform = freeform;
+            Local = local;
+            Oauth2 = oauth2;
+            Ldap = ldap;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            Freeform as object ??
-            Continuous as object ??
-            Categorical as object
+            Ldap as object ??
+            Oauth2 as object ??
+            Local as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            Categorical?.ToString() ??
-            Continuous?.ToString() ??
-            Freeform?.ToString()
+            Local?.ToString() ??
+            Oauth2?.ToString() ??
+            Ldap?.ToString()
             ;
 
         /// <summary>
@@ -233,16 +233,16 @@ namespace Phoenix
         /// </summary>
         public bool Validate()
         {
-            return IsCategorical && !IsContinuous && !IsFreeform || !IsCategorical && IsContinuous && !IsFreeform || !IsCategorical && !IsContinuous && IsFreeform;
+            return IsLocal && !IsOauth2 && !IsLdap || !IsLocal && IsOauth2 && !IsLdap || !IsLocal && !IsOauth2 && IsLdap;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Phoenix.CategoricalAnnotationConfig, TResult>? categorical = null,
-            global::System.Func<global::Phoenix.ContinuousAnnotationConfig, TResult>? continuous = null,
-            global::System.Func<global::Phoenix.FreeformAnnotationConfig, TResult>? freeform = null,
+            global::System.Func<global::Phoenix.LocalUser, TResult>? local = null,
+            global::System.Func<global::Phoenix.OAuth2User, TResult>? oauth2 = null,
+            global::System.Func<global::Phoenix.LDAPUser, TResult>? ldap = null,
             bool validate = true)
         {
             if (validate)
@@ -250,17 +250,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (Categorical is { } __value0 && categorical != null)
+            if (Local is { } __value0 && local != null)
             {
-                return categorical(__value0);
+                return local(__value0);
             }
-            else if (Continuous is { } __value1 && continuous != null)
+            else if (Oauth2 is { } __value1 && oauth2 != null)
             {
-                return continuous(__value1);
+                return oauth2(__value1);
             }
-            else if (Freeform is { } __value2 && freeform != null)
+            else if (Ldap is { } __value2 && ldap != null)
             {
-                return freeform(__value2);
+                return ldap(__value2);
             }
 
             return default(TResult);
@@ -270,11 +270,11 @@ namespace Phoenix
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Phoenix.CategoricalAnnotationConfig>? categorical = null,
+            global::System.Action<global::Phoenix.LocalUser>? local = null,
 
-            global::System.Action<global::Phoenix.ContinuousAnnotationConfig>? continuous = null,
+            global::System.Action<global::Phoenix.OAuth2User>? oauth2 = null,
 
-            global::System.Action<global::Phoenix.FreeformAnnotationConfig>? freeform = null,
+            global::System.Action<global::Phoenix.LDAPUser>? ldap = null,
             bool validate = true)
         {
             if (validate)
@@ -282,17 +282,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (Categorical is { } __value0)
+            if (Local is { } __value0)
             {
-                categorical?.Invoke(__value0);
+                local?.Invoke(__value0);
             }
-            else if (Continuous is { } __value1)
+            else if (Oauth2 is { } __value1)
             {
-                continuous?.Invoke(__value1);
+                oauth2?.Invoke(__value1);
             }
-            else if (Freeform is { } __value2)
+            else if (Ldap is { } __value2)
             {
-                freeform?.Invoke(__value2);
+                ldap?.Invoke(__value2);
             }
         }
 
@@ -300,9 +300,9 @@ namespace Phoenix
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Phoenix.CategoricalAnnotationConfig>? categorical = null,
-            global::System.Action<global::Phoenix.ContinuousAnnotationConfig>? continuous = null,
-            global::System.Action<global::Phoenix.FreeformAnnotationConfig>? freeform = null,
+            global::System.Action<global::Phoenix.LocalUser>? local = null,
+            global::System.Action<global::Phoenix.OAuth2User>? oauth2 = null,
+            global::System.Action<global::Phoenix.LDAPUser>? ldap = null,
             bool validate = true)
         {
             if (validate)
@@ -310,17 +310,17 @@ namespace Phoenix
                 Validate();
             }
 
-            if (Categorical is { } __value0)
+            if (Local is { } __value0)
             {
-                categorical?.Invoke(__value0);
+                local?.Invoke(__value0);
             }
-            else if (Continuous is { } __value1)
+            else if (Oauth2 is { } __value1)
             {
-                continuous?.Invoke(__value1);
+                oauth2?.Invoke(__value1);
             }
-            else if (Freeform is { } __value2)
+            else if (Ldap is { } __value2)
             {
-                freeform?.Invoke(__value2);
+                ldap?.Invoke(__value2);
             }
         }
 
@@ -331,12 +331,12 @@ namespace Phoenix
         {
             var fields = new object?[]
             {
-                Categorical,
-                typeof(global::Phoenix.CategoricalAnnotationConfig),
-                Continuous,
-                typeof(global::Phoenix.ContinuousAnnotationConfig),
-                Freeform,
-                typeof(global::Phoenix.FreeformAnnotationConfig),
+                Local,
+                typeof(global::Phoenix.LocalUser),
+                Oauth2,
+                typeof(global::Phoenix.OAuth2User),
+                Ldap,
+                typeof(global::Phoenix.LDAPUser),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -353,9 +353,9 @@ namespace Phoenix
         public bool Equals(Data2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.CategoricalAnnotationConfig?>.Default.Equals(Categorical, other.Categorical) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.ContinuousAnnotationConfig?>.Default.Equals(Continuous, other.Continuous) &&
-                global::System.Collections.Generic.EqualityComparer<global::Phoenix.FreeformAnnotationConfig?>.Default.Equals(Freeform, other.Freeform)
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.LocalUser?>.Default.Equals(Local, other.Local) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.OAuth2User?>.Default.Equals(Oauth2, other.Oauth2) &&
+                global::System.Collections.Generic.EqualityComparer<global::Phoenix.LDAPUser?>.Default.Equals(Ldap, other.Ldap)
                 ;
         }
 

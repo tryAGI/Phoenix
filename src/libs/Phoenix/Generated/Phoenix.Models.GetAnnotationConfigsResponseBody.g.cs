@@ -13,7 +13,7 @@ namespace Phoenix
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Phoenix.DataItem> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::Phoenix.DataItem2> Data { get; set; }
 
         /// <summary>
         ///
@@ -36,7 +36,7 @@ namespace Phoenix
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetAnnotationConfigsResponseBody(
-            global::System.Collections.Generic.IList<global::Phoenix.DataItem> data,
+            global::System.Collections.Generic.IList<global::Phoenix.DataItem2> data,
             string? nextCursor)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
