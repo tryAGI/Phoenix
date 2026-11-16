@@ -64,19 +64,17 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, int?>), TypeInfoPropertyName = "AnyOfStringInt322")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction), TypeInfoPropertyName = "UploadDatasetRequestAction2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction), TypeInfoPropertyName = "UploadDatasetRequestAction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>>?>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>>), TypeInfoPropertyName = "OneOfStringIListString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequest2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction2), TypeInfoPropertyName = "UploadDatasetRequestAction22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction?), TypeInfoPropertyName = "NullableUploadDatasetRequestAction2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction?), TypeInfoPropertyName = "NullableUploadDatasetRequestAction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OneOf<string, global::System.Collections.Generic.IList<string>>?), TypeInfoPropertyName = "NullableOneOfStringIListString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.UploadDatasetRequestAction2?), TypeInfoPropertyName = "NullableUploadDatasetRequestAction22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.DatasetLabel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.ValidationError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.DatasetExample>))]
@@ -165,11 +163,7 @@ namespace Phoenix
                 return
                     typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction)
 
-                    || typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction?)
-
-                    || typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction2)
-
-                    || typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction2?);
+                    || typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -184,16 +178,6 @@ namespace Phoenix
                 if (typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction?))
                 {
                     return new global::Phoenix.JsonConverters.UploadDatasetRequestActionNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction2))
-                {
-                    return new global::Phoenix.JsonConverters.UploadDatasetRequestAction2JsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Phoenix.UploadDatasetRequestAction2?))
-                {
-                    return new global::Phoenix.JsonConverters.UploadDatasetRequestAction2NullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

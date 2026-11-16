@@ -226,7 +226,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.Data? Type47 { get; set; }
+        public global::Phoenix.Data7? Type47 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -502,7 +502,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.Data2? Type116 { get; set; }
+        public global::Phoenix.Data4? Type116 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -718,7 +718,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.Data3? Type170 { get; set; }
+        public global::Phoenix.Data2? Type170 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -778,7 +778,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.Data4? Type185 { get; set; }
+        public global::Phoenix.Data5? Type185 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -862,7 +862,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.Data5? Type206 { get; set; }
+        public global::Phoenix.Data3? Type206 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -878,11 +878,11 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.DataItem>? Type210 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.DataItem2>? Type210 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DataItem? Type211 { get; set; }
+        public global::Phoenix.DataItem2? Type211 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -966,11 +966,11 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.DataItem2>? Type232 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.DataItem3>? Type232 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DataItem2? Type233 { get; set; }
+        public global::Phoenix.DataItem3? Type233 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1062,11 +1062,11 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Phoenix.DataItem3>? Type256 { get; set; }
+        public global::System.Collections.Generic.IList<global::Phoenix.DataItem>? Type256 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DataItem3? Type257 { get; set; }
+        public global::Phoenix.DataItem? Type257 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1082,7 +1082,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.Data6? Type261 { get; set; }
+        public global::Phoenix.Data? Type261 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2158,7 +2158,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.Data7? Type530 { get; set; }
+        public global::Phoenix.Data6? Type530 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2298,43 +2298,39 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.UploadDatasetRequestAction2? Type565 { get; set; }
+        public byte[]? Type565 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public byte[]? Type566 { get; set; }
+        public global::Phoenix.DeleteSpanAnnotationsAnnotatorKind? Type566 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DeleteSpanAnnotationsAnnotatorKind? Type567 { get; set; }
+        public global::Phoenix.DeleteTraceAnnotationsAnnotatorKind? Type567 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DeleteTraceAnnotationsAnnotatorKind? Type568 { get; set; }
+        public global::Phoenix.DeleteSessionAnnotationsAnnotatorKind? Type568 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.DeleteSessionAnnotationsAnnotatorKind? Type569 { get; set; }
+        public global::Phoenix.ListProjectTracesSort? Type569 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ListProjectTracesSort? Type570 { get; set; }
+        public global::Phoenix.ListProjectTracesOrder? Type570 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.ListProjectTracesOrder? Type571 { get; set; }
+        public global::Phoenix.GetSpansSort? Type571 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.GetSpansSort? Type572 { get; set; }
+        public global::Phoenix.GetSpansOrder? Type572 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.GetSpansOrder? Type573 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Phoenix.ListProjectSessionsOrder? Type574 { get; set; }
+        public global::Phoenix.ListProjectSessionsOrder? Type573 { get; set; }
 
         /// <summary>
         ///
@@ -2423,7 +2419,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.DataItem>? ListType21 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.DataItem2>? ListType21 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2451,7 +2447,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.DataItem2>? ListType28 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.DataItem3>? ListType28 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2479,7 +2475,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Phoenix.DataItem3>? ListType35 { get; set; }
+        public global::System.Collections.Generic.List<global::Phoenix.DataItem>? ListType35 { get; set; }
         /// <summary>
         ///
         /// </summary>

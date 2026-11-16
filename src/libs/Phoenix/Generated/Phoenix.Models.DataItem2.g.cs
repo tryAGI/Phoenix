@@ -12,7 +12,7 @@ namespace Phoenix
         /// <summary>
         ///
         /// </summary>
-        public global::Phoenix.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType? Type { get; }
+        public global::Phoenix.GetAnnotationConfigsResponseBodyDataItemDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -197,7 +197,7 @@ namespace Phoenix
         ///
         /// </summary>
         public DataItem2(
-            global::Phoenix.GetProjectAnnotationConfigsResponseBodyDataItemDiscriminatorType? type,
+            global::Phoenix.GetAnnotationConfigsResponseBodyDataItemDiscriminatorType? type,
             global::Phoenix.CategoricalAnnotationConfig? categorical,
             global::Phoenix.ContinuousAnnotationConfig? continuous,
             global::Phoenix.FreeformAnnotationConfig? freeform

@@ -12,8 +12,8 @@ namespace Phoenix
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.UploadDatasetRequestAction2JsonConverter))]
-        public global::Phoenix.UploadDatasetRequestAction2? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Phoenix.JsonConverters.UploadDatasetRequestActionJsonConverter))]
+        public global::Phoenix.UploadDatasetRequestAction? Action { get; set; }
 
         /// <summary>
         ///
@@ -133,7 +133,7 @@ namespace Phoenix
             global::System.Collections.Generic.IList<string> outputKeys,
             byte[] file,
             string filename,
-            global::Phoenix.UploadDatasetRequestAction2? action,
+            global::Phoenix.UploadDatasetRequestAction? action,
             string? description,
             global::System.Collections.Generic.IList<string>? metadataKeys,
             global::System.Collections.Generic.IList<string>? splitKeys,

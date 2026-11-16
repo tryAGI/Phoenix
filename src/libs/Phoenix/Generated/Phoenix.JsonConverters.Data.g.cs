@@ -17,39 +17,48 @@ namespace Phoenix.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.GetViewerResponseBodyDataDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.GetViewerResponseBodyDataDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.GetViewerResponseBodyDataDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Phoenix.CategoricalAnnotationConfig? categorical = default;
-            if (discriminator?.Type == global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType.Categorical)
+            global::Phoenix.LocalUser? local = default;
+            if (discriminator?.AuthMethod == global::Phoenix.GetViewerResponseBodyDataDiscriminatorAuthMethod.Local)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.CategoricalAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.CategoricalAnnotationConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.CategoricalAnnotationConfig)}");
-                categorical = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LocalUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LocalUser> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.LocalUser)}");
+                local = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Phoenix.ContinuousAnnotationConfig? continuous = default;
-            if (discriminator?.Type == global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType.Continuous)
+            global::Phoenix.OAuth2User? oauth2 = default;
+            if (discriminator?.AuthMethod == global::Phoenix.GetViewerResponseBodyDataDiscriminatorAuthMethod.Oauth2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.ContinuousAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.ContinuousAnnotationConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.ContinuousAnnotationConfig)}");
-                continuous = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.OAuth2User), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.OAuth2User> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.OAuth2User)}");
+                oauth2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Phoenix.FreeformAnnotationConfig? freeform = default;
-            if (discriminator?.Type == global::Phoenix.AssignAnnotationConfigToProjectResponseBodyDataDiscriminatorType.Freeform)
+            global::Phoenix.LDAPUser? ldap = default;
+            if (discriminator?.AuthMethod == global::Phoenix.GetViewerResponseBodyDataDiscriminatorAuthMethod.Ldap)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.FreeformAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.FreeformAnnotationConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.FreeformAnnotationConfig)}");
-                freeform = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LDAPUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LDAPUser> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.LDAPUser)}");
+                ldap = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Phoenix.AnonymousUser? anonymous = default;
+            if (discriminator?.AuthMethod == global::Phoenix.GetViewerResponseBodyDataDiscriminatorAuthMethod.Anonymous)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.AnonymousUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.AnonymousUser> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Phoenix.AnonymousUser)}");
+                anonymous = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Phoenix.Data(
-                discriminator?.Type,
-                categorical,
+                discriminator?.AuthMethod,
+                local,
 
-                continuous,
+                oauth2,
 
-                freeform
+                ldap,
+
+                anonymous
                 );
 
             return __value;
@@ -64,23 +73,29 @@ namespace Phoenix.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsCategorical)
+            if (value.IsLocal)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.CategoricalAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.CategoricalAnnotationConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.CategoricalAnnotationConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCategorical(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LocalUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LocalUser?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.LocalUser).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLocal(), typeInfo);
             }
-            else if (value.IsContinuous)
+            else if (value.IsOauth2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.ContinuousAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.ContinuousAnnotationConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.ContinuousAnnotationConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContinuous(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.OAuth2User), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.OAuth2User?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.OAuth2User).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOauth2(), typeInfo);
             }
-            else if (value.IsFreeform)
+            else if (value.IsLdap)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.FreeformAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.FreeformAnnotationConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.FreeformAnnotationConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFreeform(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.LDAPUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.LDAPUser?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.LDAPUser).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLdap(), typeInfo);
+            }
+            else if (value.IsAnonymous)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Phoenix.AnonymousUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Phoenix.AnonymousUser?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Phoenix.AnonymousUser).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnonymous(), typeInfo);
             }
         }
     }

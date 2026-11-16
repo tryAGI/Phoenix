@@ -28,19 +28,19 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateUserRequestBodyUserDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateUserRequestBodyUserDiscriminatorAuthMethod), TypeInfoPropertyName = "CreateUserRequestBodyUserDiscriminatorAuthMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateUserResponseBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data3), TypeInfoPropertyName = "Data32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data2), TypeInfoPropertyName = "Data22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.LocalUser))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OAuth2User))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.LDAPUser))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateUserResponseBodyDataDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateUserResponseBodyDataDiscriminatorAuthMethod), TypeInfoPropertyName = "CreateUserResponseBodyDataDiscriminatorAuthMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetUsersResponseBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.DataItem3>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DataItem3), TypeInfoPropertyName = "DataItem32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.DataItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DataItem), TypeInfoPropertyName = "DataItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetUsersResponseBodyDataItemDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetUsersResponseBodyDataItemDiscriminatorAuthMethod), TypeInfoPropertyName = "GetUsersResponseBodyDataItemDiscriminatorAuthMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetViewerResponseBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data6), TypeInfoPropertyName = "Data62")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data), TypeInfoPropertyName = "Data2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetViewerResponseBodyDataDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetViewerResponseBodyDataDiscriminatorAuthMethod), TypeInfoPropertyName = "GetViewerResponseBodyDataDiscriminatorAuthMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.LDAPUserRole), TypeInfoPropertyName = "LDAPUserRole2")]
@@ -54,11 +54,11 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.User?), TypeInfoPropertyName = "NullableUser2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateUserRequestBodyUserDiscriminatorAuthMethod?), TypeInfoPropertyName = "NullableCreateUserRequestBodyUserDiscriminatorAuthMethod2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data3?), TypeInfoPropertyName = "NullableData32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data2?), TypeInfoPropertyName = "NullableData22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateUserResponseBodyDataDiscriminatorAuthMethod?), TypeInfoPropertyName = "NullableCreateUserResponseBodyDataDiscriminatorAuthMethod2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DataItem3?), TypeInfoPropertyName = "NullableDataItem32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.DataItem?), TypeInfoPropertyName = "NullableDataItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetUsersResponseBodyDataItemDiscriminatorAuthMethod?), TypeInfoPropertyName = "NullableGetUsersResponseBodyDataItemDiscriminatorAuthMethod2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data6?), TypeInfoPropertyName = "NullableData62")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Data?), TypeInfoPropertyName = "NullableData2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetViewerResponseBodyDataDiscriminatorAuthMethod?), TypeInfoPropertyName = "NullableGetViewerResponseBodyDataDiscriminatorAuthMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.LDAPUserRole?), TypeInfoPropertyName = "NullableLDAPUserRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.LDAPUserDataRole?), TypeInfoPropertyName = "NullableLDAPUserDataRole2")]
@@ -66,7 +66,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.LocalUserDataRole?), TypeInfoPropertyName = "NullableLocalUserDataRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OAuth2UserRole?), TypeInfoPropertyName = "NullableOAuth2UserRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.OAuth2UserDataRole?), TypeInfoPropertyName = "NullableOAuth2UserDataRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.DataItem3>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Phoenix.DataItem>))]
     internal sealed partial class UsersSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -115,9 +115,9 @@ namespace Phoenix
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
             options.Converters.Add(new global::Phoenix.JsonConverters.UserJsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.Data3JsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.DataItem3JsonConverter());
-            options.Converters.Add(new global::Phoenix.JsonConverters.Data6JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.Data2JsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DataItemJsonConverter());
+            options.Converters.Add(new global::Phoenix.JsonConverters.DataJsonConverter());
             options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<int?, string>());
             options.Converters.Add(new global::Phoenix.JsonConverters.AnyOfJsonConverter<long?, string>());
