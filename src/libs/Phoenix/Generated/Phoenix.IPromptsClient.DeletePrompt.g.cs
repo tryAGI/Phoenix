@@ -6,7 +6,7 @@ namespace Phoenix
     {
         /// <summary>
         /// Delete a prompt<br/>
-        /// Delete a prompt and all its versions, tags, and labels by identifier.
+        /// Delete a prompt and all its versions, tags, and labels by identifier. Returns 409 if one or more LLM evaluators use the prompt.
         /// </summary>
         /// <param name="promptIdentifier">
         /// The identifier of the prompt, i.e. name or ID.
@@ -20,7 +20,7 @@ namespace Phoenix
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete a prompt<br/>
-        /// Delete a prompt and all its versions, tags, and labels by identifier.
+        /// Delete a prompt and all its versions, tags, and labels by identifier. Returns 409 if one or more LLM evaluators use the prompt.
         /// </summary>
         /// <param name="promptIdentifier">
         /// The identifier of the prompt, i.e. name or ID.
