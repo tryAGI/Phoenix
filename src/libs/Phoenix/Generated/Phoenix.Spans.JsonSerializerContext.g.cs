@@ -41,6 +41,7 @@ namespace Phoenix
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.Span>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.Span))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.CreateSpansResponseBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.GetSpanResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.HTTPValidationError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Phoenix.ValidationError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Phoenix.ValidationError))]

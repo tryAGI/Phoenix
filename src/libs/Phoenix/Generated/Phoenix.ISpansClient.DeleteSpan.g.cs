@@ -18,7 +18,7 @@ namespace Phoenix
         ///         **Note**: This operation is irreversible and may create orphaned spans.
         /// </summary>
         /// <param name="spanIdentifier">
-        /// The span identifier: either a relay GlobalID or OpenTelemetry span_id
+        /// The span identifier: either a Global ID or OpenTelemetry span_id
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -41,7 +41,7 @@ namespace Phoenix
         ///         **Note**: This operation is irreversible and may create orphaned spans.
         /// </summary>
         /// <param name="spanIdentifier">
-        /// The span identifier: either a relay GlobalID or OpenTelemetry span_id
+        /// The span identifier: either a Global ID or OpenTelemetry span_id
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
